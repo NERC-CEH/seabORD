@@ -946,7 +946,7 @@ select_destinations <- function (Prast, Nb, Nt) {
 ################################################################################
 #' @title Define the appropriate stage for the bird
 #'
-#' @description For future expansion: SeabORD currently models only the
+#' @description For future expansion: seabORD currently models only the
 #'   chick-rearing stage of the year but there is a plan to extend this to
 #'   other part of the season. Not yet known how this will be modelled but this
 #'   function is set up to be called per bird so could include chick weight or

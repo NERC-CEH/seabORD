@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup,warning = FALSE, message = FALSE}
+```{r setup,warning = FALSE, message = FALSE, eval=FALSE, echo=FALSE}
 library(seabORD)
 ```
 
@@ -26,9 +26,9 @@ Throughout this vignette, Offshore Renewable Developments (ORDs) refer to offsho
 
 In cases where there is no local GPS data available users are recommended to estimate a bird density based on a distance-decay function, and use this as their bird distribution map in the model.
 
-In the previous version of SeabORD, which ran on MatLab, the parameters to be used for creating your density-decay map would be specified in the interface. This is no longer incorporated within the code and users need to produce their own map.
+In the previous version of seabORD, which ran on MatLab, the parameters to be used for creating your density-decay map would be specified in the interface. This is no longer incorporated within the code and users need to produce their own map.
 
-We provide an example here of how this can be done, using similar parameters to those within the old version of SeabORD and the Cumulative Effects Framework (CEF).
+We provide an example here of how this can be done, using similar parameters to those within the old version of seabORD and the Cumulative Effects Framework (CEF).
 
 We also demonstrate how to assess the potential displacement that will occur given this map and a set of ORDs so that users can gain a better understanding of potential interaction in a given scenario.
 
@@ -93,7 +93,7 @@ example_DBS_map <- seabORD::calc_dist_restricted(mymap=example_data_seamask,
 Load example (used throughout this vignette)
 
 ```{r}
-example_DBS_map <- get_example_DBS_map()
+example_DBS_map <- seabORD::get_example_DBS_map()
 
 #you can plot it!
 seabORD::plot_DBS_map(DBS_map = example_DBS_map)

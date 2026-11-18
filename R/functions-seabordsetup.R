@@ -1,5 +1,5 @@
 ####################################################################################################
-## FUNCTIONS for SeabORD v2.0.x
+## FUNCTIONS for seabORD v2.0.x
 ## Author: UKCEH
 ## Date: From May 2020
 ##
@@ -16,7 +16,7 @@
 ################################################################################
 #' @title Set the seeds needed for reproducibility
 #'
-#' @description SeabORD includes stochastic methods that rely on the generation
+#' @description seabORD includes stochastic methods that rely on the generation
 #' of random numbers. To make the simulations reproducible we start the random
 #' number sequence using a seed. This function used the main, user-supplied seed
 #' to create a table of other seeds that are used to initialise other functions.

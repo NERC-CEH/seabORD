@@ -2,7 +2,7 @@
 % Please edit documentation in R/functions-seabordmain.R
 \name{seabord}
 \alias{seabord}
-\title{Run a SeabORD simulation}
+\title{Run a seabORD simulation}
 \usage{
 seabord(
   Par,
