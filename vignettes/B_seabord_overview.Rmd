@@ -39,7 +39,7 @@ A typical workflow involves:
 
 Figure 1 below provides a view of how the model is applied in practice and how it can be used to assess ORD impacts resulting from one ORD, or several in combination.
 
-![*Figure 1: Schematic of SeabORD model and how it is used in practice*](images/Schematic_model_in_practice.png){style="display: block;   margin-left: auto;   margin-right: auto;" width="100%"}
+![*Figure 1: Schematic of SeabORD model and how it is used in practice*](images/Schematic_model_in_practice.png){style="display: block;   margin-left: auto;   margin-right: auto; margin-bottom: 30px;" width="100%"}
 
 ## Model structure
 

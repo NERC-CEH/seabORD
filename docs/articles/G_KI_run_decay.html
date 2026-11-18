@@ -58,8 +58,8 @@
   <div class="dropdown-menu" aria-labelledby="dropdown-example-cases">
     <a class="dropdown-item" href="../articles/G_KI_run_decay.html">Kittiwake Example - Distance decay</a>
     <a class="dropdown-item" href="../articles/H_KI_run_gps.html">Kittiwake Example - GPS</a>
-    <a class="dropdown-item" href="../articles/I_exampleKI_output.html">Exploring Outputs</a>
-    <a class="dropdown-item" href="../articles/D_DistanceDecayMap.html">Distance Decay Maps</a>
+    <a class="dropdown-item" href="../articles/I_exampleKI_output.html">Interpreting the outputs</a>
+    <a class="dropdown-item" href="../articles/D_DistanceDecayMap.html">Create a distance-decay map</a>
   </div>
 </li>
 <li class="nav-item dropdown">
@@ -141,17 +141,9 @@ information here</a>).</p>
 </h5>
 <p>In this case study the exact colony location is at (-1.85849,
 57.388807).</p>
+<p>spadat1_example</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">spadat1_example</span> <span class="op">&lt;-</span> <span class="fu">seabORD</span><span class="fu">::</span><span class="fu"><a href="../reference/get_example_spadat1.html">get_example_spadat1</a></span><span class="op">(</span>type <span class="op">=</span> <span class="st">"dd"</span><span class="op">)</span></span>
-<span><span class="va">spadat1_example</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 23</span></span></span>
-<span><span class="co">#&gt;   SITECODE  CEF.include Marine Longitude Latitude dat.CELLNO dat.ATSEA flt.LONG</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> UK9002491 TRUE        FALSE      -<span style="color: #BB0000;">1.86</span>     57.4    1<span style="text-decoration: underline;">431</span>527 TRUE         -<span style="color: #BB0000;">1.86</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 15 more variables: flt.LAT &lt;dbl&gt;, flt.CELLNO &lt;int&gt;, flt.ATSEA &lt;lgl&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   flt.DIST &lt;dbl&gt;, flt.near &lt;lgl&gt;, datxy.E &lt;dbl&gt;, datxy.N &lt;dbl&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   datxy.CELLNO &lt;int&gt;, datxy.ATSEA &lt;lgl&gt;, fltxy.E &lt;int&gt;, fltxy.N &lt;int&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   fltxy.CELLNO &lt;int&gt;, fltxy.ATSEA &lt;lgl&gt;, fltxy.DIST &lt;dbl&gt;, fltxy.near &lt;lgl&gt;</span></span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">spadat1_example</span> <span class="op">&lt;-</span> <span class="fu">seabORD</span><span class="fu">::</span><span class="fu"><a href="../reference/get_example_spadat1.html">get_example_spadat1</a></span><span class="op">(</span>type <span class="op">=</span> <span class="st">"dd"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="G_KI_run_decay_files/figure-html/unnamed-chunk-5-1.png" width="700"></p>
 </div>
 <div class="section level5">
@@ -271,7 +263,7 @@ the population, which may be sufficient for calibration runs.</p>
 <span><span class="co">#&gt;  $ outputdir  : chr "output_seabORD"</span></span>
 <span><span class="co">#&gt;  $ Nreplicates: num 20</span></span></code></pre></div>
 <p>Create the output folder , for example “output_seabORD_calibration”
-and assign it</p>
+and assign it as output directory</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#set the output location in ModPar</span></span>
 <span><span class="co">#  specifically for calibration outputs if it doesn't alreay exist</span></span>
