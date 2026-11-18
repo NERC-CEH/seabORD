@@ -1,9 +1,5 @@
 # seabORD
 
-***Version 2.0.0***
-
-⚠️ WORK IN PROGRESS: Draft under review ⚠️
-
 ## Overview
 
 **seabORD** is an R package for predicting the demographic impacts of displacement and barrier effects from offshore renewable developments (ORDs) on seabird populations.
@@ -25,13 +21,13 @@ The methodology underpinning SeabORD-R is currently under review.
 
 SeabORD-R is developed openly on GitHub. Source code, issue tracking, and version releases are available at:
 
-<a href="https://github.com/NERC-CEH/seabORD_pkg" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+<a href="https://github.com/NERC-CEH/seabORD" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
 
 ## Getting Started
 
-1.  Follow the [installation guide](https://nerc-ceh.github.io/seabORD_pkg/articles/A_installing_seabord.html).
+1.  Follow the [installation guide](https://nerc-ceh.github.io/seabORD/articles/A_installing_seabord.html).
 
-2.  Work through the [Example kittiwake: step 1 - seabORD inputs](https://nerc-ceh.github.io/seabORD_pkg/articles/C_KI_inputs.html) tutorial.
+2.  Work through the Examples: [Kittiwake case - with distance decay maps](https://nerc-ceh.github.io/seabORD/articles/G_KI_run_decay.html), or [Kittiwake case - with GPS maps](https://nerc-ceh.github.io/seabORD/articles/H_KI_run_gps.html)
 
 ## Acknowledgements
 

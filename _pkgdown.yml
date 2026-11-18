@@ -1,8 +1,13 @@
-url: ~
+url: https://nerc-ceh.github.io/seabORD/
 
 template:
   bootstrap: 5
+  light-switch: true
+  theme: gruvbox-light
+  theme-dark: gruvbox-dark
+
   bslib:
+    pkgdown-nav-height: 100px
     bg: "#fff"
     fg: "#292C2F"
     primary: "#0483A4"
@@ -12,90 +17,112 @@ template:
 
 navbar:
   structure:
-    left: [home, gettingstarted, examples, help, reference]
-    right: [search, github]
+    left: [home, gettingstarted, examples, help, reference, news]
+    right: [search, github, lightswitch]
 
   components:
 
     gettingstarted:
       text: Getting Started
       menu:
-      - text: Installing seabORD
-        href: articles/A_installing_seabord.html
-      - text: seabORD Overview
-        href: articles/B_seabord_overview.html
-      - text: seabORD Inputs
-        href: articles/C_seabord_inputs.html
-      - text: Main Functions
-        href: articles/J_main_functions.html
+        - text: Installing seabORD
+          href: articles/A_installing_seabord.html
+        - text: seabORD Overview
+          href: articles/B_seabord_overview.html
+        - text: seabORD Inputs
+          href: articles/C_seabord_inputs.html
+        - text: Main Functions
+          href: articles/J_main_functions.html
 
     examples:
       text: Example Cases
       menu:
-      - text: Kittiwake Example - Distance decay
-        href: articles/G_KI_run_decay.html
-      - text: Kittiwake Example - GPS
-        href: articles/H_KI_run_gps.html
-      - text: Interpreting the outputs
-        href: articles/I_exampleKI_output.html
-      - text: Create a distance-decay map
-        href: articles/D_DistanceDecayMap.html
+        - text: Kittiwake Example - Distance decay
+          href: articles/G_KI_run_decay.html
+        - text: Kittiwake Example - GPS
+          href: articles/H_KI_run_gps.html
+        - text: Interpreting the outputs
+          href: articles/I_exampleKI_output.html
+        - text: Create a distance-decay map
+          href: articles/D_DistanceDecayMap.html
 
     help:
       text: Help
       menu:
-      - text: FAQs
-        href: articles/K_FAQs.html
+        - text: FAQs
+          href: articles/K_FAQs.html
 
 reference:
-- title: "Functions to run the model"
-  contents:
-  - seabord
 
-- title: "Main functions behind the seabORD model"
-  contents:
-  - calc_adultbmchange
-  - calc_adultdee
-  - calc_pSurvival
-  - calc_puffinmortality
-  - calc_chickcare
-  - calc_othermortality
-  - calc_unattendmortality
-  - calc_strategy
-  - calc_foragecapture
-  - memoised_calc_foragecapture
+  - title: "Functions to run the model"
+    contents:
+      - seabord
 
-- title: "Other functions behind seabORD"
-  contents:
-  - set_seedvalues
-  - set_initialbirdtype
-  - set_initialchickstate
-  - set_initialbirdstate
+  - title: "Main functions behind the seabORD model"
+    contents:
+      - calc_adultbmchange
+      - calc_adultdee
+      - calc_pSurvival
+      - calc_puffinmortality
+      - calc_chickcare
+      - calc_othermortality
+      - calc_unattendmortality
+      - calc_strategy
+      - calc_foragecapture
+      - memoised_calc_foragecapture
 
-- title: "seabORD distance decay"
-  contents:
-  - calc_birddensmap_dd_pinfr
-  - calc_birddensmap_dd_pinhalf
-  - calc_dd_phalf_from_pinfr
-  - calc_dd_pinfr_from_phalf
-  - calc_dist_restricted
-  - voptimise
+  - title: "Other functions behind seabORD"
+    contents:
+      - set_seedvalues
+      - set_initialbirdtype
+      - set_initialchickstate
+      - set_initialbirdstate
 
-- title: "Example data"
-  contents:
-  - starts_with("get_example")
-  - get_spdat
+  - title: "seabORD distance decay"
+    contents:
+      - calc_birddensmap_dd_pinfr
+      - calc_birddensmap_dd_pinhalf
+      - calc_dd_phalf_from_pinfr
+      - calc_dd_pinfr_from_phalf
+      - calc_dist_restricted
+      - voptimise
 
-- title: "Preparing the input"
-  contents:
-  - set_colony_point
-  - set_ORD_buffer
-  - set_prey_sequence_in_par
-  - calc_pc_in_ORD_buffer
-  - calc_calibration_range
-  - summarise_ORD_impact
-  - check_calibration_inputs
+  - title: "Example data"
+    contents:
+      - starts_with("get_example")
+      - get_spdat
 
-- title: "Plotting input/output"
-  contents:
-  - starts_with("plot")
+  - title: "Preparing the input"
+    contents:
+      - set_colony_point
+      - set_ORD_buffer
+      - set_prey_sequence_in_par
+      - calc_pc_in_ORD_buffer
+      - calc_calibration_range
+      - summarise_ORD_impact
+      - check_calibration_inputs
+
+  - title: "Plotting input/output"
+    contents:
+      - starts_with("plot")
+
+home:
+  sidebar:
+    structure: [articles_list, license, citation, links]
+
+    components:
+
+      articles_list:
+        title: "Getting Started"
+        text: |
+          - [Installing seabORD](articles/A_installing_seabord.html)
+          - [seabORD Overview](articles/B_seabord_overview.html)
+          - [seabORD Inputs](articles/C_seabord_inputs.html)
+          - [Main Functions](articles/J_main_functions.html)
+
+      citation:
+        title: "Citation"
+        text: |
+          [How to cite seabORD](authors.html#citation)
+
+source_links: false

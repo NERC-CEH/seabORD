@@ -1,5 +1,5 @@
 ####################################################################################################
-## FUNCTIONS for SeabORD v2.0.x
+## FUNCTIONS for seabORD v2.0.x
 ## Author: UKCEH
 ## Date: From January 2021
 ##

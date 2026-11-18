@@ -14,9 +14,9 @@ knitr::opts_chunk$set(
 )
 ```
 
-Load the **seabORD** package before running the examples below. If you have not yet installed the package, please follow the [Installing seabORD](https://nerc-ceh.github.io/seabORD_pkg/articles/A_installing_seabord.html) instructions first.
+Load the **seabORD** package before running the examples below. If you have not yet installed the package, please follow the [Installing seabORD](https://nerc-ceh.github.io/seabORD/articles/A_installing_seabord.html) instructions first.
 
-```{r setup, warning = FALSE, message = FALSE, echo=FALSE}
+```{r setup, warning = FALSE, message = FALSE, echo=FALSE, eval=FALSE}
 #load seabORD
 library(seabORD)
 ```
@@ -259,7 +259,7 @@ seabORD::plot_calibration_outputs(
 
 # Step 2: Running the model
 
-Now that we have run our calibration step and discerned the prey values resulting in moderate conditions in the absence of wind farms, we can continue with running the main SeabORD runs with matched pairs of baseline (no ORDs) and scenario (ORDs included).
+Now that we have run our calibration step and discerned the prey values resulting in moderate conditions in the absence of wind farms, we can continue with running the main seabORD runs with matched pairs of baseline (no ORDs) and scenario (ORDs included).
 
 In this example we will run 5 scenario runs (wind farm footprints included) with a range of prey values (173-174).
 
@@ -367,11 +367,11 @@ switches_example$saverds <- TRUE
 
 Now that all the inputs are ready we can run the model using.
 
-SeabORD runs including wind farms and full populations can take a while to run - even with a relatively small population of \~ 3,000 pairs.
+seabORD runs including wind farms and full populations can take a while to run - even with a relatively small population of \~ 3,000 pairs.
 
 The output will be saved in in your output directory set up in modPar.
 
-To learn more about the main functions behind seabORD you can [read the article on the main functions](https://nerc-ceh.github.io/seabORD_pkg/articles/I_exampleKI_output.html).
+To learn more about the main functions behind seabORD you can [read the article on the main functions](https://nerc-ceh.github.io/seabORD/articles/J_main_functions.html).
 
 To see how you can read in and plot the results you can read the article "Example kittiwake: step 4 - interpreting the outputs" where we have an example output for you to play with.
 
@@ -392,4 +392,4 @@ SeabORDoutput <- seabord(Par = Par_example,
                          ORDpoly = ORDpoly_example)
 ```
 
-To learn more about the how to interpret the output you can [read the article on the output interpretation](file:///C:/Users/madtig/Documents/repositories/SeabORD/seabORD/docs/articles/I_exampleKI_output.html).
+To learn more about the how to interpret the output you can [read the article on the output interpretation](https://nerc-ceh.github.io/seabORD/articles/I_exampleKI_output.html).

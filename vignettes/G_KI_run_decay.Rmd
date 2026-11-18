@@ -16,13 +16,13 @@ knitr::opts_chunk$set(
 
 Load the **seabORD** package before running the examples below. If you have not yet installed the package, please follow the [Installing seabORD](https://nerc-ceh.github.io/seabORD_pkg/articles/A_installing_seabord.html) instructions first.
 
-```{r setup, warning = FALSE, message = FALSE  }
+```{r setup, echo=FALSE, warning = FALSE, message = FALSE, eval = FALSE}
 library(seabORD)
 ```
 
 # Introduction & background
 
-In this example, we simulate the potential impacts of three offshore renewable developments (ORDs), **Hywind Scotland Pilot Park**, **Aberdeen Offshore Wind Farm**, and **Kincardine**, on a kittiwake colony located at **Whinnyfold** within the **Buchan Ness to Collieston Coast SPA (UK9002491)**. Bird distribution is represented using density maps generated from a distance-decay function. If you are unfamiliar with this process, see the [*Creating Bird Density Maps Using a Distance-Decay Function*](#0){style="font-size: 12pt;"} example for a step-by-step guide.
+In this example, we simulate the potential impacts of three offshore renewable developments (ORDs), **Hywind Scotland Pilot Park**, **Aberdeen Offshore Wind Farm**, and **Kincardine**, on a kittiwake colony located at **Whinnyfold** within the **Buchan Ness to Collieston Coast SPA (UK9002491)**. Bird distribution is represented using density maps generated from a distance-decay function. If you are unfamiliar with this process, see the [*Creating Bird Density Maps Using a Distance-Decay Function*](https://nerc-ceh.github.io/seabORD/articles/D_DistanceDecayMap.html){style="font-size: 12pt;"} example for a step-by-step guide.
 
 The workflow consists of two main steps:
 
@@ -32,7 +32,7 @@ The workflow consists of two main steps:
 
 # Case specific spatial inputs
 
-Get the input parameters that you will use in the calibration and actual run ([more information here](https://nerc-ceh.github.io/seabORD_pkg/articles/C_KI_inputs.html)).
+Get the input parameters that you will use in the calibration and actual run ([more information here](https://nerc-ceh.github.io/seabORD/articles/C_seabord_inputs.html)).
 
 #### seamask
 
@@ -377,7 +377,7 @@ str(switches_example)
 
 ### Set off the scenario runs
 
-Now that all the inputs are ready we can run the model using. SeabORD runs including wind farms and full populations can take a while to run - even with a relatively small population of \~ 3,000 pairs. To learn more about the main functions behind seabORD you can [read the article on the main functions](https://nerc-ceh.github.io/seabORD_pkg/articles/I_exampleKI_output.html).
+Now that all the inputs are ready we can run the model using. seabORD runs including wind farms and full populations can take a while to run - even with a relatively small population of \~ 3,000 pairs. To learn more about the main functions behind seabORD you can read the [article on the main functions](https://nerc-ceh.github.io/seabORD/articles/J_main_functions.html).
 
 The output will be saved in in your output directory set up in modPar.
 
@@ -397,4 +397,4 @@ SeabORDoutput <- seabord(Par = Par_example,
                          ORDpoly = ORDpoly_example)
 ```
 
-To learn more about the how to interpret the output you can [read the article on the output interpretation](file:///C:/Users/madtig/Documents/repositories/SeabORD/seabORD/docs/articles/I_exampleKI_output.html).
+To learn more about the how to interpret the output you can [read the article on the output interpretation](https://nerc-ceh.github.io/seabORD/articles/I_exampleKI_output.html).

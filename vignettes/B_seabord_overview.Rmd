@@ -39,7 +39,7 @@ A typical workflow involves:
 
 Figure 1 below provides a view of how the model is applied in practice and how it can be used to assess ORD impacts resulting from one ORD, or several in combination.
 
-![*Figure 1: Schematic of SeabORD model and how it is used in practice*](images/Schematic_model_in_practice.png){style="display: block;   margin-left: auto;   margin-right: auto; margin-bottom: 30px;" width="100%"}
+![*Figure 1: Schematic of seabORD model and how it is used in practice*](images/Schematic_model_in_practice.png){style="display: block;   margin-left: auto;   margin-right: auto; margin-bottom: 30px;" width="100%"}
 
 ## Model structure
 
@@ -64,7 +64,7 @@ Within each time step the adults make foraging decisions and then based on the o
 
 4.  ***Adult survival*** – Upon completion of all time steps for each season (baseline/scenario) within each replicate, adult survival over the subsequent winter period is estimated using the mass of each adult which survived to the final time step, representing the end of the chick-rearing season. Survival is estimated using relationships from previously published studies [@oro2002; @erikstad2009], by converting the mass of each adult into a probability of survival via mass-survival relationships (`calc_pSurvival`). This probability is then passed to a stochastic process which dictates which individuals survive according to their relative probabilities.
 
-![*Figure 2: Overview of the SeabORD modelling framework. Prey availability is first calibrated and combined with ORD and spatial map inputs. Spatial components are defined before simulation replicates are initialised. Within each replicate, matched baseline and impact scenarios are simulated through repeated chick-rearing time steps comprising adult foraging and behavioural decisions, chick provisioning and growth, and adult state updates. Adult survival is subsequently estimated, and outputs are summarised across replicates as ORD-induced changes in adult mass, survival and breeding success. Purple boxes indicate inputs and outputs, yellow boxes indicate setup and processing stages, green boxes indicate ecological processes, and blue labels identify iterative loops.*](images/Code_structure_nested_schematic.png){width="100%"}
+![*Figure 2: Overview of the seabORD modelling framework. Prey availability is first calibrated and combined with ORD and spatial map inputs. Spatial components are defined before simulation replicates are initialised. Within each replicate, matched baseline and impact scenarios are simulated through repeated chick-rearing time steps comprising adult foraging and behavioural decisions, chick provisioning and growth, and adult state updates. Adult survival is subsequently estimated, and outputs are summarised across replicates as ORD-induced changes in adult mass, survival and breeding success. Purple boxes indicate inputs and outputs, yellow boxes indicate setup and processing stages, green boxes indicate ecological processes, and blue labels identify iterative loops.*](images/Code_structure_nested_schematic.png){width="100%"}
 
 ## ORD interactions
 
@@ -77,7 +77,7 @@ Adult behaviour concerning sublethal interactions with ORDs is split into two wi
 
 ## Next steps
 
-Read [more about the main functions](https://nerc-ceh.github.io/seabORD_pkg/articles/J_main_functions.html), or start following the examples!
+Read [more about the main functions](https://nerc-ceh.github.io/seabORD/articles/J_main_functions.html), or start following the examples!
 
 ------------------------------------------------------------------------
 

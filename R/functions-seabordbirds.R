@@ -93,6 +93,7 @@ calc_adultbmchange <- function(alive, BM_adult, Egain_adult, Ereq_adult,
 #' Hilton et al. (2000); Enstipp et al. (2006); and
 #' Grémillet et al. (2003).
 #' @examples
+#' \dontrun{
 #' # Daily energy requirement for a living bird
 #' Ereq_adult <- calc_adultdee(
 #'   alive = TRUE,
@@ -117,7 +118,7 @@ calc_adultbmchange <- function(alive, BM_adult, Egain_adult, Ereq_adult,
 #'   colony_h = 18,
 #'   flying_h = 5.26,
 #'   foraging_h = 11.23,
-#'
+#'}
 #' @export
 calc_adultdee <- function(alive, colony_h, flying_h, foraging_h, at_sea_h,
                           energy_nest, energy_flight, energy_forage,
@@ -946,7 +947,7 @@ select_destinations <- function (Prast, Nb, Nt) {
 ################################################################################
 #' @title Define the appropriate stage for the bird
 #'
-#' @description For future expansion: SeabORD currently models only the
+#' @description For future expansion: seabORD currently models only the
 #'   chick-rearing stage of the year but there is a plan to extend this to
 #'   other part of the season. Not yet known how this will be modelled but this
 #'   function is set up to be called per bird so could include chick weight or

@@ -60,6 +60,7 @@ day-1; 810.28 kJ day-1; 1894.90 kJ day-1) and the cost of warming food
 (Gremillet et al. 2003).
 }
 \examples{
+\dontrun{
 # Daily energy requirement for a living bird
 Ereq_adult <- calc_adultdee(
   alive = TRUE,
@@ -84,7 +85,7 @@ Ereq_adult <- calc_adultdee(
   colony_h = 18,
   flying_h = 5.26,
   foraging_h = 11.23,
-
+}
 }
 \references{
 Pennycuick, C. J. (1987, 1989); Croll and McLaren (1993);

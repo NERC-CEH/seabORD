@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-In this chpater the main functions that drive the seabORD core processes are explaied. Together, these functions determine how birds acquire food, provision chicks, update their energetic state and ultimately survive to the next breeding season. For a broader description of the overall model structure, see the [seabORD overview](https://nerc-ceh.github.io/seabORD_pkg/articles/B_seabord_overview.html). The functions are grouped according the stage of the simulation in which they are used:
+In this chpater the main functions that drive the seabORD core processes are explaied. Together, these functions determine how birds acquire food, provision chicks, update their energetic state and ultimately survive to the next breeding season. For a broader description of the overall model structure, see the [seabORD overview](https://nerc-ceh.github.io/seabORD/articles/B_seabord_overview.html). The functions are grouped according the stage of the simulation in which they are used:
 
 1.  ***Foraging and adult behaviour***
 
@@ -50,7 +50,7 @@ In this chpater the main functions that drive the seabORD core processes are exp
 
 ## 1.1. Calculate the time taken to forage required amount (calc_foragecapture)
 
-A detailed description of `calc_foragecapture()`, including its arguments and returned values, can be found in the [function reference](https://nerc-ceh.github.io/seabORD_pkg/reference/calc_foragecapture.html).
+A detailed description of `calc_foragecapture()`, including its arguments and returned values, can be found in the [function ](https://nerc-ceh.github.io/seabORD_pkg/reference/calc_foragecapture.html)[reference](https://nerc-ceh.github.io/seabORD/reference/calc_foragecapture.html).
 
 This function estimates how quickly a bird can acquire prey while foraging. Food intake depends on both prey availability and the bird's maximum feeding rate [@holling1959]. The resulting capture curve is then used throughout the model to determine how long individuals must forage to meet their energetic demands.
 
@@ -170,7 +170,7 @@ legend(
 
 ## 1.2. Calculate the foraging strategy for the timestep (calc_strategy)
 
-A detailed description of `calc_strategy()`, including its arguments and returned values, can be found in the [function reference](https://nerc-ceh.github.io/seabORD_pkg/reference/calc_strategy.html).
+A detailed description of `calc_strategy()`, including its arguments and returned values, can be found in the [function reference](https://nerc-ceh.github.io/seabORD/reference/calc_strategy.html).
 
 This function determines how an adult bird allocates its time between self-maintenance and chick provisioning during a single model time step. The selected foraging strategy depends on energetic constraints, available foraging time, and the bird's current body condition. As conditions deteriorate, adults may progressively reduce nest attendance and eventually abandon the breeding attempt in order to prioritise their own survival.
 
@@ -325,7 +325,7 @@ axis(
 
 ## 2.1. Parenting the chicks (calc_chickcare)
 
-A detailed description of `calc_chickcare()`, including its arguments and returned values, can be found in the [function reference](https://nerc-ceh.github.io/seabORD_pkg/reference/calc_chickcare.html).
+A detailed description of `calc_chickcare()`, including its arguments and returned values, can be found in the [function reference](https://nerc-ceh.github.io/seabORD/reference/calc_chickcare.html).
 
 This function updates chick growth, body condition, attendance status, and survival during each model time step. Food delivered by **both parents** contributes to chick growth, while reduced parental attendance increases the amount of time chicks are left unattended. Together, these processes determine whether chicks survive and continue developing.
 
@@ -418,7 +418,7 @@ plot(
 
 ## 2.2. Chick mortality as a result of adults not attending the nest (calc_unattendmortality)
 
-A detailed description of `calc_unattendmortality()`, including its arguments and returned values, can be found in the [function reference](https://nerc-ceh.github.io/seabORD_pkg/reference/calc_strategy.html).
+A detailed description of `calc_unattendmortality()`, including its arguments and returned values, can be found in the [function reference](https://nerc-ceh.github.io/seabORD/reference/calc_unattendmortality.html).
 
 This function evaluates whether a chick dies because it has been left unattended for too long. Mortality risk increases as unattended time approaches the species-specific maximum duration that chicks can safely remain alone.
 
@@ -466,7 +466,7 @@ plot(
 
 ## 2.3. Chick mortality as a result of other causes (calc_othermortality)
 
-A detailed description of `calc_othermortality()`, including its arguments and returned values, can be found in the [function reference](https://nerc-ceh.github.io/seabORD_pkg/reference/calc_othermortality.html).
+A detailed description of `calc_othermortality()`, including its arguments and returned values, can be found in the [function reference](https://nerc-ceh.github.io/seabORD/reference/calc_othermortality.html).
 
 This function applies a background mortality risk that represents causes of death not explicitly modelled elsewhere, such as adverse weather events unrelated to chick condition.
 
@@ -498,7 +498,7 @@ barplot(
 
 ## 2.4. Puffin chick mortality from predation due to hunger (calc_puffinmortality) {data-link="4. Puffin chick mortality from predation due to hunger"}
 
-A detailed description of `calc_othermortality()`, including its arguments and returned values, can be found in the [function reference](https://nerc-ceh.github.io/seabORD_pkg/reference/calc_puffinmortality.html).
+A detailed description of `calc_othermortality()`, including its arguments and returned values, can be found in the [function reference](https://nerc-ceh.github.io/seabORD/reference/calc_puffinmortality.html).
 
 This function applies an additional mortality risk to puffin chicks that are in poor body condition. Chicks whose condition falls below a species-specific threshold are considered vulnerable to predation. Whether mortality occurs is determined stochastically, so identical individuals may survive or die in different simulation runs. The function therefore captures both the effect of chick condition on predation risk and the inherent randomness of mortality events.
 
@@ -573,7 +573,7 @@ plot(
 
 ## 3.1. Body mass increase for adult birds (calc_adultbmchage)
 
-A detailed description of `calc_adultbmchange()`, including its arguments and returned values, can be found in the [function reference](https://nerc-ceh.github.io/seabORD_pkg/reference/calc_adultbmchange.html).
+A detailed description of `calc_adultbmchange()`, including its arguments and returned values, can be found in the [function reference](https://nerc-ceh.github.io/seabORD/reference/calc_adultbmchange.html).
 
 All adult birds update their body mass at the end of each day based on the energy they gain and expend foraging and in other activities. The model we use is an expanded version of that used in [@daunt2008sandeel; @wanless1997shags], which separates flight cost and foraging cost for each adult to derive total energy expenditure.
 
@@ -618,7 +618,7 @@ plot(
 
 ## 3.2. Calculate Daily Energy Requirement (calc_adultdee)
 
-A detailed description of `calc_adultdee()`, including its arguments and returned values, can be found in the [function reference](https://nerc-ceh.github.io/seabORD_pkg/reference/calc_adultdee.html).
+A detailed description of `calc_adultdee()`, including its arguments and returned values, can be found in the [function reference](https://nerc-ceh.github.io/seabORD/reference/calc_adultdee.html).
 
 This function calculates the daily energy expenditure (DEE) of an adult bird from its behaviour during the current time step. Time spent nesting, flying, foraging, and resting at sea each contribute to overall energetic costs. The resulting DEE becomes the bird's energy requirement (`Ereq_adult`) in the following time step.
 
@@ -686,7 +686,7 @@ plot(
 
 ## 4.1. Probability of winter survival (calc_pSurvival)
 
-A detailed description of `calc_pSurvival()`, including its arguments and returned values, can be found in the [function reference](https://nerc-ceh.github.io/seabORD_pkg/reference/calc_pSurvival.html).
+A detailed description of `calc_pSurvival()`, including its arguments and returned values, can be found in the [function reference](https://nerc-ceh.github.io/seabORD/reference/calc_pSurvival.html).
 
 This function converts the final body mass of an adult bird into a probability of surviving the season. Individuals ending the breeding season in better condition are expected to have a higher probability of surviving until the following year.
 

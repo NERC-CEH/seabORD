@@ -18,7 +18,7 @@ A tibble with integer seed values for each stream and replicate
 simulation pair.
 }
 \description{
-SeabORD includes stochastic methods that rely on the generation
+seabORD includes stochastic methods that rely on the generation
 of random numbers. To make the simulations reproducible we start the random
 number sequence using a seed. This function used the main, user-supplied seed
 to create a table of other seeds that are used to initialise other functions.

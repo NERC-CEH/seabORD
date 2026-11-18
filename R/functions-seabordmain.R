@@ -1,10 +1,10 @@
 ####################################################################################################
-## FUNCTIONS for SeabORD v2.0.x
+## FUNCTIONS for seabORD v2.0.x
 ## Author: UKCEH
 ## Date: From May 2020
 
 #'
-#' @title Run a SeabORD simulation
+#' @title Run a seabORD simulation
 #'
 #' @description A model to estimate the population consequences of displacement
 #'   from proposed offshore renewable energy developments for key seabird species.
@@ -234,7 +234,7 @@ seabord <- function(Par, modPar, ordPar, switches, seamask, spadat1, spadat2,
     ## Calculations about obstructed distance by sea
     # We know the choice of colonies and the ORDs so we can generate the
     # obstructed distance by sea. These rasters only need to be calculated once
-    # per set of conditions (colonies, ORDs and borders). In SeabORD outside the
+    # per set of conditions (colonies, ORDs and borders). In seabORD outside the
     # CEF, these files would be saved locally and imported when needed, but this
     # isn't as straightforward in the CEF - partly because we don't know where
     # they could be saved (securely) and partly because of the number of
@@ -258,7 +258,7 @@ seabord <- function(Par, modPar, ordPar, switches, seamask, spadat1, spadat2,
 
   }
 
-  ## Could add a 'makezones()' function here, as used in SeabORD-M
+  ## Could add a 'makezones()' function here, as used in seabORD-M
   #> Zone 1/2 = Area unaffected by ORDs
   #> Zone 3 = area 'behind' and ORD, where dist_base not equal to dist_scen (ie bird was barriered)
   #> Zone 4 = inside a footprint
@@ -366,7 +366,7 @@ seabord <- function(Par, modPar, ordPar, switches, seamask, spadat1, spadat2,
     dplyr::mutate(ExtraKm = round(1000*(Dist.scen - Dist.base))/1000)
 
   ##============================================================================
-  ## SECTION -- SeabORD flight routines
+  ## SECTION -- seabORD flight routines
 
   ## SUBSECTION -- Replicate season pairs --
 
@@ -488,7 +488,7 @@ seabord <- function(Par, modPar, ordPar, switches, seamask, spadat1, spadat2,
 
     ## SUBSECTION -- For each simulated breeding season -- =====================
 
-    # This version of SeabORD models the breeding season only. Future versions
+    # This version of seabORD models the breeding season only. Future versions
     # may be extended to encompass a full year. If so, we might add additional
     # loops here, e.g. pre- and post- breeding season activities, OR convert
     # this loop to be a full year and model the changing lifecycle changes
@@ -748,7 +748,7 @@ seabord <- function(Par, modPar, ordPar, switches, seamask, spadat1, spadat2,
             }
           }
 
-          # > At sea survey calculation here if required (see SeabORD-M)
+          # > At sea survey calculation here if required (see seabORD-M)
           SurveyDay <- FALSE
           if (SurveyDay) {}
 

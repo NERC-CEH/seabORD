@@ -14,14 +14,14 @@
 <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/Montserrat-0.4.10/font.css" rel="stylesheet">
+<link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/Montserrat-0.4.10/font.css" rel="stylesheet">
 <link href="../deps/JetBrains_Mono-0.4.10/font.css" rel="stylesheet">
 <!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js" integrity="sha512-7O5pXpc0oCRrxk8RUfDYFgn0nO1t+jLuIOQdOMRp4APB7uZ4vSjspzp5y6YDtDs4VzUSTbWzBFZ/LKJhnyFOKw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Create a distance-decay map">
 <meta property="og:description" content="seabORD">
-<meta property="og:image" content="/logo.png">
+<meta property="og:image" content="https://nerc-ceh.github.io/seabORD/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -58,8 +58,8 @@
   <div class="dropdown-menu" aria-labelledby="dropdown-example-cases">
     <a class="dropdown-item" href="../articles/G_KI_run_decay.html">Kittiwake Example - Distance decay</a>
     <a class="dropdown-item" href="../articles/H_KI_run_gps.html">Kittiwake Example - GPS</a>
-    <a class="dropdown-item" href="../articles/I_exampleKI_output.html">Exploring Outputs</a>
-    <a class="dropdown-item" href="../articles/D_DistanceDecayMap.html">Distance Decay Maps</a>
+    <a class="dropdown-item" href="../articles/I_exampleKI_output.html">Interpreting the outputs</a>
+    <a class="dropdown-item" href="../articles/D_DistanceDecayMap.html">Create a distance-decay map</a>
   </div>
 </li>
 <li class="nav-item dropdown">
@@ -71,12 +71,22 @@
 <li class="nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
 </li>
+<li class="nav-item">
+  <a class="nav-link" href="../news/index.html">Changelog</a>
+</li>
       </ul>
 <form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off">
 </form>
 
-      <ul class="navbar-nav"></ul>
+      <ul class="navbar-nav">
+<li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/NERC-CEH/seabORD/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 
     
@@ -91,14 +101,12 @@
       <img src="../logo.png" class="logo" alt=""><h1>Create a distance-decay map</h1>
             
       
-      
+      <small class="dont-index">Source: <a href="https://github.com/NERC-CEH/seabORD/blob/HEAD/vignettes/D_DistanceDecayMap.Rmd" class="external-link"><code>vignettes/D_DistanceDecayMap.Rmd</code></a></small>
       <div class="d-none name"><code>D_DistanceDecayMap.Rmd</code></div>
     </div>
 
     
     
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">seabORD</span><span class="op">)</span></span></code></pre></div>
 <div class="section level2">
 <h2 id="introduction-to-distance-decay-maps">Introduction to distance-decay maps<a class="anchor" aria-label="anchor" href="#introduction-to-distance-decay-maps"></a>
 </h2>
@@ -108,12 +116,12 @@ infrastructure.</p>
 <p>In cases where there is no local GPS data available users are
 recommended to estimate a bird density based on a distance-decay
 function, and use this as their bird distribution map in the model.</p>
-<p>In the previous version of SeabORD, which ran on MatLab, the
+<p>In the previous version of seabORD, which ran on MatLab, the
 parameters to be used for creating your density-decay map would be
 specified in the interface. This is no longer incorporated within the
 code and users need to produce their own map.</p>
 <p>We provide an example here of how this can be done, using similar
-parameters to those within the old version of SeabORD and the Cumulative
+parameters to those within the old version of seabORD and the Cumulative
 Effects Framework (CEF).</p>
 <p>We also demonstrate how to assess the potential displacement that
 will occur given this map and a set of ORDs so that users can gain a
@@ -147,7 +155,7 @@ model.</p>
 set location is on land. It needs to be placed beside or on the sea
 cells so it is not completely obstructed by land cells which are defined
 as impassable. We recommend checking this with a plot.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#Set the location of an example colony e.g., at Whinnyfold:</span></span>
 <span><span class="va">example_colony_3035</span> <span class="op">&lt;-</span> <span class="fu">seabORD</span><span class="fu">::</span><span class="fu"><a href="../reference/set_colony_point.html">set_colony_point</a></span><span class="op">(</span>lon <span class="op">=</span> <span class="op">-</span><span class="fl">1.85849</span>,</span>
 <span>                                                    lat <span class="op">=</span> <span class="fl">57.388807</span><span class="op">)</span></span>
@@ -168,7 +176,7 @@ are made with &gt;4 directions in our instance. This correction layer
 has been pre-calculated and covers the full map we are using. You can
 use the provided one as exmaple.</p>
 <p>You will also need the seamask, and you can load the example one.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load the flight gird correction layer</span></span>
 <span><span class="va">example_FlightGridcorrection_3035</span> <span class="op">&lt;-</span> <span class="fu">seabORD</span><span class="fu">::</span><span class="fu"><a href="../reference/get_example_fgc_3035.html">get_example_fgc_3035</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
@@ -176,7 +184,7 @@ use the provided one as exmaple.</p>
 <span><span class="co"># Load in the sea mask of the UK (shows which cells are on land and sea)</span></span>
 <span><span class="va">example_data_seamask</span> <span class="op">&lt;-</span> <span class="fu">seabORD</span><span class="fu">::</span><span class="fu"><a href="../reference/get_example_seamask.html">get_example_seamask</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>Calculate (slow):</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">example_DBS_map</span> <span class="op">&lt;-</span> <span class="fu">seabORD</span><span class="fu">::</span><span class="fu"><a href="../reference/calc_dist_restricted.html">calc_dist_restricted</a></span><span class="op">(</span>mymap<span class="op">=</span><span class="va">example_data_seamask</span>,</span>
 <span>                                         obspolys<span class="op">=</span><span class="cn">NULL</span>,</span>
 <span>                                         targetcoords <span class="op">=</span> <span class="va">example_colony_3035</span>,</span>
@@ -185,8 +193,8 @@ use the provided one as exmaple.</p>
 <span>                                  obspenalty<span class="op">=</span><span class="fl">1e+08</span>,</span>
 <span>                                  maxdist<span class="op">=</span><span class="fl">300</span><span class="op">)</span></span></code></pre></div>
 <p>Load example (used throughout this vignette)</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">example_DBS_map</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_example_DBS_map.html">get_example_DBS_map</a></span><span class="op">(</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">example_DBS_map</span> <span class="op">&lt;-</span> <span class="fu">seabORD</span><span class="fu">::</span><span class="fu"><a href="../reference/get_example_DBS_map.html">get_example_DBS_map</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co">#you can plot it!</span></span>
 <span><span class="fu">seabORD</span><span class="fu">::</span><span class="fu"><a href="../reference/plot_DBS_map.html">plot_DBS_map</a></span><span class="op">(</span>DBS_map <span class="op">=</span> <span class="va">example_DBS_map</span><span class="op">)</span></span></code></pre></div>
@@ -211,7 +219,7 @@ distribution) lies</li>
 </ol>
 <p>The function then returns a raster containing the distance-decay
 map.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Set your parameter inputs for distance decay map function:</span></span>
 <span><span class="va">dmap</span> <span class="op">&lt;-</span> <span class="va">example_DBS_map</span></span>
 <span><span class="va">fr</span> <span class="op">&lt;-</span> <span class="fl">150</span> <span class="co"># set as something sensible for this speces</span></span>
@@ -232,11 +240,11 @@ map.</p>
 <p>Now that we have made the density decay map, let’s plot it with the
 ORDs footprints to check that they overlap.</p>
 <p>You can use the example ORDs</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load in the wind farm polygons.</span></span>
 <span><span class="va">example_ORDpolys</span> <span class="op">&lt;-</span> <span class="fu">seabORD</span><span class="fu">::</span><span class="fu"><a href="../reference/get_example_ORDpoly.html">get_example_ORDpoly</a></span><span class="op">(</span>type <span class="op">=</span> <span class="st">"dd"</span><span class="op">)</span></span></code></pre></div>
 <p>This plotting function adds a buffer around the ORDs.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">seabORD</span><span class="fu">::</span><span class="fu"><a href="../reference/plot_DD_map_with_ORDs.html">plot_DD_map_with_ORDs</a></span><span class="op">(</span></span>
 <span>  DD_map <span class="op">=</span> <span class="va">example_DD_map</span>,</span>
 <span>  ORDpolys <span class="op">=</span> <span class="va">example_ORDpolys</span>,</span>
@@ -255,7 +263,7 @@ which can give us a sense of barrier effects, but not compute them
 directly.</p>
 <p>First let’s calculate the ORDpolys_with_buffer (like on the map
 above)</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">example_ORDpolys_with_buffer</span> <span class="op">&lt;-</span> <span class="fu">seabORD</span><span class="fu">::</span><span class="fu"><a href="../reference/set_ORD_buffer.html">set_ORD_buffer</a></span><span class="op">(</span></span>
 <span>  <span class="va">example_ORDpolys</span>,</span>
 <span>  bufferwidth <span class="op">=</span> <span class="fl">2</span></span>
@@ -263,7 +271,7 @@ above)</p>
 <p>Since the DD map is normalized, the result can be interpreted as the
 <strong>percentage of density contained within the ORDs</strong>
 <strong>footprints and their buffers</strong>.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co">#quick assessment of the percentage of the density decay map being occupied by the ORDs and their buffers.</span></span>
 <span><span class="fu">seabORD</span><span class="fu">::</span><span class="fu"><a href="../reference/calc_pc_in_ORD_buffer.html">calc_pc_in_ORD_buffer</a></span><span class="op">(</span><span class="va">example_DD_map</span>,</span>
@@ -276,7 +284,7 @@ code used to calculate the raster is shown below, but because this step
 can be computationally expensive we load a pre-computed example for the
 remainder of the vignette.</p>
 <p>Calculate (slow):</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Run function with obstruction from ORDs:</span></span>
 <span><span class="va">example_DBS_withORDs</span> <span class="op">&lt;-</span> <span class="fu">seabORD</span><span class="fu">::</span><span class="fu"><a href="../reference/calc_dist_restricted.html">calc_dist_restricted</a></span> <span class="op">(</span></span>
 <span>    mymap <span class="op">=</span> <span class="va">example_data_seamask</span>,</span>
@@ -287,13 +295,13 @@ remainder of the vignette.</p>
 <span>    obspenalty <span class="op">=</span> <span class="fl">1e+08</span>, maxdist <span class="op">=</span> <span class="fl">300</span></span>
 <span>    <span class="op">)</span></span></code></pre></div>
 <p>Load example (used throughout this vignette):</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">example_DBS_withORDs</span> <span class="op">&lt;-</span> <span class="fu">seabORD</span><span class="fu">::</span><span class="fu"><a href="../reference/get_example_DBS_map.html">get_example_DBS_map</a></span><span class="op">(</span>type <span class="op">=</span> <span class="st">"ords"</span><span class="op">)</span></span></code></pre></div>
 <p>The obstruction map identifies locations where travel distances
 increase when ORDs are included in the Distance By Sea calculation. Red
 cells represent areas where flight paths are altered sufficiently to
 exceed the threshold specified by <code>smalltol</code>.</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co"># "smalltol" is a threshold set to remove biologically implausible.</span></span>
 <span><span class="co">#E.g., 0.1 implies a distance of 100m which isn't overly important, so we recommend this as a minmum</span></span>
@@ -312,7 +320,7 @@ per time step. This can be used to estimate the number of birds being
 displaced per time step by multiplying the proportion of the simulated
 bird distribution map (utilisation distribution) within the polygon
 (plus buffer) by the displacement rate and by the colony size.</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="co"># calculate percentage in ORD and buffer, and the percentage in the "shadow"/barriered area:</span></span>
 <span></span>

@@ -1,5 +1,5 @@
 ################################################################################
-#' @title SeabORD code to simulate one time step or simulated day
+#' @title seabORD code to simulate one time step or simulated day
 #'
 #' @description This function simulates one time step in the season. Given the
 #'   flight pattern, potential displacement or collision risk and foraging
