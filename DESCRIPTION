@@ -12,6 +12,8 @@ Maintainer: Deena Mobbs <dcmo@ceh.ac.uk>
 Description: A model to estimate the population consequences of
     displacement from proposed offshore renewable energy developments for
     key seabird species
+URL: https://github.com/NERC-CEH/seabORD
+BugReports: https://github.com/NERC-CEH/seabORD/issues
 License: OGL
 Depends: 
     R (>= 3.5),

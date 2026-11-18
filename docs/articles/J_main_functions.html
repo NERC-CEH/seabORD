@@ -14,14 +14,14 @@
 <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/Montserrat-0.4.10/font.css" rel="stylesheet">
+<link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/Montserrat-0.4.10/font.css" rel="stylesheet">
 <link href="../deps/JetBrains_Mono-0.4.10/font.css" rel="stylesheet">
 <!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js" integrity="sha512-7O5pXpc0oCRrxk8RUfDYFgn0nO1t+jLuIOQdOMRp4APB7uZ4vSjspzp5y6YDtDs4VzUSTbWzBFZ/LKJhnyFOKw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Main functions">
 <meta property="og:description" content="seabORD">
-<meta property="og:image" content="/logo.png">
+<meta property="og:image" content="https://nerc-ceh.github.io/seabORD/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -58,8 +58,8 @@
   <div class="dropdown-menu" aria-labelledby="dropdown-example-cases">
     <a class="dropdown-item" href="../articles/G_KI_run_decay.html">Kittiwake Example - Distance decay</a>
     <a class="dropdown-item" href="../articles/H_KI_run_gps.html">Kittiwake Example - GPS</a>
-    <a class="dropdown-item" href="../articles/I_exampleKI_output.html">Exploring Outputs</a>
-    <a class="dropdown-item" href="../articles/D_DistanceDecayMap.html">Distance Decay Maps</a>
+    <a class="dropdown-item" href="../articles/I_exampleKI_output.html">Interpreting the outputs</a>
+    <a class="dropdown-item" href="../articles/D_DistanceDecayMap.html">Create a distance-decay map</a>
   </div>
 </li>
 <li class="nav-item dropdown">
@@ -71,12 +71,22 @@
 <li class="nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
 </li>
+<li class="nav-item">
+  <a class="nav-link" href="../news/index.html">Changelog</a>
+</li>
       </ul>
 <form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off">
 </form>
 
-      <ul class="navbar-nav"></ul>
+      <ul class="navbar-nav">
+<li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/NERC-CEH/seabORD/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 
     
@@ -91,7 +101,7 @@
       <img src="../logo.png" class="logo" alt=""><h1>Main functions</h1>
             
       
-      
+      <small class="dont-index">Source: <a href="https://github.com/NERC-CEH/seabORD/blob/HEAD/vignettes/J_main_functions.Rmd" class="external-link"><code>vignettes/J_main_functions.Rmd</code></a></small>
       <div class="d-none name"><code>J_main_functions.Rmd</code></div>
     </div>
 
@@ -101,7 +111,7 @@
 processes are explaied. Together, these functions determine how birds
 acquire food, provision chicks, update their energetic state and
 ultimately survive to the next breeding season. For a broader
-description of the overall model structure, see the <a href="https://nerc-ceh.github.io/seabORD_pkg/articles/B_seabord_overview.html" class="external-link">seabORD
+description of the overall model structure, see the <a href="https://nerc-ceh.github.io/seabORD/articles/B_seabord_overview.html">seabORD
 overview</a>. The functions are grouped according the stage of the
 simulation in which they are used:</p>
 <ol style="list-style-type: decimal">
@@ -143,8 +153,7 @@ simulation in which they are used:</p>
 (calc_foragecapture)<a class="anchor" aria-label="anchor" href="#calculate-the-time-taken-to-forage-required-amount-calc_foragecapture"></a>
 </h3>
 <p>A detailed description of <code><a href="../reference/calc_foragecapture.html">calc_foragecapture()</a></code>,
-including its arguments and returned values, can be found in the <a href="https://nerc-ceh.github.io/seabORD_pkg/reference/calc_foragecapture.html" class="external-link">function
-reference</a>.</p>
+including its arguments and returned values, can be found in the <a href="https://nerc-ceh.github.io/seabORD_pkg/reference/calc_foragecapture.html">function</a><a href="https://nerc-ceh.github.io/seabORD/reference/calc_foragecapture.html">reference</a>.</p>
 <p>This function estimates how quickly a bird can acquire prey while
 foraging. Food intake depends on both prey availability and the bird’s
 maximum feeding rate <span class="citation">(Holling, 1959)</span>. The
@@ -186,7 +195,7 @@ to faster food accumulation over time.</p>
 (calc_strategy)<a class="anchor" aria-label="anchor" href="#calculate-the-foraging-strategy-for-the-timestep-calc_strategy"></a>
 </h3>
 <p>A detailed description of <code><a href="../reference/calc_strategy.html">calc_strategy()</a></code>, including its
-arguments and returned values, can be found in the <a href="https://nerc-ceh.github.io/seabORD_pkg/reference/calc_strategy.html" class="external-link">function
+arguments and returned values, can be found in the <a href="https://nerc-ceh.github.io/seabORD/reference/calc_strategy.html">function
 reference</a>.</p>
 <p>This function determines how an adult bird allocates its time between
 self-maintenance and chick provisioning during a single model time step.
@@ -235,7 +244,7 @@ the time step, “3” = Breeding attempt abandoned).</p>
 <h3 id="parenting-the-chicks-calc_chickcare">2.1. Parenting the chicks (calc_chickcare)<a class="anchor" aria-label="anchor" href="#parenting-the-chicks-calc_chickcare"></a>
 </h3>
 <p>A detailed description of <code><a href="../reference/calc_chickcare.html">calc_chickcare()</a></code>, including
-its arguments and returned values, can be found in the <a href="https://nerc-ceh.github.io/seabORD_pkg/reference/calc_chickcare.html" class="external-link">function
+its arguments and returned values, can be found in the <a href="https://nerc-ceh.github.io/seabORD/reference/calc_chickcare.html">function
 reference</a>.</p>
 <p>This function updates chick growth, body condition, attendance
 status, and survival during each model time step. Food delivered by
@@ -259,7 +268,7 @@ in the simulation.</p>
 (calc_unattendmortality)<a class="anchor" aria-label="anchor" href="#chick-mortality-as-a-result-of-adults-not-attending-the-nest-calc_unattendmortality"></a>
 </h3>
 <p>A detailed description of <code><a href="../reference/calc_unattendmortality.html">calc_unattendmortality()</a></code>,
-including its arguments and returned values, can be found in the <a href="https://nerc-ceh.github.io/seabORD_pkg/reference/calc_strategy.html" class="external-link">function
+including its arguments and returned values, can be found in the <a href="https://nerc-ceh.github.io/seabORD/reference/calc_unattendmortality.html">function
 reference</a>.</p>
 <p>This function evaluates whether a chick dies because it has been left
 unattended for too long. Mortality risk increases as unattended time
@@ -281,7 +290,7 @@ higher the proportion of chicks that dies because unattended
 (calc_othermortality)<a class="anchor" aria-label="anchor" href="#chick-mortality-as-a-result-of-other-causes-calc_othermortality"></a>
 </h3>
 <p>A detailed description of <code><a href="../reference/calc_othermortality.html">calc_othermortality()</a></code>,
-including its arguments and returned values, can be found in the <a href="https://nerc-ceh.github.io/seabORD_pkg/reference/calc_othermortality.html" class="external-link">function
+including its arguments and returned values, can be found in the <a href="https://nerc-ceh.github.io/seabORD/reference/calc_othermortality.html">function
 reference</a>.</p>
 <p>This function applies a background mortality risk that represents
 causes of death not explicitly modelled elsewhere, such as adverse
@@ -303,7 +312,7 @@ those that die from other causes (<code>CoD = other</code>).</p>
 (calc_puffinmortality)<a class="anchor" aria-label="anchor" href="#puffin-chick-mortality-from-predation-due-to-hunger-calc_puffinmortality"></a>
 </h3>
 <p>A detailed description of <code><a href="../reference/calc_othermortality.html">calc_othermortality()</a></code>,
-including its arguments and returned values, can be found in the <a href="https://nerc-ceh.github.io/seabORD_pkg/reference/calc_puffinmortality.html" class="external-link">function
+including its arguments and returned values, can be found in the <a href="https://nerc-ceh.github.io/seabORD/reference/calc_puffinmortality.html">function
 reference</a>.</p>
 <p>This function applies an additional mortality risk to puffin chicks
 that are in poor body condition. Chicks whose condition falls below a
@@ -348,7 +357,7 @@ mortality risk (<code>CoD = killed</code>).</p>
 <h3 id="body-mass-increase-for-adult-birds-calc_adultbmchage">3.1. Body mass increase for adult birds (calc_adultbmchage)<a class="anchor" aria-label="anchor" href="#body-mass-increase-for-adult-birds-calc_adultbmchage"></a>
 </h3>
 <p>A detailed description of <code><a href="../reference/calc_adultbmchange.html">calc_adultbmchange()</a></code>,
-including its arguments and returned values, can be found in the <a href="https://nerc-ceh.github.io/seabORD_pkg/reference/calc_adultbmchange.html" class="external-link">function
+including its arguments and returned values, can be found in the <a href="https://nerc-ceh.github.io/seabORD/reference/calc_adultbmchange.html">function
 reference</a>.</p>
 <p>All adult birds update their body mass at the end of each day based
 on the energy they gain and expend foraging and in other activities. The
@@ -381,7 +390,7 @@ day.</p>
 <h3 id="calculate-daily-energy-requirement-calc_adultdee">3.2. Calculate Daily Energy Requirement (calc_adultdee)<a class="anchor" aria-label="anchor" href="#calculate-daily-energy-requirement-calc_adultdee"></a>
 </h3>
 <p>A detailed description of <code><a href="../reference/calc_adultdee.html">calc_adultdee()</a></code>, including its
-arguments and returned values, can be found in the <a href="https://nerc-ceh.github.io/seabORD_pkg/reference/calc_adultdee.html" class="external-link">function
+arguments and returned values, can be found in the <a href="https://nerc-ceh.github.io/seabORD/reference/calc_adultdee.html">function
 reference</a>.</p>
 <p>This function calculates the daily energy expenditure (DEE) of an
 adult bird from its behaviour during the current time step. Time spent
@@ -438,7 +447,7 @@ therefore increasing the food requirements of the birds.</p>
 <h3 id="probability-of-winter-survival-calc_psurvival">4.1. Probability of winter survival (calc_pSurvival)<a class="anchor" aria-label="anchor" href="#probability-of-winter-survival-calc_psurvival"></a>
 </h3>
 <p>A detailed description of <code><a href="../reference/calc_pSurvival.html">calc_pSurvival()</a></code>, including
-its arguments and returned values, can be found in the <a href="https://nerc-ceh.github.io/seabORD_pkg/reference/calc_pSurvival.html" class="external-link">function
+its arguments and returned values, can be found in the <a href="https://nerc-ceh.github.io/seabORD/reference/calc_pSurvival.html">function
 reference</a>.</p>
 <p>This function converts the final body mass of an adult bird into a
 probability of surviving the season. Individuals ending the breeding
