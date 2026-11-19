@@ -1,42 +1,4 @@
-# Example kittiwake: step 4 - interpreting the outputs
-
-Load the seabORD package
-
-``` r
-
-library(seabORD)
-library(ggplot2)
-library(magrittr) 
-```
-
-``` r
-
-
-#use coastline
-uk_map <- seabORD::cef_coast_4326
-
-
-### theme definition
-sysfonts::font_add_google("Montserrat", "montserrat")  # Base and heading font
-sysfonts::font_add_google("JetBrains Mono", "jetbrains_mono")  # Code font
-showtext::showtext_auto()
-
-theme_bslib <- ggplot2::theme(
-  plot.background = ggplot2::element_rect(fill = "#fff", color = NA),       # Background color
-  panel.background = ggplot2::element_rect(fill = "#EAEFEC", color = NA),  # Panel background (secondary)
-  panel.grid.major = ggplot2::element_line(color = "#EAEFEC"),             # Major grid lines
-  panel.grid.minor = ggplot2::element_line(color = "#EAEFEC"),             # Minor grid lines
-  axis.text = ggplot2::element_text(color = "#292C2F", family = "montserrat"),  # Axis text (foreground and font)
-  axis.title = ggplot2::element_text(color = "#292C2F", family = "montserrat"), # Axis titles
-  plot.title = ggplot2::element_text(color = "#0483A4", family = "montserrat", size = 16, face = "bold", hjust = 0.5), # Title
-  legend.background = ggplot2::element_rect(fill = "#fff", color = NA),    # Legend background
-  legend.key = ggplot2::element_rect(fill = "#EAEFEC", color = NA),        # Legend key
-  legend.text = ggplot2::element_text(color = "#292C2F", family = "montserrat"), # Legend text
-  plot.caption = ggplot2::element_text(color = "#292C2F", family = "jetbrains_mono"),
-  axis.title.x = ggplot2::element_blank(),  # Remove x-axis label
-  axis.title.y = ggplot2::element_blank(),# Caption for code font
-)
-```
+# Interpreting the outputs
 
 ## Output - reading and interpretation
 
@@ -44,25 +6,25 @@ The main output of seabORD is a list, where the different elements
 relate to respective parts of the model e.g., wind farm effects, adult
 outputs, chick outputs etc.
 
-We shall start by reading in an example created from a similar (but not
-identical) run with the same species (kittiwake), colony (Isle of May),
-and wind farm set up (Neart na Gaoithe and Inch Cape).
-
-### Read in example output
+We shall start by reading in an example output (created from a similar
+(but not identical) run with the same species (kittiwake), colony (Isle
+of May), and wind farm set up (Neart na Gaoithe and Inch Cape)).
 
 ``` r
 
-sbordout <- seabORD::example_scenario_output
-
-# str(sbordout) # check out the structure
-# names(sbordout)
+sbordout <- seabORD::get_example_output()
+names(sbordout)
+#>  [1] "switches"      "Parameters"    "ordPar"        "modPar"       
+#>  [5] "thisRun"       "output_f0"     "output_c0"     "output_a0"    
+#>  [9] "output_y0"     "BirdFlightMap" "output_i0"     "output_i1"    
+#> [13] "output_i2"     "output_i3"     "output_i4"     "output_i5"
 ```
 
-As you can see this is an extensive output with 16 elements to the list.
-The first five elements of the list are related to inputs (“switches”,
-“Parameters”, “ordPar”, “modPar”, “thisRun”) and we include this
-information so that the runs will be reproducible and are transparent
-for anyone inspecting the results.
+This is an extensive output with 16 elements to the list. The first five
+elements of the list are related to inputs (“switches”, “Parameters”,
+“ordPar”, “modPar”, “thisRun”) and we include this information so that
+the runs will be reproducible and are transparent for anyone inspecting
+the results.
 
 The following 11 outputs, aside from “BirdFlightMap” are all outputs
 relating to different components/entities in the model and each element
@@ -93,71 +55,70 @@ typically has a \$data section where the actual data is contained and a
 
 - “output_i5”
 
-### Plot BirdFlightMap
+### BirdFlightMap
 
 Let’s plot the flight map location output just to see that the run has
-performed as intended
+performed as intended. From this plot we can see clearly the two ORD
+footprints, with a higher density of foraging location in the 5km
+displacement zone surrounding each ORD.
+
+Some birds have **foraging locations** inside the ORD footprints. These
+are individuals that were not assigned as susceptible to displacement.
 
 ``` r
 
-# View the birdfligthmap output which is saved to it:
-BirdFlightMap <- 
-    terra::rast(sbordout$BirdFlightMap) %>%
-  terra::project(terra::crs(uk_map))
-BirdFlightMap_df <- as.data.frame(BirdFlightMap, xy = TRUE)
-
-ggplot2::ggplot() + 
-  ggplot2:: geom_raster(data = BirdFlightMap_df, ggplot2::aes(x = x, y = y, fill = layer)) +
-  # Add the reprojected UK boundary
-  ggplot2::geom_sf(data = uk_map, fill = NA, color = "#D63333", size = 1.5) +
-  # Customize the plot
-  theme_bslib +  #palette theme
-    ggplot2::scale_fill_viridis_c(
-    na.value = "gray",  # Set the color for NA (i.e., for 0 values)
-    name = "BirdFlightMap", direction = -1) +
-  ggplot2::labs(fill = "BirdFlightMap locations",
-               title = "coasts (red) and BirdFlightMap")+
-  # Crop the map to the Firth of Forth and a bit of the North Sea
-  ggplot2::coord_sf(
-    xlim = c(-3.5, 0),  # Longitude range (adjust as needed)
-    ylim = c(55.25, 57.25)     # Latitude range (adjust as needed)
-  )
+seabORD::plot_BirdFlightMap(
+  sbordout
+)
 ```
 
-![](I_exampleKI_output_files/figure-html/unnamed-chunk-4-1.png)
-
-From this plot we can see clearly the two ORD footprints, with a higher
-density of foraging location in the 5km displacement zone surrounding
-each ORD. Some birds have foraging inside the ORD footprints - these
-will have been indiviudals which were not assigned as displacement
-susceptible.
+![Map of simulated kittiwake foraging locations around the Isle of May,
+showing the two offshore renewable development footprints and their
+displacement
+zones](I_exampleKI_output_files/figure-html/unnamed-chunk-3-1.png)
 
 ### Adult output (output_a0)
+
+Read the adult output metadata and data.
 
 ``` r
 
 # inspect adult metric descriptions 
-sbordout$output_a0$metadata
-#> # A tibble: 25 × 3
-#>    VarName        VarDescription                                        VarUnits
-#>    <chr>          <chr>                                                 <chr>   
-#>  1 Rep            Replicate run number                                  ""      
-#>  2 Prey           Median prey available                                 "g/area"
-#>  3 Season         Season type, baseline or scenario                     ""      
-#>  4 t              Time step                                             ""      
-#>  5 N_alive_ad     Number of live adult birds in group                   ""      
-#>  6 N_dead_ad      Number of dead adult birds in group                   ""      
-#>  7 BM_adult_t0.mn Initial adult bird body mass, mean                    "g"     
-#>  8 BM_adult_t0.sd Initial adult bird body mass, standard deviation      "g"     
-#>  9 BM_adult.mn    Adult body mass (live birds only), mean               "g"     
-#> 10 BM_adult.sd    Adult body mass (live birds only), standard deviation "g"     
-#> # ℹ 15 more rows
-
-# Isolate the adult output:
-adults <- sbordout$output_a0$data
-
-# Inspect the dataframe in a new page:
-#View(adults)
+dplyr::glimpse(sbordout$output_a0$metadata)
+#> Rows: 25
+#> Columns: 3
+#> $ VarName        <chr> "Rep", "Prey", "Season", "t", "N_alive_ad", "N_dead_ad"…
+#> $ VarDescription <chr> "Replicate run number", "Median prey available", "Seaso…
+#> $ VarUnits       <chr> "", "g/area", "", "", "", "", "g", "g", "g", "g", "g", …
+#inspect the adult output
+dplyr::glimpse(head(sbordout$output_a0$data))
+#> Rows: 6
+#> Columns: 25
+#> $ Rep               <dbl> 1, 1, 2, 2, 3, 3
+#> $ Prey              <dbl> 173.00, 173.00, 173.25, 173.25, 173.50, 173.50
+#> $ Season            <chr> "base", "scen", "base", "scen", "base", "scen"
+#> $ t                 <dbl> 30, 30, 30, 30, 30, 30
+#> $ N_alive_ad        <dbl> 5796, 5796, 5796, 5796, 5796, 5796
+#> $ N_dead_ad         <dbl> 0, 0, 0, 0, 0, 0
+#> $ BM_adult_t0.mn    <dbl> 372.4993, 372.4993, 372.5284, 372.5284, 371.9655, 37…
+#> $ BM_adult_t0.sd    <dbl> 33.82550, 33.82550, 33.07026, 33.07026, 33.29260, 33…
+#> $ BM_adult.mn       <dbl> 339.2246, 338.8007, 339.4544, 338.9445, 338.8575, 33…
+#> $ BM_adult.sd       <dbl> 34.03021, 33.99535, 33.22776, 33.14232, 33.41130, 33…
+#> $ BM_condition.mn   <dbl> 0.9103030, 0.9091455, 0.9109057, 0.9095312, 0.910670…
+#> $ BM_condition.sd   <dbl> 0.02876942, 0.02828565, 0.02902028, 0.02839074, 0.02…
+#> $ trips_n.mn        <dbl> 1.976018, 1.971877, 1.982402, 1.984645, 1.967564, 1.…
+#> $ trips_n.sd        <dbl> 0.5280185, 0.5352809, 0.5238414, 0.5485306, 0.495345…
+#> $ flying_h.mn       <dbl> 3.823523, 3.854066, 3.882985, 3.907829, 3.913761, 3.…
+#> $ flying_h.sd       <dbl> 2.768509, 2.798944, 2.761850, 2.775534, 2.833579, 2.…
+#> $ foraging_h.mn     <dbl> 8.590286, 8.498789, 8.688921, 8.610363, 8.794105, 8.…
+#> $ foraging_h.sd     <dbl> 2.948922, 2.972429, 2.879241, 2.931643, 2.881427, 2.…
+#> $ colony_h.mn       <dbl> 21.46175, 21.55700, 21.26691, 21.36163, 21.10829, 21…
+#> $ colony_h.sd       <dbl> 4.337336, 4.427567, 4.222710, 4.308765, 4.276955, 4.…
+#> $ at_sea_h.mn       <dbl> 2.124446, 2.090147, 2.161189, 2.120180, 2.183846, 2.…
+#> $ at_sea_h.sd       <dbl> 0.8978029, 0.8818137, 0.9023587, 0.8858647, 0.929709…
+#> $ forage_g.mn       <dbl> 213.9551, 212.1129, 216.6581, 214.9865, 218.3186, 21…
+#> $ forage_g.sd       <dbl> 57.13640, 57.87041, 56.26048, 57.20981, 56.22470, 57…
+#> $ AdultsSurvivingBS <dbl> 1, 1, 1, 1, 1, 1
 ```
 
 You will see that there are 4 replicates of prey values here with
@@ -170,132 +131,136 @@ baseline runs. So let’s plot that and have a look…
 
 ``` r
 
-ggplot2::ggplot()+
-  ggplot2::geom_boxplot(data=adults, aes(x=Season, y=BM_adult.mn)) +
-  ggplot2::theme_classic()
+seabORD::plot_adult_body_mass(
+  sbordout_output_adults = sbordout$output_a0
+  )
 ```
 
-![](I_exampleKI_output_files/figure-html/unnamed-chunk-6-1.png)
+![Comparison of mean adult kittiwake body mass at the end of matched
+baseline and offshore renewable development scenario
+simulations](I_exampleKI_output_files/figure-html/unnamed-chunk-5-1.png)
 
 ### Chick output (output_c0)
 
 ``` r
 
-# inspect adult metric descriptions 
-sbordout$output_c0$metadata
-#> # A tibble: 18 × 3
-#>    VarName         VarDescription                               VarUnits
-#>    <chr>           <chr>                                        <chr>   
-#>  1 Rep             Replicate run number                         ""      
-#>  2 Prey            Median prey available                        "g/area"
-#>  3 Season          Season type, baseline or scenario            ""      
-#>  4 t               Time step                                    ""      
-#>  5 N_alive_ch      Number of live chicks in group               ""      
-#>  6 N_dead_ch       Number of chicks in group                    ""      
-#>  7 BM_chick.mn     Chick body mass, mean                        "g"     
-#>  8 BM_chick.sd     Chick body mass, standard deviation          "g"     
-#>  9 BM_condition.mn Chick body condition, mean                   ""      
-#> 10 BM_condition.sd Chick body condition, standard deviation     ""      
-#> 11 CoD.none        Cause of death: none, chick is alive         ""      
-#> 12 CoD.killed      Cause of death: killed (predated)            ""      
-#> 13 CoD.starved     Cause of death: body mass too low            ""      
-#> 14 CoD.unattended  Cause of death: parents absent               ""      
-#> 15 CoD.parentdead  Cause of death: at least one parent dead     ""      
-#> 16 CoD.abandoned   Cause of death: abandoned by parents         ""      
-#> 17 CoD.other       Cause of death: other mishap (e.g. flooding) ""      
-#> 18 ChicksPerNest   Mean number of chicks per nest surviving     ""
+#inspect adult metric descriptions 
+dplyr::glimpse(sbordout$output_c0$metadata)
+#> Rows: 18
+#> Columns: 3
+#> $ VarName        <chr> "Rep", "Prey", "Season", "t", "N_alive_ch", "N_dead_ch"…
+#> $ VarDescription <chr> "Replicate run number", "Median prey available", "Seaso…
+#> $ VarUnits       <chr> "", "g/area", "", "", "", "", "g", "g", "", "", "", "",…
 
-# Isolate the adult output:
-chicks <- sbordout$output_c0$data
-
-# Inspect the dataframe in a new page:
-#View(chicks)
+#inspect the chcik output
+dplyr::glimpse(head(sbordout$output_c0$data))
+#> Rows: 6
+#> Columns: 18
+#> $ Rep             <dbl> 1, 1, 2, 2, 3, 3
+#> $ Prey            <dbl> 173.00, 173.00, 173.25, 173.25, 173.50, 173.50
+#> $ Season          <chr> "base", "scen", "base", "scen", "base", "scen"
+#> $ t               <dbl> 30, 30, 30, 30, 30, 30
+#> $ N_alive_ch      <dbl> 1746, 1661, 1812, 1746, 1812, 1739
+#> $ N_dead_ch       <dbl> 1152, 1237, 1086, 1152, 1086, 1159
+#> $ BM_chick.mn     <dbl> 337.3477, 336.8720, 337.2851, 336.9933, 337.5211, 336.…
+#> $ BM_chick.sd     <dbl> 6.267519, 6.220798, 6.532156, 6.284795, 6.278793, 6.23…
+#> $ BM_condition.mn <dbl> 0.9217150, 0.9204154, 0.9215439, 0.9207466, 0.9221889,…
+#> $ BM_condition.sd <dbl> 0.01712437, 0.01699672, 0.01784742, 0.01717157, 0.0171…
+#> $ CoD.none        <dbl> 1746, 1661, 1812, 1746, 1812, 1739
+#> $ CoD.killed      <dbl> NA, NA, NA, NA, NA, NA
+#> $ CoD.starved     <dbl> 3, 3, NA, NA, NA, NA
+#> $ CoD.unattended  <dbl> 1033, 1113, 957, 1022, 960, 1036
+#> $ CoD.parentdead  <dbl> NA, NA, NA, NA, NA, NA
+#> $ CoD.abandoned   <dbl> NA, NA, NA, NA, NA, NA
+#> $ CoD.other       <dbl> 116, 121, 129, 130, 126, 123
+#> $ ChicksPerNest   <dbl> 0.6024845, 0.5731539, 0.6252588, 0.6024845, 0.6252588,…
 ```
 
-Conceivably, the number of survivy chicks across scenario runs at the
+Conceivably, the number of surviving chicks across scenario runs at the
 end of the simulation (N_alive_ch), will be lower than that for baseline
 runs…
 
 ``` r
 
-ggplot2::ggplot()+
-  ggplot2::geom_boxplot(data=chicks, aes(x=Season, y=N_alive_ch)) +
-  ggplot2::theme_classic()
+seabORD::plot_chick_survival(
+  sbordout_output_chicks = sbordout$output_c0
+  )
 ```
 
-![](I_exampleKI_output_files/figure-html/unnamed-chunk-8-1.png)
+![Comparison of surviving kittiwake chicks at the end of matched
+baseline and offshore renewable development scenario
+simulations](I_exampleKI_output_files/figure-html/unnamed-chunk-7-1.png)
 
 ### Flight related output (output_f0)
 
 ``` r
 
-# inspect adult metric descriptions 
-sbordout$output_f0$metadata
-#> # A tibble: 20 × 3
-#>    VarName        VarDescription                                        VarUnits
-#>    <chr>          <chr>                                                 <chr>   
-#>  1 Rep            Replicate run number                                  ""      
-#>  2 Season         Season type, baseline or scenario                     ""      
-#>  3 TotN_C_risk.mn Number of 'days' where there was a collision risk, m… ""      
-#>  4 TotN_C_risk.sd Number of 'days' where there was a collision risk, sd ""      
-#>  5 TotN_None.mn   Number of 'days' where there was no ORD interaction,… ""      
-#>  6 TotN_None.sd   Number of 'days' where there was no ORD interaction,… ""      
-#>  7 TotN_D_only.mn Number of 'days' where there was displacement only, … ""      
-#>  8 TotN_D_only.sd Number of 'days' where there was displacement only, … ""      
-#>  9 TotN_B_only.mn Number of 'days' where there was a barrier effect on… ""      
-#> 10 TotN_B_only.sd Number of 'days' where there was a barrier effect on… ""      
-#> 11 TotN_BD.mn     Number of 'days' where there was a barrier and displ… ""      
-#> 12 TotN_BD.sd     Number of 'days' where there was a barrier and displ… ""      
-#> 13 TotN_trips.mn  Total number of flights taken per day, mean           ""      
-#> 14 TotN_trips.sd  Total number of flights taken, sd                     ""      
-#> 15 Tot_basickm.mn Distance flown without ORD present, mean              ""      
-#> 16 Tot_basickm.sd Distance flown without ORD present, sd                ""      
-#> 17 Tot_extrakm.mn Extra distance flown because of ORDs, mean            ""      
-#> 18 Tot_extrakm.sd Extra distance flown because of ORDs, sd              ""      
-#> 19 DispGT0.sm     Birds displaced at least once                         ""      
-#> 20 BarrGT0.sm     Birds encountered a barrier at least once             ""
-
-# Isolate the adult output:
-flights <- sbordout$output_f0$data
-
-# Inspect the dataframe in a new page:
-#View(flights)
+# Inspect flight metric descriptions
+dplyr::glimpse(sbordout$output_f0$metadata)
+#> Rows: 20
+#> Columns: 3
+#> $ VarName        <chr> "Rep", "Season", "TotN_C_risk.mn", "TotN_C_risk.sd", "T…
+#> $ VarDescription <chr> "Replicate run number", "Season type, baseline or scena…
+#> $ VarUnits       <chr> "", "", "", "", "", "", "", "", "", "", "", "", "", "",…
+# Isolate the flight related output:
+dplyr::glimpse(head(sbordout$output_f0$data))
+#> Rows: 6
+#> Columns: 21
+#> $ Rep            <dbl> 1, 1, 2, 2, 3, 3
+#> $ Season         <chr> "base", "scen", "base", "scen", "base", "scen"
+#> $ TotN_C_risk.mn <dbl> 0.000000, 4.743099, 0.000000, 4.751553, 0.000000, 4.864…
+#> $ TotN_C_risk.sd <dbl> 0.000000, 6.080542, 0.000000, 6.113681, 0.000000, 6.130…
+#> $ TotN_None.mn   <dbl> 30.00000, 22.76346, 30.00000, 22.77726, 30.00000, 22.91…
+#> $ TotN_None.sd   <dbl> 0.000000, 6.218299, 0.000000, 6.207978, 0.000000, 6.219…
+#> $ TotN_D_only.mn <dbl> 0.0000000, 0.9582471, 0.0000000, 0.9446170, 0.0000000, …
+#> $ TotN_D_only.sd <dbl> 0.000000, 1.244688, 0.000000, 1.224514, 0.000000, 1.226…
+#> $ TotN_B_only.mn <dbl> 0.000000, 5.604382, 0.000000, 5.584023, 0.000000, 5.502…
+#> $ TotN_B_only.sd <dbl> 0.000000, 4.933621, 0.000000, 4.928235, 0.000000, 4.948…
+#> $ TotN_BD.mn     <dbl> 0.0000000, 0.6739130, 0.0000000, 0.6940994, 0.0000000, …
+#> $ TotN_BD.sd     <dbl> 0.0000000, 0.9564905, 0.0000000, 0.9926945, 0.0000000, …
+#> $ TotN_trips.mn  <dbl> 60.90286, 61.01812, 60.81108, 60.88164, 60.81177, 60.83…
+#> $ TotN_trips.sd  <dbl> 2.435512, 2.551458, 2.420153, 2.524250, 2.392382, 2.476…
+#> $ Tot_basickm.mn <dbl> 5736.879, 5810.263, 5725.603, 5791.343, 5754.685, 5811.…
+#> $ Tot_basickm.sd <dbl> 821.0949, 845.0890, 827.0931, 833.9058, 831.9399, 845.4…
+#> $ Tot_extrakm.mn <dbl> 0.00000, 65.01389, 0.00000, 66.24488, 0.00000, 64.28236
+#> $ Tot_extrakm.sd <dbl> 0.00000, 82.11199, 0.00000, 82.62962, 0.00000, 81.68041
+#> $ DispGT0.sm     <dbl> 0, 3306, 0, 3287, 0, 3232
+#> $ BarrGT0.sm     <dbl> 0, 3499, 0, 3504, 0, 3440
+#> $ t              <int> 30, 30, 30, 30, 30, 30
 ```
 
 “Tot_basickm.mn” is the mean per replicate of how many km birds flew -
 which would conceivably be higher for scenario runs due to barrier
-effects increasing flight distance, so let’s do another basic plot:
+effects increasing flight distance, so let’s do another basic plot
+
+and we can see that adults in the scenario run typically flew around
+50km more on average over the simulation duration than birds with no
+wind farm interaction.
 
 ``` r
 
-ggplot2::ggplot()+
-  ggplot2::geom_boxplot(data=flights, aes(x=Season, y=Tot_basickm.mn)) +
-  ggplot2::theme_classic()
+seabORD::plot_flight_distance(sbordout_output_flight = sbordout$output_f0)
 ```
 
-![](I_exampleKI_output_files/figure-html/unnamed-chunk-10-1.png)
-
-``` r
-
-
-# and we can see that adults in the scenario run typically flew around 50km more on average over the simulation duration than birds with no wind farm interaction.
-```
+![Comparison of mean total flight distance for adult kittiwakes in
+matched baseline and offshore renewable development scenario
+simulations](I_exampleKI_output_files/figure-html/unnamed-chunk-9-1.png)
 
 ### Outputs relating to impacts (i0…5)
 
-- Metric: Additional Mortality 1-i1: TRUE means birds never directly
+- Metric: Additional Mortality 1-i0: TRUE means birds never directly
   impacted
 
-- Metric: Additional Mortality 1-i2: TRUE means birds directly impacted
+- Metric: Additional Mortality 1-i1: TRUE means birds directly impacted
   in some way at least once
 
-- Metric: Additional Mortality 1-i3: TRUE means birds displaced at least
+- Metric: Additional Mortality 1-i2: TRUE means birds displaced at least
   once, never barriered
 
-- Metric: Additional Mortality 1-i4: TRUE means birds barriered at least
+- Metric: Additional Mortality 1-i3: TRUE means birds barriered at least
   once, never displaced
 
-- Metric: Additional Mortality 1-i5: TRUE means birds barriered and
+- Metric: Additional Mortality 1-i4: TRUE means birds barriered and
   displaced at least once
 
-- Metric: Additional Mortality 1-i6: All impacts grouped separately
+- Metric: Additional Mortality 1-i5: All impacts grouped separately

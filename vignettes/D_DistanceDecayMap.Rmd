@@ -50,7 +50,7 @@ First we set the colony location, in this case Whinnyfold, but you could change 
 
 **PLEASE NOTE** these calculations will not work if the set location is on land. It needs to be placed beside or on the sea cells so it is not completely obstructed by land cells which are defined as impassable. We recommend checking this with a plot.
 
-```{r}
+```{r, fig.alt="Map showing the Whinnyfold seabird colony location beside the sea near Aberdeen"}
 #Set the location of an example colony e.g., at Whinnyfold:
 example_colony_3035 <- seabORD::set_colony_point(lon = -1.85849,
                                                     lat = 57.388807)
@@ -92,7 +92,7 @@ example_DBS_map <- seabORD::calc_dist_restricted(mymap=example_data_seamask,
 
 Load example (used throughout this vignette)
 
-```{r}
+```{r, fig.alt="Distance By Sea map showing the sea-route distance from the Whinnyfold colony without offshore renewable developments"}
 example_DBS_map <- seabORD::get_example_DBS_map()
 
 #you can plot it!
@@ -111,7 +111,7 @@ The inputs which it takes are as follows:
 
 The function then returns a raster containing the distance-decay map.
 
-```{r}
+```{r, fig.alt="Distance By Sea map showing the sea-route distance from the Whinnyfold colony without offshore renewable developments"}
 # Set your parameter inputs for distance decay map function:
 dmap <- example_DBS_map
 fr <- 150 # set as something sensible for this speces
@@ -139,7 +139,7 @@ example_ORDpolys <- seabORD::get_example_ORDpoly(type = "dd")
 
 This plotting function adds a buffer around the ORDs.
 
-```{r, warning=FALSE}
+```{r, fig.alt="Distance-decay map of the predicted kittiwake distribution around the Whinnyfold colony", warning=FALSE}
 seabORD::plot_DD_map_with_ORDs(
   DD_map = example_DD_map,
   ORDpolys = example_ORDpolys,
@@ -195,7 +195,7 @@ example_DBS_withORDs <- seabORD::get_example_DBS_map(type = "ords")
 
 The obstruction map identifies locations where travel distances increase when ORDs are included in the Distance By Sea calculation. Red cells represent areas where flight paths are altered sufficiently to exceed the threshold specified by `smalltol`.
 
-```{r}
+```{r, fig.alt="Obstruction map highlighting areas where offshore renewable developments increase flight distances from the Whinnyfold colony"}
 
 # "smalltol" is a threshold set to remove biologically implausible.
 #E.g., 0.1 implies a distance of 100m which isn't overly important, so we recommend this as a minmum

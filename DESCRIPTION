@@ -2,17 +2,38 @@ Package: seabORD
 Title: seabORD
 Version: 2.0.0
 Authors@R: c(
-    person("Deena", "Mobbs", , "dcmo@ceh.ac.uk", role = c("aut", "cre")),
-    person("Christopher", "Pollock", role = c("ctb")),
-    person("Adam", "Butler", role = "ctb"),
-    person("Maddalena", "Tigli", role = c("ctb")),
-    person("Kate", "Searle", role = "ctb")
+    person(
+      given = "Deena",
+      family = "Mobbs",
+      email = "dcmo@ceh.ac.uk",
+      role = c("aut", "cre")
+    ),
+    person(
+      given = "Christopher",
+      family = "Pollock",
+      role = "aut"
+    ),
+    person(
+      given = "Adam",
+      family = "Butler",
+      role = "aut"
+    ),
+    person(
+      given = "Maddalena",
+      family = "Tigli",
+      role = "aut"
+    ),
+    person(
+      given = "Kate",
+      family = "Searle",
+      role = "aut"
+    )
   )
 Maintainer: Deena Mobbs <dcmo@ceh.ac.uk>
 Description: A model to estimate the population consequences of
     displacement from proposed offshore renewable energy developments for
     key seabird species
-URL: https://github.com/NERC-CEH/seabORD
+URL: https://nerc-ceh.github.io/seabORD/, https://github.com/NERC-CEH/seabORD
 BugReports: https://github.com/NERC-CEH/seabORD/issues
 License: OGL
 Depends: 

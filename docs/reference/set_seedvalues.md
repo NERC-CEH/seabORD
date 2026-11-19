@@ -1,6 +1,6 @@
 # Set the seeds needed for reproducibility
 
-SeabORD includes stochastic methods that rely on the generation of
+seabORD includes stochastic methods that rely on the generation of
 random numbers. To make the simulations reproducible we start the random
 number sequence using a seed. This function used the main, user-supplied
 seed to create a table of other seeds that are used to initialise other
@@ -52,5 +52,4 @@ simulation pair.
 #>  8  6052  8077  3336  5505  1520  3239
 #>  9  5749  1436  4285  9856  9320  2041
 #> 10   739  8281  9146   134  6424  4045
-  
 ```

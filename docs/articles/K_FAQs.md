@@ -1,1 +1,1 @@
-# FAQs
+# FAQs & common pitfalls

@@ -4,15 +4,18 @@
 
 - **Deena Mobbs**. Author, maintainer.
 
-- **Christopher Pollock**. Contributor, maintainer.
+- **Christopher Pollock**. Author.
 
-- **Adam Butler**. Contributor.
+- **Adam Butler**. Author.
 
-- **Maddalena Tigli**. Contributor, maintainer.
+- **Maddalena Tigli**. Author.
 
-- **Kate Searle**. Contributor.
+- **Kate Searle**. Author.
 
 ## Citation
+
+Source:
+[`inst/CITATION`](https://github.com/NERC-CEH/seabORD/blob/HEAD/inst/CITATION)
 
 Mobbs D, Pollock C, Butler A, Tigli M, Searle K (2026). *seabORD:
 Population Consequences of Displacement from Offshore Renewable

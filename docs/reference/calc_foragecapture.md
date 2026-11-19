@@ -4,8 +4,8 @@ Given the starting prey density and the competition for food, we need to
 estimate how long it would take a bird to gather the food it needs.
 Intake model: We assume that the relationship between prey quantity x
 and intake rate (-dx/dt) is of the form dx/dt = -ax/(h+x) for parameters
-a and h, the widely-used Michaelis-Menten model. This implies that the
-prey quantity at time t is equal to
+a and h, the widely-used Michaelis-Menten model (Holling, 1959). This
+implies that the prey quantity at time t is equal to
 
 x(t,x_0)={x:(x-x_0+at+hlog(x)-h log(x_0)) = 0}
 
@@ -46,3 +46,21 @@ calc_foragecapture(x0, h, a, maxt)
 ## Value
 
 A tibble with two variables 'tmin' and 'captured' and 'maxt' rows.
+
+## References
+
+Holling, C. S. (1959). Some Characteristics of Simple Types of Predation
+and Parasitism. *The Canadian Entomologist*, 91(7), 385–398.
+doi:10.4039/Ent91385-7
+
+## Examples
+
+``` r
+# Example prey patch
+out <- calc_foragecapture(
+  x0 = 260,
+  h = 973,
+  a = 4.369,
+  maxt = 2160
+)
+```

@@ -1,59 +1,68 @@
 url: https://nerc-ceh.github.io/seabORD/
+pandoc: "3.4"
 
 template:
   bootstrap: 5
   light-switch: true
   theme: gruvbox-light
   theme-dark: gruvbox-dark
-
   bslib:
-    pkgdown-nav-height: 100px
-    bg: "#fff"
-    fg: "#292C2F"
-    primary: "#0483A4"
-    base_font: {google: "Montserrat"}
-    heading_font: {google: "Montserrat"}
-    code_font: {google: "JetBrains Mono"}
+    bootswatch: lux
+  includes:
+    in_header: |
+      <link rel="stylesheet" href="extra.css">
+
+assets:
+  - extdata
 
 navbar:
   structure:
-    left: [home, gettingstarted, examples, help, reference, news]
-    right: [search, github, lightswitch]
+    left:
+      - gettingstarted
+      - examples
+      - reference
+      - news
+    right:
+      - search
+      - github
+      - lightswitch
 
   components:
-
     gettingstarted:
-      text: Getting Started
+      text: "GETTING STARTED"
       menu:
-        - text: Installing seabORD
+        - text: "Installing seabORD"
           href: articles/A_installing_seabord.html
-        - text: seabORD Overview
+        - text: "seabORD Overview"
           href: articles/B_seabord_overview.html
-        - text: seabORD Inputs
+        - text: "seabORD Inputs"
           href: articles/C_seabord_inputs.html
-        - text: Main Functions
+        - text: "Main Functions"
           href: articles/J_main_functions.html
-
-    examples:
-      text: Example Cases
-      menu:
-        - text: Kittiwake Example - Distance decay
-          href: articles/G_KI_run_decay.html
-        - text: Kittiwake Example - GPS
-          href: articles/H_KI_run_gps.html
-        - text: Interpreting the outputs
-          href: articles/I_exampleKI_output.html
-        - text: Create a distance-decay map
-          href: articles/D_DistanceDecayMap.html
-
-    help:
-      text: Help
-      menu:
-        - text: FAQs
+        - text: "FAQs"
           href: articles/K_FAQs.html
 
-reference:
+    examples:
+      text: "EXAMPLES"
+      menu:
+        - text: "Kittiwake Example - Distance Decay"
+          href: articles/G_KI_run_decay.html
+        - text: "Kittiwake Example - GPS"
+          href: articles/H_KI_run_gps.html
+        - text: "Interpreting the Outputs"
+          href: articles/I_exampleKI_output.html
+        - text: "Create a Distance-Decay Map"
+          href: articles/D_DistanceDecayMap.html
 
+    reference:
+      text: "REFERENCE"
+      href: reference/index.html
+
+    news:
+      text: "CHANGELOG"
+      href: news/index.html
+
+reference:
   - title: "Functions to run the model"
     contents:
       - seabord
@@ -106,23 +115,69 @@ reference:
     contents:
       - starts_with("plot")
 
+articles:
+  - title: "Getting Started"
+    contents:
+      - A_installing_seabord
+      - B_seabord_overview
+      - C_seabord_inputs
+      - J_main_functions
+
+  - title: "Example Cases"
+    contents:
+      - G_KI_run_decay
+      - H_KI_run_gps
+      - I_exampleKI_output
+      - D_DistanceDecayMap
+
+  - title: "Help"
+    contents:
+      - K_FAQs
+
 home:
+  title: "seabORD"
+  description: >
+    An individual-based model for assessing the effects of offshore
+    renewable developments on breeding seabirds.
+
   sidebar:
-    structure: [articles_list, license, citation, links]
+    structure:
+      - articles_list
+      - license
+      - citation
+      - download
+      - links
+      - authors
+      - dev
 
     components:
-
       articles_list:
-        title: "Getting Started"
+        title: "Articles"
         text: |
           - [Installing seabORD](articles/A_installing_seabord.html)
           - [seabORD Overview](articles/B_seabord_overview.html)
           - [seabORD Inputs](articles/C_seabord_inputs.html)
           - [Main Functions](articles/J_main_functions.html)
+          - [Kittiwake Example: Distance Decay](articles/G_KI_run_decay.html)
+          - [Kittiwake Example: GPS](articles/H_KI_run_gps.html)
+          - [Interpreting the Outputs](articles/I_exampleKI_output.html)
+          - [Frequently Asked Questions](articles/K_FAQs.html)
 
       citation:
         title: "Citation"
         text: |
-          [How to cite seabORD](authors.html#citation)
+          Please cite seabORD when using the package or its outputs.
 
-source_links: false
+          View the full citation
+
+      download:
+        title: "Download seabORD"
+        text: |
+          <div class="p-3 border rounded-3 bg-light text-center shadow-sm">
+            <a class="btn btn-lg"
+               href="https://github.com/NERC-CEH/seabORD/releases/latest"
+               role="button"
+               style="color:black;border:1px solid black;background-color:white;">
+              <i class="bi bi-box-arrow-down"></i> Get seabORD
+            </a>
+          </div>

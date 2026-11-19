@@ -1,9 +1,5 @@
 # seabORD
 
-***Version 2.0.0***
-
-*Draft under review*
-
 ## Overview
 
 **seabORD** is an R package for predicting the demographic impacts of
@@ -19,36 +15,34 @@ Potential impacts of offshore renewable developments are assessed by
 comparing a baseline scenario with one or more development scenarios
 containing offshore renewable infrastructure.
 
-![Conceptual diagram of the SeabORD
+![Conceptual diagram of the seabORD
 model](reference/figures/SeabORD_conceptual_inbox.png)
 
-Conceptual diagram of the SeabORD model
+Conceptual diagram of the seabORD model
 
 ## Citation
 
-The methodology underpinning SeabORD-R is currently under review.
+The methodology underpinning seabORD-R is currently under review.
 
 **Associated publication:**\
 *Article title to be inserted*
 
 ## Source Code
 
-SeabORD-R is developed openly on GitHub. Source code, issue tracking,
+seabORD-R is developed openly on GitHub. Source code, issue tracking,
 and version releases are available at:
 
-[GitHub Repository](https://github.com/NERC-CEH/seabORD_pkg)
+[GitHub Repository](https://github.com/NERC-CEH/seabORD)
 
 ## Getting Started
 
-Your installation chunk should be:
+1.  Follow the [installation
+    guide](https://nerc-ceh.github.io/seabORD/articles/A_installing_seabord.html).
 
-``` r
-
-install.packages("seabORD")
-library(seabORD)
-```
-
-See the Articles tab for tutorials and worked examples.
+2.  Work through the Examples: [Kittiwake case - with distance decay
+    maps](https://nerc-ceh.github.io/seabORD/articles/G_KI_run_decay.html),
+    or [Kittiwake case - with GPS
+    maps](https://nerc-ceh.github.io/seabORD/articles/H_KI_run_gps.html)
 
 ## Acknowledgements
 

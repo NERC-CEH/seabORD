@@ -1482,15 +1482,26 @@ plot_calibration_outputs <- function(
 
   valid_prey <- calibration$Prey[calibration$overlap]
 
+  # If no overlap exists, keep plotting
   if (length(valid_prey) == 0L) {
-    stop(
-      "No prey values satisfy both calibration criteria.",
+
+    warning(
+      paste(
+        "No prey values satisfy both calibration criteria.",
+        "Consider modifying the Par$Pmedian range and rerunning the calibration.",
+        "The plot can be used to determine which direction the range should be shifted."
+      ),
       call. = FALSE
     )
-  }
 
-  xmin <- min(valid_prey)
-  xmax <- max(valid_prey)
+    xmin <- xmax <- NA_real_
+
+  } else {
+
+    xmin <- min(valid_prey)
+    xmax <- max(valid_prey)
+
+  }
 
   adult_data <- sbordout$output_a0$data %>%
     dplyr::mutate(
@@ -1505,31 +1516,33 @@ plot_calibration_outputs <- function(
       x = Prey,
       y = percentage_loss
     )
-  ) +
-    ggplot2::annotate(
-      "rect",
-      xmin = xmin,
-      xmax = xmax,
-      ymin = -Inf,
-      ymax = Inf,
-      fill = "lightblue",
-      alpha = 0.3
-    ) +
+  )
+
+  if (!is.na(xmin)) {
+    pAd <- pAd +
+      ggplot2::annotate(
+        "rect",
+        xmin = xmin,
+        xmax = xmax,
+        ymin = -Inf,
+        ymax = Inf,
+        fill = "lightblue",
+        alpha = 0.3
+      ) +
+      ggplot2::geom_vline(
+        xintercept = c(xmin, xmax),
+        colour = "black"
+      )
+  }
+
+  pAd <- pAd +
     ggplot2::geom_hline(
       yintercept = c(masslower, massupper),
       linetype = 2,
       colour = "darkgrey"
     ) +
-    ggplot2::geom_point(
-      colour = "#D63333"
-    ) +
-    ggplot2::geom_line(
-      colour = "#D63333"
-    ) +
-    ggplot2::geom_vline(
-      xintercept = c(xmin, xmax),
-      colour = "black"
-    ) +
+    ggplot2::geom_point(colour = "#D63333") +
+    ggplot2::geom_line(colour = "#D63333") +
     theme_seabord() +
     ggplot2::labs(
       title = "Adult mass loss",
@@ -1543,31 +1556,33 @@ plot_calibration_outputs <- function(
       x = Prey,
       y = ChicksPerNest
     )
-  ) +
-    ggplot2::annotate(
-      "rect",
-      xmin = xmin,
-      xmax = xmax,
-      ymin = -Inf,
-      ymax = Inf,
-      fill = "lightblue",
-      alpha = 0.3
-    ) +
+  )
+
+  if (!is.na(xmin)) {
+    pCh <- pCh +
+      ggplot2::annotate(
+        "rect",
+        xmin = xmin,
+        xmax = xmax,
+        ymin = -Inf,
+        ymax = Inf,
+        fill = "lightblue",
+        alpha = 0.3
+      ) +
+      ggplot2::geom_vline(
+        xintercept = c(xmin, xmax),
+        colour = "black"
+      )
+  }
+
+  pCh <- pCh +
     ggplot2::geom_hline(
       yintercept = c(prodlower, produpper),
       linetype = 2,
       colour = "darkgrey"
     ) +
-    ggplot2::geom_point(
-      colour = "#D63333"
-    ) +
-    ggplot2::geom_line(
-      colour = "#D63333"
-    ) +
-    ggplot2::geom_vline(
-      xintercept = c(xmin, xmax),
-      colour = "black"
-    ) +
+    ggplot2::geom_point(colour = "#D63333") +
+    ggplot2::geom_line(colour = "#D63333") +
     theme_seabord() +
     ggplot2::labs(
       title = "Chicks per nest",

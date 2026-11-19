@@ -177,7 +177,7 @@ example_data_seamask <- seabORD::get_example_seamask()
 
 which looks like:
 
-```{r}
+```{r, fig.alt="Map distinguishing sea cells from land cells in the seabORD example study area"}
 # You can use the built in plot function
 seabORD::plot_seamask(seamask = example_data_seamask)
 ```
@@ -232,7 +232,7 @@ example_brddata <- seabORD::get_example_brddata()
 
 Example:
 
-```{r}
+```{r, fig.alt="Map of the example bird distribution used by seabORD"}
 seabORD::plot_brddata(brddata = example_brddata)
 ```
 
@@ -246,7 +246,7 @@ example_frgcompdata <- seabORD::get_example_frgcompdata()
 
 Example:
 
-```{r}
+```{r, fig.alt="Map of the example competition distribution from surrounding seabird colonies"}
 seabORD::plot_frgcompdata(frgcompdata = example_frgcompdata)
 ```
 
@@ -260,7 +260,7 @@ example_fltdist_base <- seabORD::get_example_fltdist_base()
 
 Example:
 
-```{r}
+```{r, fig.alt="Map of flight distance by sea from the example seabird colony without offshore renewable developments"}
 seabORD::plot_fltdist_base(fltdist_base = example_fltdist_base)
 ```
 
@@ -282,6 +282,6 @@ ORDpoly_example <- seabORD::get_example_ORDpoly()
 
 which is a dataset with this multipolygon shapes:
 
-```{r}
+```{r, fig.alt="Map showing the offshore renewable development polygons used in the example simulation"}
 seabORD::plot_ORDpoly(ORDpoly = ORDpoly_example)
 ```
