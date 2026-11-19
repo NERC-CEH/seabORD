@@ -55,9 +55,11 @@ The following 11 outputs, aside from "BirdFlightMap" are all outputs relating to
 
 ## BirdFlightMap
 
-Let's plot the flight map location output just to see that the run has performed as intended. From this plot we can see clearly the two ORD footprints, with a higher density of foraging location in the 5km displacement zone surrounding each ORD. Some birds have foraging inside the ORD footprints - these will have been indiviudals which were not assigned as displacement susceptible.
+Let's plot the flight map location output just to see that the run has performed as intended. From this plot we can see clearly the two ORD footprints, with a higher density of foraging location in the 5km displacement zone surrounding each ORD.
 
-```{r}
+Some birds have **foraging locations** inside the ORD footprints. These are individuals that were not assigned as susceptible to displacement.
+
+```{r, fig.alt="Map of simulated kittiwake foraging locations around the Isle of May, showing the two offshore renewable development footprints and their displacement zones"}
 seabORD::plot_BirdFlightMap(
   sbordout
 )
@@ -78,7 +80,7 @@ You will see that there are 4 replicates of prey values here with respective row
 
 Conceivably, the average condition of adults across scenario runs at the end of the simulation (BM_adult.mn), will be lower than that for baseline runs. So let's plot that and have a look...
 
-```{r}
+```{r, fig.alt="Comparison of mean adult kittiwake body mass at the end of matched baseline and offshore renewable development scenario simulations"}
 seabORD::plot_adult_body_mass(
   sbordout_output_adults = sbordout$output_a0
   )
@@ -87,16 +89,16 @@ seabORD::plot_adult_body_mass(
 ## Chick output (output_c0)
 
 ```{r}
-# inspect adult metric descriptions 
+#inspect adult metric descriptions 
 dplyr::glimpse(sbordout$output_c0$metadata)
 
 #inspect the chcik output
 dplyr::glimpse(head(sbordout$output_c0$data))
 ```
 
-Conceivably, the number of survivy chicks across scenario runs at the end of the simulation (N_alive_ch), will be lower than that for baseline runs...
+Conceivably, the number of surviving chicks across scenario runs at the end of the simulation (N_alive_ch), will be lower than that for baseline runs...
 
-```{r}
+```{r, fig.alt="Comparison of surviving kittiwake chicks at the end of matched baseline and offshore renewable development scenario simulations"}
 seabORD::plot_chick_survival(
   sbordout_output_chicks = sbordout$output_c0
   )
@@ -105,7 +107,7 @@ seabORD::plot_chick_survival(
 ## Flight related output (output_f0)
 
 ```{r}
-# inspect adult metric descriptions 
+# Inspect flight metric descriptions
 dplyr::glimpse(sbordout$output_f0$metadata)
 # Isolate the flight related output:
 dplyr::glimpse(head(sbordout$output_f0$data))
@@ -115,20 +117,20 @@ dplyr::glimpse(head(sbordout$output_f0$data))
 
 and we can see that adults in the scenario run typically flew around 50km more on average over the simulation duration than birds with no wind farm interaction.
 
-```{r}
+```{r, fig.alt="Comparison of mean total flight distance for adult kittiwakes in matched baseline and offshore renewable development scenario simulations"}
 seabORD::plot_flight_distance(sbordout_output_flight = sbordout$output_f0)
 ```
 
 ## Outputs relating to impacts (i0...5)
 
-- Metric: Additional Mortality 1-i1: TRUE means birds never directly impacted
+- Metric: Additional Mortality 1-i0: TRUE means birds never directly impacted
 
-- Metric: Additional Mortality 1-i2: TRUE means birds directly impacted in some way at least once
+- Metric: Additional Mortality 1-i1: TRUE means birds directly impacted in some way at least once
 
-- Metric: Additional Mortality 1-i3: TRUE means birds displaced at least once, never barriered
+- Metric: Additional Mortality 1-i2: TRUE means birds displaced at least once, never barriered
 
-- Metric: Additional Mortality 1-i4: TRUE means birds barriered at least once, never displaced
+- Metric: Additional Mortality 1-i3: TRUE means birds barriered at least once, never displaced
 
-- Metric: Additional Mortality 1-i5: TRUE means birds barriered and displaced at least once
+- Metric: Additional Mortality 1-i4: TRUE means birds barriered and displaced at least once
 
-- Metric: Additional Mortality 1-i6: All impacts grouped separately
+- Metric: Additional Mortality 1-i5: All impacts grouped separately

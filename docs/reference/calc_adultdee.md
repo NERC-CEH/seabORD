@@ -83,3 +83,10 @@ calc_adultdee(
 ## Value
 
 A revised adult DEE for time step
+
+## References
+
+Pennycuick, C. J. (1987, 1989); Croll and McLaren (1993); Hilton et al.
+(2000); Enstipp et al. (2006); and Grémillet et al. (2003).
+
+## Examples

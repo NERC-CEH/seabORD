@@ -40,7 +40,7 @@ Get the input parameters that you will use in the calibration and actual run ([m
 seamask_example <- seabORD::get_example_seamask()
 ```
 
-```{r, echo=FALSE}
+```{r plot-seamask, echo=FALSE, fig.alt="Map showing the Whinnyfold seabird colony location beside the sea near Aberdeen."}
 seabORD::plot_seamask(seamask = seamask_example)
 ```
 
@@ -48,13 +48,17 @@ seabORD::plot_seamask(seamask = seamask_example)
 
 In this case study the exact colony location is at (-1.85849, 57.388807).
 
-spadat1_example
+::: callout-important
+## NOTE
+
+The colony location is NOT on land
+:::
 
 ```{r}
 spadat1_example <- seabORD::get_example_spadat1(type = "dd")
 ```
 
-```{r, echo=FALSE}
+```{r plot-colony-location, echo=FALSE, fig.alt="Map showing the Whinnyfold kittiwake colony location beside sea cells on the Aberdeenshire coast."}
 # check the colony location is beside sea cells using a plot
 seabORD::plot_colony_location(
   colony = seabORD::set_colony_point(
@@ -85,7 +89,7 @@ See the step-by-step guide [**Create a distance-decay map**](https://nerc-ceh.gi
 brddata_example <- seabORD::get_example_brddata(type = "dd")
 ```
 
-```{r, echo=FALSE}
+```{r plot-bird-distribution, echo=FALSE, fig.alt="Distance-decay map showing the predicted kittiwake distribution around the Whinnyfold colony."}
 seabORD::plot_brddata(brddata = brddata_example, zoom = TRUE)
 ```
 
@@ -95,7 +99,7 @@ seabORD::plot_brddata(brddata = brddata_example, zoom = TRUE)
 FrgCompData_example <- seabORD::get_example_frgcompdata(type = "dd")
 ```
 
-```{r, echo=FALSE}
+```{r plot-foraging-competition, echo=FALSE, fig.alt="Map showing the predicted distribution of foraging competition from seabirds at surrounding colonies."}
 seabORD::plot_frgcompdata(frgcompdata = FrgCompData_example, zoom = TRUE)
 ```
 
@@ -105,8 +109,8 @@ seabORD::plot_frgcompdata(frgcompdata = FrgCompData_example, zoom = TRUE)
 fltdist_base_example <- seabORD::get_example_fltdist_base(type = "dd")
 ```
 
-```{r,  echo=FALSE}
-seabORD::plot_fltdist_base(fltdist_base = fltdist_base_example, , zoom = TRUE)
+```{r plot-baseline-flight-distance, echo=FALSE, fig.alt="Distance By Sea map showing baseline flight distances from the Whinnyfold colony without offshore renewable developments."}
+seabORD::plot_fltdist_base(fltdist_base = fltdist_base_example, zoom = TRUE)
 ```
 
 #### FlightGridcorrection
@@ -121,7 +125,7 @@ FlightGridcorrection_example <- seabORD::get_example_fgc_3035()
 ORDpoly_example <- seabORD::get_example_ORDpoly(type = "dd")
 ```
 
-```{r,  echo=FALSE}
+```{r plot-ord-polygons, echo=FALSE, fig.alt="Map showing the Hywind Scotland, Aberdeen Offshore Wind Farm and Kincardine offshore renewable development footprints."}
 seabORD::plot_ORDpoly(ORDpoly = ORDpoly_example)
 ```
 
@@ -240,7 +244,7 @@ For this particular example we define moderate conditions for kittiwakes on the 
 
 Where adult mass loss is the average percentage mass loss of adults over the duration of the chick-rearing season being simulated, and chicks per nest is the average number of chicks surviving per nest. The aim of calibration is to find the shared prey values contained within the upper and lower bounds between each output.
 
-```{r}
+```{r plot-calibration-flight-map, fig.alt="Map of simulated kittiwake foraging locations during baseline calibration runs without offshore renewable developments."}
 seabORD::plot_BirdFlightMap(
   sbordout_calibration
 )
@@ -250,7 +254,7 @@ You can see from this map that there is no evidence of and ORD interactions, whi
 
 Now we will plot the adult outputs (sbordout\$output_a0) and the chick outputs (sbordout\$output_c0) against the range of prey values across replicates to obtain our calibrated estimates to be used in the scenario runs going forward.
 
-```{r}
+```{r plot-calibration-outputs, fig.alt="Calibration plots showing adult mass loss and chick productivity across prey-density values, with acceptable bounds and the overlapping calibrated prey range highlighted."}
 # Identify prey values that simultaneously satisfy
 # the adult mass loss and productivity constraints
 calibration <- seabORD::calc_calibration_range(

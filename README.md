@@ -8,18 +8,18 @@ The model simulates how changes in foraging behaviour and movement patterns affe
 
 Potential impacts of offshore renewable developments are assessed by comparing a baseline scenario with one or more development scenarios containing offshore renewable infrastructure.
 
-![Conceptual diagram of the SeabORD model](man/figures/SeabORD_conceptual_inbox.png)
+![Conceptual diagram of the seabORD model](man/figures/SeabORD_conceptual_inbox.png)
 
 ## Citation
 
-The methodology underpinning SeabORD-R is currently under review.
+The methodology underpinning seabORD-R is currently under review.
 
 **Associated publication:**\
 *Article title to be inserted*
 
 ## Source Code
 
-SeabORD-R is developed openly on GitHub. Source code, issue tracking, and version releases are available at:
+seabORD-R is developed openly on GitHub. Source code, issue tracking, and version releases are available at:
 
 <a href="https://github.com/NERC-CEH/seabORD" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
 

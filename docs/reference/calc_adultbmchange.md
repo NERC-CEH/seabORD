@@ -38,3 +38,44 @@ calc_adultbmchange(alive, BM_adult, Egain_adult, Ereq_adult, adult_mass_KG)
 ## Value
 
 A revised adult body mass
+
+## Details
+
+Adult body mass is updated according to:
+
+\$\$ M\_{t+1} = M_t + \frac{(E\_{gain} - E\_{req})}{KG} \$\$
+
+where \\M_t\\ is the current body mass, \\E\_{gain}\\ is the energy
+acquired during the time step, \\E\_{req}\\ is the energetic
+requirement, and \\KG\\ is the energy density of adult tissue.
+
+Positive energy balance results in mass gain, while negative energy
+balance results in mass loss.
+
+## References
+
+Daunt & Wanless (2008); Wanless et al. (1997).
+
+## Examples
+
+``` r
+# Adult gains more energy than it expends
+calc_adultbmchange(
+  alive = TRUE,
+  BM_adult = 400,
+  Egain_adult = 1200,
+  Ereq_adult = 1000,
+  adult_mass_KG = 25
+)
+#> [1] 408
+
+# Adult expends more energy than it gains
+calc_adultbmchange(
+  alive = TRUE,
+  BM_adult = 400,
+  Egain_adult = 800,
+  Ereq_adult = 1000,
+  adult_mass_KG = 25
+)
+#> [1] 392
+```

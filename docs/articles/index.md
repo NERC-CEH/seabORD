@@ -2,27 +2,27 @@
 
 ### Getting Started
 
-- [Workshop](A_workshop.md):
-- [Overview of seabORD](B_explanation_model.md):
-- [Default settings for the species](J_species_default.md):
-- [Main functions behind seabORD](I_main_functions.md):
+- [Installing
+  seabORD](https://nerc-ceh.github.io/seabORD/articles/A_installing_seabord.md):
+- [seabORD
+  Overview](https://nerc-ceh.github.io/seabORD/articles/B_seabord_overview.md):
+- [seabORD
+  Inputs](https://nerc-ceh.github.io/seabORD/articles/C_seabord_inputs.md):
+- [Main
+  functions](https://nerc-ceh.github.io/seabORD/articles/J_main_functions.md):
 
-### Kittiwake example case
+### Example Cases
 
-- [Example kittiwake: step 1 - seabORD inputs](C_KI_inputs.md):
-- [Example: step 1.1 - creating a distance-decay
-  map](D_DistanceDecayMap.md):
-- [Example kittiwake: step 2.1 - seabORD calibration - distance
-  decay](E_KI_calib_decay.md):
-- [Example kittiwake: step 2.2 - seabORD calibration - GPS
-  maps](F_exampleKI_calib.md):
-- [Example kittiwake: step 3.1 - seabORD run - distance
-  decay](G_KI_run_decay.md):
-- [Example kittiwake: step 3.2 - seabORD run - GPS
-  maps](H_exampleKI_run.md):
-- [Example kittiwake: step 4 - interpreting the
-  outputs](I_exampleKI_output.md):
+- [Kittiwake case - with distance decay
+  maps](https://nerc-ceh.github.io/seabORD/articles/G_KI_run_decay.md):
+- [Kittiwake case - with GPS
+  maps](https://nerc-ceh.github.io/seabORD/articles/H_KI_run_gps.md):
+- [Interpreting the
+  outputs](https://nerc-ceh.github.io/seabORD/articles/I_exampleKI_output.md):
+- [Create a distance-decay
+  map](https://nerc-ceh.github.io/seabORD/articles/D_DistanceDecayMap.md):
 
 ### Help
 
-- [FAQs](K_FAQs.md):
+- [FAQs & common
+  pitfalls](https://nerc-ceh.github.io/seabORD/articles/K_FAQs.md):

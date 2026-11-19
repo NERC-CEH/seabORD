@@ -1,0 +1,4 @@
+/* Hide the source-file line at the top of articles */
+.page-header .source {
+  display: none;
+}

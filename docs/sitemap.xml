@@ -1,360 +1,105 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/404.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/articles/A_installing_seabord.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/articles/A_workshop.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/articles/B_explanation_model.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/articles/B_seabord_overview.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/articles/C_KI_inputs.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/articles/C_seabord_inputs.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/articles/D_DistanceDecayMap.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/articles/E_KI_calib_decay.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/articles/F_exampleKI_calib.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/articles/G_KI_run_decay.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/articles/H_exampleKI_run.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/articles/H_KI_run_gps.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/articles/I_exampleKI_output.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/articles/I_main_functions.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/articles/J_main_functions.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/articles/J_species_default.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/articles/K_FAQs.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/index.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/news/index.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/News.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/BrdData_example.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/BrdData_example_dd.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/calculate_pc_in_ORD_buffer.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/calc_adultbmchange.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/calc_adultdee.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/calc_birddensmap_dd_pinfr.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/calc_birddensmap_dd_pinhalf.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/calc_calibration_range.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/calc_chickcare.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/calc_dd_phalf_from_pinfr.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/calc_dd_pinfr_from_phalf.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/calc_dist_restricted.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/calc_foragecapture.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/calc_othermortality.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/calc_pc_in_ORD_buffer.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/calc_pSurvival.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/calc_puffinmortality.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/calc_strategy.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/calc_unattendmortality.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/cef_coast_3035.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/cef_coast_4326.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/CEF_colsize_table.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/check_calibration_inputs.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/create_colony_point.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/create_crop_extent_colony.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/create_ORD_buffer.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/create_prey_sequence_in_par.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/DBS_map_example.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/DBS_withORDs_example.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/energeticsandpreydata.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/example_1_lists.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/example_calibration_output.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/example_lists_calibration.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/example_lists_calibration_dd.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/example_lists_dd.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/example_scenario_output.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/find_calibration_range.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/FlightGridcorrection_3035.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/frgcompdata_example.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/frgcompdata_example_dd.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/get_example_brddata.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/get_example_DBS_map.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/get_example_fgc_3035.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/get_example_fltdist_base.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/get_example_frgcompdata.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/get_example_modpar.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/get_example_ordPar.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/get_example_ORDpoly.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/get_example_output.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/get_example_par.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/get_example_seamask.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/get_example_spadat1.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/get_example_spadat2.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/get_example_spdat.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/get_example_switches.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/get_spdat.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/memoised_calc_foragecapture.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/offshorerenewabledevelopmentnames.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/ORDpoly_example.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/ORDpoly_example_wfold.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/plot_adult_body_mass.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/plot_BirdFlightMap.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/plot_brddata.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/plot_calibration_outputs.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/plot_chick_survival.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/plot_colony_location.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/plot_DBS_map.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/plot_DD_map.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/plot_DD_map_with_ORDs.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/plot_flight_distance.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/plot_fltdist_base.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/plot_frgcompdata.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/plot_ORDpoly.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/plot_ORD_obstruction.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/plot_seamask.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/raster_from_metadata.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/seabord.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/seamask_3035_example.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/set_colony_point.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/set_initialbirdstate.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/set_initialbirdtype.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/set_initialchickstate.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/set_medianprey.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/set_ORD_buffer.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/set_prey_sequence_in_par.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/set_seedvalues.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/spacoordinates.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/spalist.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/specieslist.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/summarise_ORD_impact.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/theme_seabord.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/UK9002491_bysea_3035.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/UK9004171_bysea_3035.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/uk_coast_3035.html</loc>
-  </url>
-  <url>
-    <loc>https://nerc-ceh.github.io/seabORD/reference/voptimise.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://nerc-ceh.github.io/seabORD/404.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/articles/A_installing_seabord.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/articles/B_seabord_overview.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/articles/C_seabord_inputs.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/articles/D_DistanceDecayMap.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/articles/G_KI_run_decay.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/articles/H_KI_run_gps.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/articles/index.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/articles/I_exampleKI_output.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/articles/J_main_functions.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/articles/K_FAQs.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/authors.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/index.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/news/index.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/News.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/BrdData_example.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/BrdData_example_dd.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/calc_adultbmchange.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/calc_adultdee.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/calc_birddensmap_dd_pinfr.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/calc_birddensmap_dd_pinhalf.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/calc_calibration_range.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/calc_chickcare.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/calc_dd_phalf_from_pinfr.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/calc_dd_pinfr_from_phalf.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/calc_dist_restricted.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/calc_foragecapture.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/calc_othermortality.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/calc_pc_in_ORD_buffer.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/calc_pSurvival.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/calc_puffinmortality.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/calc_strategy.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/calc_unattendmortality.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/cef_coast_3035.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/cef_coast_4326.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/CEF_colsize_table.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/check_calibration_inputs.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/DBS_map_example.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/DBS_withORDs_example.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/energeticsandpreydata.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/example_1_lists.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/example_calibration_output.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/example_lists_calibration.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/example_lists_calibration_dd.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/example_lists_dd.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/example_scenario_output.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/FlightGridcorrection_3035.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/frgcompdata_example.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/frgcompdata_example_dd.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/get_example_brddata.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/get_example_DBS_map.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/get_example_fgc_3035.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/get_example_fltdist_base.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/get_example_frgcompdata.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/get_example_modpar.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/get_example_ordPar.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/get_example_ORDpoly.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/get_example_output.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/get_example_par.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/get_example_seamask.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/get_example_spadat1.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/get_example_spadat2.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/get_example_spdat.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/get_example_switches.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/get_spdat.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/index.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/memoised_calc_foragecapture.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/offshorerenewabledevelopmentnames.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/ORDpoly_example.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/ORDpoly_example_wfold.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/plot_adult_body_mass.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/plot_BirdFlightMap.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/plot_brddata.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/plot_calibration_outputs.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/plot_chick_survival.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/plot_colony_location.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/plot_DBS_map.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/plot_DD_map.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/plot_DD_map_with_ORDs.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/plot_flight_distance.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/plot_fltdist_base.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/plot_frgcompdata.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/plot_ORDpoly.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/plot_ORD_obstruction.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/plot_seamask.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/seabord.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/seamask_3035_example.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/set_colony_point.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/set_initialbirdstate.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/set_initialbirdtype.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/set_initialchickstate.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/set_ORD_buffer.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/set_prey_sequence_in_par.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/set_seedvalues.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/spacoordinates.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/spalist.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/specieslist.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/summarise_ORD_impact.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/UK9002491_bysea_3035.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/UK9004171_bysea_3035.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/uk_coast_3035.html</loc></url>
+<url><loc>https://nerc-ceh.github.io/seabORD/reference/voptimise.html</loc></url>
 </urlset>
+

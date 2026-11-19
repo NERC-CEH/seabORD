@@ -1,7 +1,9 @@
-# SeabORD main function
+# Run a seabORD simulation
 
 A model to estimate the population consequences of displacement from
-proposed offshore renewable energy developments for key seabird species
+proposed offshore renewable energy developments for key seabird species.
+The function performs one or more stochastic simulation replicates and
+returns summaries of adult, chick, flight and survival metrics.
 
 ## Usage
 
@@ -48,36 +50,46 @@ seabord(
 
 - spadat1:
 
-  description TBC
+  Tibble - Information relating to the colony/SPA
 
 - spadat2:
 
-  description TBC
+  Tibble - Information relating to the colony/SPA
 
 - spdat:
 
-  Species-specific parameters
+  Dataframe - Species-specific parameters
 
 - BrdData:
 
-  description TBC
+  Raster - Bird distribution map - derived from GPS data or failing
+  that, a distance-decay model
 
 - FrgCompData:
 
-  description TBC
+  Raster - Competition distribution map - derived from GPS data or
+  failing that, a distance-decay model
 
 - fltdist_base:
 
-  Flight distance by sea, without ORDs. See user guide for details.
+  Raster - Flight distance by sea, without ORDs. See user guide for
+  details.
 
 - FlightGridcorrection:
 
-  Flight distance transition layer (gdistance)
+  Raster - Flight distance transition layer (gdistance) corrected for
+  distortions relating to the CRS
 
 - ORDpoly:
 
-  The ORD footprints
+  Multipolygon (simple features) - The ORD footprints
 
 ## Value
 
 A list containing tibbles
+
+## Details
+
+Before running this function, all model inputs must be prepared. A
+complete description of the required input objects is provided in:
+`vignette("C_KI_inputs", package = "seabORD")`

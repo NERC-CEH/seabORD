@@ -43,6 +43,23 @@ calc_pSurvival(sp, bmi, bm, basesurv, beta, sd = 0)
 
 A probability of survival
 
+## Details
+
+For kittiwakes (`"KI"`), survival probability is calculated directly
+from the difference between an individual's body mass and the population
+mean.
+
+For puffins, guillemots and razorbills, body mass is first standardised
+using the population standard deviation before applying the survival
+relationship.
+
+Individuals with body masses greater than the population mean therefore
+receive higher survival probabilities, whereas individuals in poorer
+condition receive lower probabilities.
+
+If the individual did not survive the breeding season (`bmi = 0` or
+`NA`), the function returns a survival probability of zero.
+
 ## Examples
 
 ``` r

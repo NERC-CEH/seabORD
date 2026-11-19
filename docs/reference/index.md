@@ -2,106 +2,151 @@
 
 ## Functions to run the model
 
-- [`seabord()`](seabord.md) : SeabORD main function
+- [`seabord()`](https://nerc-ceh.github.io/seabORD/reference/seabord.md)
+  : Run a seabORD simulation
 
 ## Main functions behind the seabORD model
 
-- [`calc_adultbmchange()`](calc_adultbmchange.md) : Update adult body
-  mass
-- [`calc_adultdee()`](calc_adultdee.md) : Calculate Daily Energy
-  Requirement
-- [`calc_pSurvival()`](calc_pSurvival.md) : Probability of winter
-  survival (mass-survival)
-- [`calc_puffinmortality()`](calc_puffinmortality.md) : Puffin chick
-  mortality from predation due to hunger
-- [`calc_chickcare()`](calc_chickcare.md) : Parenting the chicks
-- [`calc_othermortality()`](calc_othermortality.md) : Chick mortality as
-  a result of other causes
-- [`calc_unattendmortality()`](calc_unattendmortality.md) : Chick
-  mortality as a result of adults not attending the nest
-- [`calc_strategy()`](calc_strategy.md) : Calculate the foraging
-  strategy for the timestep
-- [`calc_foragecapture()`](calc_foragecapture.md) : Calculate the time
-  taken to forage required amount
-- [`memoised_calc_foragecapture()`](memoised_calc_foragecapture.md) :
-  Memoized Version of calc_foragecapture
+- [`calc_adultbmchange()`](https://nerc-ceh.github.io/seabORD/reference/calc_adultbmchange.md)
+  : Update adult body mass
+- [`calc_adultdee()`](https://nerc-ceh.github.io/seabORD/reference/calc_adultdee.md)
+  : Calculate Daily Energy Requirement
+- [`calc_pSurvival()`](https://nerc-ceh.github.io/seabORD/reference/calc_pSurvival.md)
+  : Probability of winter survival (mass-survival)
+- [`calc_puffinmortality()`](https://nerc-ceh.github.io/seabORD/reference/calc_puffinmortality.md)
+  : Puffin chick mortality from predation due to hunger
+- [`calc_chickcare()`](https://nerc-ceh.github.io/seabORD/reference/calc_chickcare.md)
+  : Parenting the chicks
+- [`calc_othermortality()`](https://nerc-ceh.github.io/seabORD/reference/calc_othermortality.md)
+  : Chick mortality as a result of other causes
+- [`calc_unattendmortality()`](https://nerc-ceh.github.io/seabORD/reference/calc_unattendmortality.md)
+  : Chick mortality as a result of adults not attending the nest
+- [`calc_strategy()`](https://nerc-ceh.github.io/seabORD/reference/calc_strategy.md)
+  : Calculate the foraging strategy for the timestep
+- [`calc_foragecapture()`](https://nerc-ceh.github.io/seabORD/reference/calc_foragecapture.md)
+  : Calculate the time taken to forage required amount
+- [`memoised_calc_foragecapture()`](https://nerc-ceh.github.io/seabORD/reference/memoised_calc_foragecapture.md)
+  : Memoized Version of calc_foragecapture
 
 ## Other functions behind seabORD
 
-- [`set_seedvalues()`](set_seedvalues.md) : Set the seeds needed for
-  reproducibility
-- [`set_medianprey()`](set_medianprey.md) : Set the median prey value
-  across the region
-- [`set_initialbirdtype()`](set_initialbirdtype.md) : Create individual
-  seabirds for the simulation
-- [`set_initialchickstate()`](set_initialchickstate.md) : Set initial
-  values for individual chicks
-- [`set_initialbirdstate()`](set_initialbirdstate.md) : Set initial
-  values for individual birds
-
-## Datasets available
-
-- [`example_1_lists`](example_1_lists.md) : example_1_lists
-- [`example_lists_calibration`](example_lists_calibration.md) :
-  example_lists_calibration
-- [`example_scenario_output`](example_scenario_output.md) :
-  example_scenario_output
-- [`specieslist`](specieslist.md) : Species List Dataset
-- [`spalist`](spalist.md) : SPA Site List Dataset
-- [`CEF_colsize_table`](CEF_colsize_table.md) : CEF Size Table
-- [`energeticsandpreydata`](energeticsandpreydata.md) : Energetics and
-  Prey Data
-- [`BrdData_example`](BrdData_example.md) : BrdData_example
-- [`frgcompdata_example`](frgcompdata_example.md) : frgcompdata_example
-- [`cef_coast_4326`](cef_coast_4326.md) : cef_coast_4326
-- [`cef_coast_3035`](cef_coast_3035.md) : cef_coast_3035
-- [`seamask_3035_example`](seamask_3035_example.md) :
-  seamask_3035_example
-- [`spacoordinates`](spacoordinates.md) : Spatial Coordinates of Sites
-- [`UK9004171_bysea_3035`](UK9004171_bysea_3035.md) :
-  UK9004171_bysea_3035
-- [`FlightGridcorrection_3035`](FlightGridcorrection_3035.md) :
-  FlightGridcorrection_3035: TransitionLayer Object
-- [`offshorerenewabledevelopmentnames`](offshorerenewabledevelopmentnames.md)
-  : offshorerenewabledevelopmentnames
-- [`ORDpoly_example`](ORDpoly_example.md) : ORDpoly_example
-- [`ORDpoly_example_wfold`](ORDpoly_example_wfold.md) :
-  ORDpoly_example_wfold
-- [`example_calibration_output`](example_calibration_output.md) :
-  example_calibration_output
-- [`DBS_map_example`](DBS_map_example.md) : DBS_map_example.R
-- [`DBS_withORDs_example`](DBS_withORDs_example.md) :
-  DBS_withORDs_example.R
-- [`example_lists_calibration_dd`](example_lists_calibration_dd.md) :
-  example_lists_calibration_dd
-- [`frgcompdata_example_dd`](frgcompdata_example_dd.md) :
-  frgcompdata_example_dd
-- [`BrdData_example_dd`](BrdData_example_dd.md) : BrdData_example_dd
-- [`UK9002491_bysea_3035`](UK9002491_bysea_3035.md) :
-  UK9002491_bysea_3035
-- [`example_lists_dd`](example_lists_dd.md) : example_lists_dd
+- [`set_seedvalues()`](https://nerc-ceh.github.io/seabORD/reference/set_seedvalues.md)
+  : Set the seeds needed for reproducibility
+- [`set_initialbirdtype()`](https://nerc-ceh.github.io/seabORD/reference/set_initialbirdtype.md)
+  : Create individual seabirds for the simulation
+- [`set_initialchickstate()`](https://nerc-ceh.github.io/seabORD/reference/set_initialchickstate.md)
+  : Set initial values for individual chicks
+- [`set_initialbirdstate()`](https://nerc-ceh.github.io/seabORD/reference/set_initialbirdstate.md)
+  : Set initial values for individual birds
 
 ## seabORD distance decay
 
-- [`calc_birddensmap_dd_pinfr()`](calc_birddensmap_dd_pinfr.md) :
-  Calculate bird density maps
+- [`calc_birddensmap_dd_pinfr()`](https://nerc-ceh.github.io/seabORD/reference/calc_birddensmap_dd_pinfr.md)
+  : Calculate bird density maps
 
-- [`calc_birddensmap_dd_pinhalf()`](calc_birddensmap_dd_pinhalf.md) :
+- [`calc_birddensmap_dd_pinhalf()`](https://nerc-ceh.github.io/seabORD/reference/calc_birddensmap_dd_pinhalf.md)
+  :
 
   Calculate bird density maps used the distance-decay function used in
   SeabORD, via users specifying `phalf`
 
-- [`calc_dd_phalf_from_pinfr()`](calc_dd_phalf_from_pinfr.md) :
-  Calculate 'q' from 'p' for the distance-decay model
+- [`calc_dd_phalf_from_pinfr()`](https://nerc-ceh.github.io/seabORD/reference/calc_dd_phalf_from_pinfr.md)
+  : Calculate 'q' from 'p' for the distance-decay model
 
-- [`calc_dd_pinfr_from_phalf()`](calc_dd_pinfr_from_phalf.md) :
-  Calculate 'pinfr' from 'phalf' for the distance-decay model
+- [`calc_dd_pinfr_from_phalf()`](https://nerc-ceh.github.io/seabORD/reference/calc_dd_pinfr_from_phalf.md)
+  : Calculate 'pinfr' from 'phalf' for the distance-decay model
 
-- [`calc_dist_restricted()`](calc_dist_restricted.md) : Calculate
-  distance restricted by obstructions
+- [`calc_dist_restricted()`](https://nerc-ceh.github.io/seabORD/reference/calc_dist_restricted.md)
+  : Calculate distance restricted by obstructions
 
-- [`voptimise()`](voptimise.md) :
+- [`voptimise()`](https://nerc-ceh.github.io/seabORD/reference/voptimise.md)
+  :
 
   Use numerical optimisation to give the value of `x` associated with
   each element of a vector `y`, where `y = fny(x)` for a specified
   function `fny`
+
+## Example data
+
+- [`get_example_brddata()`](https://nerc-ceh.github.io/seabORD/reference/get_example_brddata.md)
+  : Load example seabird-distribution raster data
+- [`get_example_DBS_map()`](https://nerc-ceh.github.io/seabORD/reference/get_example_DBS_map.md)
+  : Load an example distance-by-sea raster
+- [`get_example_fgc_3035()`](https://nerc-ceh.github.io/seabORD/reference/get_example_fgc_3035.md)
+  : Load the example flight-grid correction object
+- [`get_example_fltdist_base()`](https://nerc-ceh.github.io/seabORD/reference/get_example_fltdist_base.md)
+  : Load example baseline flight-distance raster data
+- [`get_example_frgcompdata()`](https://nerc-ceh.github.io/seabORD/reference/get_example_frgcompdata.md)
+  : Load example foraging-competition raster data
+- [`get_example_modpar()`](https://nerc-ceh.github.io/seabORD/reference/get_example_modpar.md)
+  : Load example model-control parameters
+- [`get_example_ordPar()`](https://nerc-ceh.github.io/seabORD/reference/get_example_ordPar.md)
+  : Load example offshore renewable development parameters
+- [`get_example_ORDpoly()`](https://nerc-ceh.github.io/seabORD/reference/get_example_ORDpoly.md)
+  : Load example offshore renewable development polygons
+- [`get_example_output()`](https://nerc-ceh.github.io/seabORD/reference/get_example_output.md)
+  : Load example seabORD model output
+- [`get_example_par()`](https://nerc-ceh.github.io/seabORD/reference/get_example_par.md)
+  : Load example biological and simulation parameters
+- [`get_example_seamask()`](https://nerc-ceh.github.io/seabORD/reference/get_example_seamask.md)
+  : Load the example sea-mask raster
+- [`get_example_spadat1()`](https://nerc-ceh.github.io/seabORD/reference/get_example_spadat1.md)
+  : Load example SPA coordinate data
+- [`get_example_spadat2()`](https://nerc-ceh.github.io/seabORD/reference/get_example_spadat2.md)
+  : Load example SPA designation data
+- [`get_example_spdat()`](https://nerc-ceh.github.io/seabORD/reference/get_example_spdat.md)
+  : Load example species parameters
+- [`get_example_switches()`](https://nerc-ceh.github.io/seabORD/reference/get_example_switches.md)
+  : Load example model switches
+- [`get_spdat()`](https://nerc-ceh.github.io/seabORD/reference/get_spdat.md)
+  : Load species-specific data
+
+## Preparing the input
+
+- [`set_colony_point()`](https://nerc-ceh.github.io/seabORD/reference/set_colony_point.md)
+  : Create a colony location point
+- [`set_ORD_buffer()`](https://nerc-ceh.github.io/seabORD/reference/set_ORD_buffer.md)
+  : Create buffer polygons around ORDs
+- [`set_prey_sequence_in_par()`](https://nerc-ceh.github.io/seabORD/reference/set_prey_sequence_in_par.md)
+  : Create a prey calibration sequence in Par
+- [`calc_pc_in_ORD_buffer()`](https://nerc-ceh.github.io/seabORD/reference/calc_pc_in_ORD_buffer.md)
+  : Calculate the percentage of a DD map within ORD buffer zones
+- [`calc_calibration_range()`](https://nerc-ceh.github.io/seabORD/reference/calc_calibration_range.md)
+  : Identify prey values meeting calibration criteria
+- [`summarise_ORD_impact()`](https://nerc-ceh.github.io/seabORD/reference/summarise_ORD_impact.md)
+  : Summarise the impact of ORDs on a density decay map
+- [`check_calibration_inputs()`](https://nerc-ceh.github.io/seabORD/reference/check_calibration_inputs.md)
+  : Check calibration input consistency
+
+## Plotting input/output
+
+- [`plot_adult_body_mass()`](https://nerc-ceh.github.io/seabORD/reference/plot_adult_body_mass.md)
+  : Plot adult body mass by season
+- [`plot_BirdFlightMap()`](https://nerc-ceh.github.io/seabORD/reference/plot_BirdFlightMap.md)
+  : Plot a bird-flight map
+- [`plot_brddata()`](https://nerc-ceh.github.io/seabORD/reference/plot_brddata.md)
+  : Plot a bird-distribution raster
+- [`plot_calibration_outputs()`](https://nerc-ceh.github.io/seabORD/reference/plot_calibration_outputs.md)
+  : Plot calibration outputs across prey values
+- [`plot_chick_survival()`](https://nerc-ceh.github.io/seabORD/reference/plot_chick_survival.md)
+  : Plot chick survival by season
+- [`plot_colony_location()`](https://nerc-ceh.github.io/seabORD/reference/plot_colony_location.md)
+  : Plot a colony location and surrounding coastline
+- [`plot_DBS_map()`](https://nerc-ceh.github.io/seabORD/reference/plot_DBS_map.md)
+  : Plot a distance-by-sea raster
+- [`plot_DD_map()`](https://nerc-ceh.github.io/seabORD/reference/plot_DD_map.md)
+  : Plot a distance-decay map
+- [`plot_DD_map_with_ORDs()`](https://nerc-ceh.github.io/seabORD/reference/plot_DD_map_with_ORDs.md)
+  : Plot a distance-decay map with ORD footprints
+- [`plot_flight_distance()`](https://nerc-ceh.github.io/seabORD/reference/plot_flight_distance.md)
+  : Plot mean flight distance by season
+- [`plot_fltdist_base()`](https://nerc-ceh.github.io/seabORD/reference/plot_fltdist_base.md)
+  : Plot a baseline flight-distance raster
+- [`plot_frgcompdata()`](https://nerc-ceh.github.io/seabORD/reference/plot_frgcompdata.md)
+  : Plot a foraging-competition raster
+- [`plot_ORDpoly()`](https://nerc-ceh.github.io/seabORD/reference/plot_ORDpoly.md)
+  : Plot offshore renewable development polygons
+- [`plot_ORD_obstruction()`](https://nerc-ceh.github.io/seabORD/reference/plot_ORD_obstruction.md)
+  : Plot areas affected by ORD obstruction
+- [`plot_seamask()`](https://nerc-ceh.github.io/seabORD/reference/plot_seamask.md)
+  : Plot a sea-mask raster

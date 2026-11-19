@@ -1,6 +1,6 @@
 # seabORD 2.0.0
 
-This is the **first public GitHub release** of **spmapper**. Core functions and datasets are in place, but minor changes may still occur 
+This is the **first public GitHub release** of **seabORD**. Core functions and datasets are in place, but minor changes may still occur 
 
 ### **Added**
 
