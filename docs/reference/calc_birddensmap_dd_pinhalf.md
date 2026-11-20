@@ -1,7 +1,7 @@
-# Calculate bird density maps used the distance-decay function used in SeabORD, via users specifying `phalf`
+# Calculate bird density maps used the distance-decay function used in seabORD, via users specifying `phalf`
 
 Calculate bird density maps used the distance-decay function used in
-SeabORD, via users specifying `phalf`
+seabORD, via users specifying `phalf`
 
 ## Usage
 

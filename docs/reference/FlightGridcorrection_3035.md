@@ -1,6 +1,7 @@
-# FlightGridcorrection_3035: TransitionLayer Object
+# FlightGridcorrection_3035: TransitionLayer object
 
-FlightGridcorrection_3035: TransitionLayer Object
+Geo-corrected transition layer for the 1 km EPSG:3035 grid, used by
+`gdistance` to calculate distances by sea between grid cells.
 
 ## Usage
 
@@ -14,16 +15,17 @@ An object of class `TransitionLayer` with the following components:
 
 - class:
 
-  The object is of class `TransitionLayer`, NEED EXPL
+  The object is of class `TransitionLayer` from the gdistance package,
+  holding transition values between neighbouring cells.
 
 - dimensions:
 
-  Dimensions of the data grid: 2200 rows and 1577 columns, with a total
-  of 3,469,400 cells.
+  Dimensions of the data grid: 2,200 rows and 1,577 columns, with a
+  total of 3,469,400 cells.
 
 - resolution:
 
-  The resolution of the raster grid: 1000 meters in both x and y
+  The resolution of the raster grid: 1,000 metres in both x and y
   directions.
 
 - extent:
@@ -39,7 +41,7 @@ An object of class `TransitionLayer` with the following components:
 
 - values:
 
-  NEED EXPL
+  Geo-corrected conductance values between neighbouring cells.
 
 - matrix class:
 
@@ -49,4 +51,8 @@ An object of class `TransitionLayer` with the following components:
 
 ## Source
 
-NEED EXPL
+Generated with
+[`gdistance::transition()`](https://AgrDataSci.github.io/gdistance/reference/transition.html)
+and
+[`gdistance::geoCorrection()`](https://AgrDataSci.github.io/gdistance/reference/geoCorrection.html)
+on the seabORD sea mask.

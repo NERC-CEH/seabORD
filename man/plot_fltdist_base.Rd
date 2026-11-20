@@ -48,7 +48,7 @@ coordinate reference system of \code{fltdist_base} before plotting.
 fltdist_base <- get_example_fltdist_base()
 plot_fltdist_base(fltdist_base)
 
-# Load and plot the density-dependence example
+# Load and plot the Density-decay example
 fltdist_base_dd <- get_example_fltdist_base("dd")
 plot_fltdist_base(fltdist_base_dd)
 

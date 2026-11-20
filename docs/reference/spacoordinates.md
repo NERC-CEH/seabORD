@@ -1,9 +1,8 @@
-# Spatial Coordinates of Sites
+# Spatial coordinates of sites
 
-A dataset containing spatial coordinates and related attributes for
-various sites, including information on whether the site is marine,
-whether data is available for different columns, and the spatial
-proximity of flight paths.
+Coordinates and related attributes for each site (SPA): the colony
+location, the nearest at-sea cell used as the start of flight paths, and
+the matching cells on the model grid.
 
 ## Usage
 
@@ -21,7 +20,7 @@ A data frame with 23 columns:
 
 - CEF.include:
 
-  Logical: Whether the site is included in the CEF dataset.
+  Logical: Whether the site is included in the CEF.
 
 - Marine:
 
@@ -109,4 +108,4 @@ A data frame with 23 columns:
 
 ## Source
 
-NEED EXPL
+Cumulative Effects Framework (CEF) SPA coordinate table.

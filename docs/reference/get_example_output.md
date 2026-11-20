@@ -20,7 +20,7 @@ get_example_output(type = NULL)
 
   - `"cal"`: Output from the standard calibration example.
 
-  - `"cal_dd"`: Output from the density-dependence calibration example.
+  - `"cal_dd"`: Output from the distance-decay calibration example.
 
 ## Value
 
@@ -74,7 +74,7 @@ output <- get_example_output()
 # Load the standard calibration output
 calibration_output <- get_example_output("cal")
 
-# Load the density-dependence calibration output
+# Load the distance-decay calibration output
 calibration_output_dd <- get_example_output("cal_dd")
 
 # Inspect the top-level output components

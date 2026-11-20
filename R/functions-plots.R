@@ -342,7 +342,7 @@ plot_brddata <- function(
 #' frgcompdata <- get_example_frgcompdata()
 #' plot_frgcompdata(frgcompdata)
 #'
-#' # Load and plot the density-dependence example
+#' # Load and plot the Density-decay example
 #' frgcompdata_dd <- get_example_frgcompdata("dd")
 #' plot_frgcompdata(frgcompdata_dd)
 #'
@@ -456,7 +456,7 @@ plot_frgcompdata <- function(
 #' fltdist_base <- get_example_fltdist_base()
 #' plot_fltdist_base(fltdist_base)
 #'
-#' # Load and plot the density-dependence example
+#' # Load and plot the Density-decay example
 #' fltdist_base_dd <- get_example_fltdist_base("dd")
 #' plot_fltdist_base(fltdist_base_dd)
 #'
@@ -563,7 +563,7 @@ plot_fltdist_base <- function(
 #' ORDpoly <- get_example_ORDpoly()
 #' plot_ORDpoly(ORDpoly)
 #'
-#' # Load and plot the density-dependence example
+#' # Load and plot the Density-decay example
 #' ORDpoly_dd <- get_example_ORDpoly("dd")
 #' plot_ORDpoly(ORDpoly_dd)
 #'

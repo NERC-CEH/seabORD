@@ -16,11 +16,11 @@ knitr::opts_chunk$set(
 )
 ```
 
-In this chapter the main functions that drive the seabORD core processes are explained. Together, these functions determine how birds acquire food, provision chicks, update their energetic state and ultimately survive to the next breeding season. For a broader description of the overall model structure, see the [seabORD overview](https://nerc-ceh.github.io/seabORD/articles/B_seabord_overview.html). The functions are grouped according to the stage of the simulation in which they are used:
+In this article the main functions that drive the seabORD core processes are explained. Together, these functions determine how birds acquire food, provision chicks, update their energetic state and ultimately survive to the next breeding season. For a broader description of the overall model structure, see the [seabORD overview](https://nerc-ceh.github.io/seabORD/articles/B_seabord_overview.html). The functions are grouped according to the stage of the simulation in which they are used:
 
 1.  ***Foraging and adult behaviour***
 
-    Calculate the time taken to forage required amount (`calc_foragecapture`)
+    Calculate the required amount taken to forage required amount (`calc_foragecapture`)
 
     Calculate the foraging strategy for the timestep (`calc_strategy`)
 
@@ -248,7 +248,7 @@ axis(
 
 ### Example 2 - effect of change in body condition (`BM_condition`)
 
-Adult body condition (`BM_condition`) influences the bird's foraging startegy (`feeding_mode`). Birds in poor condition are less able to prioritise chick provisioning and may switch to reduced attendance or nest abandonment at lower food requirements than birds in good condition. As condition approaches the abandonment threshold (`BM_adult_abdn`), the bird may switch from to a nest-unattended or nest-abandoned strategies ("1" = Provisioning chick while maintaining attendance, "2" = Chick left unattended for part of the time step, "3" = Breeding attempt abandoned).
+Adult body condition (`BM_condition`) influences the bird's foraging strategy (`feeding_mode`). Birds in poor condition are less able to prioritise chick provisioning and may switch to reduced attendance or nest abandonment at lower food requirements than birds in good condition. As condition approaches the abandonment threshold (`BM_adult_abdn`), the bird may switch to a nest-unattended or nest-abandoned strategies ("1" = Provisioning chick while maintaining attendance, "2" = Chick left unattended for part of the time step, "3" = Breeding attempt abandoned).
 
 ```{r, echo=FALSE, fig.alt="Foraging strategy across increasing food requirements for birds in poor, moderate and excellent body condition."}
 food_req <- seq(300, 700, by = 100)
@@ -424,7 +424,7 @@ This function evaluates whether a chick dies because it has been left unattended
 
 ### Example 1 - Death by unattendance (`CoD`) vs unattended hours (`hrs`)
 
-Here we simulate 1000 chicks across a range of unattended durations. The more hours the chicks are left unattended (`hrs`) the higher the proportion of chicks that die because they are left unattended (`CoD = unattended)`.
+Here we simulate 1,000 chicks across a range of unattended durations. The more hours the chicks are left unattended (`hrs`) the higher the proportion of chicks that die because they are left unattended (`CoD = unattended)`.
 
 ```{r, echo=FALSE, fig.alt="Proportion of chicks dying from unattended mortality across increasing numbers of hours left unattended."}
 set.seed(123)
@@ -459,8 +459,8 @@ plot(
   cex = 1,
   col = "#477AE2",
   xlab = "hours unattended",
-  ylab = "proportion of chicks dying (1000 chicks)",
-  main = "hours unattended vs. proportion of unattended mortality (1000 chicks)"
+  ylab = "proportion of chicks dying (1,000 chicks)",
+  main = "hours unattended vs. proportion of unattended mortality (1,000 chicks)"
 )
 ```
 
@@ -491,7 +491,7 @@ barplot(
   col = c("#477AE2", "#90A968"),
   ylab = "number of simulations",
   xlab = "cause of death",
-  main = "proportion of death by other-cause (1000 chicks)"
+  main = "proportion of death by other-cause (1,000 chicks)"
 )
 
 ```
@@ -502,7 +502,7 @@ A detailed description of `calc_puffinmortality()`, including its arguments and 
 
 This function applies an additional mortality risk to puffin chicks that are in poor body condition. Chicks whose condition falls below a species-specific threshold are considered vulnerable to predation. Whether mortality occurs is determined stochastically, so identical individuals may survive or die in different simulation runs. The function therefore captures both the effect of chick condition on predation risk and the inherent randomness of mortality events.
 
-### Example 1 - Proportion of chicks in poor condition (`BM_condition`) dying of "other" causes (`CoD = killed`)
+### Example 1 - Proportion of chicks in poor condition (`BM_condition`) dying of "predation" (`CoD = killed`)
 
 Puffin chicks in poor body condition (`BM_condition`) are assumed to be more vulnerable to predation (`CoD = killed`). Mortality is stochastic, meaning that two identical chicks may experience different outcomes due to the random draw used by the model.
 
@@ -527,7 +527,7 @@ barplot(
   tab,
   col = c("#90A968", "#D7B7AA"),
   ylab = "number of chicks",
-  main = "proportion of death by predation (1000 hungry chicks)"
+  main = "proportion of death by predation (1,000 hungry chicks)"
 )
 ```
 
@@ -562,8 +562,8 @@ plot(
   cex = 1,
   col = "#477AE2",
   xlab = "chick body condition",
-  ylab = "proportion killed (of 1000)",
-  main = "chick condition vs. proportion of chicks death by predation (1000 chicks)"
+  ylab = "proportion killed (of 1,000)",
+  main = "chick condition vs. proportion of chicks death by predation (1,000 chicks)"
 )
 ```
 
@@ -571,11 +571,11 @@ plot(
 
 # 3. Adult state update
 
-## 3.1. Body mass increase for adult birds (calc_adultbmchange)
+## 3.1. Body mass change for adult birds (calc_adultbmchange)
 
 A detailed description of `calc_adultbmchange()`, including its arguments and returned values, can be found in the [function reference](https://nerc-ceh.github.io/seabORD/reference/calc_adultbmchange.html).
 
-All adult birds update their body mass at the end of each day based on the energy they gain and expend foraging and in other activities. The model we use is an expanded version of that used in [@daunt2008sandeel; @wanless1997shags], which separates flight cost and foraging cost for each adult to derive total energy expenditure.
+All adult birds update their body mass at the end of each day based on the energy they gain and expend foraging and in other activities. The model we use is an expanded version of that used by [@daunt2008sandeel; @wanless1997shags], which separates flight cost and foraging cost for each adult to derive total energy expenditure.
 
 $$ M_{d+1} = M_{d} +  [(Egain_{d} - DEE_{d})/ KG] $$ where $M_{d+1}$ is the revised body mass, $M_{d}$ is the starting body mass (in g), $Egain_{d}$ is the energy available from food (in kJ), $DEE_{d}$ is the energy requirement (in kJ) and $KG$ is the energy density of the adult bird tissue (kJ per gram).
 

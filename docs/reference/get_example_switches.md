@@ -19,11 +19,11 @@ get_example_switches(type = NULL)
 
   - `NULL`: Standard scenario example.
 
-  - `"dd"`: Density-dependence scenario example.
+  - `"dd"`: distance-decay scenario example.
 
   - `"cal"`: Standard calibration example.
 
-  - `"cal_dd"`: Density-dependence calibration example.
+  - `"cal_dd"`: distance-decay calibration example.
 
 ## Value
 

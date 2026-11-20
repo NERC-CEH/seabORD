@@ -18,7 +18,7 @@ get_example_spadat2(type = NULL)
 
   - `NULL`: Standard example using site code `"UK9004171"`.
 
-  - `"dd"`: Density-dependence example using site code `"UK9002491"`.
+  - `"dd"`: distance-decay example using site code `"UK9002491"`.
 
 ## Value
 
@@ -66,6 +66,6 @@ Other example data:
 # Load designation data for the standard example SPA
 spadat2 <- get_example_spadat2()
 
-# Load designation data for the density-dependence example SPA
+# Load designation data for the distance-decay example SPA
 spadat2_dd <- get_example_spadat2("dd")
 ```

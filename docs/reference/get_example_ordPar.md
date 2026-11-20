@@ -18,11 +18,11 @@ get_example_ordPar(type = NULL)
 
   - `NULL`: Standard scenario example.
 
-  - `"dd"`: Density-dependence scenario example.
+  - `"dd"`: distance-decay scenario example.
 
   - `"cal"`: Standard calibration example.
 
-  - `"cal_dd"`: Density-dependence calibration example.
+  - `"cal_dd"`: distance-decay calibration example.
 
 ## Value
 
@@ -71,7 +71,7 @@ Other example data:
 # Load ORD parameters for the standard scenario example
 ordPar <- get_example_ordPar()
 
-# Load ORD parameters for the density-dependence example
+# Load ORD parameters for the distance-decay example
 ordPar_dd <- get_example_ordPar("dd")
 
 # Inspect the available parameters

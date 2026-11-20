@@ -43,7 +43,6 @@
     <li><a class="dropdown-item" href="../articles/B_seabord_overview.html">seabORD Overview</a></li>
     <li><a class="dropdown-item" href="../articles/C_seabord_inputs.html">seabORD Inputs</a></li>
     <li><a class="dropdown-item" href="../articles/J_main_functions.html">Main Functions</a></li>
-    <li><a class="dropdown-item" href="../articles/K_FAQs.html">FAQs</a></li>
   </ul>
 </li>
 <li class="active nav-item dropdown">
@@ -52,7 +51,7 @@
 <li><a class="dropdown-item" href="../articles/G_KI_run_decay.html">Kittiwake Example - Distance Decay</a></li>
     <li><a class="dropdown-item" href="../articles/H_KI_run_gps.html">Kittiwake Example - GPS</a></li>
     <li><a class="dropdown-item" href="../articles/I_exampleKI_output.html">Interpreting the Outputs</a></li>
-    <li><a class="dropdown-item" href="../articles/D_DistanceDecayMap.html">Create a Distance-Decay Map</a></li>
+    <li><a class="dropdown-item" href="../articles/D_DistanceDecayMap.html">Create a distance-decay-map</a></li>
   </ul>
 </li>
 <li class="nav-item"><a class="nav-link" href="../reference/index.html">REFERENCE</a></li>
@@ -99,10 +98,10 @@ seabORD</a> instructions first.</p>
 <h2 id="introduction-background">Introduction &amp; background<a class="anchor" aria-label="anchor" href="#introduction-background"></a>
 </h2>
 <p>In this example, we simulate the potential impacts of two offshore
-renewable developments (ORDs) <strong>Inch Cape Wind Farm</strong> and
-<strong>Neart na Gaoithe Wind Farm</strong>, on a kittiwake colony
-located at <strong>Isle of May</strong> within the <strong>Forth Islands
-SPA (UK9004171)</strong>. Bird distribution is represented using GPS
+renewable developments (ORDs), <strong>Inch Cape Wind Farm</strong> and
+<strong>Neart na Gaoithe Wind Farm</strong>, on a kittiwake colony on
+the <strong>Isle of May</strong> within the <strong>Forth Islands SPA
+(UK9004171)</strong>. Bird distribution is represented using GPS
 maps.</p>
 <p>The workflow consists of two main steps:</p>
 <ol style="list-style-type: decimal">
@@ -143,7 +142,7 @@ information here</a>).</p>
 <div class="section level5">
 <h5 id="spdat">spdat<a class="anchor" aria-label="anchor" href="#spdat"></a>
 </h5>
-<p>This are Kittiwake specific parameters for this run</p>
+<p>These are Kittiwake specific parameters for this run</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">spdat_example</span>  <span class="op">&lt;-</span> <span class="fu">seabORD</span><span class="fu">::</span><span class="fu"><a href="../reference/get_example_spdat.html">get_example_spdat</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -195,29 +194,28 @@ conditions (Figure 1). This is to allow simulation of the range of
 outcomes expected under these conditions, as the model is highly
 sensitive to the prey density parameter.</p>
 <div class="float">
-<img src="images/Calibration_plot_schematic_extended_seabordpkg.png" alt="Figure 1: Schematic plot of kittiwake adult mass loss (A) and chicks per nest (B) withdrawn from 300 baseline simulations (no ORD footprints) ranging from a prey value of 50 up to 250. The red lines are for smoothed model outputs, which are overlaid on grey points indicating the individual estimates. For calibration we have upper and lower bound for each output (A &amp; B) which are picked to reflect “moderate” conditions, i.e., what is observed in a typical year for kittiwakes at the Isle of May, and these are indicates by the dashed grey horizontal lines. The grey shaded blocks indicate where the respective outputs fall within these bound, and the light blue shaded block indicates the prey values where there is overlap between the estimates, which is the prey range used in subsequent simulations with ORDs included."><div class="figcaption"><em>Figure 1: Schematic plot of kittiwake adult
-mass loss (A) and chicks per nest (B) withdrawn from 300 baseline
+<img src="images/Calibration_plot_schematic_extended_seabordpkg.png" alt="Figure 1: Schematic plot of kittiwake adult mass loss (A) and chicks per nest (B) drawn from 300 baseline simulations (no ORD footprints) ranging from a prey value of 50 up to 250. The red lines are for smoothed model outputs, which are overlaid on grey points indicating the individual estimates. For calibration we have upper and lower bounds for each output (A &amp; B) which are picked to reflect “moderate” conditions, i.e., what is observed in a typical year for kittiwakes at the Isle of May, and these are indicated by the dashed grey horizontal lines. The grey shaded blocks indicate where the respective outputs fall within these bounds, and the light blue shaded block indicates the prey values where there is overlap between the estimates, which is the prey range used in subsequent simulations with ORDs included."><div class="figcaption"><em>Figure 1: Schematic plot of kittiwake adult
+mass loss (A) and chicks per nest (B) drawn from 300 baseline
 simulations (no ORD footprints) ranging from a prey value of 50 up to
 250. The red lines are for smoothed model outputs, which are overlaid on
 grey points indicating the individual estimates. For calibration we have
-upper and lower bound for each output (A &amp; B) which are picked to
+upper and lower bounds for each output (A &amp; B) which are picked to
 reflect “moderate” conditions, i.e., what is observed in a typical year
-for kittiwakes at the Isle of May, and these are indicates by the dashed
+for kittiwakes at the Isle of May, and these are indicated by the dashed
 grey horizontal lines. The grey shaded blocks indicate where the
-respective outputs fall within these bound, and the light blue shaded
+respective outputs fall within these bounds, and the light blue shaded
 block indicates the prey values where there is overlap between the
 estimates, which is the prey range used in subsequent simulations with
 ORDs included.</em></div>
 </div>
 <div class="section level4">
-<h4 id="parameters-sets-for-the-calibration-run">Parameters sets for the calibration run<a class="anchor" aria-label="anchor" href="#parameters-sets-for-the-calibration-run"></a>
+<h4 id="parameter-sets-for-the-calibration-run">Parameter sets for the calibration run<a class="anchor" aria-label="anchor" href="#parameter-sets-for-the-calibration-run"></a>
 </h4>
-<p>Set the parameters input specifically to perform the calibration
-run</p>
+<p>Set the input parameter for the calibration run</p>
 <div class="section level5">
 <h5 id="par">Par<a class="anchor" aria-label="anchor" href="#par"></a>
 </h5>
-<p>NOTE: “NScalefactor” is set to 0.1 meaning we are running with 10% of
+<p>NOTE: “Nscalefactor” is set to 0.1 meaning we are running with 10% of
 the population, which may be sufficient for calibration runs.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
@@ -235,7 +233,7 @@ the population, which may be sufficient for calibration runs.</p>
 <span><span class="co">#&gt;  $ reference  : chr "serial_calibration_KI_UK9004171"</span></span>
 <span><span class="co">#&gt;  $ outputdir  : chr "output_seabORD"</span></span>
 <span><span class="co">#&gt;  $ Nreplicates: num 20</span></span></code></pre></div>
-<p>Create the output folder , for example “output_seabORD_calibration”
+<p>Create the output folder, for example “output_seabORD_calibration”
 and assign it in the modPar list.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#set the output of ModPar</span></span>
@@ -245,7 +243,7 @@ and assign it in the modPar list.</p>
 <span><span class="op">}</span></span></code></pre></div>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">modPar_example</span><span class="op">$</span><span class="va">outputdir</span> <span class="op">&lt;-</span> <span class="st">"output_seabORD_calibration"</span></span></code></pre></div>
-<p>NOTE: Run this test! here is where our 20 replicates are specified -
+<p>NOTE: Run this test! Here is where our 20 replicates are specified -
 this must align with the number of prey values listed in
 “Par_example$Pmedian”.</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
@@ -410,19 +408,19 @@ included) with a range of prey values (173-174).</p>
 <div class="section level3">
 <h3 id="prepare-inputs">Prepare inputs<a class="anchor" aria-label="anchor" href="#prepare-inputs"></a>
 </h3>
-<p>For further information on inputs, please see Article “Example
-kittiwake: step 1 - seabORD inputs”.</p>
-<p>This script will import the example parameters sets and spatial data,
+<p>For further information on inputs, please see <a href="https://nerc-ceh.github.io/seabORD/articles/G_KI_run_decay.html">kittiwake
+case - with distance-decay-maps</a>.</p>
+<p>This script will import the example parameter sets and spatial data,
 which are largely similar to the calibration inputs. Note will be given
 where these differ considerably, i.e., with regard to the inclusion of
 different wind farm footprints.</p>
 <div class="section level4">
-<h4 id="parameters-sets-for-the-scenario-run">Parameters sets for the scenario run<a class="anchor" aria-label="anchor" href="#parameters-sets-for-the-scenario-run"></a>
+<h4 id="parameter-sets-for-the-scenario-run">Parameter sets for the scenario run<a class="anchor" aria-label="anchor" href="#parameter-sets-for-the-scenario-run"></a>
 </h4>
 <div class="section level5">
 <h5 id="par-1">Par<a class="anchor" aria-label="anchor" href="#par-1"></a>
 </h5>
-<p>NOTE: “NScalefactor” is <strong>set to 1 meaning we are running with
+<p>NOTE: “Nscalefactor” is <strong>set to 1 meaning we are running with
 100%</strong> <strong>of the population</strong>, which is customary for
 scenario runs.</p>
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
@@ -454,7 +452,7 @@ scenario runs.</p>
 <span><span class="co">#&gt;  $ reference  : chr "serial_scenario_KI_UK9004171"</span></span>
 <span><span class="co">#&gt;  $ outputdir  : chr "output_seabORD"</span></span>
 <span><span class="co">#&gt;  $ Nreplicates: num 1</span></span></code></pre></div>
-<p>Create the output folder , for example “output_seabORD_scenario” and
+<p>Create the output folder, for example “output_seabORD_scenario” and
 assign it</p>
 <div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Create the ouput folder "output_seabORD_scenario" specifically for scenario outputs if it doesn't alreay exist</span></span>
@@ -470,7 +468,7 @@ assign it</p>
 <div class="section level5">
 <h5 id="include-the-calibration-in-par">Include the calibration in Par<a class="anchor" aria-label="anchor" href="#include-the-calibration-in-par"></a>
 </h5>
-<p>NOTE: Run this test! here the replicates are specified - this must
+<p>NOTE: Run this test! Here the replicates are specified - this must
 align with the number of prey values listed in “Par_example$Pmedian”</p>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">seabORD</span><span class="fu">::</span><span class="fu"><a href="../reference/check_calibration_inputs.html">check_calibration_inputs</a></span><span class="op">(</span></span>
@@ -540,13 +538,12 @@ birdflightmap output. Turn on “saverds” to save the outputs as rds.</p>
 <p>seabORD runs including wind farms and full populations can take a
 while to run - even with a relatively small population of ~ 3,000
 pairs.</p>
-<p>The output will be saved in in your output directory set up in
+<p>The output will be saved in your output directory set up in
 modPar.</p>
 <p>To learn more about the main functions behind seabORD you can <a href="https://nerc-ceh.github.io/seabORD/articles/J_main_functions.html">read
-the article on the main functions</a>.</p>
-<p>To see how you can read in and plot the results you can read the
-article “Example kittiwake: step 4 - interpreting the outputs” where we
-have an example output for you to play with.</p>
+the article on the main functions</a>. To learn more about how to
+interpret the output you can <a href="https://nerc-ceh.github.io/seabORD/articles/I_exampleKI_output.html">read
+the article on the output interpretation</a>.</p>
 <div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="va">SeabORDoutput</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/seabord.html">seabord</a></span><span class="op">(</span>Par <span class="op">=</span> <span class="va">Par_example</span>,</span>
@@ -562,8 +559,6 @@ have an example output for you to play with.</p>
 <span>                         fltdist_base <span class="op">=</span> <span class="va">fltdist_base_example</span>,</span>
 <span>                         FlightGridcorrection <span class="op">=</span> <span class="va">FlightGridcorrection</span>,</span>
 <span>                         ORDpoly <span class="op">=</span> <span class="va">ORDpoly_example</span><span class="op">)</span></span></code></pre></div>
-<p>To learn more about the how to interpret the output you can <a href="https://nerc-ceh.github.io/seabORD/articles/I_exampleKI_output.html">read
-the article on the output interpretation</a>.</p>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>

@@ -3,12 +3,12 @@
 \docType{data}
 \name{DBS_withORDs_example}
 \alias{DBS_withORDs_example}
-\title{DBS_withORDs_example.R}
+\title{DBS_withORDs_example}
 \format{
-list of "raster" with the values of a raster in a matrix; and "metadata" with the extent and resolution to build back the raster in memory.
+A list with two elements, used to rebuild the raster in memory:
 \describe{
-\item{matrix}{matrix of pixel values}
-\item{metadata}{List of metadata: extent, resolution, and CRS.}
+\item{matrix}{Matrix of cell values.}
+\item{metadata}{List of metadata: extent, resolution and CRS.}
 }
 }
 \source{
@@ -18,6 +18,9 @@ Generated from "DBS_withORDs.tif".
 DBS_withORDs_example
 }
 \description{
-NEED EXPL
+Example distance-by-sea raster for Whinnyfold with ORD footprints and
+buffers treated as obstructions, as produced by
+\code{calc_dist_restricted()} in the "Create a distance-decay map"
+article.
 }
 \keyword{internal}

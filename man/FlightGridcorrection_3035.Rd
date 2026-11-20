@@ -3,26 +3,28 @@
 \docType{data}
 \name{FlightGridcorrection_3035}
 \alias{FlightGridcorrection_3035}
-\title{FlightGridcorrection_3035: TransitionLayer Object}
+\title{FlightGridcorrection_3035: TransitionLayer object}
 \format{
 An object of class \code{TransitionLayer} with the following components:
 \describe{
-\item{class}{The object is of class \code{TransitionLayer}, NEED EXPL}
-\item{dimensions}{Dimensions of the data grid: 2200 rows and 1577 columns, with a total of 3,469,400 cells.}
-\item{resolution}{The resolution of the raster grid: 1000 meters in both x and y directions.}
-\item{extent}{Spatial extent of the grid defined by the minimum and maximum x and y coordinates.  The extent is: xmin = 2661966, xmax = 4238966, ymin = 2685159, ymax = 4885159.}
+\item{class}{The object is of class \code{TransitionLayer} from the gdistance package, holding transition values between neighbouring cells.}
+\item{dimensions}{Dimensions of the data grid: 2,200 rows and 1,577 columns, with a total of 3,469,400 cells.}
+\item{resolution}{The resolution of the raster grid: 1,000 metres in both x and y directions.}
+\item{extent}{Spatial extent of the grid defined by the minimum and maximum x and y coordinates. The extent is: xmin = 2661966, xmax = 4238966, ymin = 2685159, ymax = 4885159.}
 \item{crs}{Coordinate Reference System (CRS) used for the grid: \code{+proj=laea +lat_0=52 +lon_0=10 +x_0=4321000 +y_0=3210000 +ellps=GRS80 +units=m +no_defs}}
-\item{values}{NEED EXPL}
+\item{values}{Geo-corrected conductance values between neighbouring cells.}
 \item{matrix class}{The data is stored in a sparse matrix format (\code{dsTMatrix}), which is efficient for handling large datasets with a significant number of zero values.}
 }
 }
 \source{
-NEED EXPL
+Generated with \code{gdistance::transition()} and
+\code{gdistance::geoCorrection()} on the seabORD sea mask.
 }
 \usage{
 FlightGridcorrection_3035
 }
 \description{
-FlightGridcorrection_3035: TransitionLayer Object
+Geo-corrected transition layer for the 1 km EPSG:3035 grid, used by
+\code{gdistance} to calculate distances by sea between grid cells.
 }
 \keyword{internal}

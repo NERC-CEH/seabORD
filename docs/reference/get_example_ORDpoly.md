@@ -18,7 +18,7 @@ get_example_ORDpoly(type = NULL)
 
   - `NULL`: Polygons for the standard scenario example.
 
-  - `"dd"`: Polygons for the Whinnyfold density-dependence example.
+  - `"dd"`: Polygons for the Whinnyfold distance-decay example.
 
 ## Value
 
@@ -62,7 +62,7 @@ Other example data:
 # Load polygons for the standard scenario example
 ORDpoly <- get_example_ORDpoly()
 
-# Load polygons for the density-dependence example
+# Load polygons for the distance-decay example
 ORDpoly_dd <- get_example_ORDpoly("dd")
 
 # Plot the polygon geometry

@@ -18,11 +18,11 @@ get_example_par(type = NULL)
 
   - `NULL`: Standard scenario example.
 
-  - `"dd"`: Density-dependence scenario example.
+  - `"dd"`: distance-decay scenario example.
 
   - `"cal"`: Standard calibration example.
 
-  - `"cal_dd"`: Density-dependence calibration example.
+  - `"cal_dd"`: distance-decay calibration example.
 
 ## Value
 
@@ -70,7 +70,7 @@ Other example data:
 # Load parameters for the standard scenario example
 par <- get_example_par()
 
-# Load parameters for the density-dependence example
+# Load parameters for the distance-decay example
 par_dd <- get_example_par("dd")
 
 # Inspect the available parameters

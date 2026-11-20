@@ -1,6 +1,9 @@
-# DBS_map_example.R
+# DBS_map_example
 
-NEED EXPL
+Example distance-by-sea raster for Whinnyfold without ORDs, as produced
+by
+[`calc_dist_restricted()`](https://nerc-ceh.github.io/seabORD/reference/calc_dist_restricted.md)
+in the "Create a distance-decay map" article.
 
 ## Usage
 
@@ -10,16 +13,15 @@ DBS_map_example
 
 ## Format
 
-list of "raster" with the values of a raster in a matrix; and "metadata"
-with the extent and resolution to build back the raster in memory.
+A list with two elements, used to rebuild the raster in memory:
 
 - matrix:
 
-  matrix of pixel values
+  Matrix of cell values.
 
 - metadata:
 
-  List of metadata: extent, resolution, and CRS.
+  List of metadata: extent, resolution and CRS.
 
 ## Source
 

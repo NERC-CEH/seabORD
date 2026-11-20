@@ -12,14 +12,14 @@ To run seabORD several inputs are needed:
 | Par | List | The main parameters controlling/defining this run e.g., species and colony |
 | modPar | List | Parameters relating to the model mode and computer environment |
 | ordPar | List | Input parameters relating to the ORDs |
-| switches | List | A set of switches/flags used to control optional features of the run and determine range of outptus |
-| seamask | Raster | land/sea grid, 1km expected. |
+| switches | List | A set of switches/flags used to control optional features of the run and determine range of outputs |
+| seamask | Raster | land/sea grid (1km resolution expected). |
 | spadat1 | Tibble | Information relating to the colony/SPA |
 | spadat2 | Tibble | Information relating to the colony/SPA |
 | spdat | Dataframe | Species-specific parameters |
 | BrdData | Raster | Bird distribution map - derived from GPS data or failing that, a distance-decay model |
 | FrgCompData | Raster | Competition distribution map - derived from GPS data or failing that, a distance-decay model |
-| fltdist_base | Raster | Flight distance by sea, without ORDs. See user guide for details. |
+| fltdist_base | Raster | Flight distance by sea, without ORDs. |
 | FlightGridcorrection | Raster | Flight distance transition layer (gdistance) corrected for distortions relating to the CRS |
 | ORDpoly | Multipolygon (simple features) | The ORD footprints |
 
@@ -59,8 +59,8 @@ by the model
 - **collision**: Reserved for future use. This parameter is not
   currently used by the model.
 
-- **SiteSelectionMethod**: Set to “Map” currently, but options to add in
-  a distance decay module.
+- **SiteSelectionMethod** Currently set to “Map”, a distance-decay
+  option may be added later.
 
 - **MaxDistancekm**: Not currently used in this version
 
@@ -100,8 +100,8 @@ List for model parameters.
 
 - **Nparallel**: This is used for parallel runs only (i.e., set to “NA”
   for runs on local machine) to indicate which replicate is being run
-  which will dictate the seed being so that reproducibility is conducted
-  in the same fashion as for local runs.
+  which determines the seed used, so that results are reproducible in
+  the same way as local runs.
 
 - **initialseed**: A seed for reproducibility.
 
@@ -117,7 +117,7 @@ List for model parameters.
 - **Nreplicates**: The number of replicates being used
 
 make a folder in the directory to store your output (you can place it
-wherever)
+wherever) and then the list of modPar.
 
 ``` r
 
@@ -126,8 +126,6 @@ if (!dir.exists("output_seabORD")) {
   dir.create("output_seabORD")
 }
 ```
-
-and then the list of modPar
 
 ``` r
 
@@ -174,7 +172,7 @@ str(ordPar_example)
 
 ### Switches
 
-This parameter requires a llist() object that defines the optional
+This parameter requires a list() object that defines the optional
 features of the run. It accepts the following options:
 
 - **environment** : “serial” or “parallel”
@@ -191,17 +189,17 @@ features of the run. It accepts the following options:
 - **bych**: TRUE or FALSE
 
 - **printdaily**: TRUE or FALSE - an option to print out daily outputs
-  from each timestep for all modelled indiviudals
+  from each timestep for all modelled individuals
 
 - **printseason**: TRUE or FALSE - more detailed outputs from each
-  season (baseline/scenario), as opposed to teh higher level summary
+  season (baseline/scenario), as opposed to the higher level summary
   issued as standard.
 
 - **printpair**: TRUE or FALSE - more detailed outputs from each pair.
 
-- **minout**: TRUE or FALSE - *to be completed*
+- **minout**: TRUE or FALSE
 
-- **silent**: TRUE or FALSE - *to be completed*
+- **silent**: TRUE or FALSE
 
 - **saverds**: TRUE or FALSE - This should nearly always be set to TRUE,
   as this is the standard output summary.
@@ -212,7 +210,7 @@ features of the run. It accepts the following options:
   run a simulation with the correct colony and wind farm set up.
 
 There is an example list available in the package that can be accessed
-by simply call in the built-in list “example_switch_list”:
+by calling “get_example_switches()”:
 
 ``` r
 
@@ -239,14 +237,14 @@ str(switches_example)
 #>  $ savebirdflightmap: logi FALSE
 ```
 
-In this example seabORD will in serial and in scenario mode; without
-debugging and by saving the output as a .rds file.
+In this example seabORD will run in serial and scenario mode, without
+debugging, saving the output as a .rds file.
 
 ### seamask
 
 Used to indicate ***where the sea is**.* Example data to be used as
-seamask can be found built in the package and can be accessed via the
-built in function get_example_seamask().
+seamask is built into the package and can be accessed via the built-in
+function get_example_seamask().
 
 ``` r
 
@@ -257,7 +255,7 @@ which looks like:
 
 ``` r
 
-# You can use the built in plot function
+# You can use the built-in plot function
 seabORD::plot_seamask(seamask = example_data_seamask)
 ```
 
@@ -306,7 +304,7 @@ print(t(spadat1_example))
 
 ### spadat2
 
-Can be derived from the built in list dataset “spalist”, which contains
+Can be derived from the built-in list dataset “spalist”, which contains
 information for all the SPA sites. The package provides helper functions
 for extracting the example data used throughout this vignette.
 
@@ -331,8 +329,8 @@ print(t(spadat2_example))
 
 ### spdat
 
-The species specific data for the Black-legged Kittiwake be derived from
-the built in dataset “energeticsandpreydata” that has data for all 4
+The species specific data for the black-legged Kittiwake be derived from
+the built-in dataset “energeticsandpreydata” that has data for all 4
 species that seabORD models (“KI”, “GU”, “RA”, “PU”). The package
 provides helper functions for extracting the example data used
 throughout this vignette.
@@ -393,10 +391,10 @@ spdat_all_species <- seabORD::get_spdat()
 
 ### BrdData
 
-Bird distribution map. There is a built in example data-set for this run
-which is derived from GPS data and modeled with a GAM incorporating
+Bird distribution map. There is a built-in example dataset for this run
+which is derived from GPS data and modelled with a GAM incorporating
 important factors known to drive space use in this species. The raster
-can be accessed with the built in function get_example_brddata()
+can be accessed with the built-in function get_example_brddata()
 
 ``` r
 
@@ -419,8 +417,7 @@ Competition distribution map i.e., the distribution of conspecifics from
 surrounding colonies which may interact with the colony/SPA being
 simulated. This is used throughout the model to estimate how competition
 from other colonies influences intake rate at different foraging sites.
-It uses the built in dataset “frgcompdata_example”. The example raster
-can be accessed using the built in function frgcompdata_example().
+It uses the built-in dataset get_frgcompdata_example().
 
 ``` r
 
@@ -459,8 +456,8 @@ developments](C_seabord_inputs_files/figure-html/unnamed-chunk-18-1.png)
 
 ### FlightGridcorrection
 
-It’s a TransitionLayer class object. One example provided that can be
-loaded
+It is a TransitionLayer class object. An example can be loaded with
+get_example_fgc_3035().
 
 ``` r
 
@@ -477,7 +474,7 @@ intending to predict the impact of.
 ORDpoly_example <- seabORD::get_example_ORDpoly()
 ```
 
-which is a dataset with this multipolygon shapes:
+which is a dataset of multipolygon shapes:
 
 ``` r
 

@@ -1,6 +1,6 @@
-# Create a distance-decay map
+# Create a distance-decay-map
 
-## Introduction to distance-decay maps
+## Introduction to distance-decay-maps
 
 Throughout this vignette, Offshore Renewable Developments (ORDs) refer
 to offshore wind farm footprints and associated infrastructure.
@@ -9,7 +9,7 @@ In cases where there is no local GPS data available users are
 recommended to estimate a bird density based on a distance-decay
 function, and use this as their bird distribution map in the model.
 
-In the previous version of seabORD, which ran on MatLab, the parameters
+In the previous version of seabORD, which ran on MATLAB, the parameters
 to be used for creating your density-decay map would be specified in the
 interface. This is no longer incorporated within the code and users need
 to produce their own map.
@@ -36,12 +36,10 @@ locality.
 
 This example will include the following steps:
 
-1.  Loading data - getting the required data into R environment
-2.  Create a distance by sea map - required for producing distance decay
-    map
-3.  Create distance decay map
-4.  Plot the distance decay map with OWFs
-5.  Assess the interaction with OWFs
+1.  DBS (Distance By Sea) map
+2.  Distance decay map
+3.  Plotting
+4.  Interaction assessment
 
 ### 1. DBS (Distance By Sea) map
 
@@ -80,7 +78,7 @@ The flight-grid correction layer is needed as geographic correction is
 necessary for gdistance calculations of the class Transition as they are
 made with \>4 directions in our instance. This correction layer has been
 pre-calculated and covers the full map we are using. You can use the
-provided one as exmaple.
+provided one as example.
 
 You will also need the seamask, and you can load the example one.
 
@@ -123,17 +121,17 @@ developments](D_DistanceDecayMap_files/figure-html/unnamed-chunk-5-1.png)
 
 ### 2. Distance decay map
 
-Now that we have a distance our distance by sea map we have our
-constituent inputs ready to create the distance decay map.
+Now that we have our distance-by-sea map we have our constituent inputs
+ready to create the distance decay map.
 
 The inputs which it takes are as follows:
 
-1.  **dmap** - the distance by sea map which we just created in step 2
+1.  **dmap** - the distance by sea map which we just created in step 1
 2.  **fr** - foraging range (km)
 3.  **pinhalf** - the proportion of the foraging range within which half
     of the bird distribution map (utilisation distribution) lies
 
-The function then returns a raster containing the distance-decay map.
+The function then returns a raster containing the distance-decay-map.
 
 ``` r
 
@@ -157,7 +155,7 @@ developments](D_DistanceDecayMap_files/figure-html/unnamed-chunk-6-1.png)
 
 ### 3. Plotting
 
-Now that we have made the density decay map, let’s plot it with the ORDs
+Now that we have made the density decay map, let’s plot it with the ORD
 footprints to check that they overlap.
 
 You can use the example ORDs
@@ -179,7 +177,7 @@ seabORD::plot_DD_map_with_ORDs(
 )
 ```
 
-![Distance-decay map of the predicted kittiwake distribution around the
+![distance-decay-map of the predicted kittiwake distribution around the
 Whinnyfold
 colony](D_DistanceDecayMap_files/figure-html/unnamed-chunk-8-1.png)
 
@@ -188,8 +186,8 @@ colony](D_DistanceDecayMap_files/figure-html/unnamed-chunk-8-1.png)
 Now using the “calc_dist_restricted” function again, we can calculate
 the distance to all cells, but this time including the obstruction of
 the ORDs. The output is a map with distance to the colony from all
-cells, but including the extra distance to fly around ORDs buffers,
-which can give us a sense of barrier effects, but not compute them
+cells, but including the extra distance to fly around ORD buffers, which
+can give us a sense of barrier effects, but does not compute them
 directly.
 
 First let’s calculate the ORDpolys_with_buffer (like on the map above)
@@ -202,8 +200,8 @@ example_ORDpolys_with_buffer <- seabORD::set_ORD_buffer(
 )
 ```
 
-Since the DD map is normalized, the result can be interpreted as the
-**percentage of density contained within the ORDs** **footprints and
+Since the DD map is normalised, the result can be interpreted as the
+**percentage of density contained within the ORD** **footprints and
 their buffers**.
 
 ``` r

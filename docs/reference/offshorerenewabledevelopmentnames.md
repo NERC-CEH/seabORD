@@ -1,6 +1,7 @@
 # offshorerenewabledevelopmentnames
 
-NEED EXPL
+Lookup table linking the short ORD codes used in `ordPar$include_ORDs`
+(for example "NEART") to wind-farm names and EMODnet records.
 
 ## Usage
 
@@ -14,24 +15,24 @@ A data frame with 5 columns:
 
 - code:
 
-  Character: NEED EXPL
+  Character: Short ORD code used by seabORD.
 
 - name:
 
-  Character: NEED EXPL
+  Character: Wind-farm name.
 
 - Emodnet_Site_Name:
 
-  Character: NEED EXPL
+  Character: Site name in the EMODnet wind farms dataset.
 
 - Emodnet_PolygonID:
 
-  Numeric: NEED EXPL
+  Numeric: Polygon ID in the EMODnet wind farms dataset.
 
 - Emodnet_Status:
 
-  Character: NEED EXPL
+  Character: Development status in the EMODnet wind farms dataset.
 
 ## Source
 
-NEED EXPL
+EMODnet Human Activities, wind farms.

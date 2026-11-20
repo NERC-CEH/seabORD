@@ -170,7 +170,7 @@ logit <- function(x) {xx = log(x/(1-x))}
 #'   on the body mass of the individual relative to the population mean, species
 #'   expected survival and parameters. Baseline survival values may apply to
 #'   poor, moderate or good years.
-#' @param sp The species two-letter code (either from "KI", "GU", "KI" or "RA")
+#' @param sp The species two-letter code (either from "KI", "GU", "RA" or "PU")
 #' @param bmi Body mass for the individual adult bird (g)
 #' @param bm Body mass of the adult birds alive at the end of the
 #'   breeding season, mean (g)

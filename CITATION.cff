@@ -30,7 +30,7 @@ authors:
 repository-code: https://github.com/NERC-CEH/seabORD_pkg
 url: https://nerc-ceh.github.io/seabORD_pkg/index.html
 
-license: GPL-3.0
+license: CC-BY-4.0
 
 preferred-citation:
   type: manual

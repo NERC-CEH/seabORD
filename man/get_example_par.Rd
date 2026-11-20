@@ -11,9 +11,9 @@ get_example_par(type = NULL)
 Available options are:
 \itemize{
 \item \code{NULL}: Standard scenario example.
-\item \code{"dd"}: Density-dependence scenario example.
+\item \code{"dd"}: distance-decay scenario example.
 \item \code{"cal"}: Standard calibration example.
-\item \code{"cal_dd"}: Density-dependence calibration example.
+\item \code{"cal_dd"}: distance-decay calibration example.
 }}
 }
 \value{
@@ -36,7 +36,7 @@ required by \code{\link[=seabord]{seabord()}}:
 # Load parameters for the standard scenario example
 par <- get_example_par()
 
-# Load parameters for the density-dependence example
+# Load parameters for the distance-decay example
 par_dd <- get_example_par("dd")
 
 # Inspect the available parameters

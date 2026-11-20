@@ -12,7 +12,7 @@ Available options are:
 \itemize{
 \item \code{NULL}: Output from the standard scenario example.
 \item \code{"cal"}: Output from the standard calibration example.
-\item \code{"cal_dd"}: Output from the density-dependence calibration
+\item \code{"cal_dd"}: Output from the distance-decay calibration
 example.
 }}
 }
@@ -45,7 +45,7 @@ output <- get_example_output()
 # Load the standard calibration output
 calibration_output <- get_example_output("cal")
 
-# Load the density-dependence calibration output
+# Load the distance-decay calibration output
 calibration_output_dd <- get_example_output("cal_dd")
 
 # Inspect the top-level output components

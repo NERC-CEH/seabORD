@@ -1,7 +1,7 @@
 # seabORD 2.0.0
 
 This is the **first public GitHub release** of **seabORD**. Core
-functions and datasets are in place, but minor changes may still occur 
+functions and datasets are in place, but minor changes may still occur.
 
 ### **Added**
 
@@ -9,7 +9,7 @@ functions and datasets are in place, but minor changes may still occur 
 
 - Included datasets
 
-- Documentation and vignettes:
+- Documentation and vignettes
 
 ### **Notes**
 

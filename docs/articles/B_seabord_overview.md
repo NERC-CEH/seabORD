@@ -3,7 +3,7 @@
 ## Model purpose
 
 **seabORD** is a model designed to predict how **offshore renewable
-developments (ORDs)** may affect seabird populations through sub-lethal
+developments (ORDs)** may affect seabird populations through sublethal
 displacement and barrier effects.
 
 The model estimates how changes in foraging behaviour and energy
@@ -57,7 +57,7 @@ The model consists of two main stages (see Figure 2):
 
 1.  Set-up process (and calibration)
 
-2.  Main simulation model.
+2.  Main simulation model
 
 Within each time step the adults make foraging decisions and then based
 on the outcomes of those decisions, a pair’s chick’s condition is
@@ -74,17 +74,17 @@ of seabORD are summarised below.
     (`calc_foragecapture`) using an intake rate based on a Type II
     functional response (Holling, 1959), adjusted to account for the
     effect of competition from conspecifics.\
-    Using this information, togethet with knowledge of associated
+    Using this information, together with knowledge of associated
     activities such as flying to and from the foraging site (including
     barrier effects of flying around the ORD), their own condition, and
     whether or not their chick is alive, each adult then chooses the
     optimal foraging strategy for this time step (`calc_strategy`). The
     selected strategy seeks to meet daily energy requirements while
-    minimising time away from the chick (unnattendance).\
+    minimising time away from the chick (unattendance).\
     This determines how many trips the adult will undertake in this time
     step and what behaviour the adults exhibit with respect to their
-    chick, such as potentially leaving them unattended or abandoning the
-    breeding attempt due to constraints.
+    chick, potentially leaving it unattended or abandoning the breeding
+    attempt due to constraints.
 
 2.  ***Chick provisioning and growth*** – Food captured by each adult
     during the time step is then converted to energy shared between
@@ -93,7 +93,7 @@ of seabORD are summarised below.
     then compared with the expected body mass for that stage of
     development. If body condition falls below a critical threshold, the
     chick dies from starvation (`calc_chickcare`).\
-    Surviving chicks are then subject by several stochastic mortality
+    Surviving chicks are then subject to several stochastic mortality
     processes relating to other potential causes of death: unattendance
     by the parents (`calc_unattendmortality`), other causes like storms
     (`calc_othermortality`), and in the case of puffins, predation via
@@ -106,12 +106,13 @@ of seabORD are summarised below.
     foraging strategy in the next time step. Adult body masses are then
     updated based on the energy gained and expended foraging and in
     other activities (`calc_adultbmchange`). Finally, the daily energy
-    requirements for the next time step are calculated (`calc_adultdee`)
+    requirements for the next time step are calculated
+    (`calc_adultdee`).
 
 4.  ***Adult survival*** – Upon completion of all time steps for each
     season (baseline/scenario) within each replicate, adult survival
     over the subsequent winter period is estimated using the mass of
-    each adult which survived to the final time step, representing the
+    each adult that survived to the final time step, representing the
     end of the chick-rearing season. Survival is estimated using
     relationships from previously published studies (Erikstad et al.,
     2009; Oro & Furness, 2002), by converting the mass of each adult
@@ -168,16 +169,16 @@ into two widely accepted potential impacts (see Figure 3):
 
 ![Figure 3: Schematic of ORD interactions in seabORD. 1a and 1b
 represent the barrier effects, where the path taken by the bird to reach
-the foraging site is obstructed by ORD. 2a and 2b represent the
+the foraging site is obstructed by an ORD. 2a and 2b represent the
 displacement effects, where the foraging site chosen by the bird is
 moved to a new location outside the ORD
 footprint.](images/seabORD_overview_1jpg.png)
 
 *Figure 3: Schematic of ORD interactions in seabORD. 1a and 1b represent
 the barrier effects, where the path taken by the bird to reach the
-foraging site is obstructed by ORD. 2a and 2b represent the displacement
-effects, where the foraging site chosen by the bird is moved to a new
-location outside the ORD footprint.*
+foraging site is obstructed by an ORD. 2a and 2b represent the
+displacement effects, where the foraging site chosen by the bird is
+moved to a new location outside the ORD footprint.*
 
 ## Next steps
 

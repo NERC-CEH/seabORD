@@ -2,7 +2,7 @@
 % Please edit documentation in R/input_functions_distancedecay.R
 \name{calc_dd_phalf_from_pinfr}
 \alias{calc_dd_phalf_from_pinfr}
-\title{Calculate 'q' from 'p' for the distance-decay model}
+\title{Calculate 'phalf' from 'pinfr', and define 'q' for the distance-decay model}
 \usage{
 calc_dd_phalf_from_pinfr(pinfr)
 }
@@ -13,7 +13,7 @@ calc_dd_phalf_from_pinfr(pinfr)
 A vector of length \code{length(pinfr)} containing the values of \code{phalf} associated with \code{pinfr}
 }
 \description{
-Calculate 'q' from 'p' for the distance-decay model
+Calculate 'phalf' from 'pinfr', and define 'q' for the distance-decay model
 }
 \details{
 "pinfr": the probability of being within the foraging range; "phalf": the proportion of the foraging range within which half of the UD lies

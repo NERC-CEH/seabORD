@@ -1,6 +1,7 @@
 # ORDpoly_example
 
-NEED EXPL same projection as seamask
+Footprints of Inch Cape and Neart na Gaoithe wind farms, used in the GPS
+kittiwake example. In the same projection as the sea mask (EPSG:3035).
 
 ## Usage
 
@@ -10,52 +11,53 @@ ORDpoly_example
 
 ## Format
 
-tibble
+An `sf` tibble with the following columns from the EMODnet wind farms
+dataset:
 
 - COUNTRY:
 
-  NEED EXPL
+  Country.
 
 - NAME:
 
-  NEED EXPL
+  Wind-farm name.
 
 - N_TURBINES:
 
-  NEED EXPL
+  Number of turbines.
 
 - POWER_MW:
 
-  NEED EXPL
+  Installed capacity (MW).
 
 - STATUS:
 
-  NEED EXPL
+  Development status.
 
 - YEAR:
 
-  NEED EXPL
+  Year (commissioning or status year).
 
 - COAST_DIST_M:
 
-  NEED EXPL
+  Distance to the coast (m).
 
 - AREA_SQKM:
 
-  NEED EXPL
+  Area (km\\^2\\).
 
 - NOTES:
 
-  NEED EXPL
+  Notes from EMODnet.
 
 - Shape_Length:
 
-  NEED EXPL
+  Polygon perimeter (m).
 
 - Shape_Area:
 
-  NEED EXPL
+  Polygon area (m\\^2\\).
 
 ## Source
 
-NEED EXPL
+EMODnet Human Activities, wind farms (24 March 2022).

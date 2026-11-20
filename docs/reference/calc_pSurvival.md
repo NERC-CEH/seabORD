@@ -15,7 +15,7 @@ calc_pSurvival(sp, bmi, bm, basesurv, beta, sd = 0)
 
 - sp:
 
-  The species two-letter code (either from "KI", "GU", "KI" or "RA")
+  The species two-letter code (either from "KI", "GU", "RA" or "PU")
 
 - bmi:
 

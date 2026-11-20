@@ -19,8 +19,8 @@
   maps](https://nerc-ceh.github.io/seabORD/articles/H_KI_run_gps.md):
 - [Interpreting the
   outputs](https://nerc-ceh.github.io/seabORD/articles/I_exampleKI_output.md):
-- [Create a distance-decay
-  map](https://nerc-ceh.github.io/seabORD/articles/D_DistanceDecayMap.md):
+- [Create a
+  distance-decay-map](https://nerc-ceh.github.io/seabORD/articles/D_DistanceDecayMap.md):
 
 ### Help
 

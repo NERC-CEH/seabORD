@@ -3,12 +3,12 @@
 \docType{data}
 \name{spacoordinates}
 \alias{spacoordinates}
-\title{Spatial Coordinates of Sites}
+\title{Spatial coordinates of sites}
 \format{
 A data frame with 23 columns:
 \describe{
 \item{SITECODE}{Character: The unique code identifying each site.}
-\item{CEF.include}{Logical: Whether the site is included in the CEF dataset.}
+\item{CEF.include}{Logical: Whether the site is included in the CEF.}
 \item{Marine}{Logical: Whether the site is marine.}
 \item{Longitude}{Numeric: The longitude of the site.}
 \item{Latitude}{Numeric: The latitude of the site.}
@@ -33,12 +33,14 @@ A data frame with 23 columns:
 }
 }
 \source{
-NEED EXPL
+Cumulative Effects Framework (CEF) SPA coordinate table.
 }
 \usage{
 spacoordinates
 }
 \description{
-A dataset containing spatial coordinates and related attributes for various sites, including information on whether the site is marine, whether data is available for different columns, and the spatial proximity of flight paths.
+Coordinates and related attributes for each site (SPA): the colony
+location, the nearest at-sea cell used as the start of flight paths, and
+the matching cells on the model grid.
 }
 \keyword{internal}

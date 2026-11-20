@@ -2,7 +2,7 @@
 % Please edit documentation in R/input_functions_distancedecay.R
 \name{calc_birddensmap_dd_pinhalf}
 \alias{calc_birddensmap_dd_pinhalf}
-\title{Calculate bird density maps used the distance-decay function used in SeabORD, via users specifying \code{phalf}}
+\title{Calculate bird density maps used the distance-decay function used in seabORD, via users specifying \code{phalf}}
 \usage{
 calc_birddensmap_dd_pinhalf(dmap, fr, pinhalf)
 }
@@ -17,5 +17,5 @@ calc_birddensmap_dd_pinhalf(dmap, fr, pinhalf)
 A raster containing the distance-decay map
 }
 \description{
-Calculate bird density maps used the distance-decay function used in SeabORD, via users specifying \code{phalf}
+Calculate bird density maps used the distance-decay function used in seabORD, via users specifying \code{phalf}
 }

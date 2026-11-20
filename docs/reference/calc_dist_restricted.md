@@ -52,5 +52,5 @@ obstructions, in kilometres
 Grid cells are treated as obstructed if (a) they have a missing (NA)
 value in the map, or, if "obspolys" has been provided, the grid cell
 lies within any of the polygons in "obspolys". Created 26 May 2024 based
-on "make_fltdist_scen" in SeabORD, but (a) for a single colony and (b)
+on "make_fltdist_scen" in seabORD, but (a) for a single colony and (b)
 for obstruction either by land or other (e.g. footprints)

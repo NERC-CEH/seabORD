@@ -5,10 +5,10 @@
 \alias{UK9002491_bysea_3035}
 \title{UK9002491_bysea_3035}
 \format{
-list of "raster" with the values of a raster in a matrix; and "metadata" with the extent and resolution to build back the raster in memory.
+A list with two elements, used to rebuild the raster in memory:
 \describe{
-\item{matrix}{matrix of pixel values}
-\item{metadata}{List of metadata: extent, resolution, and CRS.}
+\item{matrix}{Matrix of cell values.}
+\item{metadata}{List of metadata: extent, resolution and CRS.}
 }
 }
 \source{
@@ -18,6 +18,8 @@ Generated from "UK9002491_bysea_3035.tif".
 UK9002491_bysea_3035
 }
 \description{
-NEED EXPL
+Distance by sea (km) from the Buchan Ness to Collieston Coast SPA
+(UK9002491) colony to each sea cell, avoiding land, on the 1 km EPSG:3035
+grid. Used as \code{fltdist_base} in the distance-decay kittiwake example.
 }
 \keyword{internal}

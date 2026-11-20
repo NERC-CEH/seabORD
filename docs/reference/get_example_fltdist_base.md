@@ -18,7 +18,7 @@ get_example_fltdist_base(type = NULL)
 
   - `NULL`: Standard example for SPA site `"UK9004171"`.
 
-  - `"dd"`: Density-dependence example for SPA site `"UK9002491"`.
+  - `"dd"`: distance-decay example for SPA site `"UK9002491"`.
 
 ## Value
 
@@ -35,7 +35,7 @@ The raster is reconstructed from data stored internally as separate
 metadata and cell-value objects.
 
 For the standard example, the returned layer is named `"UK9004171"`. For
-the density-dependence example, it is named `"UK9002491"`.
+the distance-decay example, it is named `"UK9002491"`.
 
 The returned raster can be supplied as the `fltdist_base` argument to
 [`seabord()`](https://nerc-ceh.github.io/seabORD/reference/seabord.md).
@@ -72,7 +72,7 @@ Other example data:
 # Load the standard example baseline flight-distance raster
 fltdist_base <- get_example_fltdist_base()
 
-# Load the density-dependence example
+# Load the distance-decay example
 fltdist_base_dd <- get_example_fltdist_base("dd")
 
 # Plot the raster

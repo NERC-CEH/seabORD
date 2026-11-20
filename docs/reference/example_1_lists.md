@@ -1,6 +1,7 @@
 # example_1_lists
 
-NEED EXPL
+Example input lists for a scenario run of kittiwakes at the Forth
+Islands SPA (UK9004171), GPS example.
 
 ## Usage
 
@@ -10,24 +11,24 @@ example_1_lists
 
 ## Format
 
-A list NEED EXPL
+A named list with 4 elements:
 
 - `switches`:
 
-  A list NEED EXPL
+  A list of run options (see Switches in the seabORD inputs article).
 
 - `Par`:
 
-  A list NEED EXPL
+  A list of biological and simulation parameters.
 
 - `modPar`:
 
-  A list NEED EXPL
+  A list of model environment, replicate and output settings.
 
 - `ordPar`:
 
-  A list NEED EXPL
+  A list of ORD selection and buffer settings.
 
 ## Source
 
-NEED EXPL
+Created in `data-raw/example_lists.R`.

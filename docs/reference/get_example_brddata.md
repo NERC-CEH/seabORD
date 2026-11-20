@@ -18,7 +18,7 @@ get_example_brddata(type = NULL)
 
   - `NULL`: Forth Islands standard example.
 
-  - `"dd"`: Whinnyfold density-dependence example.
+  - `"dd"`: Whinnyfold distance-decay example.
 
 ## Value
 
@@ -32,7 +32,7 @@ The raster is reconstructed from data stored internally as separate
 metadata and cell-value objects.
 
 For the standard example, the returned layer is named `"Forth.Islands"`.
-For the density-dependence example, it is named `"Whinnyfold"`.
+For the distance-decay example, it is named `"Whinnyfold"`.
 
 The returned raster can be supplied as the `BrdData` argument to
 [`seabord()`](https://nerc-ceh.github.io/seabORD/reference/seabord.md).
@@ -54,7 +54,7 @@ and
 # Load the standard example bird-density raster
 BrdData <- get_example_brddata()
 
-# Load the density-dependence example
+# Load the distance-decay example
 BrdData_dd <- get_example_brddata("dd")
 
 # Plot the raster

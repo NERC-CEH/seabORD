@@ -9,7 +9,7 @@
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #' @title Calculate distance restricted by obstructions
-#' @details Grid cells are treated as obstructed if (a) they have a missing (NA) value in the map, or, if "obspolys" has been provided, the grid cell lies within any of the polygons in "obspolys". Created 26 May 2024 based on "make_fltdist_scen" in SeabORD, but (a) for a single colony and (b) for obstruction either by land or other (e.g. footprints)
+#' @details Grid cells are treated as obstructed if (a) they have a missing (NA) value in the map, or, if "obspolys" has been provided, the grid cell lies within any of the polygons in "obspolys". Created 26 May 2024 based on "make_fltdist_scen" in seabORD, but (a) for a single colony and (b) for obstruction either by land or other (e.g. footprints)
 #' @param mymap A raster in which grid cells on land are assumed to have missing (NA) values
 #' @param obspolys Polygons associated with obstacles; if NULL there are assumed to be no obstacles other than land
 #' @param FlightGridcorrection_3035 The 'flight correction' layer required by gdistance to correct for latitude (see gdistance)
@@ -90,7 +90,7 @@ calc_dist_restricted <- function(mymap, obspolys=NULL, targetcoords,
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## Added 26 Jan 2023
 #' @title Calculate bird density maps
-#' @description Calculate bird density maps using the distance-decay function used in SeabORD, via users specifying "proportion of UD lying within the foraging range"
+#' @description Calculate bird density maps using the distance-decay function used in seabORD, via users specifying "proportion of UD lying within the foraging range"
 #' @param dmap A raster containing the distance by sea from each grid cell to the population of interest
 #' @param fr Foraging range, in kilometres
 #' @param pinfr The proportion of the UD that is assumed to lie within a distance `fr` of the population: a numeric value between 0 and 1
@@ -124,7 +124,7 @@ calc_birddensmap_dd_pinfr <- function(dmap, fr, pinfr, dmin=1){
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## Added 26 Jan 2023
-#' @title Calculate bird density maps used the distance-decay function used in SeabORD, via users specifying `phalf`
+#' @title Calculate bird density maps used the distance-decay function used in seabORD, via users specifying `phalf`
 #' @inheritParams calc_birddensmap_dd_pinfr
 #' @param pinhalf the proportion of the foraging range within which half of the UD lies
 #' @return A raster containing the distance-decay map
@@ -137,7 +137,7 @@ calc_birddensmap_dd_pinhalf <- function(dmap, fr, pinhalf){
 }
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#' @title Calculate 'q' from 'p' for the distance-decay model
+#' @title Calculate 'phalf' from 'pinfr', and define 'q' for the distance-decay model
 #' @details "pinfr": the probability of being within the foraging range; "phalf": the proportion of the foraging range within which half of the UD lies
 #' Mathematical derivation:
 #' Define q to be such that: `[1 - exp(-beta * fr * phalf)] / [1 - exp(-beta * fr)] = 1/2`

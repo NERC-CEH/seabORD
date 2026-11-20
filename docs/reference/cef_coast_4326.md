@@ -1,6 +1,7 @@
 # cef_coast_4326
 
-NEED EXPL
+Coastline polygons for the UK and neighbouring countries from the
+Cumulative Effects Framework (CEF), in WGS84 (EPSG:4326).
 
 ## Usage
 
@@ -10,20 +11,20 @@ cef_coast_4326
 
 ## Format
 
-NEED EXPL.
+An `sf` object with 3 columns:
 
-- COUNTRY :
+- COUNTRY:
 
-  Character: NEED EXPL.
+  Character: Country name.
 
 - ID_0:
 
-  Character: NEED EXPL
+  Character: Country identifier.
 
 - geometry:
 
-  Numeric: NEED EXPL
+  sfc: Coastline (multi)polygon geometry.
 
 ## Source
 
-NEED EXPL
+Cumulative Effects Framework (CEF) coastline dataset.

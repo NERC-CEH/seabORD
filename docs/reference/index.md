@@ -48,10 +48,11 @@
   :
 
   Calculate bird density maps used the distance-decay function used in
-  SeabORD, via users specifying `phalf`
+  seabORD, via users specifying `phalf`
 
 - [`calc_dd_phalf_from_pinfr()`](https://nerc-ceh.github.io/seabORD/reference/calc_dd_phalf_from_pinfr.md)
-  : Calculate 'q' from 'p' for the distance-decay model
+  : Calculate 'phalf' from 'pinfr', and define 'q' for the
+  distance-decay model
 
 - [`calc_dd_pinfr_from_phalf()`](https://nerc-ceh.github.io/seabORD/reference/calc_dd_pinfr_from_phalf.md)
   : Calculate 'pinfr' from 'phalf' for the distance-decay model

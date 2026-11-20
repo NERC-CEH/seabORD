@@ -5,21 +5,22 @@
 \alias{example_lists_calibration}
 \title{example_lists_calibration}
 \format{
-A list NEED EXPL
+A named list with 4 elements:
 \describe{
-\item{\code{switches}}{A list NEED EXPL}
-\item{\code{Par}}{A list NEED EXPL}
-\item{\code{modPar}}{A list NEED EXPL}
-\item{\code{ordPar}}{A list NEED EXPL}
+\item{\code{switches}}{A list of run options, with \code{modelmode = "calibration"}.}
+\item{\code{Par}}{A list of biological and simulation parameters.}
+\item{\code{modPar}}{A list of model environment, replicate and output settings.}
+\item{\code{ordPar}}{A list of ORD settings (empty for calibration).}
 }
 }
 \source{
-NEED EXPL
+Created in \code{data-raw/example_lists_calibration.R}.
 }
 \usage{
 example_lists_calibration
 }
 \description{
-NEED EXPL
+Example input lists for a calibration run (no ORDs) of kittiwakes at the
+Forth Islands SPA (UK9004171), GPS example.
 }
 \keyword{internal}

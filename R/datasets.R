@@ -1,150 +1,175 @@
-#' Species List Dataset
+# Dataset documentation for seabORD.
+#
+# Items to confirm before publishing (inferred from data-raw/ scripts):
+#   - specieslist: sCRM_NAME meaning and the @source wording.
+#   - spalist: all six Altnames.* descriptions are inferred from the column names.
+#   - CEF_colsize_table: spacolsize unit (pairs or individuals).
+#   - FlightGridcorrection_3035: how it was generated.
+#   - ORDpoly_example_wfold: confirm owfpolys.shp has these columns, and the source.
+#   - frgcompdata_example_dd: source of the Whinnyfold competition map.
+
+
+#' Species list
 #'
-#' This dataset provides information about the bird species included in seabORD, including their English and Latin names, taxa codes, and 2 letter codes.
+#' Information about the seabird species covered by seabORD and related
+#' UKCEH tools, including English and scientific names, taxonomic codes and
+#' two-letter codes.
 #'
 #' @format A data frame with the following 13 columns:
 #' \describe{
 #'   \item{ENGLISH_NAME}{Character: The English name of the species.}
 #'   \item{LATIN_NAME}{Character: The scientific (Latin) name of the species.}
-#'   \item{TAXA_CODE}{Character: A short taxa code associated with the species.}
-#'   \item{SHORT_CODE}{Character: A short code used for quick reference.}
+#'   \item{TAXA_CODE}{Character: A short taxonomic code for the species.}
+#'   \item{SHORT_CODE}{Character: The two-letter species code used by seabORD (for example "KI").}
 #'   \item{FIVE_LETTER}{Character: A five-letter shorthand for the species.}
-#'   \item{BOU_NAME}{Character: The name of the species as recognized by the British Ornithologists' Union (BOU).}
-#'   \item{sCRM_NAME}{Character:  NEED EXPL}
-#'   \item{CEF}{character: Indicates if the species is included in the CEF project.}
-#'   \item{iPCoD}{character: Indicates if the species is included in the iPCoD project.}
-#'   \item{SeabORD}{character: Indicates if the species is included in the SeabORD project.}
-#'   \item{sCRM}{character: Indicates if the species is included in the sCRM project.}
-#'   \item{NEPVA}{character: Indicates if the species is included in the NEPVA project.}
-#'   \item{DispMat}{character: Indicates if dispersal matrices are available for the species.}
+#'   \item{BOU_NAME}{Character: The name of the species as recognised by the British Ornithologists' Union (BOU).}
+#'   \item{sCRM_NAME}{Character: The species name as used in the stochastic collision risk model (sCRM).}
+#'   \item{CEF}{Character: Indicates if the species is included in the Cumulative Effects Framework (CEF).}
+#'   \item{iPCoD}{Character: Indicates if the species is included in iPCoD.}
+#'   \item{SeabORD}{Character: Indicates if the species is included in seabORD.}
+#'   \item{sCRM}{Character: Indicates if the species is included in the sCRM.}
+#'   \item{NEPVA}{Character: Indicates if the species is included in NEPVA.}
+#'   \item{DispMat}{Character: Indicates if dispersal matrices are available for the species.}
 #' }
-#' @source NEED EXPL
+#' @source UKCEH seabird species lookup table.
 #' @keywords internal
 "specieslist"
 
-#' SPA Site List Dataset
+#' SPA site list
 #'
-#' This dataset contains information about Special Protection Areas (SPAs), including site codes, site names.
+#' Information about Special Protection Areas (SPAs), including site codes
+#' and site names, and the alternative names used to match each SPA across
+#' other datasets.
 #'
 #' @format A data frame with the following 10 columns:
 #' \describe{
 #'   \item{SITE_CODE}{Character: A unique code identifying each SPA.}
 #'   \item{SITE_NAME}{Character: The name of the SPA.}
-#'   \item{CEF.include}{character: Indicates if the site is included in the CEF project (Y) or not (NA).}
-#'   \item{Marine.only}{character: Indicates if the site is classified as a marine-only SPA.}
-#'   \item{Altnames.sufficient}{character:NEED EXPL}
-#'   \item{Altnames.SPApolys}{character:NEED EXPL}
-#'   \item{Altnames.SMP}{character:NEED EXPL}
-#'   \item{Altnames.Productivity}{character:NEED EXPL}
-#'   \item{Altnames.BDMPS}{character:NEED EXPL}
-#'   \item{Altnames.FR}{character:NEED EXPL.}
+#'   \item{CEF.include}{Character: Indicates if the site is included in the CEF (Y) or not (NA).}
+#'   \item{Marine.only}{Character: Indicates if the site is classified as a marine-only SPA.}
+#'   \item{Altnames.sufficient}{Character: Indicates whether the alternative names below are sufficient to match the SPA across datasets.}
+#'   \item{Altnames.SPApolys}{Character: The name used for this SPA in the SPA boundary polygons.}
+#'   \item{Altnames.SMP}{Character: The name used for this SPA in the Seabird Monitoring Programme (SMP) data.}
+#'   \item{Altnames.Productivity}{Character: The name used for this SPA in the productivity data.}
+#'   \item{Altnames.BDMPS}{Character: The name used for this SPA in the Biologically Defined Minimum Population Scales (BDMPS) data.}
+#'   \item{Altnames.FR}{Character: The name used for this SPA in the foraging-range data.}
 #' }
-#' @source NEED EXPL
+#' @source Cumulative Effects Framework (CEF) SPA lookup table.
 #' @keywords internal
 "spalist"
 
 
-#' CEF Size Table
+#' CEF colony size table
 #'
-#' Needs a description
+#' Breeding colony sizes for each species at each SPA, taken from the
+#' Cumulative Effects Framework (CEF).
 #'
 #' @format A data frame with 5 columns:
 #' \describe{
-#'   \item{X}{Numeric: An identifier or index for the row.}
+#'   \item{X}{Numeric: Row index.}
 #'   \item{species}{Character: The species code.}
 #'   \item{site_codes}{Character: The unique code identifying each site.}
 #'   \item{site_names}{Character: The name of the site.}
-#'   \item{spacolsize}{Numeric: NEED EXPL}
+#'   \item{spacolsize}{Numeric: Colony size at the SPA, in breeding pairs.}
 #' }
-#' @source NEED EXPL
+#' @source Cumulative Effects Framework (CEF).
 #' @keywords internal
 "CEF_colsize_table"
 
 
-#' Energetics and Prey Data
+#' Energetics and prey data
 #'
-#' A dataset containing information on various bird species' energetics and prey data, including metabolic rates, energy requirements, and survival rates under different conditions.
+#' Species-specific parameters used by seabORD: body mass, mortality and
+#' abandonment thresholds, time budgets, energetics, prey intake and
+#' mass-survival parameters, and expected outcomes in poor, moderate and
+#' good years. Descriptions follow the package metadata table in
+#' \code{R/functions-transform2seabord.R}.
 #'
-#' @format A data frame with the following 27 columns:
+#' @format A data frame with the following 38 columns:
 #' \describe{
-#'   \item{Code}{Character: A species code.}
-#'   \item{Species}{Character: The common name of the species.}
-#'   \item{BM_adult_mn}{Numeric: The mean body mass of adults.}
-#'   \item{BM_adult_sd}{Numeric: The standard deviation of adult body mass.}
-#'   \item{BM_adult_mortf}{Numeric: The mortality factor for adults.}
-#'   \item{BM_adult_abdn}{Numeric: The adult abandonment rate.}
-#'   \item{BM_chick_mn}{Numeric: The mean body mass of chicks.}
-#'   \item{BM_chick_sd}{Numeric: The standard deviation of chick body mass.}
-#'   \item{BM_Chick_mortf}{Numeric: The mortality factor for chicks.}
-#'   \item{daylength}{Numeric: The day length in hours.}
-#'   \item{seasonlength}{Numeric: The length of the season in days.}
-#'   \item{unattend_max_hrs}{Numeric: The maximum hours of unattended activity.}
-#'   \item{adult_DEE_mn}{Numeric: The mean daily energy expenditure (DEE) for adults.}
-#'   \item{adult_DEE_sd}{Numeric: The standard deviation of adult daily energy expenditure.}
-#'   \item{chick_DER}{Numeric: The chick daily energy requirement (DER).}
-#'   \item{IR_max}{Numeric: The maximum infrared radiation.}
-#'   \item{IR_half_a}{Numeric: Parameter related to infrared radiation.}
-#'   \item{IR_half_b}{Numeric: Another parameter related to infrared radiation.}
-#'   \item{flight_msec}{Numeric: The flight metabolic rate in milliseconds.}
-#'   \item{assim_eff}{Numeric: The assimilation efficiency.}
-#'   \item{energy_prey}{Numeric: The energy available from prey.}
-#'   \item{energy_nest}{Numeric: The energy associated with the nest.}
-#'   \item{energy_flight}{Numeric: The energy used in flight.}
-#'   \item{energy_searest}{Numeric: The energy associated with sea rest.}
-#'   \item{energy_forage}{Numeric: The energy used for foraging.}
-#'   \item{energy_warming}{Numeric: The energy used for warming.}
-#'   \item{chick_mass_a}{Numeric: The mass of chicks at age 'a'.}
-#'   \item{adult_mass_KG}{Numeric: The adult mass in kilograms.}
-#'   \item{beta}{Numeric: A parameter used in energetic calculations.}
-#'   \item{basesurv_poor}{Numeric: The survival rate under poor conditions.}
-#'   \item{basesurv_modr}{Numeric: The survival rate under moderate conditions.}
-#'   \item{basesurv_good}{Numeric: The survival rate under good conditions.}
-#'   \item{massloss_poor}{Numeric: The mass loss under poor conditions.}
-#'   \item{massloss_modr}{Numeric: The mass loss under moderate conditions.}
-#'   \item{massloss_good}{Numeric: The mass loss under good conditions.}
-#'   \item{chicksurv_poor}{Numeric: The chick survival rate under poor conditions.}
-#'   \item{chicksurv_modr}{Numeric: The chick survival rate under moderate conditions.}
-#'   \item{chicksurv_good}{Numeric: The chick survival rate under good conditions.}
+#' \item{Code}{Character: Two-letter species code.}
+#' \item{Species}{Character: Species name.}
+#' \item{BM_adult_mn}{Numeric: Initial adult body mass, mean (g).}
+#' \item{BM_adult_sd}{Numeric: Initial adult body mass, standard deviation (g).}
+#' \item{BM_adult_mortf}{Numeric: Critical body mass below which an adult is assumed dead (proportion of mean mass).}
+#' \item{BM_adult_abdn}{Numeric: Critical body mass below which an adult abandons its chick (proportion of mean mass).}
+#' \item{BM_chick_mn}{Numeric: Initial chick body mass, mean (g).}
+#' \item{BM_chick_sd}{Numeric: Initial chick body mass, standard deviation (g).}
+#' \item{BM_Chick_mortf}{Numeric: Critical body mass below which a chick dies (proportion of initial mass).}
+#' \item{daylength}{Numeric: Number of hours per time step.}
+#' \item{seasonlength}{Numeric: Number of time steps per season.}
+#' \item{unattend_max_hrs}{Numeric: Time a chick can be left unattended before it is assumed to die from exposure or predation (hours).}
+#' \item{adult_DEE_mn}{Numeric: Adult daily energy expenditure, mean (kJ).}
+#' \item{adult_DEE_sd}{Numeric: Adult daily energy expenditure, standard deviation (kJ).}
+#' \item{chick_DER}{Numeric: Chick daily energy requirement (kJ per day).}
+#' \item{IR_max}{Numeric: Maximum prey intake rate (g per minute).}
+#' \item{IR_half_a}{Numeric: Intake-rate half-saturation parameter a (scales the half-saturation constant with competition).}
+#' \item{IR_half_b}{Numeric: Intake-rate half-saturation parameter b (exponent applied to the competition factor).}
+#' \item{flight_msec}{Numeric: Average flight speed (metres per second).}
+#' \item{assim_eff}{Numeric: Assimilation efficiency (proportion).}
+#' \item{energy_prey}{Numeric: Energy gained from prey (kJ per gram).}
+#' \item{energy_nest}{Numeric: Energy cost of nesting at the colony (kJ per day).}
+#' \item{energy_flight}{Numeric: Energy cost of flight (kJ per day).}
+#' \item{energy_searest}{Numeric: Energy cost of resting at sea (kJ per day).}
+#' \item{energy_forage}{Numeric: Energy cost of foraging (kJ per day).}
+#' \item{energy_warming}{Numeric: Energy cost of warming food (kJ per day).}
+#' \item{chick_mass_a}{Numeric: Maximum chick mass gain per day (g).}
+#' \item{adult_mass_KG}{Numeric: Energy density of adult bird tissue (kJ per gram).}
+#' \item{beta}{Numeric: Mass-survival slope (parameter of the mass-survival relationship).}
+#' \item{basesurv_poor}{Numeric: Baseline adult survival in poor years (mass-survival relationship).}
+#' \item{basesurv_modr}{Numeric: Baseline adult survival in moderate years (mass-survival relationship).}
+#' \item{basesurv_good}{Numeric: Baseline adult survival in good years (mass-survival relationship).}
+#' \item{massloss_poor}{Numeric: Expected adult body mass loss in poor years (percent).}
+#' \item{massloss_modr}{Numeric: Expected adult body mass loss in moderate years (percent).}
+#' \item{massloss_good}{Numeric: Expected adult body mass loss in good years (percent).}
+#' \item{chicksurv_poor}{Numeric: Expected chick survival in poor years (percent).}
+#' \item{chicksurv_modr}{Numeric: Expected chick survival in moderate years (percent).}
+#' \item{chicksurv_good}{Numeric: Expected chick survival in good years (percent).}
 #' }
-#' @source  NEED EXPL
+#' @source Species parameters compiled for seabORD from the publishedstudies cited in the model description.
 #' @keywords internal
 "energeticsandpreydata"
 
 #' cef_coast_4326
 #'
-#' NEED EXPL
+#' Coastline polygons for the UK and neighbouring countries from the
+#' Cumulative Effects Framework (CEF), in WGS84 (EPSG:4326).
 #'
-#' @format NEED EXPL.
+#' @format An \code{sf} object with 3 columns:
 #' \describe{
-#'   \item{COUNTRY }{Character: NEED EXPL.}
-#'   \item{ID_0}{Character: NEED EXPL}
-#'   \item{geometry}{Numeric: NEED EXPL}
+#'   \item{COUNTRY}{Character: Country name.}
+#'   \item{ID_0}{Character: Country identifier.}
+#'   \item{geometry}{sfc: Coastline (multi)polygon geometry.}
 #' }
-#' @source  NEED EXPL
+#' @source Cumulative Effects Framework (CEF) coastline dataset.
 #' @keywords internal
 "cef_coast_4326"
 
 #' seamask_3035_example
 #'
-#' NEED EXPL
+#' Example 1 km land/sea mask in ETRS89 / LAEA Europe (EPSG:3035). Sea
+#' cells hold values and land cells are NA. Stored as a matrix plus
+#' metadata and rebuilt with \code{get_example_seamask()}.
 #'
-#' @format list of "raster" with the values of a raster in a matrix; and "metadata" with the extent and resolution to build back the raster in memory.
+#' @format A list with two elements, used to rebuild the raster in memory:
 #' \describe{
-#'   \item{matrix}{matrix of pixel values}
-#'   \item{metadata}{List of metadata: extent, resolution, and CRS.}
+#'   \item{matrix}{Matrix of cell values.}
+#'   \item{metadata}{List of metadata: extent, resolution and CRS.}
 #' }
 #' @source Generated from "seamask_3035.tif".
 #' @keywords internal
 "seamask_3035_example"
 
-#' Spatial Coordinates of Sites
+#' Spatial coordinates of sites
 #'
-#' A dataset containing spatial coordinates and related attributes for various sites, including information on whether the site is marine, whether data is available for different columns, and the spatial proximity of flight paths.
+#' Coordinates and related attributes for each site (SPA): the colony
+#' location, the nearest at-sea cell used as the start of flight paths, and
+#' the matching cells on the model grid.
 #'
 #' @format A data frame with 23 columns:
 #' \describe{
 #'   \item{SITECODE}{Character: The unique code identifying each site.}
-#'   \item{CEF.include}{Logical: Whether the site is included in the CEF dataset.}
+#'   \item{CEF.include}{Logical: Whether the site is included in the CEF.}
 #'   \item{Marine}{Logical: Whether the site is marine.}
 #'   \item{Longitude}{Numeric: The longitude of the site.}
 #'   \item{Latitude}{Numeric: The latitude of the site.}
@@ -167,238 +192,267 @@
 #'   \item{fltxy.DIST}{Numeric: The distance of the flight path in XY space.}
 #'   \item{fltxy.near}{Logical: Whether the flight path is near the site in XY space.}
 #' }
-#' @source NEED EXPL
+#' @source Cumulative Effects Framework (CEF) SPA coordinate table.
 #' @keywords internal
 "spacoordinates"
 
 
 #' UK9004171_bysea_3035
 #'
-#' NEED EXPL
+#' Distance by sea (km) from the Forth Islands SPA (UK9004171) colony to
+#' each sea cell, avoiding land, on the 1 km EPSG:3035 grid. Used as
+#' \code{fltdist_base} in the GPS kittiwake example.
 #'
-#' @format list of "raster" with the values of a raster in a matrix; and "metadata" with the extent and resolution to build back the raster in memory.
+#' @format A list with two elements, used to rebuild the raster in memory:
 #' \describe{
-#'   \item{matrix}{matrix of pixel values}
-#'   \item{metadata}{List of metadata: extent, resolution, and CRS.}
+#'   \item{matrix}{Matrix of cell values.}
+#'   \item{metadata}{List of metadata: extent, resolution and CRS.}
 #' }
 #' @source Generated from "UK9004171_bysea_3035.tif".
 #' @keywords internal
 "UK9004171_bysea_3035"
 
 
-#' FlightGridcorrection_3035: TransitionLayer Object
+#' FlightGridcorrection_3035: TransitionLayer object
+#'
+#' Geo-corrected transition layer for the 1 km EPSG:3035 grid, used by
+#' \code{gdistance} to calculate distances by sea between grid cells.
+#'
 #' @format An object of class `TransitionLayer` with the following components:
 #' \describe{
-#'   \item{class}{The object is of class `TransitionLayer`, NEED EXPL}
-#'   \item{dimensions}{Dimensions of the data grid: 2200 rows and 1577 columns, with a total of 3,469,400 cells.}
-#'   \item{resolution}{The resolution of the raster grid: 1000 meters in both x and y directions.}
-#'   \item{extent}{Spatial extent of the grid defined by the minimum and maximum x and y coordinates.  The extent is: xmin = 2661966, xmax = 4238966, ymin = 2685159, ymax = 4885159.}
+#'   \item{class}{The object is of class `TransitionLayer` from the gdistance package, holding transition values between neighbouring cells.}
+#'   \item{dimensions}{Dimensions of the data grid: 2,200 rows and 1,577 columns, with a total of 3,469,400 cells.}
+#'   \item{resolution}{The resolution of the raster grid: 1,000 metres in both x and y directions.}
+#'   \item{extent}{Spatial extent of the grid defined by the minimum and maximum x and y coordinates. The extent is: xmin = 2661966, xmax = 4238966, ymin = 2685159, ymax = 4885159.}
 #'   \item{crs}{Coordinate Reference System (CRS) used for the grid: `+proj=laea +lat_0=52 +lon_0=10 +x_0=4321000 +y_0=3210000 +ellps=GRS80 +units=m +no_defs`}
-#'   \item{values}{NEED EXPL}
+#'   \item{values}{Geo-corrected conductance values between neighbouring cells.}
 #'   \item{matrix class}{The data is stored in a sparse matrix format (`dsTMatrix`), which is efficient for handling large datasets with a significant number of zero values.}
 #' }
-#' @source  NEED EXPL
+#' @source Generated with \code{gdistance::transition()} and
+#'   \code{gdistance::geoCorrection()} on the seabORD sea mask.
 #' @keywords internal
 "FlightGridcorrection_3035"
 
 #' offshorerenewabledevelopmentnames
 #'
-#' NEED EXPL
+#' Lookup table linking the short ORD codes used in
+#' \code{ordPar$include_ORDs} (for example "NEART") to wind-farm names and
+#' EMODnet records.
 #'
 #' @format A data frame with 5 columns:
 #' \describe{
-#'   \item{code}{Character: NEED EXPL}
-#'   \item{name}{Character: NEED EXPL}
-#'   \item{Emodnet_Site_Name}{Character: NEED EXPL }
-#'   \item{Emodnet_PolygonID}{Numeric: NEED EXPL}
-#'   \item{Emodnet_Status}{Character: NEED EXPL}
+#'   \item{code}{Character: Short ORD code used by seabORD.}
+#'   \item{name}{Character: Wind-farm name.}
+#'   \item{Emodnet_Site_Name}{Character: Site name in the EMODnet wind farms dataset.}
+#'   \item{Emodnet_PolygonID}{Numeric: Polygon ID in the EMODnet wind farms dataset.}
+#'   \item{Emodnet_Status}{Character: Development status in the EMODnet wind farms dataset.}
 #' }
-#' @source NEED EXPL
+#' @source EMODnet Human Activities, wind farms.
 #' @keywords internal
 "offshorerenewabledevelopmentnames"
 
 #' example_1_lists
 #'
-#' NEED EXPL
+#' Example input lists for a scenario run of kittiwakes at the Forth
+#' Islands SPA (UK9004171), GPS example.
 #'
-#' @format A list NEED EXPL
+#' @format A named list with 4 elements:
 #' \describe{
-#'   \item{\code{switches}}{A list NEED EXPL}
-#'   \item{\code{Par}}{A list NEED EXPL}
-#'   \item{\code{modPar}}{A list NEED EXPL}
-#'   \item{\code{ordPar}}{A list NEED EXPL}
+#'   \item{\code{switches}}{A list of run options (see Switches in the seabORD inputs article).}
+#'   \item{\code{Par}}{A list of biological and simulation parameters.}
+#'   \item{\code{modPar}}{A list of model environment, replicate and output settings.}
+#'   \item{\code{ordPar}}{A list of ORD selection and buffer settings.}
 #' }
-#' @source NEED EXPL
+#' @source Created in \code{data-raw/example_lists.R}.
 #' @keywords internal
 "example_1_lists"
 
 #' BrdData_example
 #'
-#' NEED EXPL
+#' Kittiwake bird-distribution map for the Forth Islands SPA, derived from
+#' GPS tracking data. Stored as a matrix plus metadata and rebuilt with
+#' \code{get_example_brddata()}.
 #'
-#' @format list of "raster" with the values of a raster in a matrix; and "metadata" with the extent and resolution to build back the raster in memory.
+#' @format A list with two elements, used to rebuild the raster in memory:
 #' \describe{
-#'   \item{matrix}{matrix of pixel values}
-#'   \item{metadata}{List of metadata: extent, resolution, and CRS.}
+#'   \item{matrix}{Matrix of cell values.}
+#'   \item{metadata}{List of metadata: extent, resolution and CRS.}
 #' }
-#' @source NEED EXPL
+#' @source UKCEH GPS tracking data (SEANSE bird distribution maps).
 #' @keywords internal
 "BrdData_example"
 
 #' frgcompdata_example
 #'
-#' NEED EXPL
+#' Foraging-competition map for the Forth Islands example: the distribution
+#' of kittiwakes from other colonies that may compete with the modelled
+#' colony. Stored as a matrix plus metadata and rebuilt with
+#' \code{get_example_frgcompdata()}.
 #'
-#' @format list of "raster" with the values of a raster in a matrix; and "metadata" with the extent and resolution to build back the raster in memory.
+#' @format A list with two elements, used to rebuild the raster in memory:
 #' \describe{
-#'   \item{matrix}{matrix of pixel values}
-#'   \item{metadata}{List of metadata: extent, resolution, and CRS.}
+#'   \item{matrix}{Matrix of cell values.}
+#'   \item{metadata}{List of metadata: extent, resolution and CRS.}
 #' }
-#' @source NEED EXPL
+#' @source SEANSE competition maps.
 #' @keywords internal
 "frgcompdata_example"
 
 
 #' ORDpoly_example
 #'
-#' NEED EXPL
-#'same projection as seamask
-#' @format tibble
+#' Footprints of Inch Cape and Neart na Gaoithe wind farms, used in the GPS
+#' kittiwake example. In the same projection as the sea mask (EPSG:3035).
+#'
+#' @format An \code{sf} tibble with the following columns from the EMODnet wind farms dataset:
 #' \describe{
-#'   \item{COUNTRY}{NEED EXPL}
-#'   \item{NAME}{NEED EXPL}
-#'   \item{N_TURBINES}{NEED EXPL}
-#'   \item{POWER_MW}{NEED EXPL}
-#'   \item{STATUS}{NEED EXPL}
-#'   \item{YEAR}{NEED EXPL}
-#'   \item{COAST_DIST_M}{NEED EXPL}
-#'   \item{AREA_SQKM}{NEED EXPL}
-#'   \item{NOTES}{NEED EXPL}
-#'   \item{Shape_Length}{NEED EXPL}
-#'   \item{Shape_Area}{NEED EXPL}
+#'   \item{COUNTRY}{Country.}
+#'   \item{NAME}{Wind-farm name.}
+#'   \item{N_TURBINES}{Number of turbines.}
+#'   \item{POWER_MW}{Installed capacity (MW).}
+#'   \item{STATUS}{Development status.}
+#'   \item{YEAR}{Year (commissioning or status year).}
+#'   \item{COAST_DIST_M}{Distance to the coast (m).}
+#'   \item{AREA_SQKM}{Area (km\eqn{^2}).}
+#'   \item{NOTES}{Notes from EMODnet.}
+#'   \item{Shape_Length}{Polygon perimeter (m).}
+#'   \item{Shape_Area}{Polygon area (m\eqn{^2}).}
 #' }
-#' @source NEED EXPL
+#' @source EMODnet Human Activities, wind farms (24 March 2022).
 #' @keywords internal
 "ORDpoly_example"
 
 #' example_calibration_output
 #'
-#' This dataset is stored in an `.rds` file NEED EXPL
+#' Precomputed seabORD output from the Forth Islands kittiwake calibration
+#' run, used in the examples.
 #'
-#' @format An object of class \code{data.frame} (or any class the `.rds` file contains).
+#' @format A named list, as returned by \code{seabord()}:
 #' \describe{
-#'   \item{switches}{list NEED EXPL}
-#'   \item{Parameters}{list NEED EXPL}
-#'   \item{ordPar}{list NEED EXPL}
-#'   \item{modPar}{list NEED EXPL}
-#'   \item{thisRun}{list NEED EXPL}
-#'   \item{output_f0}{list of tibbles}
-#'   \item{output_c0}{list of tibbles}
-#'   \item{output_a0}{list of tibbles}
-#'   \item{output_y0}{list of tibbles}
-#'   \item{birdflightamp}{raster}
+#'   \item{switches}{List: the run options used.}
+#'   \item{Parameters}{List: the biological and simulation parameters used.}
+#'   \item{ordPar}{List: the ORD settings used.}
+#'   \item{modPar}{List: the model environment and output settings used.}
+#'   \item{thisRun}{List: run details stored for reproducibility.}
+#'   \item{output_f0}{List of tibbles: flight metrics.}
+#'   \item{output_c0}{List of tibbles: chick metrics.}
+#'   \item{output_a0}{List of tibbles: adult metrics.}
+#'   \item{output_y0}{List of tibbles: over-winter survival metrics.}
+#'   \item{BirdFlightMap}{Raster: number of simulated visits to each foraging location.}
 #' }
-#' @source \href{https://example.com}{Example Source}
+#' @source Generated by \code{seabord()} with \code{example_lists_calibration}.
 #' @keywords internal
 "example_calibration_output"
 
 
 #' example_lists_calibration
 #'
-#' NEED EXPL
+#' Example input lists for a calibration run (no ORDs) of kittiwakes at the
+#' Forth Islands SPA (UK9004171), GPS example.
 #'
-#' @format A list NEED EXPL
+#' @format A named list with 4 elements:
 #' \describe{
-#'   \item{\code{switches}}{A list NEED EXPL}
-#'   \item{\code{Par}}{A list NEED EXPL}
-#'   \item{\code{modPar}}{A list NEED EXPL}
-#'   \item{\code{ordPar}}{A list NEED EXPL}
+#'   \item{\code{switches}}{A list of run options, with \code{modelmode = "calibration"}.}
+#'   \item{\code{Par}}{A list of biological and simulation parameters.}
+#'   \item{\code{modPar}}{A list of model environment, replicate and output settings.}
+#'   \item{\code{ordPar}}{A list of ORD settings (empty for calibration).}
 #' }
-#' @source NEED EXPL
+#' @source Created in \code{data-raw/example_lists_calibration.R}.
 #' @keywords internal
 "example_lists_calibration"
 
 
 #' example_scenario_output
 #'
-#' This dataset is stored in an `.rds` file NEED EXPL
+#' Precomputed seabORD output from the Forth Islands kittiwake scenario run
+#' with Inch Cape and Neart na Gaoithe, used in the examples.
 #'
-#' @format An object of class \code{data.frame} (or any class the `.rds` file contains).
+#' @format A named list, as returned by \code{seabord()}:
 #' \describe{
-#'   \item{switches}{list NEED EXPL}
-#'   \item{Parameters}{list NEED EXPL}
-#'   \item{ordPar}{list NEED EXPL}
-#'   \item{modPar}{list NEED EXPL}
-#'   \item{thisRun}{list NEED EXPL}
-#'   \item{output_f0}{list of tibbles}
-#'   \item{output_c0}{list of tibbles}
-#'   \item{output_a0}{list of tibbles}
-#'   \item{output_y0}{list of tibbles}
-#'   \item{birdflightamp}{raster}
+#'   \item{switches}{List: the run options used.}
+#'   \item{Parameters}{List: the biological and simulation parameters used.}
+#'   \item{ordPar}{List: the ORD settings used.}
+#'   \item{modPar}{List: the model environment and output settings used.}
+#'   \item{thisRun}{List: run details stored for reproducibility.}
+#'   \item{output_f0}{List of tibbles: flight metrics.}
+#'   \item{output_c0}{List of tibbles: chick metrics.}
+#'   \item{output_a0}{List of tibbles: adult metrics.}
+#'   \item{output_y0}{List of tibbles: over-winter survival metrics.}
+#'   \item{BirdFlightMap}{Raster: number of simulated visits to each foraging location.}
+#'   \item{output_i0 to output_i5}{Lists of tibbles: impact metrics (see Interpreting the outputs).}
 #' }
-#' @source \href{https://example.com}{Example Source}
+#' @source Generated by \code{seabord()} with \code{example_1_lists}.
 #' @keywords internal
 "example_scenario_output"
 
 
 #' cef_coast_3035
 #'
-#' NEED EXPL
+#' Coastline polygons for the UK and neighbouring countries from the
+#' Cumulative Effects Framework (CEF), projected to ETRS89 / LAEA Europe
+#' (EPSG:3035).
 #'
-#' @format NEED EXPL.
+#' @format An \code{sf} object with 3 columns:
 #' \describe{
-#'   \item{COUNTRY }{Character: NEED EXPL.}
-#'   \item{ID_0}{Character: NEED EXPL}
-#'   \item{geometry}{Numeric: NEED EXPL}
+#'   \item{COUNTRY}{Character: Country name.}
+#'   \item{ID_0}{Character: Country identifier.}
+#'   \item{geometry}{sfc: Coastline (multi)polygon geometry.}
 #' }
-#' @source  NEED EXPL
+#' @source Cumulative Effects Framework (CEF) coastline dataset.
 #' @keywords internal
 "cef_coast_3035"
 
 
 #' ORDpoly_example_wfold
 #'
-#' NEED EXPL
-#'same projection as seamask
-#' @format tibble
+#' Footprints of Aberdeen Bay, Hywind Scotland and Kincardine wind farms,
+#' used in the Whinnyfold distance-decay example. In the same projection as
+#' the sea mask (EPSG:3035).
+#'
+#' @format An \code{sf} tibble with the following columns:
 #' \describe{
-#'   \item{COUNTRY}{NEED EXPL}
-#'   \item{NAME}{NEED EXPL}
-#'   \item{N_TURBINES}{NEED EXPL}
-#'   \item{POWER_MW}{NEED EXPL}
-#'   \item{STATUS}{NEED EXPL}
-#'   \item{YEAR}{NEED EXPL}
-#'   \item{COAST_DIST_M}{NEED EXPL}
-#'   \item{AREA_SQKM}{NEED EXPL}
-#'   \item{NOTES}{NEED EXPL}
-#'   \item{Shape_Length}{NEED EXPL}
-#'   \item{Shape_Area}{NEED EXPL}
+#'   \item{COUNTRY}{Country.}
+#'   \item{NAME}{Wind-farm name.}
+#'   \item{N_TURBINES}{Number of turbines.}
+#'   \item{POWER_MW}{Installed capacity (MW).}
+#'   \item{STATUS}{Development status.}
+#'   \item{YEAR}{Year (commissioning or status year).}
+#'   \item{COAST_DIST_M}{Distance to the coast (m).}
+#'   \item{AREA_SQKM}{Area (km\eqn{^2}).}
+#'   \item{NOTES}{Notes.}
+#'   \item{Shape_Length}{Polygon perimeter (m).}
+#'   \item{Shape_Area}{Polygon area (m\eqn{^2}).}
 #' }
-#' @source NEED EXPL
+#' @source Wind-farm footprints prepared for the Whinnyfold example (EMODnet).
 #' @keywords internal
 "ORDpoly_example_wfold"
 
-#' DBS_map_example.R
+#' DBS_map_example
 #'
-#' NEED EXPL
+#' Example distance-by-sea raster for Whinnyfold without ORDs, as produced
+#' by \code{calc_dist_restricted()} in the "Create a distance-decay map"
+#' article.
 #'
-#' @format list of "raster" with the values of a raster in a matrix; and "metadata" with the extent and resolution to build back the raster in memory.
+#' @format A list with two elements, used to rebuild the raster in memory:
 #' \describe{
-#'   \item{matrix}{matrix of pixel values}
-#'   \item{metadata}{List of metadata: extent, resolution, and CRS.}
+#'   \item{matrix}{Matrix of cell values.}
+#'   \item{metadata}{List of metadata: extent, resolution and CRS.}
 #' }
 #' @source Generated from "DBS_map.tif".
 #' @keywords internal
 "DBS_map_example"
 
-#' DBS_withORDs_example.R
+#' DBS_withORDs_example
 #'
-#' NEED EXPL
+#' Example distance-by-sea raster for Whinnyfold with ORD footprints and
+#' buffers treated as obstructions, as produced by
+#' \code{calc_dist_restricted()} in the "Create a distance-decay map"
+#' article.
 #'
-#' @format list of "raster" with the values of a raster in a matrix; and "metadata" with the extent and resolution to build back the raster in memory.
+#' @format A list with two elements, used to rebuild the raster in memory:
 #' \describe{
-#'   \item{matrix}{matrix of pixel values}
-#'   \item{metadata}{List of metadata: extent, resolution, and CRS.}
+#'   \item{matrix}{Matrix of cell values.}
+#'   \item{metadata}{List of metadata: extent, resolution and CRS.}
 #' }
 #' @source Generated from "DBS_withORDs.tif".
 #' @keywords internal
@@ -407,16 +461,18 @@
 
 #' example_lists_calibration_dd
 #'
-#' NEED EXPL
+#' Example input lists for a calibration run (no ORDs) of kittiwakes at
+#' Buchan Ness to Collieston Coast SPA (UK9002491), Whinnyfold
+#' distance-decay example.
 #'
-#' @format A list NEED EXPL
+#' @format A named list with 4 elements:
 #' \describe{
-#'   \item{\code{switches}}{A list NEED EXPL}
-#'   \item{\code{Par}}{A list NEED EXPL}
-#'   \item{\code{modPar}}{A list NEED EXPL}
-#'   \item{\code{ordPar}}{A list NEED EXPL}
+#'   \item{\code{switches}}{A list of run options, with \code{modelmode = "calibration"}.}
+#'   \item{\code{Par}}{A list of biological and simulation parameters.}
+#'   \item{\code{modPar}}{A list of model environment, replicate and output settings.}
+#'   \item{\code{ordPar}}{A list of ORD settings (empty for calibration).}
 #' }
-#' @source NEED EXPL
+#' @source Created in \code{data-raw/example_lists_calibration_dd.R}.
 #' @keywords internal
 "example_lists_calibration_dd"
 
@@ -424,12 +480,14 @@
 
 #' UK9002491_bysea_3035
 #'
-#' NEED EXPL
+#' Distance by sea (km) from the Buchan Ness to Collieston Coast SPA
+#' (UK9002491) colony to each sea cell, avoiding land, on the 1 km EPSG:3035
+#' grid. Used as \code{fltdist_base} in the distance-decay kittiwake example.
 #'
-#' @format list of "raster" with the values of a raster in a matrix; and "metadata" with the extent and resolution to build back the raster in memory.
+#' @format A list with two elements, used to rebuild the raster in memory:
 #' \describe{
-#'   \item{matrix}{matrix of pixel values}
-#'   \item{metadata}{List of metadata: extent, resolution, and CRS.}
+#'   \item{matrix}{Matrix of cell values.}
+#'   \item{metadata}{List of metadata: extent, resolution and CRS.}
 #' }
 #' @source Generated from "UK9002491_bysea_3035.tif".
 #' @keywords internal
@@ -438,42 +496,47 @@
 
 #' BrdData_example_dd
 #'
-#' NEED EXPL
+#' Kittiwake bird-distribution map for Whinnyfold, made with the
+#' distance-decay function (see "Create a distance-decay map"). Stored as a
+#' matrix plus metadata and rebuilt with \code{get_example_brddata("dd")}.
 #'
-#' @format list of "raster" with the values of a raster in a matrix; and "metadata" with the extent and resolution to build back the raster in memory.
+#' @format A list with two elements, used to rebuild the raster in memory:
 #' \describe{
-#'   \item{matrix}{matrix of pixel values}
-#'   \item{metadata}{List of metadata: extent, resolution, and CRS.}
+#'   \item{matrix}{Matrix of cell values.}
+#'   \item{metadata}{List of metadata: extent, resolution and CRS.}
 #' }
-#' @source NEED EXPL
+#' @source Generated with \code{calc_birddensmap_dd_pinhalf()}.
 #' @keywords internal
 "BrdData_example_dd"
 
 #' frgcompdata_example_dd
 #'
-#' NEED EXPL
+#' Foraging-competition map for the Whinnyfold distance-decay example: the
+#' distribution of kittiwakes from other colonies that may compete with the
+#' modelled colony. Rebuilt with \code{get_example_frgcompdata("dd")}.
 #'
-#' @format list of "raster" with the values of a raster in a matrix; and "metadata" with the extent and resolution to build back the raster in memory.
+#' @format A list with two elements, used to rebuild the raster in memory:
 #' \describe{
-#'   \item{matrix}{matrix of pixel values}
-#'   \item{metadata}{List of metadata: extent, resolution, and CRS.}
+#'   \item{matrix}{Matrix of cell values.}
+#'   \item{metadata}{List of metadata: extent, resolution and CRS.}
 #' }
-#' @source NEED EXPL
+#' @source SEANSE competition maps.
 #' @keywords internal
 "frgcompdata_example_dd"
 
 #' example_lists_dd
 #'
-#' NEED EXPL
+#' Example input lists for a scenario run of kittiwakes at Buchan Ness to
+#' Collieston Coast SPA (UK9002491), Whinnyfold distance-decay example.
 #'
-#' @format A list NEED EXPL
+#' @format A named list with 4 elements:
 #' \describe{
-#'   \item{\code{switches}}{A list NEED EXPL}
-#'   \item{\code{Par}}{A list NEED EXPL}
-#'   \item{\code{modPar}}{A list NEED EXPL}
-#'   \item{\code{ordPar}}{A list NEED EXPL}
+#'   \item{\code{switches}}{A list of run options (see Switches in the seabORD inputs article).}
+#'   \item{\code{Par}}{A list of biological and simulation parameters.}
+#'   \item{\code{modPar}}{A list of model environment, replicate and output settings.}
+#'   \item{\code{ordPar}}{A list of ORD selection and buffer settings.}
 #' }
-#' @source NEED EXPL
+#' @source Created in \code{data-raw/example_lists_dd.R}.
 #' @keywords internal
 "example_lists_dd"
 

@@ -11,9 +11,9 @@ get_example_switches(type = NULL)
 Available options are:
 \itemize{
 \item \code{NULL}: Standard scenario example.
-\item \code{"dd"}: Density-dependence scenario example.
+\item \code{"dd"}: distance-decay scenario example.
 \item \code{"cal"}: Standard calibration example.
-\item \code{"cal_dd"}: Density-dependence calibration example.
+\item \code{"cal_dd"}: distance-decay calibration example.
 }}
 }
 \value{
