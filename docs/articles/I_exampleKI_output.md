@@ -176,7 +176,7 @@ dplyr::glimpse(head(sbordout$output_c0$data))
 #> $ ChicksPerNest   <dbl> 0.6024845, 0.5731539, 0.6252588, 0.6024845, 0.6252588,…
 ```
 
-Conceivably, the number of surviving chicks across scenario runs at the
+As expected, the number of surviving chicks across scenario runs at the
 end of the simulation (N_alive_ch), will be lower than that for baseline
 runs…
 

@@ -417,7 +417,7 @@ Competition distribution map i.e., the distribution of conspecifics from
 surrounding colonies which may interact with the colony/SPA being
 simulated. This is used throughout the model to estimate how competition
 from other colonies influences intake rate at different foraging sites.
-It uses the built-in dataset get_frgcompdata_example().
+It uses the built-in dataset get_example_frgcompdata().
 
 ``` r
 

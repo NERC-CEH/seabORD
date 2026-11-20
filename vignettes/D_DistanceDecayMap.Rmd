@@ -1,8 +1,8 @@
 ---
-title: "Create a distance-decay-map"
+title: "Create a distance-decay map"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Create a distance-decay-map}
+  %\VignetteIndexEntry{Create a distance-decay map}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 bibliography: references.bib
@@ -20,13 +20,13 @@ knitr::opts_chunk$set(
 library(seabORD)
 ```
 
-# Introduction to distance-decay-maps
+# Introduction to distance-decay maps
 
 Throughout this vignette, Offshore Renewable Developments (ORDs) refer to offshore wind farm footprints and associated infrastructure.
 
 In cases where there is no local GPS data available users are recommended to estimate a bird density based on a distance-decay function, and use this as their bird distribution map in the model.
 
-In the previous version of seabORD, which ran on MATLAB, the parameters to be used for creating your density-decay map would be specified in the interface. This is no longer incorporated within the code and users need to produce their own map.
+In the previous version of seabORD, which ran on MATLAB, the parameters to be used for creating your distance-decay map would be specified in the interface. This is no longer incorporated within the code and users need to produce their own map.
 
 We provide an example here of how this can be done, using similar parameters to those within the old version of seabORD and the Cumulative Effects Framework (CEF).
 
@@ -34,12 +34,12 @@ We also demonstrate how to assess the potential displacement that will occur giv
 
 This example is for kittiwakes at the Whinnyfold colony near Aberdeen, and the ORDs used are Aberdeen Bay, Hywind and Kincardine, but it should be relatively straightforward to implement this code with your own colony and wind farm footprints, as all you will need to supply is the colony coordinates and your own set of shapefiles for the ORDs.
 
-**PLEASE NOTE** that the parameters we have used in the distance decay map creation (foraging range, "fr", and percentage in foraging range, "pinfr") are just an example and you will need to make your own judgments here based on existing knowledge of the species and the locality.
+**PLEASE NOTE** that the parameters we have used in the distance-decay map creation (foraging range, "fr", and percentage in foraging range, "pinfr") are just an example and you will need to make your own judgments here based on existing knowledge of the species and the locality.
 
 This example will include the following steps:
 
 1.  DBS (Distance By Sea) map
-2.  Distance decay map
+2.  distance-decay map
 3.  Plotting
 4.  Interaction assessment
 
@@ -98,9 +98,9 @@ example_DBS_map <- seabORD::get_example_DBS_map()
 seabORD::plot_DBS_map(DBS_map = example_DBS_map)
 ```
 
-## 2. Distance decay map
+## 2. distance-decay map
 
-Now that we have our distance-by-sea map we have our constituent inputs ready to create the distance decay map.
+Now that we have our distance-by-sea map we have our constituent inputs ready to create the distance-decay map.
 
 The inputs which it takes are as follows:
 
@@ -111,7 +111,7 @@ The inputs which it takes are as follows:
 The function then returns a raster containing the distance-decay-map.
 
 ```{r, fig.alt="Distance By Sea map showing the sea-route distance from the Whinnyfold colony without offshore renewable developments"}
-# Set your parameter inputs for distance decay map function:
+# Set your parameter inputs for distance-decay map function:
 dmap <- example_DBS_map
 fr <- 150 # set as something sensible for this speces
 pinhalf <- 0.95 # value between 0 and 1
@@ -127,7 +127,7 @@ seabORD::plot_DD_map(DD_map = example_DD_map,
 
 ## 3. Plotting
 
-Now that we have made the density decay map, let's plot it with the ORD footprints to check that they overlap.
+Now that we have made the distance-decay map, let's plot it with the ORD footprints to check that they overlap.
 
 You can use the example ORDs
 

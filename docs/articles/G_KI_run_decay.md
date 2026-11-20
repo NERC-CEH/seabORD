@@ -1,4 +1,4 @@
-# Kittiwake case - with distance decay maps
+# Kittiwake Example - Distance-Decay
 
 Load the **seabORD** package before running the examples below. If you
 have not yet installed the package, please follow the [Installing
@@ -77,7 +77,7 @@ These are Kittiwake specific parameters for this run
 spdat_example  <- seabORD::get_example_spdat()
 ```
 
-##### BrdData (created with a distance decay function)
+##### BrdData (created with a distance-decay function)
 
 See the step-by-step guide [**Create a distance-decay
 map**](https://nerc-ceh.github.io/seabORD/articles/D_DistanceDecayMap.html)
@@ -403,7 +403,7 @@ In this example we will run 1 scenario run (wind farm footprints
 included) with a prey value of 174, the upper end of the calibrated
 range.
 
-#### Parameters sets for the scenario run
+#### Parameter sets for the scenario run
 
 ##### Par
 

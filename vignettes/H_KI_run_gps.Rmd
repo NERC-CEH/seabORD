@@ -1,8 +1,8 @@
 ---
-title: "Kittiwake case - with GPS maps"
+title: "Kittiwake Example - GPS"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Kittiwake case - with GPS maps}
+  %\VignetteIndexEntry{Kittiwake Example - GPS}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -33,7 +33,7 @@ The workflow consists of two main steps:
 
 # Case specific spatial inputs
 
-Get the input parameters that you will use in the calibration and actual run ([more information here](https://nerc-ceh.github.io/seabORD_pkg/articles/C_KI_inputs.html)).
+Get the input parameters that you will use in the calibration and actual run ([more information here](https://nerc-ceh.github.io/seabORD/articles/C_seabord_inputs.html)).
 
 #### seamask
 
@@ -164,7 +164,7 @@ seabORD::check_calibration_inputs(
 
 #### ordPar
 
-ordPar should be empty, as there doesn't need to be as we are only running baseline runs with no ORDs included.
+ordPar should be empty, as we are only running baseline runs with no ORDs included.
 
 ```{r}
 ordPar_example <-  seabORD::get_example_ordPar(type = "cal")
@@ -365,7 +365,7 @@ switches_example$saverds <- TRUE
 
 # Running seabORD
 
-Now that all the inputs are ready we can run the model using.
+Now that all the inputs are ready we can run the model.
 
 seabORD runs including wind farms and full populations can take a while to run - even with a relatively small population of \~ 3,000 pairs.
 

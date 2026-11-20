@@ -43,7 +43,7 @@ Figure 1 below provides a view of how the model is applied in practice and how i
 
 ## Model structure
 
-The seabORD code is written in **R** and is [available on GitHub](https://github.com/NERC-CEH/seabORD_pkg).
+The seabORD code is written in **R** and is [available on GitHub](https://github.com/NERC-CEH/seabORD).
 
 The model consists of two main stages (see Figure 2):
 

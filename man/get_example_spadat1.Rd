@@ -33,7 +33,7 @@ Corresponding SPA designation information can be retrieved with
 \code{\link[=get_example_spadat2]{get_example_spadat2()}}.
 
 See the package input vignette for an example:
-\code{vignette("C_KI_inputs", package = "seabORD")}.
+\code{vignette("C_seabord_inputs", package = "seabORD")}.
 }
 \examples{
 # Load coordinates for the standard example SPA

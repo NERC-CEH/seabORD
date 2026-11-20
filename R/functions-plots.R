@@ -1410,7 +1410,7 @@ plot_BirdFlightMap <- function(
 #'
 #' @param sbordout A seabORD calibration-output object containing
 #'   `output_a0$data` and `output_c0$data`.
-#' @param calibration A data frame returned by [find_calibration_range()].
+#' @param calibration A data frame returned by [calc_calibration_range()].
 #'   It must contain `Prey` and `overlap` columns identifying prey values that
 #'   satisfy both the adult and chick calibration criteria.
 #' @param masslower Numeric scalar giving the lower acceptable bound for
@@ -1450,7 +1450,7 @@ plot_BirdFlightMap <- function(
 #' \dontrun{
 #' sbordout <- get_example_output("cal_dd")
 #'
-#' calibration <- find_calibration_range(
+#' calibration <- calc_calibration_range(
 #'   sbordout = sbordout,
 #'   masslower = 0.09,
 #'   massupper = 0.11,
@@ -1465,7 +1465,7 @@ plot_BirdFlightMap <- function(
 #' }
 #'
 #' @seealso
-#' [find_calibration_range()] for identifying prey values that satisfy the
+#' [calc_calibration_range()] for identifying prey values that satisfy the
 #' calibration criteria and [get_example_output()] for loading example
 #' calibration output.
 #'

@@ -1,6 +1,6 @@
-# Create a distance-decay-map
+# Create a distance-decay map
 
-## Introduction to distance-decay-maps
+## Introduction to distance-decay maps
 
 Throughout this vignette, Offshore Renewable Developments (ORDs) refer
 to offshore wind farm footprints and associated infrastructure.
@@ -10,9 +10,9 @@ recommended to estimate a bird density based on a distance-decay
 function, and use this as their bird distribution map in the model.
 
 In the previous version of seabORD, which ran on MATLAB, the parameters
-to be used for creating your density-decay map would be specified in the
-interface. This is no longer incorporated within the code and users need
-to produce their own map.
+to be used for creating your distance-decay map would be specified in
+the interface. This is no longer incorporated within the code and users
+need to produce their own map.
 
 We provide an example here of how this can be done, using similar
 parameters to those within the old version of seabORD and the Cumulative
@@ -28,7 +28,7 @@ be relatively straightforward to implement this code with your own
 colony and wind farm footprints, as all you will need to supply is the
 colony coordinates and your own set of shapefiles for the ORDs.
 
-**PLEASE NOTE** that the parameters we have used in the distance decay
+**PLEASE NOTE** that the parameters we have used in the distance-decay
 map creation (foraging range, “fr”, and percentage in foraging range,
 “pinfr”) are just an example and you will need to make your own
 judgments here based on existing knowledge of the species and the
@@ -37,7 +37,7 @@ locality.
 This example will include the following steps:
 
 1.  DBS (Distance By Sea) map
-2.  Distance decay map
+2.  distance-decay map
 3.  Plotting
 4.  Interaction assessment
 
@@ -119,10 +119,10 @@ seabORD::plot_DBS_map(DBS_map = example_DBS_map)
 colony without offshore renewable
 developments](D_DistanceDecayMap_files/figure-html/unnamed-chunk-5-1.png)
 
-### 2. Distance decay map
+### 2. distance-decay map
 
 Now that we have our distance-by-sea map we have our constituent inputs
-ready to create the distance decay map.
+ready to create the distance-decay map.
 
 The inputs which it takes are as follows:
 
@@ -135,7 +135,7 @@ The function then returns a raster containing the distance-decay-map.
 
 ``` r
 
-# Set your parameter inputs for distance decay map function:
+# Set your parameter inputs for distance-decay map function:
 dmap <- example_DBS_map
 fr <- 150 # set as something sensible for this speces
 pinhalf <- 0.95 # value between 0 and 1
@@ -155,7 +155,7 @@ developments](D_DistanceDecayMap_files/figure-html/unnamed-chunk-6-1.png)
 
 ### 3. Plotting
 
-Now that we have made the density decay map, let’s plot it with the ORD
+Now that we have made the distance-decay map, let’s plot it with the ORD
 footprints to check that they overlap.
 
 You can use the example ORDs

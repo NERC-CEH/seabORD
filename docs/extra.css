@@ -1,5 +1,5 @@
 /* Hide the source-file line at the top of articles */
-.page-header .source {
+.page-header small, small.dont-index{
   display: none;
 }
 

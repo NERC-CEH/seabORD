@@ -160,7 +160,7 @@ set_crop_extent_colony <- function(
 #'
 #' See the package input vignette for a description of the input objects
 #' required by [seabord()]:
-#' \code{vignette("C_KI_inputs", package = "seabORD")}.
+#' \code{vignette("C_seabord_inputs", package = "seabORD")}.
 #'
 #' @examples
 #' # Load parameters for the standard scenario example
@@ -217,7 +217,7 @@ get_example_par <- function(type = NULL) {
 #'
 #' See the package input vignette for a description of the input objects
 #' required by [seabord()]:
-#' \code{vignette("C_KI_inputs", package = "seabORD")}.
+#' \code{vignette("C_seabord_inputs", package = "seabORD")}.
 #'
 #' @examples
 #' # Load model parameters for the standard scenario example
@@ -273,7 +273,7 @@ get_example_modpar <- function(type = NULL) {
 #'
 #' See the package input vignette for a description of the input objects
 #' required by [seabord()]:
-#' \code{vignette("C_KI_inputs", package = "seabORD")}.
+#' \code{vignette("C_seabord_inputs", package = "seabORD")}.
 #'
 #' @examples
 #' # Load ORD parameters for the standard scenario example
@@ -329,7 +329,7 @@ get_example_ordPar <- function(type = NULL) {
 #'
 #' See the package input vignette for a description of the input objects
 #' required by [seabord()]:
-#' \code{vignette("C_KI_inputs", package = "seabORD")}.
+#' \code{vignette("C_seabord_inputs", package = "seabORD")}.
 #'
 #' @examples
 #' # Load switches for the standard scenario example
@@ -377,7 +377,7 @@ get_example_switches <- function(type = NULL) {
 #' for seabORD simulations.
 #'
 #' See the package input vignette for an example:
-#' \code{vignette("C_KI_inputs", package = "seabORD")}.
+#' \code{vignette("C_seabord_inputs", package = "seabORD")}.
 #'
 #' @examples
 #' # Load the example flight-grid correction object
@@ -418,7 +418,7 @@ get_example_fgc_3035 <- function(){
 #' the `ORDpoly` argument to [seabord()].
 #'
 #' See the package input vignette for an example:
-#' \code{vignette("C_KI_inputs", package = "seabORD")}.
+#' \code{vignette("C_seabord_inputs", package = "seabORD")}.
 #'
 #' @examples
 #' # Load polygons for the standard scenario example
@@ -469,7 +469,7 @@ get_example_ORDpoly <- function(type = NULL) {
 #' [seabord()].
 #'
 #' See the package input vignette for an example:
-#' \code{vignette("C_KI_inputs", package = "seabORD")}.
+#' \code{vignette("C_seabord_inputs", package = "seabORD")}.
 #'
 #' @examples
 #' # Load the example sea mask
@@ -534,7 +534,7 @@ get_example_seamask <- function(){
 #' [get_example_spadat2()].
 #'
 #' See the package input vignette for an example:
-#' \code{vignette("C_KI_inputs", package = "seabORD")}.
+#' \code{vignette("C_seabord_inputs", package = "seabORD")}.
 #'
 #' @examples
 #' # Load coordinates for the standard example SPA
@@ -607,7 +607,7 @@ get_example_spadat1 <- function(type = NULL) {
 #' [get_example_spadat1()].
 #'
 #' See the package input vignette for an example:
-#' \code{vignette("C_KI_inputs", package = "seabORD")}.
+#' \code{vignette("C_seabord_inputs", package = "seabORD")}.
 #'
 #' @examples
 #' # Load designation data for the standard example SPA
@@ -657,7 +657,7 @@ get_example_spadat2 <- function(type = NULL) {
 #' The returned object can be supplied as the `spdat` argument to [seabord()].
 #'
 #' See the package input vignette for an example:
-#' \code{vignette("C_KI_inputs", package = "seabORD")}.
+#' \code{vignette("C_seabord_inputs", package = "seabORD")}.
 #'
 #' @examples
 #' # Load the example Kittiwake species parameters
@@ -707,7 +707,7 @@ get_example_spdat <- function() {
 #' [seabord()].
 #'
 #' See the package input vignette for an example:
-#' \code{vignette("C_KI_inputs", package = "seabORD")}.
+#' \code{vignette("C_seabord_inputs", package = "seabORD")}.
 #'
 #' @examples
 #' # Load the standard example bird-density raster
@@ -787,7 +787,7 @@ get_example_brddata <- function(type = NULL) {
 #' [seabord()].
 #'
 #' See the package input vignette for an example:
-#' \code{vignette("C_KI_inputs", package = "seabORD")}.
+#' \code{vignette("C_seabord_inputs", package = "seabORD")}.
 #'
 #' @examples
 #' # Load the standard example competition raster
@@ -869,7 +869,7 @@ get_example_frgcompdata <- function(type = NULL) {
 #' [seabord()].
 #'
 #' See the package input vignette for an example:
-#' \code{vignette("C_KI_inputs", package = "seabORD")}.
+#' \code{vignette("C_seabord_inputs", package = "seabORD")}.
 #'
 #' @examples
 #' # Load the standard example baseline flight-distance raster
@@ -953,7 +953,7 @@ get_example_fltdist_base <- function(type = NULL) {
 #' flight distances.
 #'
 #' See the package input vignette for related spatial inputs:
-#' \code{vignette("C_KI_inputs", package = "seabORD")}.
+#' \code{vignette("C_seabord_inputs", package = "seabORD")}.
 #'
 #' @examples
 #' \dontrun{

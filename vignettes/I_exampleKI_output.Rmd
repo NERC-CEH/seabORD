@@ -96,7 +96,7 @@ dplyr::glimpse(sbordout$output_c0$metadata)
 dplyr::glimpse(head(sbordout$output_c0$data))
 ```
 
-Conceivably, the number of surviving chicks across scenario runs at the end of the simulation (N_alive_ch), will be lower than that for baseline runs...
+As expected, the number of surviving chicks across scenario runs at the end of the simulation (N_alive_ch), will be lower than that for baseline runs...
 
 ```{r, fig.alt="Comparison of surviving kittiwake chicks at the end of matched baseline and offshore renewable development scenario simulations"}
 seabORD::plot_chick_survival(

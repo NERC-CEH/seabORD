@@ -50,7 +50,7 @@ In this article the main functions that drive the seabORD core processes are exp
 
 ## 1.1. Calculate the time taken to forage required amount (calc_foragecapture)
 
-A detailed description of `calc_foragecapture()`, including its arguments and returned values, can be found in the [function](https://nerc-ceh.github.io/seabORD_pkg/reference/calc_foragecapture.html) [reference](https://nerc-ceh.github.io/seabORD/reference/calc_foragecapture.html).
+A detailed description of `calc_foragecapture()`, including its arguments and returned values, can be found in the [function](https://nerc-ceh.github.io/seabORD/reference/calc_foragecapture.html) [reference](https://nerc-ceh.github.io/seabORD/reference/calc_foragecapture.html).
 
 This function estimates how quickly a bird can acquire prey while foraging. Food intake depends on both prey availability and the bird's maximum feeding rate [@holling1959]. The resulting capture curve is then used throughout the model to determine how long individuals must forage to meet their energetic demands.
 

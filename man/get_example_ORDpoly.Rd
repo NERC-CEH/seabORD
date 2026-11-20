@@ -28,7 +28,7 @@ footprints used by the selected example workflow. They can be supplied as
 the \code{ORDpoly} argument to \code{\link[=seabord]{seabord()}}.
 
 See the package input vignette for an example:
-\code{vignette("C_KI_inputs", package = "seabORD")}.
+\code{vignette("C_seabord_inputs", package = "seabORD")}.
 }
 \examples{
 # Load polygons for the standard scenario example

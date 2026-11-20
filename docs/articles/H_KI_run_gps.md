@@ -1,4 +1,4 @@
-# Kittiwake case - with GPS maps
+# Kittiwake Example - GPS
 
 Load the **seabORD** package before running the examples below. If you
 have not yet installed the package, please follow the [Installing
@@ -26,7 +26,7 @@ The workflow consists of two main steps:
 
 Get the input parameters that you will use in the calibration and actual
 run ([more information
-here](https://nerc-ceh.github.io/seabORD_pkg/articles/C_KI_inputs.html)).
+here](https://nerc-ceh.github.io/seabORD/articles/C_seabord_inputs.html)).
 
 ##### seamask
 
@@ -213,8 +213,8 @@ seabORD::check_calibration_inputs(
 
 ##### ordPar
 
-ordPar should be empty, as there doesn’t need to be as we are only
-running baseline runs with no ORDs included.
+ordPar should be empty, as we are only running baseline runs with no
+ORDs included.
 
 ``` r
 
@@ -516,7 +516,7 @@ switches_example$saverds <- TRUE
 
 ## Running seabORD
 
-Now that all the inputs are ready we can run the model using.
+Now that all the inputs are ready we can run the model.
 
 seabORD runs including wind farms and full populations can take a while
 to run - even with a relatively small population of ~ 3,000 pairs.

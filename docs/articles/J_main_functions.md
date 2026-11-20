@@ -47,7 +47,7 @@ which they are used:
 A detailed description of
 [`calc_foragecapture()`](https://nerc-ceh.github.io/seabORD/reference/calc_foragecapture.md),
 including its arguments and returned values, can be found in the
-[function](https://nerc-ceh.github.io/seabORD_pkg/reference/calc_foragecapture.html)
+[function](https://nerc-ceh.github.io/seabORD/reference/calc_foragecapture.html)
 [reference](https://nerc-ceh.github.io/seabORD/reference/calc_foragecapture.html).
 
 This function estimates how quickly a bird can acquire prey while

@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Create a distance-decay-map • seabORD</title>
+<title>Create a distance-decay map • seabORD</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
 <link rel="icon" type="”image/svg+xml”" href="../favicon.svg">
 <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
@@ -16,7 +16,7 @@
 <script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><link href="../extra.css" rel="stylesheet">
-<meta property="og:title" content="Create a distance-decay-map">
+<meta property="og:title" content="Create a distance-decay map">
 <link rel="stylesheet" href="extra.css">
 </head>
 <body>
@@ -48,10 +48,10 @@
 <li class="active nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-examples" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">EXAMPLES</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-examples">
-<li><a class="dropdown-item" href="../articles/G_KI_run_decay.html">Kittiwake Example - Distance Decay</a></li>
+<li><a class="dropdown-item" href="../articles/G_KI_run_decay.html">Kittiwake Example - Distance-Decay</a></li>
     <li><a class="dropdown-item" href="../articles/H_KI_run_gps.html">Kittiwake Example - GPS</a></li>
     <li><a class="dropdown-item" href="../articles/I_exampleKI_output.html">Interpreting the Outputs</a></li>
-    <li><a class="dropdown-item" href="../articles/D_DistanceDecayMap.html">Create a distance-decay-map</a></li>
+    <li><a class="dropdown-item" href="../articles/D_DistanceDecayMap.html">Create a distance-decay map</a></li>
   </ul>
 </li>
 <li class="nav-item"><a class="nav-link" href="../reference/index.html">REFERENCE</a></li>
@@ -82,7 +82,7 @@
 
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-      <img src="../logo.png" class="logo" alt=""><h1>Create a distance-decay-map</h1>
+      <img src="../logo.png" class="logo" alt=""><h1>Create a distance-decay map</h1>
             
       
       <small class="dont-index">Source: <a href="https://github.com/NERC-CEH/seabORD/blob/HEAD/vignettes/D_DistanceDecayMap.Rmd" class="external-link"><code>vignettes/D_DistanceDecayMap.Rmd</code></a></small>
@@ -92,7 +92,7 @@
     
     
 <div class="section level2">
-<h2 id="introduction-to-distance-decay-maps">Introduction to distance-decay-maps<a class="anchor" aria-label="anchor" href="#introduction-to-distance-decay-maps"></a>
+<h2 id="introduction-to-distance-decay-maps">Introduction to distance-decay maps<a class="anchor" aria-label="anchor" href="#introduction-to-distance-decay-maps"></a>
 </h2>
 <p>Throughout this vignette, Offshore Renewable Developments (ORDs)
 refer to offshore wind farm footprints and associated
@@ -101,7 +101,7 @@ infrastructure.</p>
 recommended to estimate a bird density based on a distance-decay
 function, and use this as their bird distribution map in the model.</p>
 <p>In the previous version of seabORD, which ran on MATLAB, the
-parameters to be used for creating your density-decay map would be
+parameters to be used for creating your distance-decay map would be
 specified in the interface. This is no longer incorporated within the
 code and users need to produce their own map.</p>
 <p>We provide an example here of how this can be done, using similar
@@ -116,14 +116,14 @@ it should be relatively straightforward to implement this code with your
 own colony and wind farm footprints, as all you will need to supply is
 the colony coordinates and your own set of shapefiles for the ORDs.</p>
 <p><strong>PLEASE NOTE</strong> that the parameters we have used in the
-distance decay map creation (foraging range, “fr”, and percentage in
+distance-decay map creation (foraging range, “fr”, and percentage in
 foraging range, “pinfr”) are just an example and you will need to make
 your own judgments here based on existing knowledge of the species and
 the locality.</p>
 <p>This example will include the following steps:</p>
 <ol style="list-style-type: decimal">
 <li>DBS (Distance By Sea) map</li>
-<li>Distance decay map</li>
+<li>distance-decay map</li>
 <li>Plotting</li>
 <li>Interaction assessment</li>
 </ol>
@@ -183,10 +183,10 @@ use the provided one as example.</p>
 <p><img src="D_DistanceDecayMap_files/figure-html/unnamed-chunk-5-1.png" class="r-plt" alt="Distance By Sea map showing the sea-route distance from the Whinnyfold colony without offshore renewable developments" width="700"></p>
 </div>
 <div class="section level3">
-<h3 id="distance-decay-map">2. Distance decay map<a class="anchor" aria-label="anchor" href="#distance-decay-map"></a>
+<h3 id="distance-decay-map">2. distance-decay map<a class="anchor" aria-label="anchor" href="#distance-decay-map"></a>
 </h3>
 <p>Now that we have our distance-by-sea map we have our constituent
-inputs ready to create the distance decay map.</p>
+inputs ready to create the distance-decay map.</p>
 <p>The inputs which it takes are as follows:</p>
 <ol style="list-style-type: decimal">
 <li>
@@ -202,7 +202,7 @@ distribution) lies</li>
 <p>The function then returns a raster containing the
 distance-decay-map.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Set your parameter inputs for distance decay map function:</span></span>
+<code class="sourceCode R"><span><span class="co"># Set your parameter inputs for distance-decay map function:</span></span>
 <span><span class="va">dmap</span> <span class="op">&lt;-</span> <span class="va">example_DBS_map</span></span>
 <span><span class="va">fr</span> <span class="op">&lt;-</span> <span class="fl">150</span> <span class="co"># set as something sensible for this speces</span></span>
 <span><span class="va">pinhalf</span> <span class="op">&lt;-</span> <span class="fl">0.95</span> <span class="co"># value between 0 and 1</span></span>
@@ -219,7 +219,7 @@ distance-decay-map.</p>
 <div class="section level3">
 <h3 id="plotting">3. Plotting<a class="anchor" aria-label="anchor" href="#plotting"></a>
 </h3>
-<p>Now that we have made the density decay map, let’s plot it with the
+<p>Now that we have made the distance-decay map, let’s plot it with the
 ORD footprints to check that they overlap.</p>
 <p>You can use the example ORDs</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">

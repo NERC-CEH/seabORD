@@ -22,7 +22,7 @@ straight-line movement. It is used when calculating distance-by-sea routes
 for seabORD simulations.
 
 See the package input vignette for an example:
-\code{vignette("C_KI_inputs", package = "seabORD")}.
+\code{vignette("C_seabord_inputs", package = "seabORD")}.
 }
 \examples{
 # Load the example flight-grid correction object

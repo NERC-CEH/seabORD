@@ -58,5 +58,5 @@ The function performs one or more stochastic simulation replicates and returns s
 \details{
 Before running this function, all model inputs must be prepared.
 A complete description of the required input objects is provided in:
-\code{vignette("C_KI_inputs", package = "seabORD")}
+\code{vignette("C_seabord_inputs", package = "seabORD")}
 }

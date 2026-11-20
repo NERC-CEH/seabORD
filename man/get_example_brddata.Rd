@@ -34,7 +34,7 @@ The returned raster can be supplied as the \code{BrdData} argument to
 \code{\link[=seabord]{seabord()}}.
 
 See the package input vignette for an example:
-\code{vignette("C_KI_inputs", package = "seabORD")}.
+\code{vignette("C_seabord_inputs", package = "seabORD")}.
 }
 \examples{
 # Load the standard example bird-density raster

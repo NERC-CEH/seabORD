@@ -54,7 +54,6 @@ this project. Data used to parameterise the model were supported by
 UKCEH National Capability for UK Challenges programme NE/Y006208/1 and
 the Joint Nature Conservation Committee.
 
-## Licence
+## License
 
-This package is distributed under the **Creative Commons Attribution 4.0
-International license (CC BY 4.0)**
+Open Government License OGL-UK-3.0

@@ -33,7 +33,7 @@ as the `ORDpoly` argument to
 [`seabord()`](https://nerc-ceh.github.io/seabORD/reference/seabord.md).
 
 See the package input vignette for an example:
-`vignette("C_KI_inputs", package = "seabORD")`.
+[`vignette("C_seabord_inputs", package = "seabORD")`](https://nerc-ceh.github.io/seabORD/articles/C_seabord_inputs.md).
 
 ## See also
 

@@ -51,7 +51,7 @@ practice](images/Schematic_model_in_practice.png)
 ## Model structure
 
 The seabORD code is written in **R** and is [available on
-GitHub](https://github.com/NERC-CEH/seabORD_pkg).
+GitHub](https://github.com/NERC-CEH/seabORD).
 
 The model consists of two main stages (see Figure 2):
 

@@ -30,7 +30,7 @@ displacement and barrier probabilities, prey values, and scaling settings.
 
 See the package input vignette for a description of the input objects
 required by \code{\link[=seabord]{seabord()}}:
-\code{vignette("C_KI_inputs", package = "seabORD")}.
+\code{vignette("C_seabord_inputs", package = "seabORD")}.
 }
 \examples{
 # Load parameters for the standard scenario example

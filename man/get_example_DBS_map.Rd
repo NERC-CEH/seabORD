@@ -36,7 +36,7 @@ renewable development footprints alter available movement routes and
 flight distances.
 
 See the package input vignette for related spatial inputs:
-\code{vignette("C_KI_inputs", package = "seabORD")}.
+\code{vignette("C_seabord_inputs", package = "seabORD")}.
 }
 \examples{
 \dontrun{

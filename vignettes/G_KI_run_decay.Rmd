@@ -1,8 +1,8 @@
 ---
-title: "Kittiwake case - with distance decay maps"
+title: "Kittiwake Example - Distance-Decay"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Kittiwake case - with distance decay maps}
+  %\VignetteIndexEntry{Kittiwake Example - Distance-Decay}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -81,7 +81,7 @@ These are Kittiwake specific parameters for this run
 spdat_example  <- seabORD::get_example_spdat()
 ```
 
-#### BrdData (created with a distance decay function)
+#### BrdData (created with a distance-decay function)
 
 See the step-by-step guide [**Create a distance-decay map**](https://nerc-ceh.github.io/seabORD/articles/D_DistanceDecayMap.html) to see how this was created.
 
@@ -281,7 +281,7 @@ Now that we have run our calibration step and discerned the prey values resultin
 
 In this example we will run 1 scenario run (wind farm footprints included) with a prey value of 174, the upper end of the calibrated range.
 
-### Parameters sets for the scenario run
+### Parameter sets for the scenario run
 
 #### Par
 

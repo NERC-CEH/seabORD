@@ -236,7 +236,7 @@ seabORD::plot_brddata(brddata = example_brddata)
 
 ## FrgCompData
 
-Competition distribution map i.e., the distribution of conspecifics from surrounding colonies which may interact with the colony/SPA being simulated. This is used throughout the model to estimate how competition from other colonies influences intake rate at different foraging sites. It uses the built-in dataset get_frgcompdata_example().
+Competition distribution map i.e., the distribution of conspecifics from surrounding colonies which may interact with the colony/SPA being simulated. This is used throughout the model to estimate how competition from other colonies influences intake rate at different foraging sites. It uses the built-in dataset get_example_frgcompdata().
 
 ```{r}
 example_frgcompdata <- seabORD::get_example_frgcompdata()

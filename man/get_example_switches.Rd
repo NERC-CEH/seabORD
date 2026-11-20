@@ -31,7 +31,7 @@ debugging behaviour.
 
 See the package input vignette for a description of the input objects
 required by \code{\link[=seabord]{seabord()}}:
-\code{vignette("C_KI_inputs", package = "seabORD")}.
+\code{vignette("C_seabord_inputs", package = "seabORD")}.
 }
 \examples{
 # Load switches for the standard scenario example
