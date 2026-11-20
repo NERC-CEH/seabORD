@@ -21,7 +21,7 @@ value of \code{CoD} if the chick survives.
 \description{
 Chicks can be lost from other causes such as flooding, storms
 etc. This function calculates the probability of death and then uses rbinom
-to remove some chicks according to that probability.A fixed seasonal mortality rate is distributed evenly across all model time
+to remove some chicks according to that probability. A fixed seasonal mortality rate is distributed evenly across all model time
 steps, and a stochastic draw is used to determine whether mortality occurs  during the current time step.
 }
 \details{

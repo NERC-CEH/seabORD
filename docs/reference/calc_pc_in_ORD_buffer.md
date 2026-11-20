@@ -1,6 +1,6 @@
 # Calculate the percentage of a DD map within ORD buffer zones
 
-Calculates the proportion of a density decay (DD) map that falls within
+Calculates the proportion of a distance-decay (DD) map that falls within
 Offshore Renewable Development (ORD) footprints and their associated
 buffer zones.
 
@@ -14,7 +14,7 @@ calc_pc_in_ORD_buffer(DD_map, ORDpolys_with_buffer)
 
 - DD_map:
 
-  A normalised density decay `RasterLayer`.
+  A normalised distance-decay `RasterLayer`.
 
 - ORDpolys_with_buffer:
 

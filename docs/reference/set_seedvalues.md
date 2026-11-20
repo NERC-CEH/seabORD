@@ -2,7 +2,7 @@
 
 seabORD includes stochastic methods that rely on the generation of
 random numbers. To make the simulations reproducible we start the random
-number sequence using a seed. This function used the main, user-supplied
+number sequence using a seed. This function uses the main, user-supplied
 seed to create a table of other seeds that are used to initialise other
 functions. Each stream in the simulation uses a separate seed so that,
 for example, changes to the number of live birds does not affect the
@@ -28,7 +28,7 @@ set_seedvalues(initialseed, nstreams, Nreplicates)
 
 - Nreplicates:
 
-  The number simulation pairs in the run.
+  The number of simulation pairs in the run.
 
 ## Value
 

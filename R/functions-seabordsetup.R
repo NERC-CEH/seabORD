@@ -18,7 +18,7 @@
 #'
 #' @description seabORD includes stochastic methods that rely on the generation
 #' of random numbers. To make the simulations reproducible we start the random
-#' number sequence using a seed. This function used the main, user-supplied seed
+#' number sequence using a seed. This function uses the main, user-supplied seed
 #' to create a table of other seeds that are used to initialise other functions.
 #' Each stream in the simulation uses a separate seed so that, for example,
 #' changes to the number of live birds does not affect the sequence in another
@@ -28,7 +28,7 @@
 #'
 #' @param initialseed The user-supplied main seed.
 #' @param nstreams The number of different streams required.
-#' @param Nreplicates The number simulation pairs in the run.
+#' @param Nreplicates The number of simulation pairs in the run.
 #' @return A tibble with integer seed values for each stream and replicate
 #'   simulation pair.
 #'
@@ -85,7 +85,7 @@ set_seedvalues <- function(initialseed, nstreams, Nreplicates) {
 #' @param thisSpecies The two-letter code identifying the species of interest
 #'   (only works with one species in v2.0.0).
 #' @param Pwfde The probability of displacement across the population if
-#'   encountering an ORD,where 0 means no displacement.
+#'   encountering an ORD, where 0 means no displacement.
 #' @param Pwfbe The probability across the population of experiencing a barrier
 #'   effect when encountering an ORD. Only applies to birds who are displacement
 #'   susceptible.

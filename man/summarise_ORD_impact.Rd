@@ -2,7 +2,7 @@
 % Please edit documentation in R/functions-inputs_setup.R
 \name{summarise_ORD_impact}
 \alias{summarise_ORD_impact}
-\title{Summarise the impact of ORDs on a density decay map}
+\title{Summarise the impact of ORDs on a distance-decay map}
 \usage{
 summarise_ORD_impact(
   DD_map,
@@ -13,7 +13,7 @@ summarise_ORD_impact(
 )
 }
 \arguments{
-\item{DD_map}{A normalised density decay \code{RasterLayer}.}
+\item{DD_map}{A normalised distance-decay \code{RasterLayer}.}
 
 \item{ORDpolys_with_buffer}{An \code{sf} polygon object containing ORD
 footprints and associated buffer zones.}
@@ -42,12 +42,12 @@ ORDs.
 }
 }
 \description{
-Calculates the percentage of a density decay (DD) map contained
+Calculates the percentage of a distance-decay (DD) map contained
 within ORD footprints and buffer zones, together with the percentage
 affected by ORD barrier ("shadow") effects.
 }
 \details{
-If the density decay map is normalised to sum to one, both outputs
+If the distance-decay map is normalised to sum to one, both outputs
 can be interpreted directly as percentages of the total density
 distribution.
 }

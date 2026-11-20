@@ -162,7 +162,7 @@ calc_dd_pinfr_from_phalf <- function(phalf){ voptimise(y = phalf, fny = calc_dd_
 #' @param y A vector of numerical values
 #' @param fny A function with a single argument `x` that produces the value of `y` associated with `x`
 #' @param iv A vector of length two indicating the numerical range of values to optimize over
-#' @return A vector of numeric values of lengt `y` containing the value of `x` associated with each value of `y`
+#' @return A vector of numeric values of length `y` containing the value of `x` associated with each value of `y`
 #' @export
 voptimise <- function(y, fny, iv){
 

@@ -24,7 +24,7 @@
 - [`calc_strategy()`](https://nerc-ceh.github.io/seabORD/reference/calc_strategy.md)
   : Calculate the foraging strategy for the timestep
 - [`calc_foragecapture()`](https://nerc-ceh.github.io/seabORD/reference/calc_foragecapture.md)
-  : Calculate the time taken to forage required amount
+  : Calculate the time taken to forage the required amount
 - [`memoised_calc_foragecapture()`](https://nerc-ceh.github.io/seabORD/reference/memoised_calc_foragecapture.md)
   : Memoized Version of calc_foragecapture
 
@@ -115,7 +115,7 @@
 - [`calc_calibration_range()`](https://nerc-ceh.github.io/seabORD/reference/calc_calibration_range.md)
   : Identify prey values meeting calibration criteria
 - [`summarise_ORD_impact()`](https://nerc-ceh.github.io/seabORD/reference/summarise_ORD_impact.md)
-  : Summarise the impact of ORDs on a density decay map
+  : Summarise the impact of ORDs on a distance-decay map
 - [`check_calibration_inputs()`](https://nerc-ceh.github.io/seabORD/reference/check_calibration_inputs.md)
   : Check calibration input consistency
 

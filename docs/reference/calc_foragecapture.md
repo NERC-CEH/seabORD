@@ -1,4 +1,4 @@
-# Calculate the time taken to forage required amount
+# Calculate the time taken to forage the required amount
 
 Given the starting prey density and the competition for food, we need to
 estimate how long it would take a bird to gather the food it needs.

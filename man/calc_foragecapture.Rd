@@ -2,7 +2,7 @@
 % Please edit documentation in R/functions-seabordbirds.R
 \name{calc_foragecapture}
 \alias{calc_foragecapture}
-\title{Calculate the time taken to forage required amount}
+\title{Calculate the time taken to forage the required amount}
 \usage{
 calc_foragecapture(x0, h, a, maxt)
 }

@@ -421,7 +421,7 @@ calc_chickcare <- function(parent, ChickState, Opt_BM_chick, Species){
 #' @title Chick mortality as a result of other causes
 #' @description Chicks can be lost from other causes such as flooding, storms
 #'   etc. This function calculates the probability of death and then uses rbinom
-#'   to remove some chicks according to that probability.A fixed seasonal mortality rate is distributed evenly across all model time
+#'   to remove some chicks according to that probability. A fixed seasonal mortality rate is distributed evenly across all model time
 #'   steps, and a stochastic draw is used to determine whether mortality occurs  during the current time step.
 #' @param CoD Current cause of death. Typically `"none"` if the chick is alive.
 #' @param alive Indicator of whether the chick is currently alive (`1`) or dead
@@ -832,7 +832,7 @@ calc_strategy <- function(BM_condition, BM_adult_abdn, fmode, Fg, tf, tcapt, max
 }
 
 ################################################################################
-#' @title Calculate the time taken to forage required amount
+#' @title Calculate the time taken to forage the required amount
 #' @description Given the starting prey density and the competition for food, we
 #'   need to estimate how long it would take a bird to gather the food it needs.
 #'   Intake model: We assume that the relationship between prey quantity x and

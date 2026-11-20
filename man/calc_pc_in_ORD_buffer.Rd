@@ -7,7 +7,7 @@
 calc_pc_in_ORD_buffer(DD_map, ORDpolys_with_buffer)
 }
 \arguments{
-\item{DD_map}{A normalised density decay \code{RasterLayer}.}
+\item{DD_map}{A normalised distance-decay \code{RasterLayer}.}
 
 \item{ORDpolys_with_buffer}{An \code{sf} polygon object containing ORD
 footprints and buffer zones.}
@@ -17,7 +17,7 @@ A numeric value giving the percentage of the DD map contained
 within the supplied ORD polygons and buffers.
 }
 \description{
-Calculates the proportion of a density decay (DD) map that falls
+Calculates the proportion of a distance-decay (DD) map that falls
 within Offshore Renewable Development (ORD) footprints and their
 associated buffer zones.
 }

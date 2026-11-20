@@ -436,7 +436,7 @@ colonies](C_seabord_inputs_files/figure-html/unnamed-chunk-16-1.png)
 
 ### fltdist_base
 
-Flight distance by sea, without ORDs. See user guide for details.
+Flight distance by sea, without ORDs.
 
 ``` r
 

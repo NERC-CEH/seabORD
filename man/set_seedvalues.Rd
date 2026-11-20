@@ -11,7 +11,7 @@ set_seedvalues(initialseed, nstreams, Nreplicates)
 
 \item{nstreams}{The number of different streams required.}
 
-\item{Nreplicates}{The number simulation pairs in the run.}
+\item{Nreplicates}{The number of simulation pairs in the run.}
 }
 \value{
 A tibble with integer seed values for each stream and replicate
@@ -20,7 +20,7 @@ simulation pair.
 \description{
 seabORD includes stochastic methods that rely on the generation
 of random numbers. To make the simulations reproducible we start the random
-number sequence using a seed. This function used the main, user-supplied seed
+number sequence using a seed. This function uses the main, user-supplied seed
 to create a table of other seeds that are used to initialise other functions.
 Each stream in the simulation uses a separate seed so that, for example,
 changes to the number of live birds does not affect the sequence in another

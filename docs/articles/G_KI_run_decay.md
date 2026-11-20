@@ -2,7 +2,7 @@
 
 Load the **seabORD** package before running the examples below. If you
 have not yet installed the package, please follow the [Installing
-seabORD](https://nerc-ceh.github.io/seabORD_pkg/articles/A_installing_seabord.html)
+seabORD](https://nerc-ceh.github.io/seabORD/articles/A_installing_seabord.html)
 instructions first.
 
 ## Introduction & background
@@ -13,9 +13,8 @@ renewable developments (ORDs), **Hywind Scotland Pilot Park**,
 colony located at **Whinnyfold** within the **Buchan Ness to Collieston
 Coast SPA (UK9002491)**. Bird distribution is represented using density
 maps generated from a distance-decay function. If you are unfamiliar
-with this process, see the [*Creating Bird Density Maps Using a
-Distance-Decay
-Function*](https://nerc-ceh.github.io/seabORD/articles/D_DistanceDecayMap.html)
+with this process, see the [*density-decay
+map*](https://nerc-ceh.github.io/seabORD/articles/D_DistanceDecayMap.html)
 example for a step-by-step guide.
 
 The workflow consists of two main steps:
@@ -70,7 +69,7 @@ spadat2_example <- seabORD::get_example_spadat2(type = "dd")
 
 ##### spdat
 
-These are Kittiwake specific parameters for this run
+These are Kittiwake specific parameters for this run.
 
 ``` r
 
@@ -407,7 +406,7 @@ range.
 
 ##### Par
 
-NOTE: “NScalefactor” is **set to 1 meaning we are running with 100%**
+NOTE: “Nscalefactor” is **set to 1 meaning we are running with 100%**
 **of the population**, which is customary for scenario runs.
 
 ``` r

@@ -250,7 +250,7 @@ seabORD::plot_frgcompdata(frgcompdata = example_frgcompdata)
 
 ## fltdist_base
 
-Flight distance by sea, without ORDs. See user guide for details.
+Flight distance by sea, without ORDs.
 
 ```{r}
 example_fltdist_base <- seabORD::get_example_fltdist_base()

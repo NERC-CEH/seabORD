@@ -48,8 +48,8 @@
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-examples" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">EXAMPLES</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-examples">
-<li><a class="dropdown-item" href="../articles/G_KI_run_decay.html">Kittiwake Example - Distance-Decay</a></li>
-    <li><a class="dropdown-item" href="../articles/H_KI_run_gps.html">Kittiwake Example - GPS</a></li>
+<li><a class="dropdown-item" href="../articles/G_KI_run_decay.html">Kittiwake Example: Distance-Decay</a></li>
+    <li><a class="dropdown-item" href="../articles/H_KI_run_gps.html">Kittiwake Example: GPS</a></li>
     <li><a class="dropdown-item" href="../articles/I_exampleKI_output.html">Interpreting the Outputs</a></li>
     <li><a class="dropdown-item" href="../articles/D_DistanceDecayMap.html">Create a distance-decay map</a></li>
   </ul>
@@ -101,7 +101,7 @@ simulation in which they are used:</p>
 <ol style="list-style-type: decimal">
 <li>
 <p><strong><em>Foraging and adult behaviour</em></strong></p>
-<p>Calculate the required amount taken to forage required amount
+<p>Calculate the time taken to forage required amount
 (<code>calc_foragecapture</code>)</p>
 <p>Calculate the foraging strategy for the timestep
 (<code>calc_strategy</code>)</p>
@@ -118,7 +118,7 @@ simulation in which they are used:</p>
 </li>
 <li>
 <p><strong><em>Adult state update</em></strong></p>
-<p>Body mass increase for adult birds
+<p>Body mass change for adult birds
 (<code>calc_adultbmchange</code>)</p>
 <p>Calculate Daily Energy Requirement
 (<code>calc_adultdee</code>)</p>
@@ -133,8 +133,8 @@ simulation in which they are used:</p>
 <h2 id="foraging-and-adult-behaviour">1. Foraging and adult behaviour<a class="anchor" aria-label="anchor" href="#foraging-and-adult-behaviour"></a>
 </h2>
 <div class="section level3">
-<h3 id="calculate-the-time-taken-to-forage-required-amount-calc_foragecapture">1.1. Calculate the time taken to forage required amount
-(calc_foragecapture)<a class="anchor" aria-label="anchor" href="#calculate-the-time-taken-to-forage-required-amount-calc_foragecapture"></a>
+<h3 id="calculate-the-time-taken-to-forage-the-required-amount-calc_foragecapture">1.1. Calculate the time taken to forage the required amount
+(calc_foragecapture)<a class="anchor" aria-label="anchor" href="#calculate-the-time-taken-to-forage-the-required-amount-calc_foragecapture"></a>
 </h3>
 <p>A detailed description of <code><a href="../reference/calc_foragecapture.html">calc_foragecapture()</a></code>,
 including its arguments and returned values, can be found in the <a href="https://nerc-ceh.github.io/seabORD/reference/calc_foragecapture.html">function</a>
@@ -308,7 +308,7 @@ function therefore captures both the effect of chick condition on
 predation risk and the inherent randomness of mortality events.</p>
 <div class="section level4">
 <h4 id="example-1---proportion-of-chicks-in-poor-condition-bm_condition-dying-of-predation-cod-killed">Example 1 - Proportion of chicks in poor condition
-(<code>BM_condition</code>) dying of “predation”
+(<code>BM_condition</code>) dying of predation
 (<code>CoD = killed</code>)<a class="anchor" aria-label="anchor" href="#example-1---proportion-of-chicks-in-poor-condition-bm_condition-dying-of-predation-cod-killed"></a>
 </h4>
 <p>Puffin chicks in poor body condition (<code>BM_condition</code>) are

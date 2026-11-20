@@ -44,9 +44,9 @@ navbar:
     examples:
       text: "EXAMPLES"
       menu:
-        - text: "Kittiwake Example - Distance-Decay"
+        - text: "Kittiwake Example: Distance-Decay"
           href: articles/G_KI_run_decay.html
-        - text: "Kittiwake Example - GPS"
+        - text: "Kittiwake Example: GPS"
           href: articles/H_KI_run_gps.html
         - text: "Interpreting the Outputs"
           href: articles/I_exampleKI_output.html
@@ -155,7 +155,7 @@ home:
           - [Main Functions](articles/J_main_functions.html)
 
       license:
-        title: "license"
+        title: "licence"
         text: |
           [OGL-UK-3.0](LICENSE-text.html)
 

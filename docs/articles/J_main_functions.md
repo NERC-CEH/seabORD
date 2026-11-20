@@ -11,7 +11,7 @@ which they are used:
 
 1.  ***Foraging and adult behaviour***
 
-    Calculate the required amount taken to forage required amount
+    Calculate the time taken to forage required amount
     (`calc_foragecapture`)
 
     Calculate the foraging strategy for the timestep (`calc_strategy`)
@@ -30,7 +30,7 @@ which they are used:
 
 3.  ***Adult state update***
 
-    Body mass increase for adult birds (`calc_adultbmchange`)
+    Body mass change for adult birds (`calc_adultbmchange`)
 
     Calculate Daily Energy Requirement (`calc_adultdee`)
 
@@ -42,7 +42,7 @@ which they are used:
 
 ## 1. Foraging and adult behaviour
 
-### 1.1. Calculate the time taken to forage required amount (calc_foragecapture)
+### 1.1. Calculate the time taken to forage the required amount (calc_foragecapture)
 
 A detailed description of
 [`calc_foragecapture()`](https://nerc-ceh.github.io/seabORD/reference/calc_foragecapture.md),
@@ -232,7 +232,7 @@ individuals may survive or die in different simulation runs. The
 function therefore captures both the effect of chick condition on
 predation risk and the inherent randomness of mortality events.
 
-#### Example 1 - Proportion of chicks in poor condition (`BM_condition`) dying of “predation” (`CoD = killed`)
+#### Example 1 - Proportion of chicks in poor condition (`BM_condition`) dying of predation (`CoD = killed`)
 
 Puffin chicks in poor body condition (`BM_condition`) are assumed to be
 more vulnerable to predation (`CoD = killed`). Mortality is stochastic,

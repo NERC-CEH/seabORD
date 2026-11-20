@@ -32,4 +32,4 @@ This work was funded by (i) The Offshore Wind Evidence and Change programme, led
 
 ## License
 
-Open Government License OGL-UK-3.0
+This pacakge is distributed under the Open Government Licence v3.0 (OGL-UK-3.0)

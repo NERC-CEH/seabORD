@@ -111,11 +111,11 @@ set_ORD_buffer <- function(
 
 #' Calculate the percentage of a DD map within ORD buffer zones
 #'
-#' Calculates the proportion of a density decay (DD) map that falls
+#' Calculates the proportion of a distance-decay (DD) map that falls
 #' within Offshore Renewable Development (ORD) footprints and their
 #' associated buffer zones.
 #'
-#' @param DD_map A normalised density decay `RasterLayer`.
+#' @param DD_map A normalised distance-decay `RasterLayer`.
 #'
 #' @param ORDpolys_with_buffer An `sf` polygon object containing ORD
 #'   footprints and buffer zones.
@@ -162,13 +162,13 @@ calc_pc_in_ORD_buffer <- function(
 }
 
 
-#' Summarise the impact of ORDs on a density decay map
+#' Summarise the impact of ORDs on a distance-decay map
 #'
-#' Calculates the percentage of a density decay (DD) map contained
+#' Calculates the percentage of a distance-decay (DD) map contained
 #' within ORD footprints and buffer zones, together with the percentage
 #' affected by ORD barrier ("shadow") effects.
 #'
-#' @param DD_map A normalised density decay `RasterLayer`.
+#' @param DD_map A normalised distance-decay `RasterLayer`.
 #'
 #' @param ORDpolys_with_buffer An `sf` polygon object containing ORD
 #'   footprints and associated buffer zones.
@@ -197,7 +197,7 @@ calc_pc_in_ORD_buffer <- function(
 #' }
 #'
 #' @details
-#' If the density decay map is normalised to sum to one, both outputs
+#' If the distance-decay map is normalised to sum to one, both outputs
 #' can be interpreted directly as percentages of the total density
 #' distribution.
 #'

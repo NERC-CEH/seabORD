@@ -30,7 +30,7 @@ set_initialbirdtype(seed, Colonies, thisSpecies, Pwfde, Pwfbe)
 - Pwfde:
 
   The probability of displacement across the population if encountering
-  an ORD,where 0 means no displacement.
+  an ORD, where 0 means no displacement.
 
 - Pwfbe:
 

@@ -28,5 +28,5 @@ voptimise(y, fny, iv)
 
 ## Value
 
-A vector of numeric values of lengt `y` containing the value of `x`
+A vector of numeric values of length `y` containing the value of `x`
 associated with each value of `y`

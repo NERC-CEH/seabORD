@@ -17,7 +17,7 @@ interest in this simulation. Requires "code" with the colony codes and
 (only works with one species in v2.0.0).}
 
 \item{Pwfde}{The probability of displacement across the population if
-encountering an ORD,where 0 means no displacement.}
+encountering an ORD, where 0 means no displacement.}
 
 \item{Pwfbe}{The probability across the population of experiencing a barrier
 effect when encountering an ORD. Only applies to birds who are displacement

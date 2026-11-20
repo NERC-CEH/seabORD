@@ -56,7 +56,7 @@ spadat2_example <- seabORD::get_example_spadat2()
 
 ##### spdat
 
-These are Kittiwake specific parameters for this run
+These are Kittiwake specific parameters for this run.
 
 ``` r
 

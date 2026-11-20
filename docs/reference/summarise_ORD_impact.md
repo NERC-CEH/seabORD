@@ -1,6 +1,6 @@
-# Summarise the impact of ORDs on a density decay map
+# Summarise the impact of ORDs on a distance-decay map
 
-Calculates the percentage of a density decay (DD) map contained within
+Calculates the percentage of a distance-decay (DD) map contained within
 ORD footprints and buffer zones, together with the percentage affected
 by ORD barrier ("shadow") effects.
 
@@ -20,7 +20,7 @@ summarise_ORD_impact(
 
 - DD_map:
 
-  A normalised density decay `RasterLayer`.
+  A normalised distance-decay `RasterLayer`.
 
 - ORDpolys_with_buffer:
 
@@ -58,7 +58,7 @@ A data frame with two columns:
 
 ## Details
 
-If the density decay map is normalised to sum to one, both outputs can
+If the distance-decay map is normalised to sum to one, both outputs can
 be interpreted directly as percentages of the total density
 distribution.
 

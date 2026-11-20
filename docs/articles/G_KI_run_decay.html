@@ -48,8 +48,8 @@
 <li class="active nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-examples" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">EXAMPLES</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-examples">
-<li><a class="dropdown-item" href="../articles/G_KI_run_decay.html">Kittiwake Example - Distance-Decay</a></li>
-    <li><a class="dropdown-item" href="../articles/H_KI_run_gps.html">Kittiwake Example - GPS</a></li>
+<li><a class="dropdown-item" href="../articles/G_KI_run_decay.html">Kittiwake Example: Distance-Decay</a></li>
+    <li><a class="dropdown-item" href="../articles/H_KI_run_gps.html">Kittiwake Example: GPS</a></li>
     <li><a class="dropdown-item" href="../articles/I_exampleKI_output.html">Interpreting the Outputs</a></li>
     <li><a class="dropdown-item" href="../articles/D_DistanceDecayMap.html">Create a distance-decay map</a></li>
   </ul>
@@ -92,7 +92,7 @@
     
     
 <p>Load the <strong>seabORD</strong> package before running the examples
-below. If you have not yet installed the package, please follow the <a href="https://nerc-ceh.github.io/seabORD_pkg/articles/A_installing_seabord.html">Installing
+below. If you have not yet installed the package, please follow the <a href="https://nerc-ceh.github.io/seabORD/articles/A_installing_seabord.html">Installing
 seabORD</a> instructions first.</p>
 <div class="section level2">
 <h2 id="introduction-background">Introduction &amp; background<a class="anchor" aria-label="anchor" href="#introduction-background"></a>
@@ -104,8 +104,8 @@ Park</strong>, <strong>Aberdeen Offshore Wind Farm</strong>, and
 <strong>Whinnyfold</strong> within the <strong>Buchan Ness to Collieston
 Coast SPA (UK9002491)</strong>. Bird distribution is represented using
 density maps generated from a distance-decay function. If you are
-unfamiliar with this process, see the <a href="https://nerc-ceh.github.io/seabORD/articles/D_DistanceDecayMap.html" style="font-size: 12pt;"><em>Creating Bird Density Maps Using a
-Distance-Decay Function</em></a> example for a step-by-step guide.</p>
+unfamiliar with this process, see the <a href="https://nerc-ceh.github.io/seabORD/articles/D_DistanceDecayMap.html" style="font-size: 12pt;"><em>density-decay map</em></a> example for a
+step-by-step guide.</p>
 <p>The workflow consists of two main steps:</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>Model calibration</strong> – determine suitable prey
@@ -151,7 +151,7 @@ information here</a>).</p>
 <div class="section level5">
 <h5 id="spdat">spdat<a class="anchor" aria-label="anchor" href="#spdat"></a>
 </h5>
-<p>These are Kittiwake specific parameters for this run</p>
+<p>These are Kittiwake specific parameters for this run.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">spdat_example</span>  <span class="op">&lt;-</span> <span class="fu">seabORD</span><span class="fu">::</span><span class="fu"><a href="../reference/get_example_spdat.html">get_example_spdat</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -440,7 +440,7 @@ range.</p>
 <div class="section level5">
 <h5 id="par-1">Par<a class="anchor" aria-label="anchor" href="#par-1"></a>
 </h5>
-<p>NOTE: “NScalefactor” is <strong>set to 1 meaning we are running with
+<p>NOTE: “Nscalefactor” is <strong>set to 1 meaning we are running with
 100%</strong> <strong>of the population</strong>, which is customary for
 scenario runs.</p>
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">

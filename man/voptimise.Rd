@@ -14,7 +14,7 @@ voptimise(y, fny, iv)
 \item{iv}{A vector of length two indicating the numerical range of values to optimize over}
 }
 \value{
-A vector of numeric values of lengt \code{y} containing the value of \code{x} associated with each value of \code{y}
+A vector of numeric values of length \code{y} containing the value of \code{x} associated with each value of \code{y}
 }
 \description{
 Use numerical optimisation to give the value of \code{x} associated with each element of a vector \code{y}, where \code{y = fny(x)} for a specified function \code{fny}
