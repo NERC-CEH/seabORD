@@ -1,0 +1,391 @@
+---
+title: "Kittiwake Example - GPS"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Kittiwake Example - GPS}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+Load the **seabORD** package before running the examples below. If you have not yet installed the package, please follow the [Installing seabORD](https://nerc-ceh.github.io/seabORD/articles/A_installing_seabord.html) instructions first.
+
+```{r setup, warning = FALSE, message = FALSE, echo=FALSE, eval=FALSE}
+#load seabORD
+library(seabORD)
+```
+
+# Introduction & background
+
+In this example, we simulate the potential impacts of two offshore renewable developments (ORDs), **Inch Cape Wind Farm** and **Neart na Gaoithe Wind Farm**, on a kittiwake colony on the **Isle of May** within the **Forth Islands SPA (UK9004171)**. Bird distribution is represented using GPS maps.
+
+The workflow consists of two main steps:
+
+1.  **Model calibration** – determine suitable prey density values by running baseline simulations without ORDs.
+
+2.  **ORDs simulations** – use the calibrated prey densities to assess the potential impacts of offshore renewable developments (ORDs) on adult and chick performance.
+
+# Case specific spatial inputs
+
+Get the input parameters that you will use in the calibration and actual run ([more information here](https://nerc-ceh.github.io/seabORD/articles/C_seabord_inputs.html)).
+
+#### seamask
+
+```{r}
+seamask_example <- seabORD::get_example_seamask()
+```
+
+```{r, echo=FALSE, fig.alt="Map distinguishing sea cells from land cells in the seabORD example study area"}
+seabORD::plot_seamask(seamask = seamask_example)
+```
+
+#### spadat1
+
+In this case study the exact colony location is at (-2.564, 56.186).
+
+```{r}
+spadat1_example <- seabORD::get_example_spadat1()
+```
+
+#### spadat2
+
+```{r}
+spadat2_example <- seabORD::get_example_spadat2()
+```
+
+#### spdat
+
+These are Kittiwake specific parameters for this run.
+
+```{r}
+spdat_example  <- seabORD::get_example_spdat()
+```
+
+#### BrdData (GPS)
+
+```{r}
+brddata_example <- seabORD::get_example_brddata()
+```
+
+```{r, echo=FALSE, fig.alt="GPS-derived distribution map for kittiwakes from the Isle of May colony"}
+seabORD::plot_brddata(brddata = brddata_example, zoom = TRUE)
+```
+
+#### FrgCompData
+
+```{r}
+FrgCompData_example <- seabORD::get_example_frgcompdata()
+```
+
+```{r, echo=FALSE, fig.alt="Distribution map showing potential foraging competition from seabirds at surrounding colonies"}
+seabORD::plot_frgcompdata(frgcompdata = FrgCompData_example, zoom = TRUE)
+```
+
+#### fltdist_base
+
+```{r}
+fltdist_base_example <- seabORD::get_example_fltdist_base()
+```
+
+```{r,  echo=FALSE, fig.alt="Map of baseline flight distances by sea from the Isle of May colony without offshore renewable developments"}
+seabORD::plot_fltdist_base(fltdist_base = fltdist_base_example, zoom = TRUE)
+```
+
+#### FlightGridcorrection
+
+```{r}
+FlightGridcorrection_example <- seabORD::get_example_fgc_3035()
+```
+
+#### ORDpoly
+
+```{r}
+ORDpoly_example <- seabORD::get_example_ORDpoly()
+```
+
+```{r,  echo=FALSE, fig.alt="Map showing the Inch Cape and Neart na Gaoithe offshore renewable development footprints"}
+seabORD::plot_ORDpoly(ORDpoly = ORDpoly_example)
+```
+
+# Step 1: Calibrating prey density
+
+A key component of the seabORD model is the need to calibrate the prey level inputs used for each new species and colony combination. This currently involves re-running the model without ORDs (baseline simulations) with a range of prey levels to ascertain the range of values within which the model returns adult mass and chick mortality rates consistent with pre-defined values representing “moderate” conditions (Figure 1). This is to allow simulation of the range of outcomes expected under these conditions, as the model is highly sensitive to the prey density parameter.
+
+![*Figure 1: Schematic plot of kittiwake adult mass loss (A) and chicks per nest (B) drawn from 300 baseline simulations (no ORD footprints) ranging from a prey value of 50 up to 250. The red lines are for smoothed model outputs, which are overlaid on grey points indicating the individual estimates. For calibration we have upper and lower bounds for each output (A & B) which are picked to reflect “moderate” conditions, i.e., what is observed in a typical year for kittiwakes at the Isle of May, and these are indicated by the dashed grey horizontal lines. The grey shaded blocks indicate where the respective outputs fall within these bounds, and the light blue shaded block indicates the prey values where there is overlap between the estimates, which is the prey range used in subsequent simulations with ORDs included.*](images/Calibration_plot_schematic_extended_seabordpkg.png)
+
+### Parameter sets for the calibration run
+
+Set the input parameter for the calibration run
+
+#### Par
+
+NOTE: "Nscalefactor" is set to 0.1 meaning we are running with 10% of the population, which may be sufficient for calibration runs.
+
+```{r}
+
+Par_example <- seabORD::get_example_par(type = "cal")
+```
+
+#### modPar
+
+```{r}
+modPar_example <- seabORD::get_example_modpar(type = "cal")
+str(modPar_example)
+```
+
+Create the output folder, for example "output_seabORD_calibration" and assign it in the modPar list.
+
+```{r, eval = FALSE}
+#set the output of ModPar
+#specifically for calibration outputs if it doesn't alreay exist
+if (!dir.exists("output_seabORD_calibration")) {
+  dir.create("output_seabORD_calibration")
+}
+```
+
+```{r}
+modPar_example$outputdir <- "output_seabORD_calibration"
+```
+
+NOTE: Run this test! Here is where our 20 replicates are specified - this must align with the number of prey values listed in "Par_example\$Pmedian".
+
+```{r}
+seabORD::check_calibration_inputs(
+  Par = Par_example,
+  modPar = modPar_example
+)
+```
+
+#### ordPar
+
+ordPar should be empty, as we are only running baseline runs with no ORDs included.
+
+```{r}
+ordPar_example <-  seabORD::get_example_ordPar(type = "cal")
+str(ordPar_example) 
+```
+
+#### Switches
+
+Turn on the switch "savebirdflightmap", to see an example of the birdflightmap output
+
+```{r}
+switches_example <- seabORD::get_example_switches(type = "cal")
+switches_example$savebirdflightmap <- TRUE
+
+str(switches_example)
+```
+
+### Set off calibration runs
+
+Now that the inputs have been prepared by loading them into our environment we can set off the run using the following code. You can also use the example output.
+
+The **ORDpoly** is set to NULL in the calibration run, as this is not needed.
+
+Calculates (Slow):
+
+```{r, eval = FALSE}
+SeabORDoutput <- seabord(Par = Par_example,
+                         ordPar = ordPar_example,
+                         modPar = modPar_example,
+                         switches = switches_example,
+                         seamask = seamask_example,
+                         spadat1 = spadat1_example,
+                         spadat2 = spadat2_example,
+                         spdat = spdat_example,
+                         BrdData = BrdData_example,
+                         FrgCompData = FrgCompData_example,
+                         fltdist_base = fltdist_base_example,
+                         FlightGridcorrection = FlightGridcorrection,
+                         ORDpoly = NULL)
+```
+
+Load example calibration output (used throughout this vignette)
+
+```{r}
+sbordout_calibration <- seabORD::get_example_output(type = "cal")
+```
+
+### Plot the outputs and determine prey values
+
+For this particular example we define moderate conditions for kittiwakes on the Isle of May against the two following outputs:
+
+| Output          | Moderate value | Upper bound (+10%) | Lower bound (-10%) |
+|-----------------|----------------|--------------------|--------------------|
+| Adult mass loss | 10%            | 11%                | 9%                 |
+| Chicks per nest | 50%            | 55%                | 45%                |
+
+Where adult mass loss is the average percentage mass loss of adults over the duration of the chick-rearing season being simulated, and chicks per nest is the average number of chicks surviving per nest. The aim of calibration is to find the shared prey values contained within the upper and lower bounds between each output.
+
+```{r, fig.alt="Simulated kittiwake foraging locations during the baseline calibration runs without offshore renewable developments"}
+seabORD::plot_BirdFlightMap(
+  sbordout_calibration
+)
+```
+
+You can see from this map that there is no evidence of any interaction with ORDs, which is reassuring.
+
+Now we will plot the adult outputs (sbordout\$output_a0) and the chick outputs (sbordout\$output_c0) against the range of prey values across replicates to obtain our calibrated estimates to be used in the scenario runs going forward.
+
+Use the bounds for moderate conditions to be plotted.
+
+```{r, fig.alt="Calibration plots showing adult mass loss and chick productivity across prey-density values, with acceptable bounds and the overlapping calibrated prey range highlighted"}
+# Identify prey values that simultaneously satisfy
+# the adult mass loss and productivity constraints
+calibration <- seabORD::calc_calibration_range(
+  sbordout_calibration,
+  masslower = 0.09,
+  massupper = 0.11,
+  prodlower = 0.45,
+  produpper = 0.55
+)
+
+#plot it
+seabORD::plot_calibration_outputs(
+  sbordout_calibration,
+  calibration = calibration,
+  masslower = 0.09,
+  massupper = 0.11,
+  prodlower = 0.45,
+  produpper = 0.55
+)
+```
+
+# Step 2: Running the model
+
+Now that we have run our calibration step and discerned the prey values resulting in moderate conditions in the absence of wind farms, we can continue with running the main seabORD runs with matched pairs of baseline (no ORDs) and scenario (ORDs included).
+
+In this example we will run 5 scenario runs (wind farm footprints included) with a range of prey values (173-174).
+
+## Prepare inputs
+
+For further information on inputs, please see [kittiwake case - with distance-decay-maps](https://nerc-ceh.github.io/seabORD/articles/G_KI_run_decay.html).
+
+This script will import the example parameter sets and spatial data, which are largely similar to the calibration inputs. Note will be given where these differ considerably, i.e., with regard to the inclusion of different wind farm footprints.
+
+### Parameter sets for the scenario run
+
+#### Par
+
+NOTE: "Nscalefactor" is **set to 1 meaning we are running with 100%** **of the population**, which is customary for scenario runs.
+
+```{r}
+Par_example <- seabORD::get_example_par()
+str(Par_example)
+```
+
+#### modPar
+
+```{r}
+modPar_example <- seabORD::get_example_modpar()
+str(modPar_example) 
+```
+
+Create the output folder, for example "output_seabORD_scenario" and assign it
+
+```{r, eval = FALSE}
+# Create the ouput folder "output_seabORD_scenario" specifically for scenario outputs if it doesn't alreay exist
+if (!dir.exists("./output_seabORD_scenario")) {
+  dir.create("./output_seabORD_scenario")
+}
+```
+
+```{r}
+modPar_example$outputdir <- "output_seabORD_scenario"
+```
+
+We intend to run 5 replicates so need to change this in modPar
+
+```{r}
+modPar_example$Nreplicates <- 5
+```
+
+#### Include the calibration in Par
+
+NOTE: Run this test! Here the replicates are specified - this must align with the number of prey values listed in "Par_example\$Pmedian"
+
+```{r}
+seabORD::check_calibration_inputs(
+  Par = Par_example,
+  modPar = modPar_example
+)
+```
+
+This is because we must include the right calibration values (5) if we want to run 5 replicates.
+
+Change the values:
+
+```{r}
+# min prey value from range determined in calibration 
+Pmin <- 173  
+# max prey value from range determined in calibration
+Pmax <- 174 
+
+Par_example <- seabORD::set_prey_sequence_in_par(
+  Par = Par_example,
+  modPar = modPar_example,
+  Pmin = Pmin,
+  Pmax = Pmax
+)
+```
+
+```{r}
+str(Par_example$Pmedian) #should be good to go!
+
+seabORD::check_calibration_inputs(
+  Par = Par_example,
+  modPar = modPar_example
+)
+```
+
+#### ordPar
+
+```{r}
+ordPar_example <-  seabORD::get_example_ordPar()
+str(ordPar_example)
+```
+
+#### Switches
+
+Turn on the switch "savebirdflightmap", to see an example of the birdflightmap output. Turn on "saverds" to save the outputs as rds.
+
+```{r}
+switches_example <- seabORD::get_example_switches()
+switches_example$savebirdflightmap <- TRUE
+switches_example$saverds <- TRUE 
+```
+
+### Set off the scenario runs
+
+# Running seabORD
+
+Now that all the inputs are ready we can run the model.
+
+seabORD runs including wind farms and full populations can take a while to run - even with a relatively small population of \~ 3,000 pairs.
+
+The output will be saved in your output directory set up in modPar.
+
+To learn more about the main functions behind seabORD you can [read the article on the main functions](https://nerc-ceh.github.io/seabORD/articles/J_main_functions.html). To learn more about how to interpret the output you can [read the article on the output interpretation](https://nerc-ceh.github.io/seabORD/articles/I_exampleKI_output.html).
+
+```{r, eval = FALSE}
+
+SeabORDoutput <- seabord(Par = Par_example,
+                         ordPar = ordPar_example,
+                         modPar = modPar_example,
+                         switches = switches_example,
+                         seamask = seamask_example,
+                         spadat1 = spadat1_example,
+                         spadat2 = spadat2_example,
+                         spdat = spdat_example,
+                         BrdData = BrdData_example,
+                         FrgCompData = FrgCompData_example,
+                         fltdist_base = fltdist_base_example,
+                         FlightGridcorrection = FlightGridcorrection,
+                         ORDpoly = ORDpoly_example)
+```

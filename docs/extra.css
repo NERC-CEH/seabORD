@@ -1,0 +1,13 @@
+/* Hide the source-file line at the top of articles */
+.page-header small, small.dont-index{
+  display: none;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+  text-transform: none;
+}
+
+.dropdown-item {
+  text-transform: none;
+}
+

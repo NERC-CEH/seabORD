@@ -1,0 +1,16 @@
+pandoc: '3.10'
+pkgdown: 2.2.1
+pkgdown_sha: ~
+articles:
+  A_installing_seabord: A_installing_seabord.html
+  B_seabord_overview: B_seabord_overview.html
+  C_seabord_inputs: C_seabord_inputs.html
+  D_DistanceDecayMap: D_DistanceDecayMap.html
+  G_KI_run_decay: G_KI_run_decay.html
+  H_KI_run_gps: H_KI_run_gps.html
+  I_exampleKI_output: I_exampleKI_output.html
+  J_main_functions: J_main_functions.html
+last_built: 2026-11-20T15:51Z
+urls:
+  reference: https://nerc-ceh.github.io/seabORD/reference
+  article: https://nerc-ceh.github.io/seabORD/articles

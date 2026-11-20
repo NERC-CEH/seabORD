@@ -1,0 +1,136 @@
+---
+title: "Interpreting the outputs"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Interpreting the outputs}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+bibliography: references.bib
+csl: apa.csl
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Output - reading and interpretation
+
+The main output of seabORD is a list, where the different elements relate to respective parts of the model e.g., wind farm effects, adult outputs, chick outputs etc.
+
+We shall start by reading in an example output (created from a similar (but not identical) run with the same species (kittiwake), colony (Isle of May), and wind farm set up (Neart na Gaoithe and Inch Cape)).
+
+```{r}
+sbordout <- seabORD::get_example_output()
+names(sbordout)
+```
+
+This is an extensive output with 16 elements to the list. The first five elements of the list are related to inputs ("switches", "Parameters", "ordPar", "modPar", "thisRun") and we include this information so that the runs will be reproducible and are transparent for anyone inspecting the results.
+
+The following 11 outputs, aside from "BirdFlightMap", are all outputs relating to different components/entities in the model and each element typically has a \$data section where the actual data is contained and a \$metadata section which describes each of the columns in the output.
+
+- "output_f0" - Flight metrics relating to ORD interaction
+
+- "output_c0" - Chick metrics e.g., number alive and mean body mass
+
+- "output_a0" - Adult metrics e.g., survival and body mass
+
+- "output_y0" - Survival metrics relating to calc_pSurvival function which estimates over-winter survival from mass-survival relationships
+
+- "BirdFlightMap" - a flight map of locations - note this is just for visual assessment
+
+- "output_i0"
+
+- "output_i1"
+
+- "output_i2"
+
+- "output_i3"
+
+- "output_i4"
+
+- "output_i5"
+
+## BirdFlightMap
+
+Let's plot the flight map location output just to see that the run has performed as intended. From this plot we can see clearly the two ORD footprints, with a higher density of foraging locations in the 5 km displacement zone surrounding each ORD.
+
+Some birds have **foraging locations** inside the ORD footprints. These are individuals that were not assigned as susceptible to displacement.
+
+```{r, fig.alt="Map of simulated kittiwake foraging locations around the Isle of May, showing the two offshore renewable development footprints and their displacement zones"}
+seabORD::plot_BirdFlightMap(
+  sbordout
+)
+```
+
+## Adult output (output_a0)
+
+Read the adult output metadata and data.
+
+```{r}
+# inspect adult metric descriptions 
+dplyr::glimpse(sbordout$output_a0$metadata)
+#inspect the adult output
+dplyr::glimpse(head(sbordout$output_a0$data))
+```
+
+You will see that there are 4 replicates of prey values here with respective rows for baseline ("Season\$base") and scenario ("Season\$scen") matched runs, giving a total of 8 rows.
+
+We would expect the average condition of adults across scenario runs at the end of the simulation (BM_adult.mn), will be lower than that for baseline runs. So let's plot that and have a look...
+
+```{r, fig.alt="Comparison of mean adult kittiwake body mass at the end of matched baseline and offshore renewable development scenario simulations"}
+seabORD::plot_adult_body_mass(
+  sbordout_output_adults = sbordout$output_a0
+  )
+```
+
+## Chick output (output_c0)
+
+```{r}
+#inspect adult metric descriptions 
+dplyr::glimpse(sbordout$output_c0$metadata)
+
+#inspect the chcik output
+dplyr::glimpse(head(sbordout$output_c0$data))
+```
+
+As expected, the number of surviving chicks across scenario runs at the end of the simulation (N_alive_ch), will be lower than that for baseline runs...
+
+```{r, fig.alt="Comparison of surviving kittiwake chicks at the end of matched baseline and offshore renewable development scenario simulations"}
+seabORD::plot_chick_survival(
+  sbordout_output_chicks = sbordout$output_c0
+  )
+```
+
+## Flight related output (output_f0)
+
+```{r}
+# Inspect flight metric descriptions
+dplyr::glimpse(sbordout$output_f0$metadata)
+# Isolate the flight related output:
+dplyr::glimpse(head(sbordout$output_f0$data))
+```
+
+"Tot_basickm.mn" is the mean per replicate of how many km birds flew - which would conceivably be higher for scenario runs due to barrier effects increasing flight distance, so let's do another basic plot
+
+and we can see that adults in the scenario run typically flew around 50 km more on average over the simulation duration than birds with no wind farm interaction.
+
+```{r, fig.alt="Comparison of mean total flight distance for adult kittiwakes in matched baseline and offshore renewable development scenario simulations"}
+seabORD::plot_flight_distance(sbordout_output_flight = sbordout$output_f0)
+```
+
+## Outputs relating to impacts (i0...5)
+
+- Metric: Additional Mortality 1-i0: TRUE means birds never directly impacted
+
+- Metric: Additional Mortality 1-i1: TRUE means birds directly impacted in some way at least once
+
+- Metric: Additional Mortality 1-i2: TRUE means birds displaced at least once, never subject to barrier effects
+
+- Metric: Additional Mortality 1-i3: TRUE means birds subject to barrier effects at least once, never displaced
+
+- Metric: Additional Mortality 1-i4: TRUE means birds subject to barrier effects and displaced at least once
+
+- Metric: Additional Mortality 1-i5: All impacts grouped separately

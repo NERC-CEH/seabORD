@@ -1,0 +1,77 @@
+Package: seabORD
+Title: seabORD
+Version: 2.0.0
+Authors@R: c(
+    person(
+      given = "Deena",
+      family = "Mobbs",
+      email = "dcmo@ceh.ac.uk",
+      role = c("aut", "cre")
+    ),
+    person(
+      given = "Christopher",
+      family = "Pollock",
+      role = "aut"
+    ),
+    person(
+      given = "Adam",
+      family = "Butler",
+      role = "aut"
+    ),
+    person(
+      given = "Maddalena",
+      family = "Tigli",
+      role = "aut"
+    ),
+    person(
+      given = "Kate",
+      family = "Searle",
+      role = "aut"
+    )
+  )
+Maintainer: Deena Mobbs <dcmo@ceh.ac.uk>
+Description: A model to estimate the population consequences of
+    displacement from proposed offshore renewable energy developments for
+    key seabird species
+URL: https://nerc-ceh.github.io/seabORD/, https://github.com/NERC-CEH/seabORD
+BugReports: https://github.com/NERC-CEH/seabORD/issues
+License: file LICENSE
+Depends: 
+    R (>= 3.5),
+    dplyr,
+    forcats,
+    gdistance,
+    ggspatial,
+    magrittr,
+    memoise,
+    methods,
+    nleqslv,
+    purrr,
+    raster,
+    readr,
+    readxl,
+    rlang,
+    sf,
+    sp,
+    stats,
+    stringr,
+    tabularaster,
+    tibble,
+    tidyr,
+    utils,
+    gridExtra
+Suggests: 
+    boot,
+    ggplot2,
+    knitr,
+    rmarkdown,
+    showtext,
+    sysfonts,
+    testthat (>= 3.0.0)
+VignetteBuilder: 
+    knitr
+Config/testthat/edition: 3
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2

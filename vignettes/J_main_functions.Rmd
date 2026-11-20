@@ -1,0 +1,772 @@
+---
+title: "Main functions"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Main functions}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+bibliography: references.bib
+csl: apa.csl
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+In this article the main functions that drive the seabORD core processes are explained. Together, these functions determine how birds acquire food, provision chicks, update their energetic state and ultimately survive to the next breeding season. For a broader description of the overall model structure, see the [seabORD overview](https://nerc-ceh.github.io/seabORD/articles/B_seabord_overview.html). The functions are grouped according to the stage of the simulation in which they are used:
+
+1.  ***Foraging and adult behaviour***
+
+    Calculate the time taken to forage required amount (`calc_foragecapture`)
+
+    Calculate the foraging strategy for the timestep (`calc_strategy`)
+
+2.  ***Chick provisioning and growth***
+
+    Parenting the chicks (`calc_chickcare`)
+
+    Chick mortality as a result of adults not attending the nest (`calc_unattendmortality`)
+
+    Chick mortality as a result of other causes (`calc_othermortality`)
+
+    Puffin chick mortality from predation due to hunger (`calc_puffinmortality`)
+
+3.  ***Adult state update***
+
+    Body mass change for adult birds (`calc_adultbmchange`)
+
+    Calculate Daily Energy Requirement (`calc_adultdee`)
+
+4.  ***Adult survival***
+
+    Probability of winter survival (`calc_pSurvival`)
+
+------------------------------------------------------------------------
+
+# 1. Foraging and adult behaviour
+
+## 1.1. Calculate the time taken to forage the required amount (calc_foragecapture)
+
+A detailed description of `calc_foragecapture()`, including its arguments and returned values, can be found in the [function](https://nerc-ceh.github.io/seabORD/reference/calc_foragecapture.html) [reference](https://nerc-ceh.github.io/seabORD/reference/calc_foragecapture.html).
+
+This function estimates how quickly a bird can acquire prey while foraging. Food intake depends on both prey availability and the bird's maximum feeding rate [@holling1959]. The resulting capture curve is then used throughout the model to determine how long individuals must forage to meet their energetic demands.
+
+### Example 1 - prey capture (`captured_g`) through time (`tmin`)
+
+The function returns a lookup table describing how prey (`captured_g`) accumulates through time (`tmin`). Initially, prey is captured rapidly, but the rate gradually slows as available prey becomes depleted. The resulting curve can be used to estimate how long a bird must remain in a foraging area to obtain a given amount of food.
+
+```{r, echo=FALSE, fig.alt="Cumulative prey captured increases rapidly at first and then levels off as foraging time increases."}
+x0 <- 260
+h <- 973
+a <- 4.369
+maxt <- 2160
+
+out <- seabORD::calc_foragecapture(x0, h, a, maxt)
+
+plot(
+  out$tmin,
+  out$captured_g,
+  type = "l",
+  lwd = 2,
+  pch = 16,
+  cex = 1,
+  col = "#477AE2",
+  xlab = "time (minutes)",
+  ylab = "cumulative prey captured (g)",
+  main = "time vs. prey capture"
+)
+```
+
+### Example 2 - effect of change in prey availability (`x0`)
+
+Here we compare two foraging patches that differ only in prey availability (`x0`). Birds feeding in richer patches obtain food more rapidly and therefore require less time to meet their energetic requirements.
+
+```{r, echo=FALSE, fig.alt="Cumulative prey capture through time under high and low prey availability, showing faster food acquisition when prey availability is high."}
+high_prey <- seabORD::calc_foragecapture(
+  x0 = 260,
+  h = 973,
+  a = 4.369,
+  maxt = 2160
+)
+
+low_prey <- seabORD::calc_foragecapture(
+  x0 = 50,
+  h = 973,
+  a = 4.369,
+  maxt = 2160
+)
+
+plot(
+  high_prey$tmin,
+  high_prey$captured_g,
+  type = "l",
+  lwd = 2,
+  col = "#477AE2",
+  xlab = "time (minutes)",
+  ylab = "cumulative prey captured (g)"
+)
+
+lines(
+  low_prey$tmin,
+  low_prey$captured_g,
+  col = "#90A968",
+  lwd = 2
+)
+
+legend(
+  "topleft",
+  legend = c("high prey availability", "low prey availability"),
+  col = c("#477AE2", "#90A968"),
+  lwd = 2
+)
+```
+
+### Example 3 - effect of change in maximum intake rate (a)
+
+Maximum intake rate (`a`) can vary among individuals or species. Higher values allow prey to be captured more quickly, leading to faster food accumulation over time.
+
+```{r, echo=FALSE, fig.alt="Cumulative prey capture through time under higher and lower maximum intake rates, showing faster accumulation at the higher intake rate."}
+low_intake <- seabORD::calc_foragecapture(
+  x0 = 260,
+  h = 973,
+  a = 2,
+  maxt = 2160
+)
+
+high_intake <- seabORD::calc_foragecapture(
+  x0 = 260,
+  h = 973,
+  a = 6,
+  maxt = 2160
+)
+
+plot(
+  high_intake$tmin,
+  high_intake$captured_g,
+  type = "l",
+  lwd = 2,
+  col = "#90A968",
+  xlab = "time (minutes)",
+  ylab = "cumulative prey captured (g)"
+)
+
+lines(
+  low_intake$tmin,
+  low_intake$captured_g,
+  col = "#477AE2",
+  lwd = 2
+)
+
+legend(
+  "bottomright",
+  legend = c("higher intake rate", "lower intake rate"),
+  col = c("#90A968", "#477AE2"),
+  lwd = 2
+)
+```
+
+## 1.2. Calculate the foraging strategy for the timestep (calc_strategy)
+
+A detailed description of `calc_strategy()`, including its arguments and returned values, can be found in the [function reference](https://nerc-ceh.github.io/seabORD/reference/calc_strategy.html).
+
+This function determines how an adult bird allocates its time between self-maintenance and chick provisioning during a single model time step. The selected foraging strategy depends on energetic constraints, available foraging time, and the bird's current body condition. As conditions deteriorate, adults may progressively reduce nest attendance and eventually abandon the breeding attempt in order to prioritise their own survival.
+
+The function can return one of 4 outcomes:
+
+"1" = Provisioning chick while maintaining attendance
+
+"2" = Chick left unattended for part of the time step
+
+"3" = Breeding attempt abandoned
+
+"4" = Adult already dead
+
+### Example 1 - effect of change in food requirement (`Fg`)
+
+As food requirements (`Fg`) increase, birds must undertake additional foraging trips to meet demand (`n_trips`). Eventually, time constraints may limit how much food can be collected, forcing changes in behaviour.
+
+```{r, echo=FALSE, fig.alt="Number of foraging trips required as the bird's food requirement increases."}
+food_req <- seq(50, 500, by = 50)
+
+tcapt <- seabORD::calc_foragecapture(
+  x0 = 260,
+  h = 973,
+  a = 4.369,
+  maxt = 2160
+)
+
+results <- lapply(food_req, function(fg){
+  
+  strat <- seabORD::calc_strategy(
+    BM_condition = 0.95,
+    BM_adult_abdn = 0.70,
+    fmode = 1,
+    Fg = fg,
+    tf = 0.25,
+    tcapt = tcapt,
+    maxf = 10,
+    ts = 1,
+    tc = 8,
+    tm = 2,
+    ttotal = 24
+  )
+  
+  c(Fg = fg,
+    trips_n = strat$trips_n,
+    feeding_mode = strat$feeding_mode)
+})
+
+results <- do.call(rbind, results)
+
+plot(
+  results[, "Fg"],
+  results[, "trips_n"],
+  type = "b",
+  pch = 16,
+  cex = 1,
+  col = "#477AE2",
+  xlab = "food requirement (g)",
+  ylab = "number of trips",
+  yaxt = "n",
+  main = "food requirement vs. trips required to meet it"
+)
+
+axis(
+  2,
+  at = 1:3,
+  labels = c(
+    "1",
+    "2",
+    "3"
+  ),
+  las = 1
+)
+```
+
+### Example 2 - effect of change in body condition (`BM_condition`)
+
+Adult body condition (`BM_condition`) influences the bird's foraging strategy (`feeding_mode`). Birds in poor condition are less able to prioritise chick provisioning and may switch to reduced attendance or nest abandonment at lower food requirements than birds in good condition. As condition approaches the abandonment threshold (`BM_adult_abdn`), the bird may switch to a nest-unattended or nest-abandoned strategies ("1" = Provisioning chick while maintaining attendance, "2" = Chick left unattended for part of the time step, "3" = Breeding attempt abandoned).
+
+```{r, echo=FALSE, fig.alt="Foraging strategy across increasing food requirements for birds in poor, moderate and excellent body condition."}
+food_req <- seq(300, 700, by = 100)
+
+get_mode <- function(cond){
+  
+  sapply(food_req, function(fg){
+    
+    seabORD::calc_strategy(
+      BM_condition = cond,
+      BM_adult_abdn = 0.70,
+      fmode = 1,
+      Fg = fg,
+      tf = 0.5,
+      tcapt = tcapt,
+      maxf = 10,
+      ts = 1,
+      tc = 8,
+      tm = 2,
+      ttotal = 24
+    )$feeding_mode
+    
+  })
+  
+}
+
+poor <- get_mode(0.6)
+medium <- get_mode(0.8)
+good <- get_mode(1.0)
+
+plot(
+  food_req,
+  poor,
+  type = "b",
+  pch = 16,
+  col = "#477AE2",
+  ylim = c(1, 3),
+  xlab = "food requirement (g)",
+  ylab = "foraging strategy",
+  yaxt = "n",
+  main = "food requirement vs. foraging strategy"
+)
+
+lines(food_req, medium, type = "b", pch = 17, col = "#D7B7AA")
+lines(food_req, good, type = "b", pch = 15, col = "#90A968")
+
+legend(
+  "topleft",
+  title = "BM_condition",
+  legend = c(
+    "poor condition (0.6)",
+    "moderate condition (0.8)",
+    "excellent condition (1.0)"
+  ),
+  col = c("#477AE2", "#D7B7AA", "#90A968"),
+  pch = c(16, 17, 15)
+)
+
+axis(
+  2,
+  at = 1:3,
+  labels = c(
+    "1",
+    "2",
+    "3"
+  ),
+  las = 1
+)
+```
+
+------------------------------------------------------------------------
+
+# 2. Chick provisioning and growth
+
+## 2.1. Parenting the chicks (calc_chickcare)
+
+A detailed description of `calc_chickcare()`, including its arguments and returned values, can be found in the [function reference](https://nerc-ceh.github.io/seabORD/reference/calc_chickcare.html).
+
+This function updates chick growth, body condition, attendance status, and survival during each model time step. Food delivered by **both parents** contributes to chick growth, while reduced parental attendance increases the amount of time chicks are left unattended. Together, these processes determine whether chicks survive and continue developing.
+
+### Example 1 - reduced parental provisioning (`Ereq_intake`) lowers chick condition (`BM_condition`)
+
+When parents deliver less food (`Ereq_intake`), chicks gain less mass and their body condition (`BM_condition`) declines. This can increase vulnerability to mortality processes later in the simulation.
+
+```{r, echo = FALSE, fig.alt="Chick body condition increases as the amount of food delivered by the parents increases."}
+
+# Example parent data
+parent <- tibble::tibble(
+  BirdID = c(1, 2),
+  PairID = c(1, 1),
+  feeding_mode = c(1, 1),
+  Ereq_intakef_c = c(0.8, 0.9),
+  colony_h = c(8, 8),
+  MF = c("M", "F")
+)
+
+ChickState <- list(
+  data = tibble::tibble(
+    PairID = 1,
+    CoD = "none",
+    is_chick_alive = 1,
+    BM_chick = 300,
+    BM_condition = 1,
+    Ereq_chick = 100
+  ),
+  metadata = tibble::tibble(
+    VarName = c(
+      "PairID",
+      "CoD",
+      "is_chick_alive",
+      "BM_chick",
+      "BM_condition",
+      "Ereq_chick"
+    ),
+    VarDescription = NA_character_,
+    VarUnits = NA_character_
+  )
+)
+
+Species <- list(
+  data = tibble::tibble(
+    daylength = 16,
+    BM_Chick_mortf = 0.75,
+    chick_mass_a = 20
+  )
+)
+
+Opt_BM_chick <- 350
+
+food_levels <- seq(0, 1.0, by = 0.2)
+
+BM_condition <- numeric(length(food_levels))
+
+for(i in seq_along(food_levels)){
+  
+  parent <- tibble::tibble(
+    BirdID = c(1, 2),
+    PairID = c(1, 1),
+    feeding_mode = c(1, 1),
+    Ereq_intakef_c = c(food_levels[i], food_levels[i]),
+    colony_h = c(8, 8),
+    MF = c("M", "F")
+  )
+  
+  tmp <- seabORD::calc_chickcare(
+    parent = parent,
+    ChickState = ChickState,
+    Opt_BM_chick = Opt_BM_chick,
+    Species = Species
+  )
+  
+  BM_condition[i] <- tmp$data$BM_condition
+}
+
+plot(
+  food_levels,
+  BM_condition,
+  type = "b",
+  pch = 16,
+  cex = 1,
+  col = "#477AE2",
+  xlab = "food delivered by parents",
+  ylab = "chick body condition",
+  main = "food delivered by parents vs. chick condition"
+)
+```
+
+## 2.2. Chick mortality as a result of adults not attending the nest (calc_unattendmortality)
+
+A detailed description of `calc_unattendmortality()`, including its arguments and returned values, can be found in the [function reference](https://nerc-ceh.github.io/seabORD/reference/calc_unattendmortality.html).
+
+This function evaluates whether a chick dies because it has been left unattended for too long. Mortality risk increases as unattended time approaches the species-specific maximum duration that chicks can safely remain alone.
+
+### Example 1 - Death by unattendance (`CoD`) vs unattended hours (`hrs`)
+
+Here we simulate 1,000 chicks across a range of unattended durations. The more hours the chicks are left unattended (`hrs`) the higher the proportion of chicks that die because they are left unattended (`CoD = unattended)`.
+
+```{r, echo=FALSE, fig.alt="Proportion of chicks dying from unattended mortality across increasing numbers of hours left unattended."}
+set.seed(123)
+
+hrs <- c(0, 3, 6, 9, 12, 15, 18)
+
+out <- lapply(hrs, function(h) {
+  
+  results <- replicate(
+    1000,
+    seabORD::calc_unattendmortality(
+      CoD = "none",
+      alive = 1,
+      unattend_hrs = h,
+      max_hrs = 18
+    )
+  )
+  
+  data.frame(
+    hrs = h,
+    mortality = mean(results == "unattended")
+  )
+})
+
+out <- do.call(rbind, out)
+
+plot(
+  out$hrs,
+  out$mortality,
+  type = "b",
+  pch = 16,
+  cex = 1,
+  col = "#477AE2",
+  xlab = "hours unattended",
+  ylab = "proportion of chicks dying (1,000 chicks)",
+  main = "hours unattended vs. proportion of unattended mortality (1,000 chicks)"
+)
+```
+
+## 2.3. Chick mortality as a result of other causes (calc_othermortality)
+
+A detailed description of `calc_othermortality()`, including its arguments and returned values, can be found in the [function reference](https://nerc-ceh.github.io/seabORD/reference/calc_othermortality.html).
+
+This function applies a background mortality risk that represents causes of death not explicitly modelled elsewhere, such as adverse weather events unrelated to chick condition.
+
+### Example 1 - Proportion of chicks dying of "other" causes (`CoD = other`)
+
+In each simulation there is a small probability that mortality occurs due to background causes. By repeating the calculation 1,000 times over a 30-day period (`seasonlength`) we can visualise the proportion of individuals that survive (`CoD = none`) versus those that die from other causes (`CoD = other`).
+
+```{r, echo=FALSE, fig.alt="Number of simulated chicks surviving or dying from background causes across one thousand simulations."}
+#ensure reproducibility
+set.seed(789)
+new_CoD <- replicate(1000,#repeat the function to get a few cases where it dies
+                     seabORD::calc_othermortality(CoD = "none", #alive
+                                         alive = 1, #alive
+                                         seasonlength = 30)
+)
+
+
+tab <- table(new_CoD)
+
+barplot(
+  tab,
+  col = c("#477AE2", "#90A968"),
+  ylab = "number of simulations",
+  xlab = "cause of death",
+  main = "proportion of death by other-cause (1,000 chicks)"
+)
+
+```
+
+## 2.4. Puffin chick mortality from predation due to hunger (calc_puffinmortality) {data-link="4. Puffin chick mortality from predation due to hunger"}
+
+A detailed description of `calc_puffinmortality()`, including its arguments and returned values, can be found in the [function reference](https://nerc-ceh.github.io/seabORD/reference/calc_puffinmortality.html).
+
+This function applies an additional mortality risk to puffin chicks that are in poor body condition. Chicks whose condition falls below a species-specific threshold are considered vulnerable to predation. Whether mortality occurs is determined stochastically, so identical individuals may survive or die in different simulation runs. The function therefore captures both the effect of chick condition on predation risk and the inherent randomness of mortality events.
+
+### Example 1 - Proportion of chicks in poor condition (`BM_condition`) dying of predation (`CoD = killed`)
+
+Puffin chicks in poor body condition (`BM_condition`) are assumed to be more vulnerable to predation (`CoD = killed`). Mortality is stochastic, meaning that two identical chicks may experience different outcomes due to the random draw used by the model.
+
+The example below simulates 1,000 chicks with the same body condition and shows the frequency of survival (`CoD = none`) and predation events.
+
+```{r, echo=FALSE, fig.alt="Number of hungry puffin chicks surviving or being killed by predation across one thousand simulations."}
+set.seed(123)
+
+mortality <- replicate(
+  1000,
+  seabORD::calc_puffinmortality(
+    CoD = "none",
+    alive = 1,
+    BM_condition = 0.6,
+    BM_Chick_mortf = 0.5
+  )
+)
+
+tab <- table(mortality)
+
+barplot(
+  tab,
+  col = c("#90A968", "#D7B7AA"),
+  ylab = "number of chicks",
+  main = "proportion of death by predation (1,000 hungry chicks)"
+)
+```
+
+### Example 2 - Predation death declines (`CoD = killed`) as chick condition improves (`BM_condition`)
+
+Chicks in poor condition are assumed to be more susceptible to predation than chicks in good condition. Repeating the simulation 1,000 times across a range of body conditions (`BM_condition`) reveals the underlying relationship between condition and predation mortality risk (`CoD = killed`).
+
+```{r, echo=FALSE, fig.alt="Proportion of puffin chicks killed by predation decreases as chick body condition improves."}
+BM_condition <- seq(0.5, 1, by = 0.05)
+
+mortality_rate <- sapply(BM_condition, function(cond){
+  
+  mean(
+    replicate(
+      1000,
+      seabORD::calc_puffinmortality(
+        CoD = "none",
+        alive = 1,
+        BM_condition = cond,
+        BM_Chick_mortf = 0.5
+      ) == "killed"
+    )
+  )
+  
+})
+
+plot(
+  BM_condition,
+  mortality_rate,
+  type = "b",
+  pch = 16,
+  cex = 1,
+  col = "#477AE2",
+  xlab = "chick body condition",
+  ylab = "proportion killed (of 1,000)",
+  main = "chick condition vs. proportion of chicks death by predation (1,000 chicks)"
+)
+```
+
+------------------------------------------------------------------------
+
+# 3. Adult state update
+
+## 3.1. Body mass change for adult birds (calc_adultbmchange)
+
+A detailed description of `calc_adultbmchange()`, including its arguments and returned values, can be found in the [function reference](https://nerc-ceh.github.io/seabORD/reference/calc_adultbmchange.html).
+
+All adult birds update their body mass at the end of each day based on the energy they gain and expend foraging and in other activities. The model we use is an expanded version of that used by [@daunt2008sandeel; @wanless1997shags], which separates flight cost and foraging cost for each adult to derive total energy expenditure.
+
+$$ M_{d+1} = M_{d} +  [(Egain_{d} - DEE_{d})/ KG] $$ where $M_{d+1}$ is the revised body mass, $M_{d}$ is the starting body mass (in g), $Egain_{d}$ is the energy available from food (in kJ), $DEE_{d}$ is the energy requirement (in kJ) and $KG$ is the energy density of the adult bird tissue (kJ per gram).
+
+### Example 1 - Body mass (`BM_adult`) changes with energy intake (`Egain_adult`)
+
+Within seabORD, adults stop foraging once their energetic requirement has been met. Consequently, energy intake (`Egain_adult`) never exceeds the daily energy requirement (`Ereq_adult`). Adult body mass can therefore either remain stable or decline, depending on whether sufficient food was acquired during the time step.
+
+The figure shows how **body mass loss** decreases as food intake increases. Under these example parameters, a bird that obtains no food would lose approximately 40 g of body mass during the day.
+
+```{r, echo=FALSE, fig.alt="Adult body-mass loss decreases as energy intake approaches the bird's daily energy requirement."}
+
+BM_adult <- 354.51
+Ereq_adult <- 1569.75 #kJ
+adult_mass_KG <- 38.5
+Egain_adult <- c(0:Ereq_adult)
+  
+bodymass <- 
+  seabORD::calc_adultbmchange(alive = TRUE, #it's alive
+                     BM_adult = BM_adult, #g 
+                     Egain_adult = Egain_adult, #kJ
+                     Ereq_adult = Ereq_adult, #kJ
+                     adult_mass_KG = adult_mass_KG) #kJ per g
+
+data <- data.frame(
+  Egain_adult = Egain_adult,
+  BodyMassChange = bodymass - BM_adult
+)
+
+plot(
+  data$Egain_adult,
+  data$BodyMassChange,
+  pch = 16,
+  cex = 0.2,
+  col = "#477AE2",
+  xlab = "energy intake (kJ)",
+  ylab = "body mass change (g)",
+  main = "energy intake vs body mass change"
+)
+```
+
+## 3.2. Calculate Daily Energy Requirement (calc_adultdee)
+
+A detailed description of `calc_adultdee()`, including its arguments and returned values, can be found in the [function reference](https://nerc-ceh.github.io/seabORD/reference/calc_adultdee.html).
+
+This function calculates the daily energy expenditure (DEE) of an adult bird from its behaviour during the current time step. Time spent nesting, flying, foraging, and resting at sea each contribute to overall energetic costs. The resulting DEE becomes the bird's energy requirement (`Ereq_adult`) in the following time step.
+
+Energy expenditure is calculated by combining the duration of each activity with activity-specific energetic costs derived from published studies [@pennycuick1989bird; @croll1993diving; @hilton2000digestion; @enstipp2006foraging]. Additional energetic costs associated with warming ingested prey are also included [@gremillet2003cormorants].
+
+As a result, changes in behaviour, such as longer foraging trips or increased flight time, directly influence the energetic requirements of the bird in subsequent time steps.
+
+The function calculates the **adult DEE** as follows:
+
+- Energy spent on **nesting**: $\frac{energynest \times colonyh}{daylength}$
+
+- Energy spent on **flying**: $\frac{energyflight \times flyingh}{daylength}$
+
+- Energy spent on **foraging**: $\frac{energyforage \times foragingh}{daylength}$
+
+- Energy spent **at sea**: $\frac{energysearest \times atseah}{daylength}$
+
+- Energy spent on **warming**: $\frac{energywarming \times daylength}{24}$
+
+And the final requirement as:
+
+- Energy requirement (`Ereq_adult`): $\frac{energy nesting  + energy flying + energy foraging + energy at sea + energy warming }{assim_eff}$
+
+### Example 1 - Longer flying times (`flying_h`) increase food requirements (`Ereq_adult`)
+
+Longer flights increase energetic expenditure, leading to higher food requirements (`Ereq_adult`) in subsequent time steps. Offshore renewable developments may increase commuting distances between colonies and foraging grounds (barrier and displacement effects), therefore increasing the food requirements of the birds.
+
+```{r, echo=FALSE, fig.alt="Adult daily energy requirement increases as the number of hours spent flying increases."}
+flight_hours <- seq(0, 8, by = 0.5)
+
+DEE <- sapply(flight_hours, function(x){
+  
+  seabORD::calc_adultdee(
+    alive = 1,
+    colony_h = 8,
+    flying_h = x,
+    foraging_h = 4,
+    at_sea_h = 12 - x,
+    energy_nest = 1168.91,
+    energy_flight = 7361.72,
+    energy_forage = 1894.90,
+    energy_searest = 810.28,
+    energy_warming = 100,
+    assim_eff = 0.75,
+    daylength = 24
+  )
+  
+})
+
+plot(
+  flight_hours,
+  DEE,
+  type = "b",
+  pch = 16,
+  col = "#0483A4",
+  xlab = "flight time (hours)",
+  ylab = "daily energy requirement (kJ)",
+  main = "flight time vs. energy requirements"
+)
+```
+
+------------------------------------------------------------------------
+
+# 4. Adult survival
+
+## 4.1. Probability of winter survival (calc_pSurvival)
+
+A detailed description of `calc_pSurvival()`, including its arguments and returned values, can be found in the [function reference](https://nerc-ceh.github.io/seabORD/reference/calc_pSurvival.html).
+
+This function converts the final body mass of an adult bird into a probability of surviving the season. Individuals ending the breeding season in better condition are expected to have a higher probability of surviving until the following year.
+
+### **Example 1 -** survival probability increases with adult body mass
+
+The figure shows that survival probability generally increases with adult body mass. However, the rate of increase differs among species because each species has different mass-survival parameters. Around the reference body mass (`bm`), survival is close to the species-specific baseline survival (`basesurv`). As body mass increases above this value, survival approaches one, whereas increasingly underweight individuals experience progressively lower survival probabilities. Consequently, poor foraging conditions during the breeding season can reduce winter survival indirectly by lowering adult body mass. The parameter values used below are illustrative and are not intended to represent any specific seabORD species parameterisation.
+
+```{r, echo=FALSE, fig.alt="Estimated survival probability across adult body masses for kittiwakes, puffins, guillemots and razorbills."}
+
+masses <- seq(250, 1200, by = 10)
+
+surv_KI <- sapply(
+  masses,
+  seabORD::calc_pSurvival,
+  sp = "KI",
+  bm = 370.8,
+  basesurv = 0.80,
+  beta = 0.038
+)
+
+surv_PU <- sapply(
+  masses,
+  seabORD::calc_pSurvival,
+  sp = "PU",
+  bm = 420,
+  basesurv = 0.90,
+  beta = 1.03,
+  sd = 50
+)
+
+surv_GU <- sapply(
+  masses,
+  seabORD::calc_pSurvival,
+  sp = "GU",
+  bm = 950,
+  basesurv = 0.92,
+  beta = 1.03,
+  sd = 70
+)
+
+surv_RA <- sapply(
+  masses,
+  seabORD::calc_pSurvival,
+  sp = "RA",
+  bm = 700,
+  basesurv = 0.88,
+  beta = 1.03,
+  sd = 60
+)
+
+plot(
+  masses,
+  surv_KI,
+  type = "l",
+  lwd = 2,
+  col = "#D7B7AA",
+  ylim = c(0, 1),
+  xlab = "adult body mass (g)",
+  ylab = "probability of survival",
+  main = "adult body mass vs. survival probability"
+)
+
+lines(masses, surv_PU, lwd = 2, col = "#0483A4")
+lines(masses, surv_GU, lwd = 2, col = "#90A968")
+lines(masses, surv_RA, lwd = 2, col = "#DBFE52")
+
+legend(
+  "bottomright",
+  title = "Species",
+  legend = c(
+    "Kittiwake (KI)",
+    "Puffin (PU)",
+    "Guillemot (GU)",
+    "Razorbill (RA)"
+  ),
+  col = c("#D7B7AA", "#0483A4", "#90A968", "#DBFE52"),
+  lwd = 2
+)
+```
+
+------------------------------------------------------------------------
+
+# References
