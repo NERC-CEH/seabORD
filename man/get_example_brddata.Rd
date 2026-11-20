@@ -11,7 +11,7 @@ get_example_brddata(type = NULL)
 Available options are:
 \itemize{
 \item \code{NULL}: Forth Islands standard example.
-\item \code{"dd"}: Whinnyfold density-dependence example.
+\item \code{"dd"}: Whinnyfold distance-decay example.
 }}
 }
 \value{
@@ -28,19 +28,19 @@ The raster is reconstructed from data stored internally as separate
 metadata and cell-value objects.
 
 For the standard example, the returned layer is named \code{"Forth.Islands"}.
-For the density-dependence example, it is named \code{"Whinnyfold"}.
+For the distance-decay example, it is named \code{"Whinnyfold"}.
 
 The returned raster can be supplied as the \code{BrdData} argument to
 \code{\link[=seabord]{seabord()}}.
 
 See the package input vignette for an example:
-\code{vignette("C_KI_inputs", package = "seabORD")}.
+\code{vignette("C_seabord_inputs", package = "seabORD")}.
 }
 \examples{
 # Load the standard example bird-density raster
 BrdData <- get_example_brddata()
 
-# Load the density-dependence example
+# Load the distance-decay example
 BrdData_dd <- get_example_brddata("dd")
 
 # Plot the raster

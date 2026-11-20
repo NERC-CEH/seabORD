@@ -1,6 +1,8 @@
 # ORDpoly_example_wfold
 
-NEED EXPL same projection as seamask
+Footprints of Aberdeen Bay, Hywind Scotland and Kincardine wind farms,
+used in the Whinnyfold distance-decay example. In the same projection as
+the sea mask (EPSG:3035).
 
 ## Usage
 
@@ -10,52 +12,52 @@ ORDpoly_example_wfold
 
 ## Format
 
-tibble
+An `sf` tibble with the following columns:
 
 - COUNTRY:
 
-  NEED EXPL
+  Country.
 
 - NAME:
 
-  NEED EXPL
+  Wind-farm name.
 
 - N_TURBINES:
 
-  NEED EXPL
+  Number of turbines.
 
 - POWER_MW:
 
-  NEED EXPL
+  Installed capacity (MW).
 
 - STATUS:
 
-  NEED EXPL
+  Development status.
 
 - YEAR:
 
-  NEED EXPL
+  Year (commissioning or status year).
 
 - COAST_DIST_M:
 
-  NEED EXPL
+  Distance to the coast (m).
 
 - AREA_SQKM:
 
-  NEED EXPL
+  Area (km\\^2\\).
 
 - NOTES:
 
-  NEED EXPL
+  Notes.
 
 - Shape_Length:
 
-  NEED EXPL
+  Polygon perimeter (m).
 
 - Shape_Area:
 
-  NEED EXPL
+  Polygon area (m\\^2\\).
 
 ## Source
 
-NEED EXPL
+Wind-farm footprints prepared for the Whinnyfold example (EMODnet).

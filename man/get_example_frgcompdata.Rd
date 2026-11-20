@@ -11,7 +11,7 @@ get_example_frgcompdata(type = NULL)
 Available options are:
 \itemize{
 \item \code{NULL}: Forth Islands standard example.
-\item \code{"dd"}: Whinnyfold density-dependence example.
+\item \code{"dd"}: Whinnyfold distance-decay example.
 }}
 }
 \value{
@@ -32,19 +32,19 @@ The raster is reconstructed from data stored internally as separate
 metadata and cell-value objects.
 
 For the standard example, the returned layer is named \code{"Forth.Islands"}.
-For the density-dependence example, it is named \code{"Whinnyfold"}.
+For the distance-decay example, it is named \code{"Whinnyfold"}.
 
 The returned raster can be supplied as the \code{FrgCompData} argument to
 \code{\link[=seabord]{seabord()}}.
 
 See the package input vignette for an example:
-\code{vignette("C_KI_inputs", package = "seabORD")}.
+\code{vignette("C_seabord_inputs", package = "seabORD")}.
 }
 \examples{
 # Load the standard example competition raster
 FrgCompData <- get_example_frgcompdata()
 
-# Load the density-dependence example
+# Load the distance-decay example
 FrgCompData_dd <- get_example_frgcompdata("dd")
 
 # Plot the raster

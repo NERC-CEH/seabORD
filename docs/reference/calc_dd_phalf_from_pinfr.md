@@ -1,6 +1,7 @@
-# Calculate 'q' from 'p' for the distance-decay model
+# Calculate 'phalf' from 'pinfr', and define 'q' for the distance-decay model
 
-Calculate 'q' from 'p' for the distance-decay model
+Calculate 'phalf' from 'pinfr', and define 'q' for the distance-decay
+model
 
 ## Usage
 

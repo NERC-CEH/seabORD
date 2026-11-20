@@ -43,16 +43,15 @@
     <li><a class="dropdown-item" href="../articles/B_seabord_overview.html">seabORD Overview</a></li>
     <li><a class="dropdown-item" href="../articles/C_seabord_inputs.html">seabORD Inputs</a></li>
     <li><a class="dropdown-item" href="../articles/J_main_functions.html">Main Functions</a></li>
-    <li><a class="dropdown-item" href="../articles/K_FAQs.html">FAQs</a></li>
   </ul>
 </li>
 <li class="active nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-examples" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">EXAMPLES</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-examples">
-<li><a class="dropdown-item" href="../articles/G_KI_run_decay.html">Kittiwake Example - Distance Decay</a></li>
+<li><a class="dropdown-item" href="../articles/G_KI_run_decay.html">Kittiwake Example - Distance-Decay</a></li>
     <li><a class="dropdown-item" href="../articles/H_KI_run_gps.html">Kittiwake Example - GPS</a></li>
     <li><a class="dropdown-item" href="../articles/I_exampleKI_output.html">Interpreting the Outputs</a></li>
-    <li><a class="dropdown-item" href="../articles/D_DistanceDecayMap.html">Create a Distance-Decay Map</a></li>
+    <li><a class="dropdown-item" href="../articles/D_DistanceDecayMap.html">Create a distance-decay map</a></li>
   </ul>
 </li>
 <li class="nav-item"><a class="nav-link" href="../reference/index.html">REFERENCE</a></li>
@@ -114,7 +113,7 @@ five elements of the list are related to inputs (“switches”,
 “Parameters”, “ordPar”, “modPar”, “thisRun”) and we include this
 information so that the runs will be reproducible and are transparent
 for anyone inspecting the results.</p>
-<p>The following 11 outputs, aside from “BirdFlightMap” are all outputs
+<p>The following 11 outputs, aside from “BirdFlightMap”, are all outputs
 relating to different components/entities in the model and each element
 typically has a $data section where the actual data is contained and a
 $metadata section which describes each of the columns in the output.</p>
@@ -140,7 +139,7 @@ for visual assessment</p></li>
 </h3>
 <p>Let’s plot the flight map location output just to see that the run
 has performed as intended. From this plot we can see clearly the two ORD
-footprints, with a higher density of foraging location in the 5km
+footprints, with a higher density of foraging locations in the 5 km
 displacement zone surrounding each ORD.</p>
 <p>Some birds have <strong>foraging locations</strong> inside the ORD
 footprints. These are individuals that were not assigned as susceptible
@@ -195,8 +194,8 @@ to displacement.</p>
 <p>You will see that there are 4 replicates of prey values here with
 respective rows for baseline (“Season$base”) and scenario
 (“Season$scen”) matched runs, giving a total of 8 rows.</p>
-<p>Conceivably, the average condition of adults across scenario runs at
-the end of the simulation (BM_adult.mn), will be lower than that for
+<p>We would expect the average condition of adults across scenario runs
+at the end of the simulation (BM_adult.mn), will be lower than that for
 baseline runs. So let’s plot that and have a look…</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">seabORD</span><span class="fu">::</span><span class="fu"><a href="../reference/plot_adult_body_mass.html">plot_adult_body_mass</a></span><span class="op">(</span></span>
@@ -238,7 +237,7 @@ baseline runs. So let’s plot that and have a look…</p>
 <span><span class="co">#&gt; $ CoD.abandoned   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #BB0000;">NA</span><span style="color: #949494;">, </span><span style="color: #BB0000;">NA</span><span style="color: #949494;">, </span><span style="color: #BB0000;">NA</span><span style="color: #949494;">, </span><span style="color: #BB0000;">NA</span><span style="color: #949494;">, </span><span style="color: #BB0000;">NA</span><span style="color: #949494;">, </span><span style="color: #BB0000;">NA</span></span></span>
 <span><span class="co">#&gt; $ CoD.other       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 116<span style="color: #949494;">, </span>121<span style="color: #949494;">, </span>129<span style="color: #949494;">, </span>130<span style="color: #949494;">, </span>126<span style="color: #949494;">, </span>123</span></span>
 <span><span class="co">#&gt; $ ChicksPerNest   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 0.6024845<span style="color: #949494;">, </span>0.5731539<span style="color: #949494;">, </span>0.6252588<span style="color: #949494;">, </span>0.6024845<span style="color: #949494;">, </span>0.6252588<span style="color: #949494;">,</span>…</span></span></code></pre></div>
-<p>Conceivably, the number of surviving chicks across scenario runs at
+<p>As expected, the number of surviving chicks across scenario runs at
 the end of the simulation (N_alive_ch), will be lower than that for
 baseline runs…</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
@@ -287,7 +286,7 @@ baseline runs…</p>
 - which would conceivably be higher for scenario runs due to barrier
 effects increasing flight distance, so let’s do another basic plot</p>
 <p>and we can see that adults in the scenario run typically flew around
-50km more on average over the simulation duration than birds with no
+50 km more on average over the simulation duration than birds with no
 wind farm interaction.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">seabORD</span><span class="fu">::</span><span class="fu"><a href="../reference/plot_flight_distance.html">plot_flight_distance</a></span><span class="op">(</span>sbordout_output_flight <span class="op">=</span> <span class="va">sbordout</span><span class="op">$</span><span class="va">output_f0</span><span class="op">)</span></span></code></pre></div>
@@ -302,11 +301,11 @@ directly impacted</p></li>
 <li><p>Metric: Additional Mortality 1-i1: TRUE means birds directly
 impacted in some way at least once</p></li>
 <li><p>Metric: Additional Mortality 1-i2: TRUE means birds displaced at
-least once, never barriered</p></li>
-<li><p>Metric: Additional Mortality 1-i3: TRUE means birds barriered at
-least once, never displaced</p></li>
-<li><p>Metric: Additional Mortality 1-i4: TRUE means birds barriered and
-displaced at least once</p></li>
+least once, never subject to barrier effects</p></li>
+<li><p>Metric: Additional Mortality 1-i3: TRUE means birds subject to
+barrier effects at least once, never displaced</p></li>
+<li><p>Metric: Additional Mortality 1-i4: TRUE means birds subject to
+barrier effects and displaced at least once</p></li>
 <li><p>Metric: Additional Mortality 1-i5: All impacts grouped
 separately</p></li>
 </ul>

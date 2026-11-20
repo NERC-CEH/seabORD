@@ -7,7 +7,7 @@
 calc_pSurvival(sp, bmi, bm, basesurv, beta, sd = 0)
 }
 \arguments{
-\item{sp}{The species two-letter code (either from "KI", "GU", "KI" or "RA")}
+\item{sp}{The species two-letter code (either from "KI", "GU", "RA" or "PU")}
 
 \item{bmi}{Body mass for the individual adult bird (g)}
 

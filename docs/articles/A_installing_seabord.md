@@ -46,8 +46,8 @@ remotes::install_github("NERC-CEH/seabORD")
 
 Read [more about the seabORD
 model](https://nerc-ceh.github.io/seabORD/articles/B_seabord_overview.html),
-[read about its
+[its
 inputs](https://nerc-ceh.github.io/seabORD/articles/C_seabord_inputs.html),
 or [its main
 functions](https://nerc-ceh.github.io/seabORD/articles/J_main_functions.html),
-or start following the examples!
+or start with the examples.

@@ -3,57 +3,61 @@
 \docType{data}
 \name{energeticsandpreydata}
 \alias{energeticsandpreydata}
-\title{Energetics and Prey Data}
+\title{Energetics and prey data}
 \format{
-A data frame with the following 27 columns:
+A data frame with the following 38 columns:
 \describe{
-\item{Code}{Character: A species code.}
-\item{Species}{Character: The common name of the species.}
-\item{BM_adult_mn}{Numeric: The mean body mass of adults.}
-\item{BM_adult_sd}{Numeric: The standard deviation of adult body mass.}
-\item{BM_adult_mortf}{Numeric: The mortality factor for adults.}
-\item{BM_adult_abdn}{Numeric: The adult abandonment rate.}
-\item{BM_chick_mn}{Numeric: The mean body mass of chicks.}
-\item{BM_chick_sd}{Numeric: The standard deviation of chick body mass.}
-\item{BM_Chick_mortf}{Numeric: The mortality factor for chicks.}
-\item{daylength}{Numeric: The day length in hours.}
-\item{seasonlength}{Numeric: The length of the season in days.}
-\item{unattend_max_hrs}{Numeric: The maximum hours of unattended activity.}
-\item{adult_DEE_mn}{Numeric: The mean daily energy expenditure (DEE) for adults.}
-\item{adult_DEE_sd}{Numeric: The standard deviation of adult daily energy expenditure.}
-\item{chick_DER}{Numeric: The chick daily energy requirement (DER).}
-\item{IR_max}{Numeric: The maximum infrared radiation.}
-\item{IR_half_a}{Numeric: Parameter related to infrared radiation.}
-\item{IR_half_b}{Numeric: Another parameter related to infrared radiation.}
-\item{flight_msec}{Numeric: The flight metabolic rate in milliseconds.}
-\item{assim_eff}{Numeric: The assimilation efficiency.}
-\item{energy_prey}{Numeric: The energy available from prey.}
-\item{energy_nest}{Numeric: The energy associated with the nest.}
-\item{energy_flight}{Numeric: The energy used in flight.}
-\item{energy_searest}{Numeric: The energy associated with sea rest.}
-\item{energy_forage}{Numeric: The energy used for foraging.}
-\item{energy_warming}{Numeric: The energy used for warming.}
-\item{chick_mass_a}{Numeric: The mass of chicks at age 'a'.}
-\item{adult_mass_KG}{Numeric: The adult mass in kilograms.}
-\item{beta}{Numeric: A parameter used in energetic calculations.}
-\item{basesurv_poor}{Numeric: The survival rate under poor conditions.}
-\item{basesurv_modr}{Numeric: The survival rate under moderate conditions.}
-\item{basesurv_good}{Numeric: The survival rate under good conditions.}
-\item{massloss_poor}{Numeric: The mass loss under poor conditions.}
-\item{massloss_modr}{Numeric: The mass loss under moderate conditions.}
-\item{massloss_good}{Numeric: The mass loss under good conditions.}
-\item{chicksurv_poor}{Numeric: The chick survival rate under poor conditions.}
-\item{chicksurv_modr}{Numeric: The chick survival rate under moderate conditions.}
-\item{chicksurv_good}{Numeric: The chick survival rate under good conditions.}
+\item{Code}{Character: Two-letter species code.}
+\item{Species}{Character: Species name.}
+\item{BM_adult_mn}{Numeric: Initial adult body mass, mean (g).}
+\item{BM_adult_sd}{Numeric: Initial adult body mass, standard deviation (g).}
+\item{BM_adult_mortf}{Numeric: Critical body mass below which an adult is assumed dead (proportion of mean mass).}
+\item{BM_adult_abdn}{Numeric: Critical body mass below which an adult abandons its chick (proportion of mean mass).}
+\item{BM_chick_mn}{Numeric: Initial chick body mass, mean (g).}
+\item{BM_chick_sd}{Numeric: Initial chick body mass, standard deviation (g).}
+\item{BM_Chick_mortf}{Numeric: Critical body mass below which a chick dies (proportion of initial mass).}
+\item{daylength}{Numeric: Number of hours per time step.}
+\item{seasonlength}{Numeric: Number of time steps per season.}
+\item{unattend_max_hrs}{Numeric: Time a chick can be left unattended before it is assumed to die from exposure or predation (hours).}
+\item{adult_DEE_mn}{Numeric: Adult daily energy expenditure, mean (kJ).}
+\item{adult_DEE_sd}{Numeric: Adult daily energy expenditure, standard deviation (kJ).}
+\item{chick_DER}{Numeric: Chick daily energy requirement (kJ per day).}
+\item{IR_max}{Numeric: Maximum prey intake rate (g per minute).}
+\item{IR_half_a}{Numeric: Intake-rate half-saturation parameter a (scales the half-saturation constant with competition).}
+\item{IR_half_b}{Numeric: Intake-rate half-saturation parameter b (exponent applied to the competition factor).}
+\item{flight_msec}{Numeric: Average flight speed (metres per second).}
+\item{assim_eff}{Numeric: Assimilation efficiency (proportion).}
+\item{energy_prey}{Numeric: Energy gained from prey (kJ per gram).}
+\item{energy_nest}{Numeric: Energy cost of nesting at the colony (kJ per day).}
+\item{energy_flight}{Numeric: Energy cost of flight (kJ per day).}
+\item{energy_searest}{Numeric: Energy cost of resting at sea (kJ per day).}
+\item{energy_forage}{Numeric: Energy cost of foraging (kJ per day).}
+\item{energy_warming}{Numeric: Energy cost of warming food (kJ per day).}
+\item{chick_mass_a}{Numeric: Maximum chick mass gain per day (g).}
+\item{adult_mass_KG}{Numeric: Energy density of adult bird tissue (kJ per gram).}
+\item{beta}{Numeric: Mass-survival slope (parameter of the mass-survival relationship).}
+\item{basesurv_poor}{Numeric: Baseline adult survival in poor years (mass-survival relationship).}
+\item{basesurv_modr}{Numeric: Baseline adult survival in moderate years (mass-survival relationship).}
+\item{basesurv_good}{Numeric: Baseline adult survival in good years (mass-survival relationship).}
+\item{massloss_poor}{Numeric: Expected adult body mass loss in poor years (percent).}
+\item{massloss_modr}{Numeric: Expected adult body mass loss in moderate years (percent).}
+\item{massloss_good}{Numeric: Expected adult body mass loss in good years (percent).}
+\item{chicksurv_poor}{Numeric: Expected chick survival in poor years (percent).}
+\item{chicksurv_modr}{Numeric: Expected chick survival in moderate years (percent).}
+\item{chicksurv_good}{Numeric: Expected chick survival in good years (percent).}
 }
 }
 \source{
-NEED EXPL
+Species parameters compiled for seabORD from the publishedstudies cited in the model description.
 }
 \usage{
 energeticsandpreydata
 }
 \description{
-A dataset containing information on various bird species' energetics and prey data, including metabolic rates, energy requirements, and survival rates under different conditions.
+Species-specific parameters used by seabORD: body mass, mortality and
+abandonment thresholds, time budgets, energetics, prey intake and
+mass-survival parameters, and expected outcomes in poor, moderate and
+good years. Descriptions follow the package metadata table in
+\code{R/functions-transform2seabord.R}.
 }
 \keyword{internal}

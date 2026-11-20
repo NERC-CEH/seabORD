@@ -35,7 +35,7 @@ Description: A model to estimate the population consequences of
     key seabird species
 URL: https://nerc-ceh.github.io/seabORD/, https://github.com/NERC-CEH/seabORD
 BugReports: https://github.com/NERC-CEH/seabORD/issues
-License: OGL
+License: file LICENSE
 Depends: 
     R (>= 3.5),
     dplyr,

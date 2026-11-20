@@ -11,9 +11,9 @@ get_example_modpar(type = NULL)
 Available options are:
 \itemize{
 \item \code{NULL}: Standard scenario example.
-\item \code{"dd"}: Density-dependence scenario example.
+\item \code{"dd"}: distance-decay scenario example.
 \item \code{"cal"}: Standard calibration example.
-\item \code{"cal_dd"}: Density-dependence calibration example.
+\item \code{"cal_dd"}: distance-decay calibration example.
 }}
 }
 \value{
@@ -31,7 +31,7 @@ and parallel-processing configuration.
 
 See the package input vignette for a description of the input objects
 required by \code{\link[=seabord]{seabord()}}:
-\code{vignette("C_KI_inputs", package = "seabORD")}.
+\code{vignette("C_seabord_inputs", package = "seabORD")}.
 }
 \examples{
 # Load model parameters for the standard scenario example

@@ -3,32 +3,34 @@
 \docType{data}
 \name{specieslist}
 \alias{specieslist}
-\title{Species List Dataset}
+\title{Species list}
 \format{
 A data frame with the following 13 columns:
 \describe{
 \item{ENGLISH_NAME}{Character: The English name of the species.}
 \item{LATIN_NAME}{Character: The scientific (Latin) name of the species.}
-\item{TAXA_CODE}{Character: A short taxa code associated with the species.}
-\item{SHORT_CODE}{Character: A short code used for quick reference.}
+\item{TAXA_CODE}{Character: A short taxonomic code for the species.}
+\item{SHORT_CODE}{Character: The two-letter species code used by seabORD (for example "KI").}
 \item{FIVE_LETTER}{Character: A five-letter shorthand for the species.}
-\item{BOU_NAME}{Character: The name of the species as recognized by the British Ornithologists' Union (BOU).}
-\item{sCRM_NAME}{Character:  NEED EXPL}
-\item{CEF}{character: Indicates if the species is included in the CEF project.}
-\item{iPCoD}{character: Indicates if the species is included in the iPCoD project.}
-\item{SeabORD}{character: Indicates if the species is included in the SeabORD project.}
-\item{sCRM}{character: Indicates if the species is included in the sCRM project.}
-\item{NEPVA}{character: Indicates if the species is included in the NEPVA project.}
-\item{DispMat}{character: Indicates if dispersal matrices are available for the species.}
+\item{BOU_NAME}{Character: The name of the species as recognised by the British Ornithologists' Union (BOU).}
+\item{sCRM_NAME}{Character: The species name as used in the stochastic collision risk model (sCRM).}
+\item{CEF}{Character: Indicates if the species is included in the Cumulative Effects Framework (CEF).}
+\item{iPCoD}{Character: Indicates if the species is included in iPCoD.}
+\item{SeabORD}{Character: Indicates if the species is included in seabORD.}
+\item{sCRM}{Character: Indicates if the species is included in the sCRM.}
+\item{NEPVA}{Character: Indicates if the species is included in NEPVA.}
+\item{DispMat}{Character: Indicates if dispersal matrices are available for the species.}
 }
 }
 \source{
-NEED EXPL
+UKCEH seabird species lookup table.
 }
 \usage{
 specieslist
 }
 \description{
-This dataset provides information about the bird species included in seabORD, including their English and Latin names, taxa codes, and 2 letter codes.
+Information about the seabird species covered by seabORD and related
+UKCEH tools, including English and scientific names, taxonomic codes and
+two-letter codes.
 }
 \keyword{internal}

@@ -25,14 +25,13 @@ seabORD calibration run."><meta property="og:image" content="https://nerc-ceh.gi
     <li><a class="dropdown-item" href="../articles/B_seabord_overview.html">seabORD Overview</a></li>
     <li><a class="dropdown-item" href="../articles/C_seabord_inputs.html">seabORD Inputs</a></li>
     <li><a class="dropdown-item" href="../articles/J_main_functions.html">Main Functions</a></li>
-    <li><a class="dropdown-item" href="../articles/K_FAQs.html">FAQs</a></li>
   </ul></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-examples" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">EXAMPLES</button>
-  <ul class="dropdown-menu" aria-labelledby="dropdown-examples"><li><a class="dropdown-item" href="../articles/G_KI_run_decay.html">Kittiwake Example - Distance Decay</a></li>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-examples"><li><a class="dropdown-item" href="../articles/G_KI_run_decay.html">Kittiwake Example - Distance-Decay</a></li>
     <li><a class="dropdown-item" href="../articles/H_KI_run_gps.html">Kittiwake Example - GPS</a></li>
     <li><a class="dropdown-item" href="../articles/I_exampleKI_output.html">Interpreting the Outputs</a></li>
-    <li><a class="dropdown-item" href="../articles/D_DistanceDecayMap.html">Create a Distance-Decay Map</a></li>
+    <li><a class="dropdown-item" href="../articles/D_DistanceDecayMap.html">Create a distance-decay map</a></li>
   </ul></li>
 <li class="active nav-item"><a class="nav-link" href="../reference/index.html">REFERENCE</a></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">CHANGELOG</a></li>
@@ -85,7 +84,7 @@ seabORD calibration run.</p>
 
 
 <dt id="arg-calibration">calibration<a class="anchor" aria-label="anchor" href="#arg-calibration"></a></dt>
-<dd><p>A data frame returned by <code>find_calibration_range()</code>.
+<dd><p>A data frame returned by <code><a href="calc_calibration_range.html">calc_calibration_range()</a></code>.
 It must contain <code>Prey</code> and <code>overlap</code> columns identifying prey values that
 satisfy both the adult and chick calibration criteria.</p></dd>
 
@@ -132,7 +131,7 @@ overlapping calibration range.</p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
-    <div class="dont-index"><p><code>find_calibration_range()</code> for identifying prey values that satisfy the
+    <div class="dont-index"><p><code><a href="calc_calibration_range.html">calc_calibration_range()</a></code> for identifying prey values that satisfy the
 calibration criteria and <code><a href="get_example_output.html">get_example_output()</a></code> for loading example
 calibration output.</p>
 <p>Other plotting functions:
@@ -157,7 +156,7 @@ calibration output.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># \dontrun{</span></span></span>
 <span class="r-in"><span><span class="va">sbordout</span> <span class="op">&lt;-</span> <span class="fu"><a href="get_example_output.html">get_example_output</a></span><span class="op">(</span><span class="st">"cal_dd"</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">calibration</span> <span class="op">&lt;-</span> <span class="fu">find_calibration_range</span><span class="op">(</span></span></span>
+<span class="r-in"><span><span class="va">calibration</span> <span class="op">&lt;-</span> <span class="fu"><a href="calc_calibration_range.html">calc_calibration_range</a></span><span class="op">(</span></span></span>
 <span class="r-in"><span>  sbordout <span class="op">=</span> <span class="va">sbordout</span>,</span></span>
 <span class="r-in"><span>  masslower <span class="op">=</span> <span class="fl">0.09</span>,</span></span>
 <span class="r-in"><span>  massupper <span class="op">=</span> <span class="fl">0.11</span>,</span></span>

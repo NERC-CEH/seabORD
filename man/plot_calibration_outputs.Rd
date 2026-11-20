@@ -17,7 +17,7 @@ plot_calibration_outputs(
 \item{sbordout}{A seabORD calibration-output object containing
 \code{output_a0$data} and \code{output_c0$data}.}
 
-\item{calibration}{A data frame returned by \code{\link[=find_calibration_range]{find_calibration_range()}}.
+\item{calibration}{A data frame returned by \code{\link[=calc_calibration_range]{calc_calibration_range()}}.
 It must contain \code{Prey} and \code{overlap} columns identifying prey values that
 satisfy both the adult and chick calibration criteria.}
 
@@ -66,7 +66,7 @@ overlapping calibration range.
 \dontrun{
 sbordout <- get_example_output("cal_dd")
 
-calibration <- find_calibration_range(
+calibration <- calc_calibration_range(
   sbordout = sbordout,
   masslower = 0.09,
   massupper = 0.11,
@@ -82,7 +82,7 @@ plot_calibration_outputs(
 
 }
 \seealso{
-\code{\link[=find_calibration_range]{find_calibration_range()}} for identifying prey values that satisfy the
+\code{\link[=calc_calibration_range]{calc_calibration_range()}} for identifying prey values that satisfy the
 calibration criteria and \code{\link[=get_example_output]{get_example_output()}} for loading example
 calibration output.
 

@@ -1,6 +1,7 @@
-# CEF Size Table
+# CEF colony size table
 
-Needs a description
+Breeding colony sizes for each species at each SPA, taken from the
+Cumulative Effects Framework (CEF).
 
 ## Usage
 
@@ -14,7 +15,7 @@ A data frame with 5 columns:
 
 - X:
 
-  Numeric: An identifier or index for the row.
+  Numeric: Row index.
 
 - species:
 
@@ -30,8 +31,8 @@ A data frame with 5 columns:
 
 - spacolsize:
 
-  Numeric: NEED EXPL
+  Numeric: Colony size at the SPA, in breeding pairs.
 
 ## Source
 
-NEED EXPL
+Cumulative Effects Framework (CEF).

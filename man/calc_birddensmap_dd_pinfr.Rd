@@ -19,5 +19,5 @@ A raster containing the distance-decay map
 }
 }
 \description{
-Calculate bird density maps using the distance-decay function used in SeabORD, via users specifying "proportion of UD lying within the foraging range"
+Calculate bird density maps using the distance-decay function used in seabORD, via users specifying "proportion of UD lying within the foraging range"
 }

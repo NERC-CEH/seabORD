@@ -5,19 +5,22 @@
 \alias{frgcompdata_example}
 \title{frgcompdata_example}
 \format{
-list of "raster" with the values of a raster in a matrix; and "metadata" with the extent and resolution to build back the raster in memory.
+A list with two elements, used to rebuild the raster in memory:
 \describe{
-\item{matrix}{matrix of pixel values}
-\item{metadata}{List of metadata: extent, resolution, and CRS.}
+\item{matrix}{Matrix of cell values.}
+\item{metadata}{List of metadata: extent, resolution and CRS.}
 }
 }
 \source{
-NEED EXPL
+SEANSE competition maps.
 }
 \usage{
 frgcompdata_example
 }
 \description{
-NEED EXPL
+Foraging-competition map for the Forth Islands example: the distribution
+of kittiwakes from other colonies that may compete with the modelled
+colony. Stored as a matrix plus metadata and rebuilt with
+\code{get_example_frgcompdata()}.
 }
 \keyword{internal}

@@ -7,20 +7,22 @@
 \format{
 A data frame with 5 columns:
 \describe{
-\item{code}{Character: NEED EXPL}
-\item{name}{Character: NEED EXPL}
-\item{Emodnet_Site_Name}{Character: NEED EXPL }
-\item{Emodnet_PolygonID}{Numeric: NEED EXPL}
-\item{Emodnet_Status}{Character: NEED EXPL}
+\item{code}{Character: Short ORD code used by seabORD.}
+\item{name}{Character: Wind-farm name.}
+\item{Emodnet_Site_Name}{Character: Site name in the EMODnet wind farms dataset.}
+\item{Emodnet_PolygonID}{Numeric: Polygon ID in the EMODnet wind farms dataset.}
+\item{Emodnet_Status}{Character: Development status in the EMODnet wind farms dataset.}
 }
 }
 \source{
-NEED EXPL
+EMODnet Human Activities, wind farms.
 }
 \usage{
 offshorerenewabledevelopmentnames
 }
 \description{
-NEED EXPL
+Lookup table linking the short ORD codes used in
+\code{ordPar$include_ORDs} (for example "NEART") to wind-farm names and
+EMODnet records.
 }
 \keyword{internal}

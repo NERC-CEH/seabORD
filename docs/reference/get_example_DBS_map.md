@@ -39,7 +39,7 @@ offshore renewable development footprints alter available movement
 routes and flight distances.
 
 See the package input vignette for related spatial inputs:
-`vignette("C_KI_inputs", package = "seabORD")`.
+[`vignette("C_seabord_inputs", package = "seabORD")`](https://nerc-ceh.github.io/seabORD/articles/C_seabord_inputs.md).
 
 ## See also
 

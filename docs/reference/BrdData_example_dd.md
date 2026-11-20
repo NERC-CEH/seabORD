@@ -1,6 +1,8 @@
 # BrdData_example_dd
 
-NEED EXPL
+Kittiwake bird-distribution map for Whinnyfold, made with the
+distance-decay function (see "Create a distance-decay map"). Stored as a
+matrix plus metadata and rebuilt with `get_example_brddata("dd")`.
 
 ## Usage
 
@@ -10,17 +12,17 @@ BrdData_example_dd
 
 ## Format
 
-list of "raster" with the values of a raster in a matrix; and "metadata"
-with the extent and resolution to build back the raster in memory.
+A list with two elements, used to rebuild the raster in memory:
 
 - matrix:
 
-  matrix of pixel values
+  Matrix of cell values.
 
 - metadata:
 
-  List of metadata: extent, resolution, and CRS.
+  List of metadata: extent, resolution and CRS.
 
 ## Source
 
-NEED EXPL
+Generated with
+[`calc_birddensmap_dd_pinhalf()`](https://nerc-ceh.github.io/seabORD/reference/calc_birddensmap_dd_pinhalf.md).

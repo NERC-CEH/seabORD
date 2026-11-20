@@ -8,6 +8,7 @@ template:
   theme-dark: gruvbox-dark
   bslib:
     bootswatch: lux
+    pkgdown-nav-height: 100px
   includes:
     in_header: |
       <link rel="stylesheet" href="extra.css">
@@ -39,19 +40,17 @@ navbar:
           href: articles/C_seabord_inputs.html
         - text: "Main Functions"
           href: articles/J_main_functions.html
-        - text: "FAQs"
-          href: articles/K_FAQs.html
 
     examples:
       text: "EXAMPLES"
       menu:
-        - text: "Kittiwake Example - Distance Decay"
+        - text: "Kittiwake Example - Distance-Decay"
           href: articles/G_KI_run_decay.html
         - text: "Kittiwake Example - GPS"
           href: articles/H_KI_run_gps.html
         - text: "Interpreting the Outputs"
           href: articles/I_exampleKI_output.html
-        - text: "Create a Distance-Decay Map"
+        - text: "Create a distance-decay map"
           href: articles/D_DistanceDecayMap.html
 
     reference:
@@ -130,10 +129,6 @@ articles:
       - I_exampleKI_output
       - D_DistanceDecayMap
 
-  - title: "Help"
-    contents:
-      - K_FAQs
-
 home:
   title: "seabORD"
   description: >
@@ -152,23 +147,24 @@ home:
 
     components:
       articles_list:
-        title: "Articles"
+        title: "GETTING STARTED"
         text: |
           - [Installing seabORD](articles/A_installing_seabord.html)
           - [seabORD Overview](articles/B_seabord_overview.html)
           - [seabORD Inputs](articles/C_seabord_inputs.html)
           - [Main Functions](articles/J_main_functions.html)
-          - [Kittiwake Example: Distance Decay](articles/G_KI_run_decay.html)
-          - [Kittiwake Example: GPS](articles/H_KI_run_gps.html)
-          - [Interpreting the Outputs](articles/I_exampleKI_output.html)
-          - [Frequently Asked Questions](articles/K_FAQs.html)
+
+      license:
+        title: "license"
+        text: |
+          [OGL-UK-3.0](LICENSE-text.html)
 
       citation:
         title: "Citation"
         text: |
           Please cite seabORD when using the package or its outputs.
 
-          View the full citation
+          [View the full citation](authors.html#citation)
 
       download:
         title: "Download seabORD"

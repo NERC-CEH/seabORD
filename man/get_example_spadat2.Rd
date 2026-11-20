@@ -11,7 +11,7 @@ get_example_spadat2(type = NULL)
 Available options are:
 \itemize{
 \item \code{NULL}: Standard example using site code \code{"UK9004171"}.
-\item \code{"dd"}: Density-dependence example using site code \code{"UK9002491"}.
+\item \code{"dd"}: distance-decay example using site code \code{"UK9002491"}.
 }}
 }
 \value{
@@ -33,13 +33,13 @@ Corresponding SPA coordinate information can be retrieved with
 \code{\link[=get_example_spadat1]{get_example_spadat1()}}.
 
 See the package input vignette for an example:
-\code{vignette("C_KI_inputs", package = "seabORD")}.
+\code{vignette("C_seabord_inputs", package = "seabORD")}.
 }
 \examples{
 # Load designation data for the standard example SPA
 spadat2 <- get_example_spadat2()
 
-# Load designation data for the density-dependence example SPA
+# Load designation data for the distance-decay example SPA
 spadat2_dd <- get_example_spadat2("dd")
 
 }

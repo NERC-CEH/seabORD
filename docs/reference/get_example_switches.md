@@ -19,11 +19,11 @@ get_example_switches(type = NULL)
 
   - `NULL`: Standard scenario example.
 
-  - `"dd"`: Density-dependence scenario example.
+  - `"dd"`: distance-decay scenario example.
 
   - `"cal"`: Standard calibration example.
 
-  - `"cal_dd"`: Density-dependence calibration example.
+  - `"cal_dd"`: distance-decay calibration example.
 
 ## Value
 
@@ -39,7 +39,7 @@ debugging behaviour.
 See the package input vignette for a description of the input objects
 required by
 [`seabord()`](https://nerc-ceh.github.io/seabORD/reference/seabord.md):
-`vignette("C_KI_inputs", package = "seabORD")`.
+[`vignette("C_seabord_inputs", package = "seabORD")`](https://nerc-ceh.github.io/seabORD/articles/C_seabord_inputs.md).
 
 ## See also
 

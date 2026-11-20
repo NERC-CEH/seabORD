@@ -5,20 +5,21 @@
 \alias{cef_coast_4326}
 \title{cef_coast_4326}
 \format{
-NEED EXPL.
+An \code{sf} object with 3 columns:
 \describe{
-\item{COUNTRY }{Character: NEED EXPL.}
-\item{ID_0}{Character: NEED EXPL}
-\item{geometry}{Numeric: NEED EXPL}
+\item{COUNTRY}{Character: Country name.}
+\item{ID_0}{Character: Country identifier.}
+\item{geometry}{sfc: Coastline (multi)polygon geometry.}
 }
 }
 \source{
-NEED EXPL
+Cumulative Effects Framework (CEF) coastline dataset.
 }
 \usage{
 cef_coast_4326
 }
 \description{
-NEED EXPL
+Coastline polygons for the UK and neighbouring countries from the
+Cumulative Effects Framework (CEF), in WGS84 (EPSG:4326).
 }
 \keyword{internal}

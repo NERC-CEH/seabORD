@@ -1,8 +1,10 @@
-# Energetics and Prey Data
+# Energetics and prey data
 
-A dataset containing information on various bird species' energetics and
-prey data, including metabolic rates, energy requirements, and survival
-rates under different conditions.
+Species-specific parameters used by seabORD: body mass, mortality and
+abandonment thresholds, time budgets, energetics, prey intake and
+mass-survival parameters, and expected outcomes in poor, moderate and
+good years. Descriptions follow the package metadata table in
+`R/functions-transform2seabord.R`.
 
 ## Usage
 
@@ -12,160 +14,171 @@ energeticsandpreydata
 
 ## Format
 
-A data frame with the following 27 columns:
+A data frame with the following 38 columns:
 
 - Code:
 
-  Character: A species code.
+  Character: Two-letter species code.
 
 - Species:
 
-  Character: The common name of the species.
+  Character: Species name.
 
 - BM_adult_mn:
 
-  Numeric: The mean body mass of adults.
+  Numeric: Initial adult body mass, mean (g).
 
 - BM_adult_sd:
 
-  Numeric: The standard deviation of adult body mass.
+  Numeric: Initial adult body mass, standard deviation (g).
 
 - BM_adult_mortf:
 
-  Numeric: The mortality factor for adults.
+  Numeric: Critical body mass below which an adult is assumed dead
+  (proportion of mean mass).
 
 - BM_adult_abdn:
 
-  Numeric: The adult abandonment rate.
+  Numeric: Critical body mass below which an adult abandons its chick
+  (proportion of mean mass).
 
 - BM_chick_mn:
 
-  Numeric: The mean body mass of chicks.
+  Numeric: Initial chick body mass, mean (g).
 
 - BM_chick_sd:
 
-  Numeric: The standard deviation of chick body mass.
+  Numeric: Initial chick body mass, standard deviation (g).
 
 - BM_Chick_mortf:
 
-  Numeric: The mortality factor for chicks.
+  Numeric: Critical body mass below which a chick dies (proportion of
+  initial mass).
 
 - daylength:
 
-  Numeric: The day length in hours.
+  Numeric: Number of hours per time step.
 
 - seasonlength:
 
-  Numeric: The length of the season in days.
+  Numeric: Number of time steps per season.
 
 - unattend_max_hrs:
 
-  Numeric: The maximum hours of unattended activity.
+  Numeric: Time a chick can be left unattended before it is assumed to
+  die from exposure or predation (hours).
 
 - adult_DEE_mn:
 
-  Numeric: The mean daily energy expenditure (DEE) for adults.
+  Numeric: Adult daily energy expenditure, mean (kJ).
 
 - adult_DEE_sd:
 
-  Numeric: The standard deviation of adult daily energy expenditure.
+  Numeric: Adult daily energy expenditure, standard deviation (kJ).
 
 - chick_DER:
 
-  Numeric: The chick daily energy requirement (DER).
+  Numeric: Chick daily energy requirement (kJ per day).
 
 - IR_max:
 
-  Numeric: The maximum infrared radiation.
+  Numeric: Maximum prey intake rate (g per minute).
 
 - IR_half_a:
 
-  Numeric: Parameter related to infrared radiation.
+  Numeric: Intake-rate half-saturation parameter a (scales the
+  half-saturation constant with competition).
 
 - IR_half_b:
 
-  Numeric: Another parameter related to infrared radiation.
+  Numeric: Intake-rate half-saturation parameter b (exponent applied to
+  the competition factor).
 
 - flight_msec:
 
-  Numeric: The flight metabolic rate in milliseconds.
+  Numeric: Average flight speed (metres per second).
 
 - assim_eff:
 
-  Numeric: The assimilation efficiency.
+  Numeric: Assimilation efficiency (proportion).
 
 - energy_prey:
 
-  Numeric: The energy available from prey.
+  Numeric: Energy gained from prey (kJ per gram).
 
 - energy_nest:
 
-  Numeric: The energy associated with the nest.
+  Numeric: Energy cost of nesting at the colony (kJ per day).
 
 - energy_flight:
 
-  Numeric: The energy used in flight.
+  Numeric: Energy cost of flight (kJ per day).
 
 - energy_searest:
 
-  Numeric: The energy associated with sea rest.
+  Numeric: Energy cost of resting at sea (kJ per day).
 
 - energy_forage:
 
-  Numeric: The energy used for foraging.
+  Numeric: Energy cost of foraging (kJ per day).
 
 - energy_warming:
 
-  Numeric: The energy used for warming.
+  Numeric: Energy cost of warming food (kJ per day).
 
 - chick_mass_a:
 
-  Numeric: The mass of chicks at age 'a'.
+  Numeric: Maximum chick mass gain per day (g).
 
 - adult_mass_KG:
 
-  Numeric: The adult mass in kilograms.
+  Numeric: Energy density of adult bird tissue (kJ per gram).
 
 - beta:
 
-  Numeric: A parameter used in energetic calculations.
+  Numeric: Mass-survival slope (parameter of the mass-survival
+  relationship).
 
 - basesurv_poor:
 
-  Numeric: The survival rate under poor conditions.
+  Numeric: Baseline adult survival in poor years (mass-survival
+  relationship).
 
 - basesurv_modr:
 
-  Numeric: The survival rate under moderate conditions.
+  Numeric: Baseline adult survival in moderate years (mass-survival
+  relationship).
 
 - basesurv_good:
 
-  Numeric: The survival rate under good conditions.
+  Numeric: Baseline adult survival in good years (mass-survival
+  relationship).
 
 - massloss_poor:
 
-  Numeric: The mass loss under poor conditions.
+  Numeric: Expected adult body mass loss in poor years (percent).
 
 - massloss_modr:
 
-  Numeric: The mass loss under moderate conditions.
+  Numeric: Expected adult body mass loss in moderate years (percent).
 
 - massloss_good:
 
-  Numeric: The mass loss under good conditions.
+  Numeric: Expected adult body mass loss in good years (percent).
 
 - chicksurv_poor:
 
-  Numeric: The chick survival rate under poor conditions.
+  Numeric: Expected chick survival in poor years (percent).
 
 - chicksurv_modr:
 
-  Numeric: The chick survival rate under moderate conditions.
+  Numeric: Expected chick survival in moderate years (percent).
 
 - chicksurv_good:
 
-  Numeric: The chick survival rate under good conditions.
+  Numeric: Expected chick survival in good years (percent).
 
 ## Source
 
-NEED EXPL
+Species parameters compiled for seabORD from the publishedstudies cited
+in the model description.

@@ -1,6 +1,6 @@
 # Main functions
 
-In this chapter the main functions that drive the seabORD core processes
+In this article the main functions that drive the seabORD core processes
 are explained. Together, these functions determine how birds acquire
 food, provision chicks, update their energetic state and ultimately
 survive to the next breeding season. For a broader description of the
@@ -11,7 +11,7 @@ which they are used:
 
 1.  ***Foraging and adult behaviour***
 
-    Calculate the time taken to forage required amount
+    Calculate the required amount taken to forage required amount
     (`calc_foragecapture`)
 
     Calculate the foraging strategy for the timestep (`calc_strategy`)
@@ -47,7 +47,7 @@ which they are used:
 A detailed description of
 [`calc_foragecapture()`](https://nerc-ceh.github.io/seabORD/reference/calc_foragecapture.md),
 including its arguments and returned values, can be found in the
-[function](https://nerc-ceh.github.io/seabORD_pkg/reference/calc_foragecapture.html)
+[function](https://nerc-ceh.github.io/seabORD/reference/calc_foragecapture.html)
 [reference](https://nerc-ceh.github.io/seabORD/reference/calc_foragecapture.html).
 
 This function estimates how quickly a bird can acquire prey while
@@ -127,11 +127,11 @@ increases.](J_main_functions_files/figure-html/unnamed-chunk-5-1.png)
 #### Example 2 - effect of change in body condition (`BM_condition`)
 
 Adult body condition (`BM_condition`) influences the bird’s foraging
-startegy (`feeding_mode`). Birds in poor condition are less able to
+strategy (`feeding_mode`). Birds in poor condition are less able to
 prioritise chick provisioning and may switch to reduced attendance or
 nest abandonment at lower food requirements than birds in good
 condition. As condition approaches the abandonment threshold
-(`BM_adult_abdn`), the bird may switch from to a nest-unattended or
+(`BM_adult_abdn`), the bird may switch to a nest-unattended or
 nest-abandoned strategies (“1” = Provisioning chick while maintaining
 attendance, “2” = Chick left unattended for part of the time step, “3” =
 Breeding attempt abandoned).
@@ -183,8 +183,8 @@ remain alone.
 
 #### Example 1 - Death by unattendance (`CoD`) vs unattended hours (`hrs`)
 
-Here we simulate 1000 chicks across a range of unattended durations. The
-more hours the chicks are left unattended (`hrs`) the higher the
+Here we simulate 1,000 chicks across a range of unattended durations.
+The more hours the chicks are left unattended (`hrs`) the higher the
 proportion of chicks that die because they are left unattended
 (`CoD = unattended)`.
 
@@ -232,7 +232,7 @@ individuals may survive or die in different simulation runs. The
 function therefore captures both the effect of chick condition on
 predation risk and the inherent randomness of mortality events.
 
-#### Example 1 - Proportion of chicks in poor condition (`BM_condition`) dying of “other” causes (`CoD = killed`)
+#### Example 1 - Proportion of chicks in poor condition (`BM_condition`) dying of “predation” (`CoD = killed`)
 
 Puffin chicks in poor body condition (`BM_condition`) are assumed to be
 more vulnerable to predation (`CoD = killed`). Mortality is stochastic,
@@ -262,7 +262,7 @@ improves.](J_main_functions_files/figure-html/unnamed-chunk-11-1.png)
 
 ## 3. Adult state update
 
-### 3.1. Body mass increase for adult birds (calc_adultbmchange)
+### 3.1. Body mass change for adult birds (calc_adultbmchange)
 
 A detailed description of
 [`calc_adultbmchange()`](https://nerc-ceh.github.io/seabORD/reference/calc_adultbmchange.md),
@@ -272,7 +272,7 @@ reference](https://nerc-ceh.github.io/seabORD/reference/calc_adultbmchange.html)
 
 All adult birds update their body mass at the end of each day based on
 the energy they gain and expend foraging and in other activities. The
-model we use is an expanded version of that used in (Daunt et al., 2008;
+model we use is an expanded version of that used by (Daunt et al., 2008;
 Wanless et al., 1997), which separates flight cost and foraging cost for
 each adult to derive total energy expenditure.
 

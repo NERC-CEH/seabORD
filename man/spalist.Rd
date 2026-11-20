@@ -3,29 +3,31 @@
 \docType{data}
 \name{spalist}
 \alias{spalist}
-\title{SPA Site List Dataset}
+\title{SPA site list}
 \format{
 A data frame with the following 10 columns:
 \describe{
 \item{SITE_CODE}{Character: A unique code identifying each SPA.}
 \item{SITE_NAME}{Character: The name of the SPA.}
-\item{CEF.include}{character: Indicates if the site is included in the CEF project (Y) or not (NA).}
-\item{Marine.only}{character: Indicates if the site is classified as a marine-only SPA.}
-\item{Altnames.sufficient}{character:NEED EXPL}
-\item{Altnames.SPApolys}{character:NEED EXPL}
-\item{Altnames.SMP}{character:NEED EXPL}
-\item{Altnames.Productivity}{character:NEED EXPL}
-\item{Altnames.BDMPS}{character:NEED EXPL}
-\item{Altnames.FR}{character:NEED EXPL.}
+\item{CEF.include}{Character: Indicates if the site is included in the CEF (Y) or not (NA).}
+\item{Marine.only}{Character: Indicates if the site is classified as a marine-only SPA.}
+\item{Altnames.sufficient}{Character: Indicates whether the alternative names below are sufficient to match the SPA across datasets.}
+\item{Altnames.SPApolys}{Character: The name used for this SPA in the SPA boundary polygons.}
+\item{Altnames.SMP}{Character: The name used for this SPA in the Seabird Monitoring Programme (SMP) data.}
+\item{Altnames.Productivity}{Character: The name used for this SPA in the productivity data.}
+\item{Altnames.BDMPS}{Character: The name used for this SPA in the Biologically Defined Minimum Population Scales (BDMPS) data.}
+\item{Altnames.FR}{Character: The name used for this SPA in the foraging-range data.}
 }
 }
 \source{
-NEED EXPL
+Cumulative Effects Framework (CEF) SPA lookup table.
 }
 \usage{
 spalist
 }
 \description{
-This dataset contains information about Special Protection Areas (SPAs), including site codes, site names.
+Information about Special Protection Areas (SPAs), including site codes
+and site names, and the alternative names used to match each SPA across
+other datasets.
 }
 \keyword{internal}

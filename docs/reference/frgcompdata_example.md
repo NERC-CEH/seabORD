@@ -1,6 +1,9 @@
 # frgcompdata_example
 
-NEED EXPL
+Foraging-competition map for the Forth Islands example: the distribution
+of kittiwakes from other colonies that may compete with the modelled
+colony. Stored as a matrix plus metadata and rebuilt with
+[`get_example_frgcompdata()`](https://nerc-ceh.github.io/seabORD/reference/get_example_frgcompdata.md).
 
 ## Usage
 
@@ -10,17 +13,16 @@ frgcompdata_example
 
 ## Format
 
-list of "raster" with the values of a raster in a matrix; and "metadata"
-with the extent and resolution to build back the raster in memory.
+A list with two elements, used to rebuild the raster in memory:
 
 - matrix:
 
-  matrix of pixel values
+  Matrix of cell values.
 
 - metadata:
 
-  List of metadata: extent, resolution, and CRS.
+  List of metadata: extent, resolution and CRS.
 
 ## Source
 
-NEED EXPL
+SEANSE competition maps.

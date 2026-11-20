@@ -5,29 +5,30 @@
 \alias{ORDpoly_example_wfold}
 \title{ORDpoly_example_wfold}
 \format{
-tibble
+An \code{sf} tibble with the following columns:
 \describe{
-\item{COUNTRY}{NEED EXPL}
-\item{NAME}{NEED EXPL}
-\item{N_TURBINES}{NEED EXPL}
-\item{POWER_MW}{NEED EXPL}
-\item{STATUS}{NEED EXPL}
-\item{YEAR}{NEED EXPL}
-\item{COAST_DIST_M}{NEED EXPL}
-\item{AREA_SQKM}{NEED EXPL}
-\item{NOTES}{NEED EXPL}
-\item{Shape_Length}{NEED EXPL}
-\item{Shape_Area}{NEED EXPL}
+\item{COUNTRY}{Country.}
+\item{NAME}{Wind-farm name.}
+\item{N_TURBINES}{Number of turbines.}
+\item{POWER_MW}{Installed capacity (MW).}
+\item{STATUS}{Development status.}
+\item{YEAR}{Year (commissioning or status year).}
+\item{COAST_DIST_M}{Distance to the coast (m).}
+\item{AREA_SQKM}{Area (km\eqn{^2}).}
+\item{NOTES}{Notes.}
+\item{Shape_Length}{Polygon perimeter (m).}
+\item{Shape_Area}{Polygon area (m\eqn{^2}).}
 }
 }
 \source{
-NEED EXPL
+Wind-farm footprints prepared for the Whinnyfold example (EMODnet).
 }
 \usage{
 ORDpoly_example_wfold
 }
 \description{
-NEED EXPL
-same projection as seamask
+Footprints of Aberdeen Bay, Hywind Scotland and Kincardine wind farms,
+used in the Whinnyfold distance-decay example. In the same projection as
+the sea mask (EPSG:3035).
 }
 \keyword{internal}

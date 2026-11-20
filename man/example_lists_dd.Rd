@@ -5,21 +5,22 @@
 \alias{example_lists_dd}
 \title{example_lists_dd}
 \format{
-A list NEED EXPL
+A named list with 4 elements:
 \describe{
-\item{\code{switches}}{A list NEED EXPL}
-\item{\code{Par}}{A list NEED EXPL}
-\item{\code{modPar}}{A list NEED EXPL}
-\item{\code{ordPar}}{A list NEED EXPL}
+\item{\code{switches}}{A list of run options (see Switches in the seabORD inputs article).}
+\item{\code{Par}}{A list of biological and simulation parameters.}
+\item{\code{modPar}}{A list of model environment, replicate and output settings.}
+\item{\code{ordPar}}{A list of ORD selection and buffer settings.}
 }
 }
 \source{
-NEED EXPL
+Created in \code{data-raw/example_lists_dd.R}.
 }
 \usage{
 example_lists_dd
 }
 \description{
-NEED EXPL
+Example input lists for a scenario run of kittiwakes at Buchan Ness to
+Collieston Coast SPA (UK9002491), Whinnyfold distance-decay example.
 }
 \keyword{internal}

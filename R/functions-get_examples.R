@@ -145,9 +145,9 @@ set_crop_extent_colony <- function(
 #'   Available options are:
 #'   \itemize{
 #'     \item `NULL`: Standard scenario example.
-#'     \item `"dd"`: Density-dependence scenario example.
+#'     \item `"dd"`: distance-decay scenario example.
 #'     \item `"cal"`: Standard calibration example.
-#'     \item `"cal_dd"`: Density-dependence calibration example.
+#'     \item `"cal_dd"`: distance-decay calibration example.
 #'   }
 #'
 #' @return
@@ -160,13 +160,13 @@ set_crop_extent_colony <- function(
 #'
 #' See the package input vignette for a description of the input objects
 #' required by [seabord()]:
-#' \code{vignette("C_KI_inputs", package = "seabORD")}.
+#' \code{vignette("C_seabord_inputs", package = "seabORD")}.
 #'
 #' @examples
 #' # Load parameters for the standard scenario example
 #' par <- get_example_par()
 #'
-#' # Load parameters for the density-dependence example
+#' # Load parameters for the distance-decay example
 #' par_dd <- get_example_par("dd")
 #'
 #' # Inspect the available parameters
@@ -201,9 +201,9 @@ get_example_par <- function(type = NULL) {
 #'   Available options are:
 #'   \itemize{
 #'     \item `NULL`: Standard scenario example.
-#'     \item `"dd"`: Density-dependence scenario example.
+#'     \item `"dd"`: distance-decay scenario example.
 #'     \item `"cal"`: Standard calibration example.
-#'     \item `"cal_dd"`: Density-dependence calibration example.
+#'     \item `"cal_dd"`: distance-decay calibration example.
 #'   }
 #'
 #' @return
@@ -217,7 +217,7 @@ get_example_par <- function(type = NULL) {
 #'
 #' See the package input vignette for a description of the input objects
 #' required by [seabord()]:
-#' \code{vignette("C_KI_inputs", package = "seabORD")}.
+#' \code{vignette("C_seabord_inputs", package = "seabORD")}.
 #'
 #' @examples
 #' # Load model parameters for the standard scenario example
@@ -257,9 +257,9 @@ get_example_modpar <- function(type = NULL) {
 #'   Available options are:
 #'   \itemize{
 #'     \item `NULL`: Standard scenario example.
-#'     \item `"dd"`: Density-dependence scenario example.
+#'     \item `"dd"`: distance-decay scenario example.
 #'     \item `"cal"`: Standard calibration example.
-#'     \item `"cal_dd"`: Density-dependence calibration example.
+#'     \item `"cal_dd"`: distance-decay calibration example.
 #'   }
 #'
 #' @return
@@ -273,13 +273,13 @@ get_example_modpar <- function(type = NULL) {
 #'
 #' See the package input vignette for a description of the input objects
 #' required by [seabord()]:
-#' \code{vignette("C_KI_inputs", package = "seabORD")}.
+#' \code{vignette("C_seabord_inputs", package = "seabORD")}.
 #'
 #' @examples
 #' # Load ORD parameters for the standard scenario example
 #' ordPar <- get_example_ordPar()
 #'
-#' # Load ORD parameters for the density-dependence example
+#' # Load ORD parameters for the distance-decay example
 #' ordPar_dd <- get_example_ordPar("dd")
 #'
 #' # Inspect the available parameters
@@ -314,9 +314,9 @@ get_example_ordPar <- function(type = NULL) {
 #'   Available options are:
 #'   \itemize{
 #'     \item `NULL`: Standard scenario example.
-#'     \item `"dd"`: Density-dependence scenario example.
+#'     \item `"dd"`: distance-decay scenario example.
 #'     \item `"cal"`: Standard calibration example.
-#'     \item `"cal_dd"`: Density-dependence calibration example.
+#'     \item `"cal_dd"`: distance-decay calibration example.
 #'   }
 #'
 #' @return
@@ -329,7 +329,7 @@ get_example_ordPar <- function(type = NULL) {
 #'
 #' See the package input vignette for a description of the input objects
 #' required by [seabord()]:
-#' \code{vignette("C_KI_inputs", package = "seabORD")}.
+#' \code{vignette("C_seabord_inputs", package = "seabORD")}.
 #'
 #' @examples
 #' # Load switches for the standard scenario example
@@ -377,7 +377,7 @@ get_example_switches <- function(type = NULL) {
 #' for seabORD simulations.
 #'
 #' See the package input vignette for an example:
-#' \code{vignette("C_KI_inputs", package = "seabORD")}.
+#' \code{vignette("C_seabord_inputs", package = "seabORD")}.
 #'
 #' @examples
 #' # Load the example flight-grid correction object
@@ -405,7 +405,7 @@ get_example_fgc_3035 <- function(){
 #'   load. Available options are:
 #'   \itemize{
 #'     \item `NULL`: Polygons for the standard scenario example.
-#'     \item `"dd"`: Polygons for the Whinnyfold density-dependence example.
+#'     \item `"dd"`: Polygons for the Whinnyfold distance-decay example.
 #'   }
 #'
 #' @return
@@ -418,13 +418,13 @@ get_example_fgc_3035 <- function(){
 #' the `ORDpoly` argument to [seabord()].
 #'
 #' See the package input vignette for an example:
-#' \code{vignette("C_KI_inputs", package = "seabORD")}.
+#' \code{vignette("C_seabord_inputs", package = "seabORD")}.
 #'
 #' @examples
 #' # Load polygons for the standard scenario example
 #' ORDpoly <- get_example_ORDpoly()
 #'
-#' # Load polygons for the density-dependence example
+#' # Load polygons for the distance-decay example
 #' ORDpoly_dd <- get_example_ORDpoly("dd")
 #'
 #' # Plot the polygon geometry
@@ -469,7 +469,7 @@ get_example_ORDpoly <- function(type = NULL) {
 #' [seabord()].
 #'
 #' See the package input vignette for an example:
-#' \code{vignette("C_KI_inputs", package = "seabORD")}.
+#' \code{vignette("C_seabord_inputs", package = "seabORD")}.
 #'
 #' @examples
 #' # Load the example sea mask
@@ -516,7 +516,7 @@ get_example_seamask <- function(){
 #'   Available options are:
 #'   \itemize{
 #'     \item `NULL`: Standard example using site code `"UK9004171"`.
-#'     \item `"dd"`: Density-dependence example using site code `"UK9002491"`.
+#'     \item `"dd"`: distance-decay example using site code `"UK9002491"`.
 #'   }
 #'
 #' @return
@@ -534,13 +534,13 @@ get_example_seamask <- function(){
 #' [get_example_spadat2()].
 #'
 #' See the package input vignette for an example:
-#' \code{vignette("C_KI_inputs", package = "seabORD")}.
+#' \code{vignette("C_seabord_inputs", package = "seabORD")}.
 #'
 #' @examples
 #' # Load coordinates for the standard example SPA
 #' spadat1 <- get_example_spadat1()
 #'
-#' # Load coordinates for the density-dependence example SPA
+#' # Load coordinates for the distance-decay example SPA
 #' spadat1_dd <- get_example_spadat1("dd")
 #'
 #' @seealso
@@ -589,7 +589,7 @@ get_example_spadat1 <- function(type = NULL) {
 #'   Available options are:
 #'   \itemize{
 #'     \item `NULL`: Standard example using site code `"UK9004171"`.
-#'     \item `"dd"`: Density-dependence example using site code `"UK9002491"`.
+#'     \item `"dd"`: distance-decay example using site code `"UK9002491"`.
 #'   }
 #'
 #' @return
@@ -607,13 +607,13 @@ get_example_spadat1 <- function(type = NULL) {
 #' [get_example_spadat1()].
 #'
 #' See the package input vignette for an example:
-#' \code{vignette("C_KI_inputs", package = "seabORD")}.
+#' \code{vignette("C_seabord_inputs", package = "seabORD")}.
 #'
 #' @examples
 #' # Load designation data for the standard example SPA
 #' spadat2 <- get_example_spadat2()
 #'
-#' # Load designation data for the density-dependence example SPA
+#' # Load designation data for the distance-decay example SPA
 #' spadat2_dd <- get_example_spadat2("dd")
 #'
 #' @seealso
@@ -657,7 +657,7 @@ get_example_spadat2 <- function(type = NULL) {
 #' The returned object can be supplied as the `spdat` argument to [seabord()].
 #'
 #' See the package input vignette for an example:
-#' \code{vignette("C_KI_inputs", package = "seabORD")}.
+#' \code{vignette("C_seabord_inputs", package = "seabORD")}.
 #'
 #' @examples
 #' # Load the example Kittiwake species parameters
@@ -688,7 +688,7 @@ get_example_spdat <- function() {
 #'   Available options are:
 #'   \itemize{
 #'     \item `NULL`: Forth Islands standard example.
-#'     \item `"dd"`: Whinnyfold density-dependence example.
+#'     \item `"dd"`: Whinnyfold distance-decay example.
 #'   }
 #'
 #' @return
@@ -701,19 +701,19 @@ get_example_spdat <- function() {
 #' metadata and cell-value objects.
 #'
 #' For the standard example, the returned layer is named `"Forth.Islands"`.
-#' For the density-dependence example, it is named `"Whinnyfold"`.
+#' For the distance-decay example, it is named `"Whinnyfold"`.
 #'
 #' The returned raster can be supplied as the `BrdData` argument to
 #' [seabord()].
 #'
 #' See the package input vignette for an example:
-#' \code{vignette("C_KI_inputs", package = "seabORD")}.
+#' \code{vignette("C_seabord_inputs", package = "seabORD")}.
 #'
 #' @examples
 #' # Load the standard example bird-density raster
 #' BrdData <- get_example_brddata()
 #'
-#' # Load the density-dependence example
+#' # Load the distance-decay example
 #' BrdData_dd <- get_example_brddata("dd")
 #'
 #' # Plot the raster
@@ -764,7 +764,7 @@ get_example_brddata <- function(type = NULL) {
 #'   Available options are:
 #'   \itemize{
 #'     \item `NULL`: Forth Islands standard example.
-#'     \item `"dd"`: Whinnyfold density-dependence example.
+#'     \item `"dd"`: Whinnyfold distance-decay example.
 #'   }
 #'
 #' @return
@@ -781,19 +781,19 @@ get_example_brddata <- function(type = NULL) {
 #' metadata and cell-value objects.
 #'
 #' For the standard example, the returned layer is named `"Forth.Islands"`.
-#' For the density-dependence example, it is named `"Whinnyfold"`.
+#' For the distance-decay example, it is named `"Whinnyfold"`.
 #'
 #' The returned raster can be supplied as the `FrgCompData` argument to
 #' [seabord()].
 #'
 #' See the package input vignette for an example:
-#' \code{vignette("C_KI_inputs", package = "seabORD")}.
+#' \code{vignette("C_seabord_inputs", package = "seabORD")}.
 #'
 #' @examples
 #' # Load the standard example competition raster
 #' FrgCompData <- get_example_frgcompdata()
 #'
-#' # Load the density-dependence example
+#' # Load the distance-decay example
 #' FrgCompData_dd <- get_example_frgcompdata("dd")
 #'
 #' # Plot the raster
@@ -847,7 +847,7 @@ get_example_frgcompdata <- function(type = NULL) {
 #'   Available options are:
 #'   \itemize{
 #'     \item `NULL`: Standard example for SPA site `"UK9004171"`.
-#'     \item `"dd"`: Density-dependence example for SPA site `"UK9002491"`.
+#'     \item `"dd"`: distance-decay example for SPA site `"UK9002491"`.
 #'   }
 #'
 #' @return
@@ -863,19 +863,19 @@ get_example_frgcompdata <- function(type = NULL) {
 #' metadata and cell-value objects.
 #'
 #' For the standard example, the returned layer is named `"UK9004171"`.
-#' For the density-dependence example, it is named `"UK9002491"`.
+#' For the distance-decay example, it is named `"UK9002491"`.
 #'
 #' The returned raster can be supplied as the `fltdist_base` argument to
 #' [seabord()].
 #'
 #' See the package input vignette for an example:
-#' \code{vignette("C_KI_inputs", package = "seabORD")}.
+#' \code{vignette("C_seabord_inputs", package = "seabORD")}.
 #'
 #' @examples
 #' # Load the standard example baseline flight-distance raster
 #' fltdist_base <- get_example_fltdist_base()
 #'
-#' # Load the density-dependence example
+#' # Load the distance-decay example
 #' fltdist_base_dd <- get_example_fltdist_base("dd")
 #'
 #' # Plot the raster
@@ -953,7 +953,7 @@ get_example_fltdist_base <- function(type = NULL) {
 #' flight distances.
 #'
 #' See the package input vignette for related spatial inputs:
-#' \code{vignette("C_KI_inputs", package = "seabORD")}.
+#' \code{vignette("C_seabord_inputs", package = "seabORD")}.
 #'
 #' @examples
 #' \dontrun{
@@ -1016,7 +1016,7 @@ get_example_DBS_map <- function(type = NULL){
 #'   \itemize{
 #'     \item `NULL`: Output from the standard scenario example.
 #'     \item `"cal"`: Output from the standard calibration example.
-#'     \item `"cal_dd"`: Output from the density-dependence calibration
+#'     \item `"cal_dd"`: Output from the distance-decay calibration
 #'       example.
 #'   }
 #'
@@ -1045,7 +1045,7 @@ get_example_DBS_map <- function(type = NULL){
 #' # Load the standard calibration output
 #' calibration_output <- get_example_output("cal")
 #'
-#' # Load the density-dependence calibration output
+#' # Load the distance-decay calibration output
 #' calibration_output_dd <- get_example_output("cal_dd")
 #'
 #' # Inspect the top-level output components

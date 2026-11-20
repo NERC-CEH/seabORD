@@ -92,4 +92,4 @@ A list containing tibbles
 
 Before running this function, all model inputs must be prepared. A
 complete description of the required input objects is provided in:
-`vignette("C_KI_inputs", package = "seabORD")`
+[`vignette("C_seabord_inputs", package = "seabORD")`](https://nerc-ceh.github.io/seabORD/articles/C_seabord_inputs.md)

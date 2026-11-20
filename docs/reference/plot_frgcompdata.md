@@ -83,7 +83,7 @@ frgcompdata <- get_example_frgcompdata()
 plot_frgcompdata(frgcompdata)
 
 
-# Load and plot the density-dependence example
+# Load and plot the Density-decay example
 frgcompdata_dd <- get_example_frgcompdata("dd")
 plot_frgcompdata(frgcompdata_dd)
 

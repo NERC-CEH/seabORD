@@ -43,16 +43,15 @@
     <li><a class="dropdown-item" href="../articles/B_seabord_overview.html">seabORD Overview</a></li>
     <li><a class="dropdown-item" href="../articles/C_seabord_inputs.html">seabORD Inputs</a></li>
     <li><a class="dropdown-item" href="../articles/J_main_functions.html">Main Functions</a></li>
-    <li><a class="dropdown-item" href="../articles/K_FAQs.html">FAQs</a></li>
   </ul>
 </li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-examples" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">EXAMPLES</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-examples">
-<li><a class="dropdown-item" href="../articles/G_KI_run_decay.html">Kittiwake Example - Distance Decay</a></li>
+<li><a class="dropdown-item" href="../articles/G_KI_run_decay.html">Kittiwake Example - Distance-Decay</a></li>
     <li><a class="dropdown-item" href="../articles/H_KI_run_gps.html">Kittiwake Example - GPS</a></li>
     <li><a class="dropdown-item" href="../articles/I_exampleKI_output.html">Interpreting the Outputs</a></li>
-    <li><a class="dropdown-item" href="../articles/D_DistanceDecayMap.html">Create a Distance-Decay Map</a></li>
+    <li><a class="dropdown-item" href="../articles/D_DistanceDecayMap.html">Create a distance-decay map</a></li>
   </ul>
 </li>
 <li class="nav-item"><a class="nav-link" href="../reference/index.html">REFERENCE</a></li>
@@ -97,7 +96,7 @@
 </h2>
 <p><strong>seabORD</strong> is a model designed to predict how
 <strong>offshore renewable developments (ORDs)</strong> may affect
-seabird populations through sub-lethal displacement and barrier
+seabird populations through sublethal displacement and barrier
 effects.</p>
 <p>The model estimates how changes in foraging behaviour and energy
 expenditure during the chick-rearing period influence key demographic
@@ -139,12 +138,11 @@ it is used in practice</em></div>
 <div class="section level2">
 <h2 id="model-structure">Model structure<a class="anchor" aria-label="anchor" href="#model-structure"></a>
 </h2>
-<p>The seabORD code is written in <strong>R</strong> and is <a href="https://github.com/NERC-CEH/seabORD_pkg" class="external-link">available on
-GitHub</a>.</p>
+<p>The seabORD code is written in <strong>R</strong> and is <a href="https://github.com/NERC-CEH/seabORD" class="external-link">available on GitHub</a>.</p>
 <p>The model consists of two main stages (see Figure 2):</p>
 <ol style="list-style-type: decimal">
 <li><p>Set-up process (and calibration)</p></li>
-<li><p>Main simulation model.</p></li>
+<li><p>Main simulation model</p></li>
 </ol>
 <p>Within each time step the adults make foraging decisions and then
 based on the outcomes of those decisions, a pair’s chick’s condition is
@@ -162,17 +160,17 @@ used to calculate the time required to obtain their food requirement
 II functional response <span class="citation">(Holling, 1959)</span>,
 adjusted to account for the effect of competition from
 conspecifics.<br>
-Using this information, togethet with knowledge of associated activities
+Using this information, together with knowledge of associated activities
 such as flying to and from the foraging site (including barrier effects
 of flying around the ORD), their own condition, and whether or not their
 chick is alive, each adult then chooses the optimal foraging strategy
 for this time step (<code>calc_strategy</code>). The selected strategy
 seeks to meet daily energy requirements while minimising time away from
-the chick (unnattendance).<br>
+the chick (unattendance).<br>
 This determines how many trips the adult will undertake in this time
 step and what behaviour the adults exhibit with respect to their chick,
-such as potentially leaving them unattended or abandoning the breeding
-attempt due to constraints.</p></li>
+potentially leaving it unattended or abandoning the breeding attempt due
+to constraints.</p></li>
 <li><p><strong><em>Chick provisioning and growth</em></strong> – Food
 captured by each adult during the time step is then converted to energy
 shared between themselves and the chick. The total energy provided by
@@ -180,7 +178,7 @@ both parents is used to calculate chick growth and body mass. Chick body
 mass is then compared with the expected body mass for that stage of
 development. If body condition falls below a critical threshold, the
 chick dies from starvation (<code>calc_chickcare</code>).<br>
-Surviving chicks are then subject by several stochastic mortality
+Surviving chicks are then subject to several stochastic mortality
 processes relating to other potential causes of death: unattendance by
 the parents (<code>calc_unattendmortality</code>), other causes like
 storms (<code>calc_othermortality</code>), and in the case of puffins,
@@ -193,11 +191,11 @@ for their foraging strategy in the next time step. Adult body masses are
 then updated based on the energy gained and expended foraging and in
 other activities (<code>calc_adultbmchange</code>). Finally, the daily
 energy requirements for the next time step are calculated
-(<code>calc_adultdee</code>)</p></li>
+(<code>calc_adultdee</code>).</p></li>
 <li><p><strong><em>Adult survival</em></strong> – Upon completion of all
 time steps for each season (baseline/scenario) within each replicate,
 adult survival over the subsequent winter period is estimated using the
-mass of each adult which survived to the final time step, representing
+mass of each adult that survived to the final time step, representing
 the end of the chick-rearing season. Survival is estimated using
 relationships from previously published studies <span class="citation">(Erikstad et al., 2009; Oro &amp; Furness,
 2002)</span>, by converting the mass of each adult into a probability of
@@ -242,10 +240,10 @@ displacement zone, with new foraging locations chosen proportional to
 the probability of bird usage within the displacement zone.  </li>
 </ol>
 <div class="float">
-<img src="images/seabORD_overview_1jpg.png" style="width:100.0%" alt="Figure 3: Schematic of ORD interactions in seabORD. 1a and 1b represent the barrier effects, where the path taken by the bird to reach the foraging site is obstructed by ORD. 2a and 2b represent the displacement effects, where the foraging site chosen by the bird is moved to a new location outside the ORD footprint."><div class="figcaption"><em>Figure 3: Schematic of ORD interactions in
+<img src="images/seabORD_overview_1jpg.png" style="width:100.0%" alt="Figure 3: Schematic of ORD interactions in seabORD. 1a and 1b represent the barrier effects, where the path taken by the bird to reach the foraging site is obstructed by an ORD. 2a and 2b represent the displacement effects, where the foraging site chosen by the bird is moved to a new location outside the ORD footprint."><div class="figcaption"><em>Figure 3: Schematic of ORD interactions in
 seabORD. 1a and 1b represent the barrier effects, where the path taken
-by the bird to reach the foraging site is obstructed by ORD. 2a and 2b
-represent the displacement effects, where the foraging site chosen by
+by the bird to reach the foraging site is obstructed by an ORD. 2a and
+2b represent the displacement effects, where the foraging site chosen by
 the bird is moved to a new location outside the ORD
 footprint.</em></div>
 </div>

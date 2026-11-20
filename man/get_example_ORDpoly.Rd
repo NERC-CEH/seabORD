@@ -11,7 +11,7 @@ get_example_ORDpoly(type = NULL)
 load. Available options are:
 \itemize{
 \item \code{NULL}: Polygons for the standard scenario example.
-\item \code{"dd"}: Polygons for the Whinnyfold density-dependence example.
+\item \code{"dd"}: Polygons for the Whinnyfold distance-decay example.
 }}
 }
 \value{
@@ -28,13 +28,13 @@ footprints used by the selected example workflow. They can be supplied as
 the \code{ORDpoly} argument to \code{\link[=seabord]{seabord()}}.
 
 See the package input vignette for an example:
-\code{vignette("C_KI_inputs", package = "seabORD")}.
+\code{vignette("C_seabord_inputs", package = "seabORD")}.
 }
 \examples{
 # Load polygons for the standard scenario example
 ORDpoly <- get_example_ORDpoly()
 
-# Load polygons for the density-dependence example
+# Load polygons for the distance-decay example
 ORDpoly_dd <- get_example_ORDpoly("dd")
 
 # Plot the polygon geometry

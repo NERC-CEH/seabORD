@@ -1,7 +1,8 @@
-# SPA Site List Dataset
+# SPA site list
 
-This dataset contains information about Special Protection Areas (SPAs),
-including site codes, site names.
+Information about Special Protection Areas (SPAs), including site codes
+and site names, and the alternative names used to match each SPA across
+other datasets.
 
 ## Usage
 
@@ -23,37 +24,40 @@ A data frame with the following 10 columns:
 
 - CEF.include:
 
-  character: Indicates if the site is included in the CEF project (Y) or
-  not (NA).
+  Character: Indicates if the site is included in the CEF (Y) or not
+  (NA).
 
 - Marine.only:
 
-  character: Indicates if the site is classified as a marine-only SPA.
+  Character: Indicates if the site is classified as a marine-only SPA.
 
 - Altnames.sufficient:
 
-  character:NEED EXPL
+  Character: Indicates whether the alternative names below are
+  sufficient to match the SPA across datasets.
 
 - Altnames.SPApolys:
 
-  character:NEED EXPL
+  Character: The name used for this SPA in the SPA boundary polygons.
 
 - Altnames.SMP:
 
-  character:NEED EXPL
+  Character: The name used for this SPA in the Seabird Monitoring
+  Programme (SMP) data.
 
 - Altnames.Productivity:
 
-  character:NEED EXPL
+  Character: The name used for this SPA in the productivity data.
 
 - Altnames.BDMPS:
 
-  character:NEED EXPL
+  Character: The name used for this SPA in the Biologically Defined
+  Minimum Population Scales (BDMPS) data.
 
 - Altnames.FR:
 
-  character:NEED EXPL.
+  Character: The name used for this SPA in the foraging-range data.
 
 ## Source
 
-NEED EXPL
+Cumulative Effects Framework (CEF) SPA lookup table.

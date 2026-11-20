@@ -5,10 +5,10 @@
 \alias{seamask_3035_example}
 \title{seamask_3035_example}
 \format{
-list of "raster" with the values of a raster in a matrix; and "metadata" with the extent and resolution to build back the raster in memory.
+A list with two elements, used to rebuild the raster in memory:
 \describe{
-\item{matrix}{matrix of pixel values}
-\item{metadata}{List of metadata: extent, resolution, and CRS.}
+\item{matrix}{Matrix of cell values.}
+\item{metadata}{List of metadata: extent, resolution and CRS.}
 }
 }
 \source{
@@ -18,6 +18,8 @@ Generated from "seamask_3035.tif".
 seamask_3035_example
 }
 \description{
-NEED EXPL
+Example 1 km land/sea mask in ETRS89 / LAEA Europe (EPSG:3035). Sea
+cells hold values and land cells are NA. Stored as a matrix plus
+metadata and rebuilt with \code{get_example_seamask()}.
 }
 \keyword{internal}

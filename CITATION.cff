@@ -27,10 +27,10 @@ authors:
   - family-names: Searle
     given-names: Kate
 
-repository-code: https://github.com/NERC-CEH/seabORD_pkg
-url: https://nerc-ceh.github.io/seabORD_pkg/index.html
+repository-code: https://github.com/NERC-CEH/seabORD
+url: https://nerc-ceh.github.io/seabORD/index.html
 
-license: GPL-3.0
+license: OGL-UK-3.0
 
 preferred-citation:
   type: manual

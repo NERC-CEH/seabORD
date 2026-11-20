@@ -5,21 +5,22 @@
 \alias{example_1_lists}
 \title{example_1_lists}
 \format{
-A list NEED EXPL
+A named list with 4 elements:
 \describe{
-\item{\code{switches}}{A list NEED EXPL}
-\item{\code{Par}}{A list NEED EXPL}
-\item{\code{modPar}}{A list NEED EXPL}
-\item{\code{ordPar}}{A list NEED EXPL}
+\item{\code{switches}}{A list of run options (see Switches in the seabORD inputs article).}
+\item{\code{Par}}{A list of biological and simulation parameters.}
+\item{\code{modPar}}{A list of model environment, replicate and output settings.}
+\item{\code{ordPar}}{A list of ORD selection and buffer settings.}
 }
 }
 \source{
-NEED EXPL
+Created in \code{data-raw/example_lists.R}.
 }
 \usage{
 example_1_lists
 }
 \description{
-NEED EXPL
+Example input lists for a scenario run of kittiwakes at the Forth
+Islands SPA (UK9004171), GPS example.
 }
 \keyword{internal}

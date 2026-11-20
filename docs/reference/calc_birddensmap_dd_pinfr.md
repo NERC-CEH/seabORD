@@ -1,7 +1,7 @@
 # Calculate bird density maps
 
 Calculate bird density maps using the distance-decay function used in
-SeabORD, via users specifying "proportion of UD lying within the
+seabORD, via users specifying "proportion of UD lying within the
 foraging range"
 
 ## Usage

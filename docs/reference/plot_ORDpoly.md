@@ -70,7 +70,7 @@ ORDpoly <- get_example_ORDpoly()
 plot_ORDpoly(ORDpoly)
 
 
-# Load and plot the density-dependence example
+# Load and plot the Density-decay example
 ORDpoly_dd <- get_example_ORDpoly("dd")
 plot_ORDpoly(ORDpoly_dd)
 

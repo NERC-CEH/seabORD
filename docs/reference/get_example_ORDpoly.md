@@ -18,7 +18,7 @@ get_example_ORDpoly(type = NULL)
 
   - `NULL`: Polygons for the standard scenario example.
 
-  - `"dd"`: Polygons for the Whinnyfold density-dependence example.
+  - `"dd"`: Polygons for the Whinnyfold distance-decay example.
 
 ## Value
 
@@ -33,7 +33,7 @@ as the `ORDpoly` argument to
 [`seabord()`](https://nerc-ceh.github.io/seabORD/reference/seabord.md).
 
 See the package input vignette for an example:
-`vignette("C_KI_inputs", package = "seabORD")`.
+[`vignette("C_seabord_inputs", package = "seabORD")`](https://nerc-ceh.github.io/seabORD/articles/C_seabord_inputs.md).
 
 ## See also
 
@@ -62,7 +62,7 @@ Other example data:
 # Load polygons for the standard scenario example
 ORDpoly <- get_example_ORDpoly()
 
-# Load polygons for the density-dependence example
+# Load polygons for the distance-decay example
 ORDpoly_dd <- get_example_ORDpoly("dd")
 
 # Plot the polygon geometry

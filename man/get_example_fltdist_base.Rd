@@ -11,7 +11,7 @@ get_example_fltdist_base(type = NULL)
 Available options are:
 \itemize{
 \item \code{NULL}: Standard example for SPA site \code{"UK9004171"}.
-\item \code{"dd"}: Density-dependence example for SPA site \code{"UK9002491"}.
+\item \code{"dd"}: distance-decay example for SPA site \code{"UK9002491"}.
 }}
 }
 \value{
@@ -31,19 +31,19 @@ The raster is reconstructed from data stored internally as separate
 metadata and cell-value objects.
 
 For the standard example, the returned layer is named \code{"UK9004171"}.
-For the density-dependence example, it is named \code{"UK9002491"}.
+For the distance-decay example, it is named \code{"UK9002491"}.
 
 The returned raster can be supplied as the \code{fltdist_base} argument to
 \code{\link[=seabord]{seabord()}}.
 
 See the package input vignette for an example:
-\code{vignette("C_KI_inputs", package = "seabORD")}.
+\code{vignette("C_seabord_inputs", package = "seabORD")}.
 }
 \examples{
 # Load the standard example baseline flight-distance raster
 fltdist_base <- get_example_fltdist_base()
 
-# Load the density-dependence example
+# Load the distance-decay example
 fltdist_base_dd <- get_example_fltdist_base("dd")
 
 # Plot the raster

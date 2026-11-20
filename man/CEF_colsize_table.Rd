@@ -3,24 +3,25 @@
 \docType{data}
 \name{CEF_colsize_table}
 \alias{CEF_colsize_table}
-\title{CEF Size Table}
+\title{CEF colony size table}
 \format{
 A data frame with 5 columns:
 \describe{
-\item{X}{Numeric: An identifier or index for the row.}
+\item{X}{Numeric: Row index.}
 \item{species}{Character: The species code.}
 \item{site_codes}{Character: The unique code identifying each site.}
 \item{site_names}{Character: The name of the site.}
-\item{spacolsize}{Numeric: NEED EXPL}
+\item{spacolsize}{Numeric: Colony size at the SPA, in breeding pairs.}
 }
 }
 \source{
-NEED EXPL
+Cumulative Effects Framework (CEF).
 }
 \usage{
 CEF_colsize_table
 }
 \description{
-Needs a description
+Breeding colony sizes for each species at each SPA, taken from the
+Cumulative Effects Framework (CEF).
 }
 \keyword{internal}

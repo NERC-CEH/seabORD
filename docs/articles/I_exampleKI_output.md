@@ -26,7 +26,7 @@ elements of the list are related to inputs (“switches”, “Parameters”,
 the runs will be reproducible and are transparent for anyone inspecting
 the results.
 
-The following 11 outputs, aside from “BirdFlightMap” are all outputs
+The following 11 outputs, aside from “BirdFlightMap”, are all outputs
 relating to different components/entities in the model and each element
 typically has a \$data section where the actual data is contained and a
 \$metadata section which describes each of the columns in the output.
@@ -59,7 +59,7 @@ typically has a \$data section where the actual data is contained and a
 
 Let’s plot the flight map location output just to see that the run has
 performed as intended. From this plot we can see clearly the two ORD
-footprints, with a higher density of foraging location in the 5km
+footprints, with a higher density of foraging locations in the 5 km
 displacement zone surrounding each ORD.
 
 Some birds have **foraging locations** inside the ORD footprints. These
@@ -125,8 +125,8 @@ You will see that there are 4 replicates of prey values here with
 respective rows for baseline (“Season\$base”) and scenario
 (“Season\$scen”) matched runs, giving a total of 8 rows.
 
-Conceivably, the average condition of adults across scenario runs at the
-end of the simulation (BM_adult.mn), will be lower than that for
+We would expect the average condition of adults across scenario runs at
+the end of the simulation (BM_adult.mn), will be lower than that for
 baseline runs. So let’s plot that and have a look…
 
 ``` r
@@ -176,7 +176,7 @@ dplyr::glimpse(head(sbordout$output_c0$data))
 #> $ ChicksPerNest   <dbl> 0.6024845, 0.5731539, 0.6252588, 0.6024845, 0.6252588,…
 ```
 
-Conceivably, the number of surviving chicks across scenario runs at the
+As expected, the number of surviving chicks across scenario runs at the
 end of the simulation (N_alive_ch), will be lower than that for baseline
 runs…
 
@@ -233,9 +233,9 @@ dplyr::glimpse(head(sbordout$output_f0$data))
 which would conceivably be higher for scenario runs due to barrier
 effects increasing flight distance, so let’s do another basic plot
 
-and we can see that adults in the scenario run typically flew around
-50km more on average over the simulation duration than birds with no
-wind farm interaction.
+and we can see that adults in the scenario run typically flew around 50
+km more on average over the simulation duration than birds with no wind
+farm interaction.
 
 ``` r
 
@@ -255,12 +255,12 @@ simulations](I_exampleKI_output_files/figure-html/unnamed-chunk-9-1.png)
   in some way at least once
 
 - Metric: Additional Mortality 1-i2: TRUE means birds displaced at least
-  once, never barriered
+  once, never subject to barrier effects
 
-- Metric: Additional Mortality 1-i3: TRUE means birds barriered at least
-  once, never displaced
+- Metric: Additional Mortality 1-i3: TRUE means birds subject to barrier
+  effects at least once, never displaced
 
-- Metric: Additional Mortality 1-i4: TRUE means birds barriered and
-  displaced at least once
+- Metric: Additional Mortality 1-i4: TRUE means birds subject to barrier
+  effects and displaced at least once
 
 - Metric: Additional Mortality 1-i5: All impacts grouped separately

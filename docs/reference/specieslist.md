@@ -1,8 +1,8 @@
-# Species List Dataset
+# Species list
 
-This dataset provides information about the bird species included in
-seabORD, including their English and Latin names, taxa codes, and 2
-letter codes.
+Information about the seabird species covered by seabORD and related
+UKCEH tools, including English and scientific names, taxonomic codes and
+two-letter codes.
 
 ## Usage
 
@@ -24,11 +24,12 @@ A data frame with the following 13 columns:
 
 - TAXA_CODE:
 
-  Character: A short taxa code associated with the species.
+  Character: A short taxonomic code for the species.
 
 - SHORT_CODE:
 
-  Character: A short code used for quick reference.
+  Character: The two-letter species code used by seabORD (for example
+  "KI").
 
 - FIVE_LETTER:
 
@@ -36,39 +37,40 @@ A data frame with the following 13 columns:
 
 - BOU_NAME:
 
-  Character: The name of the species as recognized by the British
+  Character: The name of the species as recognised by the British
   Ornithologists' Union (BOU).
 
 - sCRM_NAME:
 
-  Character: NEED EXPL
+  Character: The species name as used in the stochastic collision risk
+  model (sCRM).
 
 - CEF:
 
-  character: Indicates if the species is included in the CEF project.
+  Character: Indicates if the species is included in the Cumulative
+  Effects Framework (CEF).
 
 - iPCoD:
 
-  character: Indicates if the species is included in the iPCoD project.
+  Character: Indicates if the species is included in iPCoD.
 
 - SeabORD:
 
-  character: Indicates if the species is included in the SeabORD
-  project.
+  Character: Indicates if the species is included in seabORD.
 
 - sCRM:
 
-  character: Indicates if the species is included in the sCRM project.
+  Character: Indicates if the species is included in the sCRM.
 
 - NEPVA:
 
-  character: Indicates if the species is included in the NEPVA project.
+  Character: Indicates if the species is included in NEPVA.
 
 - DispMat:
 
-  character: Indicates if dispersal matrices are available for the
+  Character: Indicates if dispersal matrices are available for the
   species.
 
 ## Source
 
-NEED EXPL
+UKCEH seabird species lookup table.

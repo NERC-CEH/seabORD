@@ -18,7 +18,7 @@ get_example_spadat2(type = NULL)
 
   - `NULL`: Standard example using site code `"UK9004171"`.
 
-  - `"dd"`: Density-dependence example using site code `"UK9002491"`.
+  - `"dd"`: distance-decay example using site code `"UK9002491"`.
 
 ## Value
 
@@ -37,7 +37,7 @@ Corresponding SPA coordinate information can be retrieved with
 [`get_example_spadat1()`](https://nerc-ceh.github.io/seabORD/reference/get_example_spadat1.md).
 
 See the package input vignette for an example:
-`vignette("C_KI_inputs", package = "seabORD")`.
+[`vignette("C_seabord_inputs", package = "seabORD")`](https://nerc-ceh.github.io/seabORD/articles/C_seabord_inputs.md).
 
 ## See also
 
@@ -66,6 +66,6 @@ Other example data:
 # Load designation data for the standard example SPA
 spadat2 <- get_example_spadat2()
 
-# Load designation data for the density-dependence example SPA
+# Load designation data for the distance-decay example SPA
 spadat2_dd <- get_example_spadat2("dd")
 ```

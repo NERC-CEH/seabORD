@@ -5,19 +5,21 @@
 \alias{BrdData_example}
 \title{BrdData_example}
 \format{
-list of "raster" with the values of a raster in a matrix; and "metadata" with the extent and resolution to build back the raster in memory.
+A list with two elements, used to rebuild the raster in memory:
 \describe{
-\item{matrix}{matrix of pixel values}
-\item{metadata}{List of metadata: extent, resolution, and CRS.}
+\item{matrix}{Matrix of cell values.}
+\item{metadata}{List of metadata: extent, resolution and CRS.}
 }
 }
 \source{
-NEED EXPL
+UKCEH GPS tracking data (SEANSE bird distribution maps).
 }
 \usage{
 BrdData_example
 }
 \description{
-NEED EXPL
+Kittiwake bird-distribution map for the Forth Islands SPA, derived from
+GPS tracking data. Stored as a matrix plus metadata and rebuilt with
+\code{get_example_brddata()}.
 }
 \keyword{internal}

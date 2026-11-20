@@ -18,7 +18,7 @@ get_example_frgcompdata(type = NULL)
 
   - `NULL`: Forth Islands standard example.
 
-  - `"dd"`: Whinnyfold density-dependence example.
+  - `"dd"`: Whinnyfold distance-decay example.
 
 ## Value
 
@@ -36,13 +36,13 @@ The raster is reconstructed from data stored internally as separate
 metadata and cell-value objects.
 
 For the standard example, the returned layer is named `"Forth.Islands"`.
-For the density-dependence example, it is named `"Whinnyfold"`.
+For the distance-decay example, it is named `"Whinnyfold"`.
 
 The returned raster can be supplied as the `FrgCompData` argument to
 [`seabord()`](https://nerc-ceh.github.io/seabORD/reference/seabord.md).
 
 See the package input vignette for an example:
-`vignette("C_KI_inputs", package = "seabORD")`.
+[`vignette("C_seabord_inputs", package = "seabORD")`](https://nerc-ceh.github.io/seabORD/articles/C_seabord_inputs.md).
 
 ## See also
 
@@ -73,7 +73,7 @@ Other example data:
 # Load the standard example competition raster
 FrgCompData <- get_example_frgcompdata()
 
-# Load the density-dependence example
+# Load the distance-decay example
 FrgCompData_dd <- get_example_frgcompdata("dd")
 
 # Plot the raster

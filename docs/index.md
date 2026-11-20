@@ -22,15 +22,12 @@ Conceptual diagram of the seabORD model
 
 ## Citation
 
-The methodology underpinning seabORD-R is currently under review.
-
-**Associated publication:**\
-*Article title to be inserted*
+The methodology underpinning seabORD is currently under review.
 
 ## Source Code
 
-seabORD-R is developed openly on GitHub. Source code, issue tracking,
-and version releases are available at:
+seabORD is developed openly on GitHub. Source code, issue tracking, and
+version releases are available at:
 
 [GitHub Repository](https://github.com/NERC-CEH/seabORD)
 
@@ -46,17 +43,17 @@ and version releases are available at:
 
 ## Acknowledgements
 
-Acknowledgements: This work was funded by (i) The Offshore Wind Evidence
-and Change programme, led by The Crown Estate in partnership with the
-Department for Energy Security and Net Zero and Department for
-Environment, Food & Rural Affairs through the Predators and Prey Around
-Renewable Energy Developments (PrePARED) project and by (ii) Scottish
-Government’s Contract Research Fund. We wish to thank Marine Directorate
-and members of Project Steering Groups for support and guidance
-throughout this project. Data used to parameterise the model were
-supported by UKCEH National Capability for UK Challenges programme
-NE/Y006208/1 and the Joint Nature Conservation Committee.
+This work was funded by (i) The Offshore Wind Evidence and Change
+programme, led by The Crown Estate in partnership with the Department
+for Energy Security and Net Zero and Department for Environment, Food &
+Rural Affairs through the Predators and Prey Around Renewable Energy
+Developments (PrePARED) project and by (ii) the Scottish Government’s
+Contract Research Fund. We wish to thank the Marine Directorate and
+members of Project Steering Groups for support and guidance throughout
+this project. Data used to parameterise the model were supported by
+UKCEH National Capability for UK Challenges programme NE/Y006208/1 and
+the Joint Nature Conservation Committee.
 
-## Licence
+## License
 
-This package is distributed under the **Open Government Licence (OGL)**.
+Open Government License OGL-UK-3.0
